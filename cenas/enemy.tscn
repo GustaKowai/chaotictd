@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://cag6dlg72b634"]
+
+[ext_resource type="Texture2D" uid="uid://dr7j2qpsxwp17" path="res://sprites/Sem Título-1.png" id="1_32mm3"]
+[ext_resource type="Script" uid="uid://bxk7ou5cwigkv" path="res://gd/enemy.gd" id="1_sbeh8"]
+[ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_wbqij"]
+[ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="4_2cyxh"]
+[ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="5_4r1g7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbeh8"]
+size = Vector2(108, 137)
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_sbeh8")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(-2, 3)
+texture = ExtResource("1_32mm3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 8.5)
+shape = SubResource("RectangleShape2D_sbeh8")
+
+[node name="State_machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_wbqij")
+initial_state = NodePath("Follow")
+
+[node name="Idle" type="Node" parent="State_machine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("4_2cyxh")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://cqvygmqemyqcq"
+
+[node name="Follow" type="Node" parent="State_machine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_4r1g7")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://cjnylbeht4a6i"

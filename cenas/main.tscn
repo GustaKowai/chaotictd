@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://wig3gvmd4il6"]
+
+[ext_resource type="PackedScene" uid="uid://cag6dlg72b634" path="res://cenas/enemy.tscn" id="1_mtgg2"]
+[ext_resource type="Script" uid="uid://oob10hyg242h" path="res://player_teste.gd" id="2_t4ukd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mtgg2"]
+radius = 39.8121
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mtgg2"]
+size = Vector2(20, 20)
+
+[node name="Main" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_mtgg2")]
+position = Vector2(384, 421)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
+position = Vector2(710, 450)
+script = ExtResource("2_t4ukd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_mtgg2")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = SubResource("PlaceholderTexture2D_mtgg2")
