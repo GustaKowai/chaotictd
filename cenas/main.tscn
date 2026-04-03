@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://wig3gvmd4il6"]
+[gd_scene load_steps=6 format=3 uid="uid://wig3gvmd4il6"]
 
 [ext_resource type="PackedScene" uid="uid://cag6dlg72b634" path="res://cenas/enemy.tscn" id="1_mtgg2"]
 [ext_resource type="Script" uid="uid://oob10hyg242h" path="res://player_teste.gd" id="2_t4ukd"]
+[ext_resource type="PackedScene" uid="uid://t4n6p64qxp5d" path="res://cenas/base.tscn" id="3_4fhxt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtgg2"]
 radius = 39.8121
@@ -23,3 +24,8 @@ shape = SubResource("CircleShape2D_mtgg2")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture = SubResource("PlaceholderTexture2D_mtgg2")
+
+[node name="Base" parent="." groups=["Base", "Player"] instance=ExtResource("3_4fhxt")]
+position = Vector2(1551, 212)
+
+[editable path="Enemy"]

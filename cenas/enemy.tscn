@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cag6dlg72b634"]
+[gd_scene load_steps=8 format=3 uid="uid://cag6dlg72b634"]
 
 [ext_resource type="Texture2D" uid="uid://dr7j2qpsxwp17" path="res://sprites/Sem Título-1.png" id="1_32mm3"]
 [ext_resource type="Script" uid="uid://bxk7ou5cwigkv" path="res://gd/enemy.gd" id="1_sbeh8"]
@@ -9,7 +9,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sbeh8"]
 size = Vector2(108, 137)
 
-[node name="Enemy" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4r1g7"]
+size = Vector2(108, 139)
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_sbeh8")
 
 [node name="Sprite" type="Sprite2D" parent="."]
@@ -33,3 +36,13 @@ metadata/_custom_type_script = "uid://cqvygmqemyqcq"
 script = ExtResource("5_4r1g7")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://cjnylbeht4a6i"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(10, 8.5)
+shape = SubResource("RectangleShape2D_4r1g7")
