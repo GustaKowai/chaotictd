@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://wig3gvmd4il6"]
+[gd_scene load_steps=7 format=3 uid="uid://wig3gvmd4il6"]
 
 [ext_resource type="PackedScene" uid="uid://cag6dlg72b634" path="res://cenas/enemy.tscn" id="1_mtgg2"]
+[ext_resource type="PackedScene" uid="uid://c7myvvb3gsh5t" path="res://cenas/cannon_teste.tscn" id="2_b30p5"]
 [ext_resource type="Script" uid="uid://oob10hyg242h" path="res://player_teste.gd" id="2_t4ukd"]
 [ext_resource type="PackedScene" uid="uid://t4n6p64qxp5d" path="res://cenas/base.tscn" id="3_4fhxt"]
 
@@ -16,6 +17,7 @@ size = Vector2(20, 20)
 position = Vector2(384, 421)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
+visible = false
 position = Vector2(710, 450)
 script = ExtResource("2_t4ukd")
 
@@ -25,7 +27,34 @@ shape = SubResource("CircleShape2D_mtgg2")
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture = SubResource("PlaceholderTexture2D_mtgg2")
 
+[node name="Cannon_teste" parent="." instance=ExtResource("2_b30p5")]
+position = Vector2(646, 552)
+
 [node name="Base" parent="." groups=["Base", "Player"] instance=ExtResource("3_4fhxt")]
-position = Vector2(1551, 212)
+position = Vector2(973, 520)
+
+[node name="Enemy2" parent="." instance=ExtResource("1_mtgg2")]
+position = Vector2(257, -194)
+
+[node name="Enemy3" parent="." instance=ExtResource("1_mtgg2")]
+position = Vector2(747, 1614)
+
+[node name="Enemy4" parent="." instance=ExtResource("1_mtgg2")]
+position = Vector2(3344, 1507)
+
+[node name="Enemy5" parent="." instance=ExtResource("1_mtgg2")]
+position = Vector2(3268, 634)
+
+[node name="Enemy6" parent="." instance=ExtResource("1_mtgg2")]
+position = Vector2(2311, -315)
+
+[node name="Cannon_teste2" parent="." instance=ExtResource("2_b30p5")]
+position = Vector2(1808, 999)
+
+[node name="Cannon_teste3" parent="." instance=ExtResource("2_b30p5")]
+position = Vector2(900, 815)
+
+[node name="Cannon_teste4" parent="." instance=ExtResource("2_b30p5")]
+position = Vector2(1451, 540)
 
 [editable path="Enemy"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkyyvpf4gndau"]
+
+[ext_resource type="Script" uid="uid://cxcw8ygpqinfj" path="res://gd/bullet_teste.gd" id="1_xx1y1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qwbpu"]
+radius = 4.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xx1y1"]
+size = Vector2(5, 5)
+
+[node name="Bullet_teste" type="Area2D"]
+script = ExtResource("1_xx1y1")
+speed = 400.0
+damage = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qwbpu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_xx1y1")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(2.38419e-07, 2.38419e-07)
+scale = Vector2(0.4, 0.4)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

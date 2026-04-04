@@ -4,7 +4,7 @@ class_name  EnemyFollow
 @export var enemy: Enemy
 @export var move_speed:float = 30.0
 
-@export var base: StaticBody2D
+@export var base: PhysicsBody2D
 
 func Enter():
 	base = get_tree().get_first_node_in_group("Base")
@@ -18,7 +18,7 @@ func Update(_delta: float):
 func Physics_update(_delta: float):
 	if base:
 		var direction = base.global_position - enemy.global_position
-		print_debug(direction.length())
+		#print_debug(direction.length())
 		if direction.length() > 25:
 			enemy.velocity = direction.normalized()*move_speed
 		else:
