@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://tgjpj17povjb"]
+
+[ext_resource type="Script" uid="uid://d1acouyvco1en" path="res://gd/button_torre.gd" id="1_8sa5k"]
+[ext_resource type="PackedScene" uid="uid://fudqwumtu2ly" path="res://cenas/fantasma_torre.tscn" id="2_lettw"]
+
+[node name="Button" type="Button"]
+offset_right = 58.0
+offset_bottom = 37.0
+text = "torre"
+script = ExtResource("1_8sa5k")
+torre = ExtResource("2_lettw")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

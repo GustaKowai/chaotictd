@@ -19,5 +19,5 @@ func _physics_process(delta: float) -> void:
 		
 func shoot():
 	var b = bullet.instantiate()
-	owner.add_child(b)
+	get_tree().root.add_child(b)
 	b.transform = mira.global_transform

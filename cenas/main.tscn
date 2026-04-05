@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://wig3gvmd4il6"]
+[gd_scene load_steps=8 format=3 uid="uid://wig3gvmd4il6"]
 
 [ext_resource type="PackedScene" uid="uid://cag6dlg72b634" path="res://cenas/enemy.tscn" id="1_mtgg2"]
 [ext_resource type="PackedScene" uid="uid://c7myvvb3gsh5t" path="res://cenas/cannon_teste.tscn" id="2_b30p5"]
 [ext_resource type="Script" uid="uid://oob10hyg242h" path="res://player_teste.gd" id="2_t4ukd"]
 [ext_resource type="PackedScene" uid="uid://t4n6p64qxp5d" path="res://cenas/base.tscn" id="3_4fhxt"]
+[ext_resource type="PackedScene" uid="uid://tgjpj17povjb" path="res://cenas/button_torre.tscn" id="5_5wwvk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtgg2"]
 radius = 39.8121
@@ -56,5 +57,11 @@ position = Vector2(900, 815)
 
 [node name="Cannon_teste4" parent="." instance=ExtResource("2_b30p5")]
 position = Vector2(1451, 540)
+
+[node name="Button" parent="." instance=ExtResource("5_5wwvk")]
+offset_left = 82.0
+offset_top = 1027.0
+offset_right = 140.0
+offset_bottom = 1064.0
 
 [editable path="Enemy"]
