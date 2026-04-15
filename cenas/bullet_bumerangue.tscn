@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://do7groqhlbflw"]
+
+[ext_resource type="Script" uid="uid://cju1mfu60b65w" path="res://gd/bullet_bumerangue.gd" id="1_k0fcg"]
+[ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="2_lgxiu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lgxiu"]
+
+[node name="Bullet_bumerangue" type="Area2D" unique_id=1251024802]
+script = ExtResource("1_k0fcg")
+bullet_duracao = 6.0
+speed = 400.0
+damage = 2
+metadata/_custom_type_script = "uid://dfphxkt0fqq73"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=275368755]
+shape = SubResource("CircleShape2D_lgxiu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1768558595]
+position = Vector2(-3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.1171875, 0.109375)
+texture = ExtResource("2_lgxiu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

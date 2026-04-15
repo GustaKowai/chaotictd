@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://wig3gvmd4il6"]
+[gd_scene format=3 uid="uid://wig3gvmd4il6"]
 
 [ext_resource type="PackedScene" uid="uid://cag6dlg72b634" path="res://cenas/enemy.tscn" id="1_mtgg2"]
 [ext_resource type="PackedScene" uid="uid://c7myvvb3gsh5t" path="res://cenas/cannon_teste.tscn" id="2_b30p5"]
 [ext_resource type="Script" uid="uid://oob10hyg242h" path="res://player_teste.gd" id="2_t4ukd"]
 [ext_resource type="PackedScene" uid="uid://t4n6p64qxp5d" path="res://cenas/base.tscn" id="3_4fhxt"]
+[ext_resource type="PackedScene" uid="uid://do7groqhlbflw" path="res://cenas/bullet_bumerangue.tscn" id="4_bhvw8"]
 [ext_resource type="PackedScene" uid="uid://tgjpj17povjb" path="res://cenas/button_torre.tscn" id="5_5wwvk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtgg2"]
@@ -12,53 +13,48 @@ radius = 39.8121
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mtgg2"]
 size = Vector2(20, 20)
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=1501420038]
 
-[node name="Enemy" parent="." instance=ExtResource("1_mtgg2")]
-position = Vector2(384, 421)
+[node name="Enemy" parent="." unique_id=519408120 instance=ExtResource("1_mtgg2")]
+position = Vector2(-517, 348)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
+[node name="ProgressBar" parent="Enemy" index="3"]
+metadata/_edit_use_anchors_ = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2034334671 groups=["Player"]]
 visible = false
 position = Vector2(710, 450)
 script = ExtResource("2_t4ukd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1809760856]
 shape = SubResource("CircleShape2D_mtgg2")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1253204912]
 texture = SubResource("PlaceholderTexture2D_mtgg2")
 
-[node name="Cannon_teste" parent="." instance=ExtResource("2_b30p5")]
+[node name="Cannon_teste" parent="." unique_id=1486798227 instance=ExtResource("2_b30p5")]
 position = Vector2(646, 552)
+bullet = ExtResource("4_bhvw8")
 
-[node name="Base" parent="." groups=["Base", "Player"] instance=ExtResource("3_4fhxt")]
+[node name="Base" parent="." unique_id=1886608135 groups=["Base", "Player"] instance=ExtResource("3_4fhxt")]
 position = Vector2(973, 520)
 
-[node name="Enemy2" parent="." instance=ExtResource("1_mtgg2")]
+[node name="Enemy2" parent="." unique_id=2071312390 instance=ExtResource("1_mtgg2")]
 position = Vector2(257, -194)
 
-[node name="Enemy3" parent="." instance=ExtResource("1_mtgg2")]
+[node name="Enemy3" parent="." unique_id=1952201669 instance=ExtResource("1_mtgg2")]
 position = Vector2(747, 1614)
 
-[node name="Enemy4" parent="." instance=ExtResource("1_mtgg2")]
+[node name="Enemy4" parent="." unique_id=1976001293 instance=ExtResource("1_mtgg2")]
 position = Vector2(3344, 1507)
 
-[node name="Enemy5" parent="." instance=ExtResource("1_mtgg2")]
+[node name="Enemy5" parent="." unique_id=1491329288 instance=ExtResource("1_mtgg2")]
 position = Vector2(3268, 634)
 
-[node name="Enemy6" parent="." instance=ExtResource("1_mtgg2")]
+[node name="Enemy6" parent="." unique_id=575020746 instance=ExtResource("1_mtgg2")]
 position = Vector2(2311, -315)
 
-[node name="Cannon_teste2" parent="." instance=ExtResource("2_b30p5")]
-position = Vector2(1808, 999)
-
-[node name="Cannon_teste3" parent="." instance=ExtResource("2_b30p5")]
-position = Vector2(900, 815)
-
-[node name="Cannon_teste4" parent="." instance=ExtResource("2_b30p5")]
-position = Vector2(1451, 540)
-
-[node name="Button" parent="." instance=ExtResource("5_5wwvk")]
+[node name="Button" parent="." unique_id=493173635 instance=ExtResource("5_5wwvk")]
 offset_left = 82.0
 offset_top = 1027.0
 offset_right = 140.0
