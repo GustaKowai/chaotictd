@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://t4n6p64qxp5d" path="res://cenas/base.tscn" id="3_4fhxt"]
 [ext_resource type="PackedScene" uid="uid://do7groqhlbflw" path="res://cenas/bullet_bumerangue.tscn" id="4_bhvw8"]
 [ext_resource type="PackedScene" uid="uid://tgjpj17povjb" path="res://cenas/button_torre.tscn" id="5_5wwvk"]
+[ext_resource type="PackedScene" uid="uid://fudqwumtu2ly" path="res://cenas/fantasma_torre.tscn" id="7_l8342"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtgg2"]
 radius = 39.8121
@@ -59,5 +60,7 @@ offset_left = 82.0
 offset_top = 1027.0
 offset_right = 140.0
 offset_bottom = 1064.0
+torre = ExtResource("2_b30p5")
+fantasma_torre = ExtResource("7_l8342")
 
 [editable path="Enemy"]

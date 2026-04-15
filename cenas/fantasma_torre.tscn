@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://fudqwumtu2ly"]
+[gd_scene format=3 uid="uid://fudqwumtu2ly"]
 
 [ext_resource type="Script" uid="uid://c3gth08e7jl43" path="res://gd/fantasma_torre.gd" id="1_l2hpw"]
-[ext_resource type="PackedScene" uid="uid://c7myvvb3gsh5t" path="res://cenas/cannon_teste.tscn" id="2_gi2gw"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_x8kok"]
 size = Vector2(20, 20)
@@ -11,19 +10,18 @@ size = Vector2(10, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2hpw"]
 
-[node name="Node2D" type="Area2D"]
+[node name="Node2D" type="Area2D" unique_id=39781860]
 modulate = Color(1, 1, 1, 0.376471)
 script = ExtResource("1_l2hpw")
-torre = ExtResource("2_gi2gw")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1236101624]
 texture = SubResource("PlaceholderTexture2D_x8kok")
 
-[node name="Cannon" type="Sprite2D" parent="Sprite2D"]
+[node name="Cannon" type="Sprite2D" parent="Sprite2D" unique_id=1943698142]
 position = Vector2(12, 0)
 texture = SubResource("PlaceholderTexture2D_l2hpw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1393945763]
 shape = SubResource("RectangleShape2D_l2hpw")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

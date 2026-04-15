@@ -1,6 +1,6 @@
 extends Button
 @export var torre:PackedScene
-
+@export var fantasma_torre:PackedScene
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -12,5 +12,6 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	var t = torre.instantiate()
+	var t = fantasma_torre.instantiate()
+	t.torre = torre
 	owner.add_child(t)
