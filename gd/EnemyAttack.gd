@@ -8,6 +8,7 @@ class_name EnemyAttack
 var delay:float
 
 func Enter():
+	#print_debug("Modo de ataque")
 	delay = delay_attack
 
 func Exit():
@@ -16,6 +17,7 @@ func Exit():
 func Update(delta: float):
 	if !enemy.alvo:
 		Transitioned.emit(self,"hunt")
+		Transitioned.emit(self,"follow")
 	else:
 		charge_attack(delta)
 	

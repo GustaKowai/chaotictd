@@ -13,6 +13,8 @@ radius = 54.0023
 radius = 85.119
 
 [node name="Enemy" type="CharacterBody2D" unique_id=11593940 groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_sbeh8")
 distancia_colisao = 90.0
 max_health = 50
@@ -27,14 +29,14 @@ shape = SubResource("CircleShape2D_4r1g7")
 
 [node name="State_machine" type="Node" parent="." unique_id=152176512 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_wbqij")
-initial_state = NodePath("EnemyFollow")
+initial_state = NodePath("follow")
 
-[node name="EnemyFollow" type="Node" parent="State_machine" unique_id=1248873948 node_paths=PackedStringArray("enemy")]
+[node name="follow" type="Node" parent="State_machine" unique_id=1248873948 node_paths=PackedStringArray("enemy")]
 script = ExtResource("4_2cyxh")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://cjnylbeht4a6i"
 
-[node name="EnemyAttack" type="Node" parent="State_machine" unique_id=2081486930 node_paths=PackedStringArray("enemy", "area_dano")]
+[node name="attack" type="Node" parent="State_machine" unique_id=2081486930 node_paths=PackedStringArray("enemy", "area_dano")]
 script = ExtResource("5_4r1g7")
 enemy = NodePath("../..")
 area_dano = NodePath("../../HitBox")

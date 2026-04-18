@@ -27,6 +27,12 @@ window/size/viewport_height=1080
 
 torre=""
 
+[layer_names]
+
+2d_physics/layer_1="Torres"
+2d_physics/layer_2="Inimigos"
+2d_physics/layer_3="Balas"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

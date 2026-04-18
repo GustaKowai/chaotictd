@@ -25,7 +25,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2034334671 groups=["Player"]]
 visible = false
-position = Vector2(710, 450)
+position = Vector2(499, -167)
 script = ExtResource("2_t4ukd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1809760856]
@@ -42,10 +42,10 @@ bullet = ExtResource("4_bhvw8")
 position = Vector2(973, 520)
 
 [node name="Enemy2" parent="." unique_id=2071312390 instance=ExtResource("1_mtgg2")]
-position = Vector2(257, -194)
+position = Vector2(513, 200)
 
 [node name="Enemy3" parent="." unique_id=1952201669 instance=ExtResource("1_mtgg2")]
-position = Vector2(1140, 907)
+position = Vector2(451, 301)
 
 [node name="Button" parent="." unique_id=493173635 instance=ExtResource("5_5wwvk")]
 offset_left = 82.0
@@ -56,7 +56,7 @@ torre = ExtResource("2_b30p5")
 fantasma_torre = ExtResource("7_l8342")
 
 [node name="Enemy_fast" parent="." unique_id=1900647932 instance=ExtResource("8_v1d1r")]
-position = Vector2(76, 973)
+position = Vector2(-420, 1103)
 
 [node name="Cannon_teste2" parent="." unique_id=747018379 instance=ExtResource("2_b30p5")]
 position = Vector2(370, 890)

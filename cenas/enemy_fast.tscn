@@ -19,6 +19,8 @@ radius = 25.0
 radius = 198.0
 
 [node name="Enemy_fast" type="CharacterBody2D" unique_id=1900647932 groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_tk4rn")
 distancia_colisao = 45.0
 max_health = 200
