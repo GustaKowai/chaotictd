@@ -70,4 +70,19 @@ position = Vector2(76, 973)
 [node name="Cannon_teste2" parent="." unique_id=747018379 instance=ExtResource("2_b30p5")]
 position = Vector2(612, 871)
 
+[node name="Enemy_fast2" parent="." unique_id=468925157 instance=ExtResource("8_v1d1r")]
+position = Vector2(-593, 1248)
+
+[node name="Enemy_fast3" parent="." unique_id=1289626672 instance=ExtResource("8_v1d1r")]
+position = Vector2(-233, 511)
+
+[node name="Enemy_fast4" parent="." unique_id=1901241556 instance=ExtResource("8_v1d1r")]
+position = Vector2(-109, 1792)
+
+[node name="Enemy_fast5" parent="." unique_id=1488044709 instance=ExtResource("8_v1d1r")]
+position = Vector2(-676, 1655)
+
+[node name="Enemy_fast6" parent="." unique_id=2113394823 instance=ExtResource("8_v1d1r")]
+position = Vector2(-886, 835)
+
 [editable path="Enemy"]
