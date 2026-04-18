@@ -35,7 +35,7 @@ shape = SubResource("CircleShape2D_mtgg2")
 texture = SubResource("PlaceholderTexture2D_mtgg2")
 
 [node name="Cannon_teste" parent="." unique_id=1486798227 instance=ExtResource("2_b30p5")]
-position = Vector2(594, 672)
+position = Vector2(494, 719)
 bullet = ExtResource("4_bhvw8")
 
 [node name="Base" parent="." unique_id=1886608135 groups=["Base", "Player"] instance=ExtResource("3_4fhxt")]
@@ -45,16 +45,7 @@ position = Vector2(973, 520)
 position = Vector2(257, -194)
 
 [node name="Enemy3" parent="." unique_id=1952201669 instance=ExtResource("1_mtgg2")]
-position = Vector2(747, 1614)
-
-[node name="Enemy4" parent="." unique_id=1976001293 instance=ExtResource("1_mtgg2")]
-position = Vector2(3344, 1507)
-
-[node name="Enemy5" parent="." unique_id=1491329288 instance=ExtResource("1_mtgg2")]
-position = Vector2(3268, 634)
-
-[node name="Enemy6" parent="." unique_id=575020746 instance=ExtResource("1_mtgg2")]
-position = Vector2(2311, -315)
+position = Vector2(1140, 907)
 
 [node name="Button" parent="." unique_id=493173635 instance=ExtResource("5_5wwvk")]
 offset_left = 82.0
@@ -68,21 +59,6 @@ fantasma_torre = ExtResource("7_l8342")
 position = Vector2(76, 973)
 
 [node name="Cannon_teste2" parent="." unique_id=747018379 instance=ExtResource("2_b30p5")]
-position = Vector2(612, 871)
-
-[node name="Enemy_fast2" parent="." unique_id=468925157 instance=ExtResource("8_v1d1r")]
-position = Vector2(-593, 1248)
-
-[node name="Enemy_fast3" parent="." unique_id=1289626672 instance=ExtResource("8_v1d1r")]
-position = Vector2(-233, 511)
-
-[node name="Enemy_fast4" parent="." unique_id=1901241556 instance=ExtResource("8_v1d1r")]
-position = Vector2(-109, 1792)
-
-[node name="Enemy_fast5" parent="." unique_id=1488044709 instance=ExtResource("8_v1d1r")]
-position = Vector2(-676, 1655)
-
-[node name="Enemy_fast6" parent="." unique_id=2113394823 instance=ExtResource("8_v1d1r")]
-position = Vector2(-886, 835)
+position = Vector2(370, 890)
 
 [editable path="Enemy"]

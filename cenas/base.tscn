@@ -11,8 +11,9 @@ size = Vector2(90, 90)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2pul"]
 size = Vector2(90, 91)
 
-[node name="Base" type="StaticBody2D" unique_id=1670237934]
+[node name="Base" type="StaticBody2D" unique_id=1670237934 groups=["torre"]]
 script = ExtResource("1_m2pul")
+max_health = 1000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1133035403]
 position = Vector2(1, 0.5)

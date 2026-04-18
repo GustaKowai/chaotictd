@@ -1,0 +1,38 @@
+extends State
+class_name EnemyAttack
+
+@export var enemy:Enemy
+@export var area_dano:Area2D
+@export var dano:int
+@export var delay_attack:float
+var delay:float
+
+func Enter():
+	delay = delay_attack
+
+func Exit():
+	pass
+	
+func Update(delta: float):
+	if !enemy.alvo:
+		Transitioned.emit(self,"hunt")
+	else:
+		charge_attack(delta)
+	
+func Physics_update(_delta: float):
+	pass
+
+func charge_attack(delta):
+	delay -= delta
+	if delay <= 0:
+		attack()
+		delay = delay_attack
+	else:
+		pass
+		
+func attack():
+	#print_debug("ataquei")
+	var alvos = area_dano.get_overlapping_bodies()
+	for alvo in alvos:
+		if alvo.is_in_group("torre"):
+			alvo.take_damage(dano)

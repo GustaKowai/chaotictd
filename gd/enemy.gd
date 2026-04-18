@@ -7,7 +7,11 @@ class_name Enemy
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var sprite: Sprite2D = $Sprite
 
+@export var distancia_colisao:float
 @export var max_health:int = 10
+
+var alvo:Building  #Utilizado para inimigos que podem mudar de alvo
+
 var current_health: int :
 	set(new_value):
 		current_health = new_value
@@ -28,10 +32,13 @@ func _process(delta: float) -> void:
 func take_damage(damage:int):
 	current_health -= damage
 	if current_health <= 0:
-		queue_free()
+		die()
 
 func heal_damage(heal:int):
 	if current_health+heal < max_health:
 		current_health += heal
 	else:
 		current_health = max_health
+		
+func die():
+	queue_free()

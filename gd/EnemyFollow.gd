@@ -19,10 +19,12 @@ func Physics_update(_delta: float):
 	if base:
 		var direction = base.global_position - enemy.global_position
 		#print_debug(direction.length())
-		if direction.length() > 25:
+		if direction.length() > enemy.distancia_colisao:
 			enemy.velocity = direction.normalized()*move_speed
 		else:
+			print_debug("Alcancei a base")
 			enemy.velocity = Vector2()
+			Transitioned.emit(self,"attack")
 		#if direction.length() > 500:
 			#Transitioned.emit(self,"idle")
 	else:

@@ -3,7 +3,7 @@ class_name Building
 
 @onready var progress_bar: ProgressBar = $ProgressBar
 
-var max_health:int = 100
+@export var max_health:int = 100
 var current_health: int :
 	set(new_value):
 		current_health = new_value
@@ -20,9 +20,14 @@ func _process(delta: float) -> void:
 
 func take_damage(damage:int):
 	current_health -= damage
+	if current_health <= 0:
+		die()
 
 func heal_damage(heal:int):
 	if current_health+heal < max_health:
 		current_health += heal
 	else:
 		current_health = max_health
+
+func die():
+	queue_free()

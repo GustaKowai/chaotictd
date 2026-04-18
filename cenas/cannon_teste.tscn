@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://cigjf741pjw4n" path="res://gd/cannon_teste.gd" id="1_is2nt"]
 [ext_resource type="PackedScene" uid="uid://bkyyvpf4gndau" path="res://cenas/bullet_teste.tscn" id="2_slvgt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_slvgt"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_slvgt"]
+radius = 13.0
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ocafh"]
 size = Vector2(20, 20)
@@ -17,7 +18,7 @@ delay_shoot = 0.3
 bullet = ExtResource("2_slvgt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=929075892]
-shape = SubResource("RectangleShape2D_slvgt")
+shape = SubResource("CircleShape2D_slvgt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1836009599]
 texture = SubResource("PlaceholderTexture2D_ocafh")

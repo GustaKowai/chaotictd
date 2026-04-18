@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dr7j2qpsxwp17" path="res://sprites/Sem Título-1.png" id="2_abb4h"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_5w5ak"]
 [ext_resource type="Script" uid="uid://cjtli66j3y46e" path="res://gd/EnemyHunt.gd" id="4_abb4h"]
+[ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="5_5w5ak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abb4h"]
+size = Vector2(25, 25)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ne27"]
 radius = 18.0
@@ -16,12 +20,20 @@ radius = 198.0
 
 [node name="Enemy_fast" type="CharacterBody2D" unique_id=1900647932 groups=["Enemy"]]
 script = ExtResource("1_tk4rn")
-max_health = 1
+distancia_colisao = 45.0
+max_health = 200
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1875544201]
 scale = Vector2(0.305, 0.305)
 texture = ExtResource("2_abb4h")
+
+[node name="AttackArea" type="Area2D" parent="Sprite" unique_id=1944355732]
+scale = Vector2(3.2786884, 3.2786884)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/AttackArea" unique_id=2010956223]
+position = Vector2(27, 0)
+shape = SubResource("RectangleShape2D_abb4h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1666622167 groups=["Enemy"]]
 position = Vector2(0, 1)
@@ -29,14 +41,22 @@ shape = SubResource("CircleShape2D_3ne27")
 
 [node name="State_machine" type="Node" parent="." unique_id=32125361 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_5w5ak")
-initial_state = NodePath("EnemyHunt")
+initial_state = NodePath("hunt")
 
-[node name="EnemyHunt" type="Node" parent="State_machine" unique_id=465053437 node_paths=PackedStringArray("area_alerta", "enemy")]
+[node name="hunt" type="Node" parent="State_machine" unique_id=465053437 node_paths=PackedStringArray("area_alerta", "enemy")]
 script = ExtResource("4_abb4h")
 area_alerta = NodePath("../../Area2D")
 enemy = NodePath("../..")
 move_speed = 100.0
 metadata/_custom_type_script = "uid://cjtli66j3y46e"
+
+[node name="attack" type="Node" parent="State_machine" unique_id=443917886 node_paths=PackedStringArray("enemy", "area_dano")]
+script = ExtResource("5_5w5ak")
+enemy = NodePath("../..")
+area_dano = NodePath("../../Sprite/AttackArea")
+dano = 20
+delay_attack = 1.0
+metadata/_custom_type_script = "uid://da3rkekrhcba0"
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1184608670]
 offset_left = -106.0
