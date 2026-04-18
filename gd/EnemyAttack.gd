@@ -1,10 +1,10 @@
 extends State
 class_name EnemyAttack
 
-@export var enemy:Enemy
-@export var area_dano:Area2D
-@export var dano:int
-@export var delay_attack:float
+@export var enemy:Enemy #O inimigo que está com esse módulo
+@export var area_dano:Area2D #A área que o inimigo irá causar dano
+@export var dano:int #Quantidade de dano causado por ataque
+@export var delay_attack:float #Tempo entre os ataques
 var delay:float
 
 func Enter():

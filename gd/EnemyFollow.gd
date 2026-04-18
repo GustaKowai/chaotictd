@@ -1,8 +1,8 @@
 extends State
 class_name  EnemyFollow
 
-@export var enemy: Enemy
-@export var move_speed:float = 30.0
+@export var enemy: Enemy #O inimigo que está com esse módulo
+@export var move_speed:float = 30.0 #Velocidade de movimento do inimigo
 
 var base: PhysicsBody2D
 
