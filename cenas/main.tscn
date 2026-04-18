@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://do7groqhlbflw" path="res://cenas/bullet_bumerangue.tscn" id="4_bhvw8"]
 [ext_resource type="PackedScene" uid="uid://tgjpj17povjb" path="res://cenas/button_torre.tscn" id="5_5wwvk"]
 [ext_resource type="PackedScene" uid="uid://fudqwumtu2ly" path="res://cenas/fantasma_torre.tscn" id="7_l8342"]
+[ext_resource type="PackedScene" uid="uid://bij78peujw27q" path="res://cenas/enemy_fast.tscn" id="8_v1d1r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtgg2"]
 radius = 39.8121
@@ -19,7 +20,7 @@ size = Vector2(20, 20)
 [node name="Enemy" parent="." unique_id=519408120 instance=ExtResource("1_mtgg2")]
 position = Vector2(-517, 348)
 
-[node name="ProgressBar" parent="Enemy" index="3"]
+[node name="ProgressBar" parent="Enemy" index="3" unique_id=1835059122]
 metadata/_edit_use_anchors_ = true
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2034334671 groups=["Player"]]
@@ -34,7 +35,7 @@ shape = SubResource("CircleShape2D_mtgg2")
 texture = SubResource("PlaceholderTexture2D_mtgg2")
 
 [node name="Cannon_teste" parent="." unique_id=1486798227 instance=ExtResource("2_b30p5")]
-position = Vector2(646, 552)
+position = Vector2(594, 672)
 bullet = ExtResource("4_bhvw8")
 
 [node name="Base" parent="." unique_id=1886608135 groups=["Base", "Player"] instance=ExtResource("3_4fhxt")]
@@ -62,5 +63,11 @@ offset_right = 140.0
 offset_bottom = 1064.0
 torre = ExtResource("2_b30p5")
 fantasma_torre = ExtResource("7_l8342")
+
+[node name="Enemy_fast" parent="." unique_id=1900647932 instance=ExtResource("8_v1d1r")]
+position = Vector2(76, 973)
+
+[node name="Cannon_teste2" parent="." unique_id=747018379 instance=ExtResource("2_b30p5")]
+position = Vector2(612, 871)
 
 [editable path="Enemy"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://t4n6p64qxp5d"]
+[gd_scene format=3 uid="uid://t4n6p64qxp5d"]
 
 [ext_resource type="Script" uid="uid://687nbbkelr7d" path="res://gd/base.gd" id="1_m2pul"]
 
@@ -11,25 +11,25 @@ size = Vector2(90, 90)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2pul"]
 size = Vector2(90, 91)
 
-[node name="Base" type="StaticBody2D"]
+[node name="Base" type="StaticBody2D" unique_id=1670237934]
 script = ExtResource("1_m2pul")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1133035403]
 position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_fqtx0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1964487356]
 texture = SubResource("PlaceholderTexture2D_m2pul")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1488286985]
 offset_left = -68.0
 offset_top = -73.0
 offset_right = 71.0
 offset_bottom = -46.0
 show_percentage = false
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=369362489]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1772929820]
 position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_m2pul")

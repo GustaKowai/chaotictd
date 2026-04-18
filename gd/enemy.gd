@@ -1,5 +1,9 @@
 extends CharacterBody2D
 class_name Enemy
+### Classe Inimigo, usado de base para todos os inimigos.
+### A Classe base tem um Sprite, CollisionShape2D, State_Machine, ProgressBar e HitBox.
+
+
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var sprite: Sprite2D = $Sprite
 

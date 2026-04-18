@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cag6dlg72b634"]
+[gd_scene format=3 uid="uid://cag6dlg72b634"]
 
 [ext_resource type="Texture2D" uid="uid://dr7j2qpsxwp17" path="res://sprites/Sem Título-1.png" id="1_32mm3"]
 [ext_resource type="Script" uid="uid://bxk7ou5cwigkv" path="res://gd/enemy.gd" id="1_sbeh8"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_wbqij"]
-[ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="4_2cyxh"]
-[ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="5_4r1g7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4r1g7"]
 radius = 54.0023
@@ -12,41 +10,31 @@ radius = 54.0023
 [sub_resource type="CircleShape2D" id="CircleShape2D_7fy4e"]
 radius = 85.119
 
-[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+[node name="Enemy" type="CharacterBody2D" unique_id=11593940 groups=["Enemy"]]
 script = ExtResource("1_sbeh8")
 max_health = 50
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=466451512]
 position = Vector2(-2, 3)
 texture = ExtResource("1_32mm3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=434025234 groups=["Enemy"]]
 position = Vector2(10, 8.5)
 shape = SubResource("CircleShape2D_4r1g7")
 
-[node name="State_machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+[node name="State_machine" type="Node" parent="." unique_id=152176512 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_wbqij")
-initial_state = NodePath("Follow")
+initial_state = NodePath("")
 
-[node name="Idle" type="Node" parent="State_machine" node_paths=PackedStringArray("enemy")]
-script = ExtResource("4_2cyxh")
-enemy = NodePath("../..")
-metadata/_custom_type_script = "uid://cqvygmqemyqcq"
-
-[node name="Follow" type="Node" parent="State_machine" node_paths=PackedStringArray("enemy")]
-script = ExtResource("5_4r1g7")
-enemy = NodePath("../..")
-metadata/_custom_type_script = "uid://cjnylbeht4a6i"
-
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1835059122]
 offset_left = -106.0
 offset_top = -93.0
 offset_right = 138.0
 offset_bottom = -66.0
 show_percentage = false
 
-[node name="HitBox" type="Area2D" parent="." groups=["Enemy"]]
+[node name="HitBox" type="Area2D" parent="." unique_id=1199072096 groups=["Enemy"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1453686356]
 position = Vector2(10, 8.5)
 shape = SubResource("CircleShape2D_7fy4e")

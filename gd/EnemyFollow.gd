@@ -4,7 +4,7 @@ class_name  EnemyFollow
 @export var enemy: Enemy
 @export var move_speed:float = 30.0
 
-@export var base: PhysicsBody2D
+var base: PhysicsBody2D
 
 func Enter():
 	base = get_tree().get_first_node_in_group("Base")
