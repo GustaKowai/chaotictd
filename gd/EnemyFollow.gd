@@ -22,15 +22,10 @@ func Physics_update(_delta: float):
 		var direction = enemy.alvo.global_position - enemy.global_position
 		#print_debug(direction.length())
 		if enemy.get_slide_collision_count() == 0:
-			
 			enemy.velocity = direction.normalized()*move_speed
 		else:
-			var collision := enemy.get_slide_collision(0)
-			var body := collision.get_collider()
-			#print_debug("Alcancei")
-			enemy.alvo = body
-			enemy.velocity = Vector2()
-			Transitioned.emit(self,"attack")
+			collided()
+			
 		#if direction.length() > 500:
 			#Transitioned.emit(self,"idle")
 	else:
@@ -38,3 +33,11 @@ func Physics_update(_delta: float):
 		
 func lost_target():
 	Transitioned.emit(self,"idle")
+	
+func collided():
+	var collision := enemy.get_slide_collision(0)
+	var body := collision.get_collider()
+	#print_debug("Alcancei")
+	enemy.alvo = body
+	enemy.velocity = Vector2()
+	Transitioned.emit(self,"attack")
