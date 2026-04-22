@@ -29,6 +29,7 @@ position = Vector2(12, 0)
 texture = SubResource("PlaceholderTexture2D_p00pg")
 
 [node name="Mira" type="Marker2D" parent="Sprite2D/Cannon" unique_id=1614255656]
+unique_name_in_owner = true
 position = Vector2(6, 0)
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=2017982163]

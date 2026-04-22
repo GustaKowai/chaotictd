@@ -1,7 +1,8 @@
 extends Building
+class_name Cannon_tower
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var cannon_teste: StaticBody2D = $"."
-@onready var mira: Marker2D = $Sprite2D/Cannon/Mira
+@onready var mira: Marker2D = %Mira
 
 @export var delay_shoot: float = 5
 @export var bullet: PackedScene
