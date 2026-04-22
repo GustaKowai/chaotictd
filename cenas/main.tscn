@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://tgjpj17povjb" path="res://cenas/button_torre.tscn" id="5_5wwvk"]
 [ext_resource type="PackedScene" uid="uid://fudqwumtu2ly" path="res://cenas/fantasma_torre.tscn" id="7_l8342"]
 [ext_resource type="PackedScene" uid="uid://bij78peujw27q" path="res://cenas/enemy_fast.tscn" id="8_v1d1r"]
+[ext_resource type="PackedScene" uid="uid://cvmxlps3fc4v1" path="res://cenas/planeta_dano_area.tscn" id="9_1yycb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtgg2"]
 radius = 39.8121
@@ -60,5 +61,20 @@ position = Vector2(-420, 1103)
 
 [node name="Cannon_teste2" parent="." unique_id=747018379 instance=ExtResource("2_b30p5")]
 position = Vector2(370, 890)
+
+[node name="Building" parent="." unique_id=40702169 instance=ExtResource("9_1yycb")]
+position = Vector2(784, 384)
+
+[node name="Enemy_fast2" parent="." unique_id=1520700301 instance=ExtResource("8_v1d1r")]
+position = Vector2(569, 420)
+
+[node name="Button2" parent="." unique_id=1961303369 instance=ExtResource("5_5wwvk")]
+offset_left = 174.0
+offset_top = 1025.0
+offset_right = 232.0
+offset_bottom = 1062.0
+text = "planeta dano area"
+torre = ExtResource("9_1yycb")
+fantasma_torre = ExtResource("7_l8342")
 
 [editable path="Enemy"]
