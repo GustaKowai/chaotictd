@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b8gx3dwhi4wxt"]
+
+[ext_resource type="Script" uid="uid://cxcw8ygpqinfj" path="res://gd/bullet_teste.gd" id="1_axlfb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qwbpu"]
+radius = 4.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xx1y1"]
+size = Vector2(5, 5)
+
+[node name="bullet_heavy_cannon" type="Area2D" unique_id=1877698230]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_axlfb")
+speed = 700.0
+damage = 120
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=362243721]
+shape = SubResource("CircleShape2D_qwbpu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=88191023]
+texture = SubResource("PlaceholderTexture2D_xx1y1")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1574740193]
+position = Vector2(2.38419e-07, 2.38419e-07)
+scale = Vector2(0.4, 0.4)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
