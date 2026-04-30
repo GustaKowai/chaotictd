@@ -16,7 +16,6 @@ radius = 85.119
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_sbeh8")
-distancia_colisao = 90.0
 max_health = 50
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=466451512]
