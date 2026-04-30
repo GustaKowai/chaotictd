@@ -3,11 +3,14 @@ class_name  EnemyHunt
 var chasing:bool = false
 
 @export var area_alerta:Area2D
+@export var speed_hunting:float
+var speed_not_hunting:float = move_speed
 
 func Enter():
 	super()
 	#print_debug("Hunt")
 	enemy.alvo = base
+	move_speed = speed_not_hunting
 	chasing = false
 	#print_debug(alvo)
 
@@ -22,6 +25,7 @@ func chase():
 	for alvo in alvos:
 		if alvo.is_in_group("torre"):
 			enemy.alvo = alvo
+			move_speed = speed_hunting
 			chasing = true
 			
 func lost_target():

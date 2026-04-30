@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bij78peujw27q" path="res://cenas/enemy_fast.tscn" id="8_v1d1r"]
 [ext_resource type="PackedScene" uid="uid://cvmxlps3fc4v1" path="res://cenas/planeta_dano_area.tscn" id="9_1yycb"]
 [ext_resource type="PackedScene" uid="uid://dpmp81xpx6xl1" path="res://cenas/heavy_cannon_torre.tscn" id="10_jdavq"]
+[ext_resource type="PackedScene" uid="uid://cpr4xsnla50fm" path="res://cenas/arraia_enemy.tscn" id="11_vhipe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtgg2"]
 radius = 39.8121
@@ -37,7 +38,7 @@ shape = SubResource("CircleShape2D_mtgg2")
 texture = SubResource("PlaceholderTexture2D_mtgg2")
 
 [node name="Cannon_teste" parent="." unique_id=1486798227 instance=ExtResource("2_b30p5")]
-position = Vector2(494, 719)
+position = Vector2(237, 267)
 bullet = ExtResource("4_bhvw8")
 
 [node name="Base" parent="." unique_id=1886608135 groups=["Base", "Player"] instance=ExtResource("3_4fhxt")]
@@ -61,13 +62,13 @@ fantasma_torre = ExtResource("7_l8342")
 position = Vector2(-420, 1103)
 
 [node name="Cannon_teste2" parent="." unique_id=747018379 instance=ExtResource("2_b30p5")]
-position = Vector2(370, 890)
+position = Vector2(719, 895)
 
 [node name="Building" parent="." unique_id=40702169 instance=ExtResource("9_1yycb")]
-position = Vector2(784, 384)
+position = Vector2(861, 710)
 
 [node name="Enemy_fast2" parent="." unique_id=1520700301 instance=ExtResource("8_v1d1r")]
-position = Vector2(569, 420)
+position = Vector2(-237, 892)
 
 [node name="Button2" parent="." unique_id=1961303369 instance=ExtResource("5_5wwvk")]
 offset_left = 174.0
@@ -79,6 +80,10 @@ torre = ExtResource("9_1yycb")
 fantasma_torre = ExtResource("7_l8342")
 
 [node name="heavy_cannon_torre" parent="." unique_id=776932796 instance=ExtResource("10_jdavq")]
-position = Vector2(290, 743)
+position = Vector2(241, 875)
+
+[node name="ArraiaEnemy" parent="." unique_id=1532225188 instance=ExtResource("11_vhipe")]
+position = Vector2(78.00006, 220.00003)
+scale = Vector2(0.1, 0.1)
 
 [editable path="Enemy"]

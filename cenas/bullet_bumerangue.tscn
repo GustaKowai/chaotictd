@@ -11,7 +11,7 @@ collision_mask = 2
 script = ExtResource("1_k0fcg")
 bullet_duracao = 6.0
 speed = 400.0
-damage = 2
+damage = 3
 metadata/_custom_type_script = "uid://dfphxkt0fqq73"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=275368755]

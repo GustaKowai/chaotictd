@@ -19,4 +19,7 @@ func _on_body_entered(body):
 	#print_debug(body)
 	if body.is_in_group("Enemy"):
 		body.take_damage(damage)
-		queue_free()
+		hit()
+		
+func hit():
+	queue_free()

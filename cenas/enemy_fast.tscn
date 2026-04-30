@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_5w5ak"]
 [ext_resource type="Script" uid="uid://cjtli66j3y46e" path="res://gd/EnemyHunt.gd" id="4_abb4h"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="5_5w5ak"]
+[ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="6_3ne27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abb4h"]
 size = Vector2(25, 25)
@@ -22,8 +23,6 @@ radius = 198.0
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_tk4rn")
-distancia_colisao = 45.0
-max_health = 200
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1875544201]
@@ -48,6 +47,7 @@ initial_state = NodePath("hunt")
 [node name="hunt" type="Node" parent="State_machine" unique_id=465053437 node_paths=PackedStringArray("area_alerta", "enemy")]
 script = ExtResource("4_abb4h")
 area_alerta = NodePath("../../Area2D")
+speed_hunting = 100.0
 enemy = NodePath("../..")
 move_speed = 100.0
 metadata/_custom_type_script = "uid://cjtli66j3y46e"
@@ -56,9 +56,14 @@ metadata/_custom_type_script = "uid://cjtli66j3y46e"
 script = ExtResource("5_5w5ak")
 enemy = NodePath("../..")
 area_dano = NodePath("../../Sprite/AttackArea")
-dano = 20
+dano = 5
 delay_attack = 1.0
 metadata/_custom_type_script = "uid://da3rkekrhcba0"
+
+[node name="Idle" type="Node" parent="State_machine" unique_id=366427699 node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_3ne27")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://cqvygmqemyqcq"
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1184608670]
 offset_left = -106.0

@@ -12,6 +12,7 @@ radius = 74.02702
 
 [node name="planeta_dano_area" type="StaticBody2D" unique_id=40702169 groups=["torre"]]
 script = ExtResource("1_qlp5y")
+max_health = 50
 metadata/_custom_type_script = "uid://cb8m2etlq51wa"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1106354335]
@@ -34,7 +35,7 @@ show_percentage = false
 [node name="area_dano" type="Area2D" parent="." unique_id=1978986120]
 collision_mask = 2
 script = ExtResource("3_rcaev")
-dano_area = 5
+dano_area = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_dano" unique_id=1239509862]
 shape = SubResource("CircleShape2D_6krs8")
