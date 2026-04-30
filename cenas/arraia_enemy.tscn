@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cpr4xsnla50fm"]
 
 [ext_resource type="Script" uid="uid://bxk7ou5cwigkv" path="res://gd/enemy.gd" id="1_xju15"]
+[ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="2_d2wt1"]
 [ext_resource type="Texture2D" uid="uid://8pfjxwcex8n4" path="res://sprites/nave inimiga.png" id="2_qtwt8"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_xju15"]
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_6qwg1"]
@@ -21,6 +22,9 @@ collision_mask = 12
 script = ExtResource("1_xju15")
 max_health = 50
 color_damage = Color(0.99215686, 0.4627451, 0, 1)
+pieces = ExtResource("2_d2wt1")
+pieces_rate = 1.0
+number_pieces_max = 4
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=226990112]

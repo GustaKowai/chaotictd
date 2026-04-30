@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cvmxlps3fc4v1" path="res://cenas/planeta_dano_area.tscn" id="9_1yycb"]
 [ext_resource type="PackedScene" uid="uid://dpmp81xpx6xl1" path="res://cenas/heavy_cannon_torre.tscn" id="10_jdavq"]
 [ext_resource type="PackedScene" uid="uid://cpr4xsnla50fm" path="res://cenas/arraia_enemy.tscn" id="11_vhipe"]
+[ext_resource type="PackedScene" uid="uid://blll4f2yqp03e" path="res://cenas/UI.tscn" id="12_iwfo7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtgg2"]
 radius = 39.8121
@@ -85,5 +86,21 @@ position = Vector2(241, 875)
 [node name="ArraiaEnemy" parent="." unique_id=1532225188 instance=ExtResource("11_vhipe")]
 position = Vector2(78.00006, 220.00003)
 scale = Vector2(0.1, 0.1)
+
+[node name="Control" parent="." unique_id=949335040 instance=ExtResource("12_iwfo7")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Enemy_fast3" parent="." unique_id=2128256311 instance=ExtResource("8_v1d1r")]
+position = Vector2(-224, 1488)
+
+[node name="Enemy_fast4" parent="." unique_id=2131139087 instance=ExtResource("8_v1d1r")]
+position = Vector2(-625, 1453)
+
+[node name="Enemy_fast5" parent="." unique_id=426613890 instance=ExtResource("8_v1d1r")]
+position = Vector2(-755, 1259)
 
 [editable path="Enemy"]

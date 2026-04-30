@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cb8m2etlq51wa" path="res://gd/building.gd" id="1_qlp5y"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="2_rcaev"]
-[ext_resource type="Script" uid="uid://ddlwi8gohf47d" path="res://cenas/area_dano.gd" id="3_rcaev"]
+[ext_resource type="Script" uid="uid://ddlwi8gohf47d" path="res://gd/area_dano.gd" id="3_rcaev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6krs8"]
 size = Vector2(50, 48)

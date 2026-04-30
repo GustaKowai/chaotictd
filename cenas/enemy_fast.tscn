@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bij78peujw27q"]
 
 [ext_resource type="Script" uid="uid://chymrunoty06p" path="res://enemy_fast.gd" id="1_tk4rn"]
+[ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="2_2fvk4"]
 [ext_resource type="Texture2D" uid="uid://dr7j2qpsxwp17" path="res://sprites/Sem Título-1.png" id="2_abb4h"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_5w5ak"]
 [ext_resource type="Script" uid="uid://cjtli66j3y46e" path="res://gd/EnemyHunt.gd" id="4_abb4h"]
@@ -23,6 +24,9 @@ radius = 198.0
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_tk4rn")
+pieces = ExtResource("2_2fvk4")
+pieces_rate = 1.0
+number_pieces_max = 3
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1875544201]

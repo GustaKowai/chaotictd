@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://f7bbx5pbm5t8"]
+
+[ext_resource type="Texture2D" uid="uid://caqy0mde87qnk" path="res://sprites/peca_temp.jpg" id="1_wdwfm"]
+[ext_resource type="Script" uid="uid://bj33bhsg33454" path="res://gd/piece.gd" id="1_wyrut"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdwfm"]
+size = Vector2(46, 40)
+
+[node name="Piece" type="Area2D" unique_id=1811701426]
+script = ExtResource("1_wyrut")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=105374640]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_wdwfm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=738292096]
+position = Vector2(0.9999695, -0.9999695)
+scale = Vector2(0.044921875, 0.04993679)
+texture = ExtResource("1_wdwfm")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

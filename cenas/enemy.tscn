@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dr7j2qpsxwp17" path="res://sprites/Sem Título-1.png" id="1_32mm3"]
 [ext_resource type="Script" uid="uid://bxk7ou5cwigkv" path="res://gd/enemy.gd" id="1_sbeh8"]
+[ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="2_7fy4e"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_wbqij"]
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_2cyxh"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="5_4r1g7"]
@@ -17,6 +18,9 @@ collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_sbeh8")
 max_health = 50
+pieces = ExtResource("2_7fy4e")
+pieces_rate = 1.0
+number_pieces_max = 5
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=466451512]
 position = Vector2(-2, 3)
