@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dj2eo5j6lmgkx"]
+
+[ext_resource type="Script" uid="uid://cigjf741pjw4n" path="res://gd/cannon_teste.gd" id="1_8qm5g"]
+[ext_resource type="PackedScene" uid="uid://do7groqhlbflw" path="res://cenas/bullet_bumerangue.tscn" id="2_ho27v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ho27v"]
+radius = 13.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4ljs1"]
+size = Vector2(20, 20)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rtupr"]
+size = Vector2(10, 2)
+
+[node name="Bumerangue_tower" type="StaticBody2D" unique_id=887835860]
+collision_mask = 3
+script = ExtResource("1_8qm5g")
+bullet = ExtResource("2_ho27v")
+max_health = 50
+metadata/_custom_type_script = "uid://cigjf741pjw4n"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=840609154]
+shape = SubResource("CircleShape2D_ho27v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=705764391]
+texture = SubResource("PlaceholderTexture2D_4ljs1")
+
+[node name="Cannon" type="Sprite2D" parent="Sprite2D" unique_id=1979164218]
+position = Vector2(12, 0)
+texture = SubResource("PlaceholderTexture2D_rtupr")
+
+[node name="Mira" type="Marker2D" parent="Sprite2D/Cannon" unique_id=943189823]
+unique_name_in_owner = true
+position = Vector2(6, 0)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2071147825]
+offset_left = -9.0
+offset_top = 14.0
+offset_right = 12.0
+offset_bottom = 19.0
+show_percentage = false

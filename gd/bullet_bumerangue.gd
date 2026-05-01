@@ -16,7 +16,10 @@ func _process(delta: float) -> void:
 	if bullet_tempodevida > bullet_duracao:
 		queue_free()
 
-func _on_body_entered(body):
-	#print_debug(body)
-	if body.is_in_group("Enemy"):
-		body.take_damage(damage)
+#func _on_body_entered(body):
+	##print_debug(body)
+	#if body.is_in_group("Enemy"):
+		#body.take_damage(damage)
+		
+func hit():
+	pass

@@ -13,7 +13,7 @@ radius = 54.0023
 [sub_resource type="CircleShape2D" id="CircleShape2D_7fy4e"]
 radius = 85.119
 
-[node name="Enemy" type="CharacterBody2D" unique_id=11593940 groups=["Enemy"]]
+[node name="Enemy" type="CharacterBody2D" unique_id=11593940]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_sbeh8")
@@ -55,6 +55,8 @@ offset_bottom = -66.0
 show_percentage = false
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1199072096 groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1453686356]
 position = Vector2(10, 8.5)

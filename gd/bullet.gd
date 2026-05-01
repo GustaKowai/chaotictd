@@ -15,10 +15,11 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	position += transform.x * speed * delta
 
-func _on_body_entered(body):
+func _on_area_entered(body):
 	#print_debug(body)
 	if body.is_in_group("Enemy"):
-		body.take_damage(damage)
+		var target = body.get_parent()
+		target.take_damage(damage)
 		hit()
 		
 func hit():

@@ -20,7 +20,7 @@ radius = 25.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_abb4h"]
 radius = 198.0
 
-[node name="Enemy_fast" type="CharacterBody2D" unique_id=1900647932 groups=["Enemy"]]
+[node name="Enemy_fast" type="CharacterBody2D" unique_id=1900647932]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_tk4rn")
@@ -35,6 +35,7 @@ texture = ExtResource("2_abb4h")
 
 [node name="AttackArea" type="Area2D" parent="Sprite" unique_id=1944355732]
 scale = Vector2(3.2786884, 3.2786884)
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/AttackArea" unique_id=2010956223]
 position = Vector2(27, 0)
@@ -77,11 +78,13 @@ offset_bottom = -66.0
 show_percentage = false
 
 [node name="HitBox" type="Area2D" parent="." unique_id=572550190 groups=["Enemy"]]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=901465905]
 shape = SubResource("CircleShape2D_2fvk4")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=183298999]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1433040040]
 shape = SubResource("CircleShape2D_abb4h")

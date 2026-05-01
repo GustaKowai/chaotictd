@@ -16,7 +16,7 @@ radius = 608.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtwt8"]
 size = Vector2(260, 1069)
 
-[node name="ArraiaEnemy" type="CharacterBody2D" unique_id=1532225188 groups=["Enemy"]]
+[node name="ArraiaEnemy" type="CharacterBody2D" unique_id=1532225188]
 collision_layer = 2
 collision_mask = 12
 script = ExtResource("1_xju15")
@@ -35,7 +35,8 @@ position = Vector2(147, 8)
 scale = Vector2(49.80001, 44.520004)
 shape = SubResource("CircleShape2D_sfe5s")
 
-[node name="HitBox" type="Area2D" parent="." unique_id=2028237609]
+[node name="HitBox" type="Area2D" parent="." unique_id=2028237609 groups=["Enemy"]]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=732585819]
 position = Vector2(15, -10)
@@ -66,6 +67,7 @@ delay_attack = 3.0
 metadata/_custom_type_script = "uid://da3rkekrhcba0"
 
 [node name="AreaAtaque" type="Area2D" parent="." unique_id=1404639723]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque" unique_id=2393644]
 position = Vector2(593, 7)

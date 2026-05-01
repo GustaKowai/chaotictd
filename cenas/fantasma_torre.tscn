@@ -24,4 +24,5 @@ texture = SubResource("PlaceholderTexture2D_l2hpw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1393945763]
 shape = SubResource("RectangleShape2D_l2hpw")
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]

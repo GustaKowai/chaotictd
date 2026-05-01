@@ -15,8 +15,8 @@ func _on_timer_timeout():
 	
 func causar_dano():
 	#print_debug("tentou_causar_dano")
-	var inimigos = get_overlapping_bodies()
+	var inimigos = get_overlapping_areas()
 	#print_debug(inimigos)
 	for inimigo in inimigos:
 		if inimigo.is_in_group("Enemy"):
-			inimigo.take_damage(dano_area)
+			inimigo.get_parent().take_damage(dano_area)

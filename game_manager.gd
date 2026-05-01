@@ -1,9 +1,11 @@
 extends Node
 var piece_count:int
 signal piece_collected()
+var posicionando:bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	posicionando = false
 	piece_count = 0
 	pass # Replace with function body.
 

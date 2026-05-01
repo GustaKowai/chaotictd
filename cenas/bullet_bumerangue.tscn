@@ -22,4 +22,5 @@ position = Vector2(-3.8146973e-06, 3.8146973e-06)
 scale = Vector2(0.1171875, 0.109375)
 texture = ExtResource("2_lgxiu")
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
