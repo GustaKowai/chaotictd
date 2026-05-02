@@ -5,10 +5,12 @@ class_name EnemyAttack
 @export var area_dano:Area2D #A área que o inimigo irá causar dano
 @export var dano:int #Quantidade de dano causado por ataque
 @export var delay_attack:float #Tempo entre os ataques
+@export var lost_target_try_first:String = "hunt"
+@export var lost_target_try_second:String = "follow"
 var delay:float
 
 func Enter():
-	#print_debug("Modo de ataque")
+	print_debug("Modo de ataque")
 	delay = delay_attack
 
 func Exit():
@@ -16,8 +18,8 @@ func Exit():
 	
 func Update(delta: float):
 	if !enemy.alvo:
-		Transitioned.emit(self,"hunt")
-		Transitioned.emit(self,"follow")
+		Transitioned.emit(self,lost_target_try_first)
+		Transitioned.emit(self,lost_target_try_second)
 	else:
 		charge_attack(delta)
 	

@@ -3,6 +3,8 @@ class_name  EnemyFollow
 
 @export var enemy: Enemy #O inimigo que está com esse módulo
 @export var move_speed:float = 30.0 #Velocidade de movimento do inimigo
+@export var do_lost_target:String = "idle"
+@export var do_collided:String = "attack"
 
 var base: PhysicsBody2D
 
@@ -32,7 +34,7 @@ func Physics_update(_delta: float):
 		lost_target()
 		
 func lost_target():
-	Transitioned.emit(self,"idle")
+	Transitioned.emit(self,do_lost_target)
 	
 func collided():
 	var collision := enemy.get_slide_collision(0)
@@ -40,4 +42,4 @@ func collided():
 	#print_debug("Alcancei")
 	enemy.alvo = body
 	enemy.velocity = Vector2()
-	Transitioned.emit(self,"attack")
+	Transitioned.emit(self,do_collided)

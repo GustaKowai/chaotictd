@@ -34,4 +34,4 @@ func lost_target():
 		chasing = false
 		enemy.alvo = base
 	else:
-		Transitioned.emit(self,"idle")
+		super()
