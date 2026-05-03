@@ -22,3 +22,4 @@ func shoot():
 	var b = bullet.instantiate()
 	get_tree().root.add_child(b)
 	b.transform = mira.global_transform
+	b.scale = Vector2(1.0,1.0)

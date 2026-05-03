@@ -8,9 +8,9 @@ var speed_not_hunting:float = move_speed
 
 func Enter():
 	super()
-	#print_debug("Hunt")
+	print_debug(speed_hunting,move_speed)
 	enemy.alvo = base
-	move_speed = speed_not_hunting
+	speed_not_hunting = move_speed
 	chasing = false
 	#print_debug(alvo)
 

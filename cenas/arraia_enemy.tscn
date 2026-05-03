@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxk7ou5cwigkv" path="res://gd/enemy.gd" id="1_xju15"]
 [ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="2_d2wt1"]
-[ext_resource type="Texture2D" uid="uid://8pfjxwcex8n4" path="res://sprites/nave inimiga.png" id="2_qtwt8"]
+[ext_resource type="Texture2D" uid="uid://b7dt2xg6nutu4" path="res://sprites/nave inimiga - movimento spritesheet2.png" id="3_qtwt8"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_xju15"]
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_6qwg1"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="5_ct7dm"]
@@ -16,7 +16,47 @@ radius = 608.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtwt8"]
 size = Vector2(260, 1069)
 
+[sub_resource type="Animation" id="Animation_d2wt1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_6qwg1"]
+resource_name = "moving"
+length = 0.6
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4007509),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ct7dm"]
+_data = {
+&"RESET": SubResource("Animation_d2wt1"),
+&"moving": SubResource("Animation_6qwg1")
+}
+
 [node name="ArraiaEnemy" type="CharacterBody2D" unique_id=1532225188]
+scale = Vector2(0.1, 0.1)
 collision_layer = 2
 collision_mask = 12
 script = ExtResource("1_xju15")
@@ -28,7 +68,8 @@ number_pieces_max = 4
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=226990112]
-texture = ExtResource("2_qtwt8")
+texture = ExtResource("3_qtwt8")
+hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1721174049]
 position = Vector2(147, 8)
@@ -72,3 +113,7 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque" unique_id=2393644]
 position = Vector2(593, 7)
 shape = SubResource("RectangleShape2D_qtwt8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1333043451]
+libraries/ = SubResource("AnimationLibrary_ct7dm")
+autoplay = &"moving"

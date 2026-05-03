@@ -2,15 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://cag6dlg72b634" path="res://cenas/enemy.tscn" id="1_mtgg2"]
 [ext_resource type="PackedScene" uid="uid://c7myvvb3gsh5t" path="res://cenas/cannon_teste.tscn" id="2_b30p5"]
-[ext_resource type="Script" uid="uid://oob10hyg242h" path="res://player_teste.gd" id="2_t4ukd"]
+[ext_resource type="Script" uid="uid://oob10hyg242h" path="res://gd/player_teste.gd" id="2_t4ukd"]
 [ext_resource type="PackedScene" uid="uid://t4n6p64qxp5d" path="res://cenas/base.tscn" id="3_4fhxt"]
-[ext_resource type="PackedScene" uid="uid://do7groqhlbflw" path="res://cenas/bullet_bumerangue.tscn" id="4_bhvw8"]
 [ext_resource type="PackedScene" uid="uid://tgjpj17povjb" path="res://cenas/button_torre.tscn" id="5_5wwvk"]
 [ext_resource type="PackedScene" uid="uid://fudqwumtu2ly" path="res://cenas/fantasma_torre.tscn" id="7_l8342"]
 [ext_resource type="PackedScene" uid="uid://bij78peujw27q" path="res://cenas/enemy_fast.tscn" id="8_v1d1r"]
 [ext_resource type="PackedScene" uid="uid://cvmxlps3fc4v1" path="res://cenas/planeta_dano_area.tscn" id="9_1yycb"]
 [ext_resource type="PackedScene" uid="uid://dpmp81xpx6xl1" path="res://cenas/heavy_cannon_torre.tscn" id="10_jdavq"]
 [ext_resource type="PackedScene" uid="uid://cpr4xsnla50fm" path="res://cenas/arraia_enemy.tscn" id="11_vhipe"]
+[ext_resource type="PackedScene" uid="uid://dj2eo5j6lmgkx" path="res://cenas/bumerangue_tower.tscn" id="12_g6klm"]
 [ext_resource type="PackedScene" uid="uid://blll4f2yqp03e" path="res://cenas/UI.tscn" id="12_iwfo7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtgg2"]
@@ -37,10 +37,6 @@ shape = SubResource("CircleShape2D_mtgg2")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1253204912]
 texture = SubResource("PlaceholderTexture2D_mtgg2")
-
-[node name="Cannon_teste" parent="." unique_id=1486798227 instance=ExtResource("2_b30p5")]
-position = Vector2(237, 267)
-bullet = ExtResource("4_bhvw8")
 
 [node name="Base" parent="." unique_id=1886608135 groups=["Base", "Player"] instance=ExtResource("3_4fhxt")]
 position = Vector2(973, 520)
@@ -85,7 +81,6 @@ position = Vector2(241, 875)
 
 [node name="ArraiaEnemy" parent="." unique_id=1532225188 instance=ExtResource("11_vhipe")]
 position = Vector2(78.00006, 220.00003)
-scale = Vector2(0.1, 0.1)
 
 [node name="Control" parent="." unique_id=949335040 instance=ExtResource("12_iwfo7")]
 anchors_preset = 0
@@ -102,5 +97,11 @@ position = Vector2(-625, 1453)
 
 [node name="Enemy_fast5" parent="." unique_id=426613890 instance=ExtResource("8_v1d1r")]
 position = Vector2(-755, 1259)
+
+[node name="ArraiaEnemy2" parent="." unique_id=320599351 instance=ExtResource("11_vhipe")]
+position = Vector2(1274, 250)
+
+[node name="Bumerangue_tower" parent="." unique_id=887835860 instance=ExtResource("12_g6klm")]
+position = Vector2(346, 565)
 
 [editable path="Enemy"]
