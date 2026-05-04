@@ -2,7 +2,8 @@ extends StaticBody2D
 class_name Building
 
 @onready var progress_bar: ProgressBar = $ProgressBar
-
+@export var sprite2d:Sprite2D
+@export var collision_shape:CollisionShape2D
 @export var max_health:int = 100
 var current_health: int :
 	set(new_value):

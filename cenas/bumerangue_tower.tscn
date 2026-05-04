@@ -2,19 +2,18 @@
 
 [ext_resource type="Script" uid="uid://cigjf741pjw4n" path="res://gd/cannon_teste.gd" id="1_8qm5g"]
 [ext_resource type="PackedScene" uid="uid://do7groqhlbflw" path="res://cenas/bullet_bumerangue.tscn" id="2_ho27v"]
-[ext_resource type="Texture2D" uid="uid://c3uls5x1xvgxx" path="res://sprites/PlanetasBumerangue.png" id="3_4ljs1"]
+[ext_resource type="Texture2D" uid="uid://dmvyghuhdgw5w" path="res://sprites/PlanetasBumerangue2.png" id="3_4ljs1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ho27v"]
-radius = 43.0
+radius = 40.0
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rtupr"]
-size = Vector2(10, 2)
-
-[node name="Bumerangue_tower" type="StaticBody2D" unique_id=887835860 groups=["torre"]]
+[node name="Bumerangue_tower" type="StaticBody2D" unique_id=887835860 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 collision_mask = 3
 script = ExtResource("1_8qm5g")
 delay_shoot = 0.3
 bullet = ExtResource("2_ho27v")
+sprite2d = NodePath("Sprite2D")
+collision_shape = NodePath("CollisionShape2D")
 max_health = 50
 metadata/_custom_type_script = "uid://cigjf741pjw4n"
 
@@ -22,17 +21,15 @@ metadata/_custom_type_script = "uid://cigjf741pjw4n"
 shape = SubResource("CircleShape2D_ho27v")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=705764391]
-position = Vector2(1.9999998, -6.9999995)
-scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_4ljs1")
+offset = Vector2(2.9999962, -6.9999924)
 
 [node name="Cannon" type="Sprite2D" parent="Sprite2D" unique_id=1979164218]
-position = Vector2(389.99997, 69.99999)
-texture = SubResource("PlaceholderTexture2D_rtupr")
+position = Vector2(45, 8)
 
 [node name="Mira" type="Marker2D" parent="Sprite2D/Cannon" unique_id=943189823]
 unique_name_in_owner = true
-position = Vector2(220.00003, 89.99999)
+position = Vector2(5, 0)
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=2071147825]
 offset_left = -9.0

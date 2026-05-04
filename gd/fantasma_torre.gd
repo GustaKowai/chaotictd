@@ -1,8 +1,15 @@
 extends Area2D
+class_name Ghost_tower
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @export var torre :PackedScene
+var sprite2D:Sprite2D
+var collision_shape:CollisionShape2D
 var pode_colocar
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	sprite_2d.texture = sprite2D.texture
+	collision_shape_2d.shape = collision_shape.shape
 	pass # Replace with function body.
 
 

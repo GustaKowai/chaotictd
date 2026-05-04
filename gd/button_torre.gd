@@ -14,6 +14,9 @@ func _process(delta: float) -> void:
 func _on_pressed() -> void:
 	if !GameManager.posicionando:
 		GameManager.posicionando = true
-		var t = fantasma_torre.instantiate()
+		var t:Ghost_tower = fantasma_torre.instantiate()
+		var tower:Building = torre.instantiate()
 		t.torre = torre
+		t.sprite2D = tower.sprite2d
+		t.collision_shape = tower.collision_shape
 		owner.add_child(t)
