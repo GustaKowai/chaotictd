@@ -4,16 +4,15 @@
 [ext_resource type="Script" uid="uid://oob10hyg242h" path="res://gd/player_teste.gd" id="2_t4ukd"]
 [ext_resource type="PackedScene" uid="uid://t4n6p64qxp5d" path="res://cenas/base.tscn" id="3_4fhxt"]
 [ext_resource type="PackedScene" uid="uid://tgjpj17povjb" path="res://cenas/button_torre.tscn" id="5_5wwvk"]
-[ext_resource type="PackedScene" uid="uid://bij78peujw27q" path="res://cenas/enemy_fast.tscn" id="8_v1d1r"]
 [ext_resource type="PackedScene" uid="uid://cvmxlps3fc4v1" path="res://cenas/planeta_dano_area.tscn" id="9_1yycb"]
 [ext_resource type="PackedScene" uid="uid://dpmp81xpx6xl1" path="res://cenas/heavy_cannon_torre.tscn" id="10_jdavq"]
-[ext_resource type="PackedScene" uid="uid://cpr4xsnla50fm" path="res://cenas/arraia_enemy.tscn" id="11_vhipe"]
 [ext_resource type="PackedScene" uid="uid://dj2eo5j6lmgkx" path="res://cenas/bumerangue_tower.tscn" id="12_g6klm"]
 [ext_resource type="PackedScene" uid="uid://blll4f2yqp03e" path="res://cenas/UI.tscn" id="12_iwfo7"]
 [ext_resource type="Texture2D" uid="uid://dmvyghuhdgw5w" path="res://sprites/PlanetasBumerangue2.png" id="12_klgsu"]
 [ext_resource type="Texture2D" uid="uid://bjsjja478f7dv" path="res://sprites/torre base2.png" id="12_ocpn0"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="13_gl1un"]
-[ext_resource type="PackedScene" uid="uid://utweuuar87qt" path="res://cenas/armadeira_enemy.tscn" id="15_ocpn0"]
+[ext_resource type="PackedScene" uid="uid://bjc66ers4cmw8" path="res://cenas/enemy_spawner.tscn" id="15_gl1un"]
+[ext_resource type="Script" uid="uid://drlrt3gt788xc" path="res://cenas/next_wave.gd" id="16_gl1un"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtgg2"]
 radius = 39.8121
@@ -37,23 +36,14 @@ texture = SubResource("PlaceholderTexture2D_mtgg2")
 [node name="Base" parent="." unique_id=1886608135 groups=["Base", "Player"] instance=ExtResource("3_4fhxt")]
 position = Vector2(973, 520)
 
-[node name="Enemy_fast" parent="." unique_id=1900647932 instance=ExtResource("8_v1d1r")]
-position = Vector2(-420, 1103)
-
 [node name="Cannon_teste2" parent="." unique_id=747018379 instance=ExtResource("2_b30p5")]
 position = Vector2(719, 895)
 
 [node name="Building" parent="." unique_id=40702169 instance=ExtResource("9_1yycb")]
 position = Vector2(861, 710)
 
-[node name="Enemy_fast2" parent="." unique_id=1520700301 instance=ExtResource("8_v1d1r")]
-position = Vector2(-237, 892)
-
 [node name="heavy_cannon_torre" parent="." unique_id=776932796 instance=ExtResource("10_jdavq")]
-position = Vector2(241, 875)
-
-[node name="ArraiaEnemy" parent="." unique_id=1532225188 instance=ExtResource("11_vhipe")]
-position = Vector2(78.00006, 220.00003)
+position = Vector2(644, 605)
 
 [node name="Control" parent="." unique_id=949335040 instance=ExtResource("12_iwfo7")]
 anchors_preset = 0
@@ -61,18 +51,6 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
-
-[node name="Enemy_fast3" parent="." unique_id=2128256311 instance=ExtResource("8_v1d1r")]
-position = Vector2(-224, 1488)
-
-[node name="Enemy_fast4" parent="." unique_id=2131139087 instance=ExtResource("8_v1d1r")]
-position = Vector2(-625, 1453)
-
-[node name="Enemy_fast5" parent="." unique_id=426613890 instance=ExtResource("8_v1d1r")]
-position = Vector2(-755, 1259)
-
-[node name="ArraiaEnemy2" parent="." unique_id=320599351 instance=ExtResource("11_vhipe")]
-position = Vector2(1274, 250)
 
 [node name="Bumerangue_tower" parent="." unique_id=887835860 instance=ExtResource("12_g6klm")]
 position = Vector2(346, 565)
@@ -109,5 +87,12 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 torre = ExtResource("12_g6klm")
 
-[node name="Enemy4" parent="." unique_id=2128877228 instance=ExtResource("15_ocpn0")]
-position = Vector2(57, 508)
+[node name="EnemySpawner" parent="." unique_id=959906953 instance=ExtResource("15_gl1un")]
+
+[node name="nextWave" type="Button" parent="." unique_id=1560289640]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Next"
+script = ExtResource("16_gl1un")
+
+[connection signal="pressed" from="nextWave" to="nextWave" method="_on_pressed"]

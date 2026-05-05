@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*uid://h61yfsbnewh1"
+WaveManager="*uid://dxer41x3yml61"
 
 [display]
 

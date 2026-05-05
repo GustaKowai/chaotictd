@@ -10,7 +10,7 @@ class_name EnemyAttack
 var delay:float
 
 func Enter():
-	print_debug("Modo de ataque")
+	#print_debug("Modo de ataque")
 	delay = delay_attack
 
 func Exit():

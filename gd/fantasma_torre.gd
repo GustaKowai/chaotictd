@@ -29,7 +29,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		GameManager.posicionando = false
 		var t = torre.instantiate()
 		t.global_position = global_position
-		print_debug(t)
-		print_debug(get_parent())
+		#print_debug(t)
+		#print_debug(get_parent())
 		get_parent().add_child(t)
 		queue_free()

@@ -16,7 +16,10 @@ class_name Enemy
 @export_range(0,1) var pieces_rate:float = 0.5
 @export var number_pieces_min:int = 1
 @export var number_pieces_max:int = 1
-@export var spread_area_radius:float = 10.0
+@export var spread_area_radius:float = 10.07
+@export_category("waves")
+@export var cost:int
+@export var wave_appear:int
 
 var alvo:Building  #Utilizado para inimigos que podem mudar de alvo
 
