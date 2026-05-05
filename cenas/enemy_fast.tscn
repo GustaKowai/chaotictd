@@ -15,7 +15,7 @@ radius = 198.0
 radius = 25.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abb4h"]
-size = Vector2(45.725533, 41.57234)
+size = Vector2(9.442764, 7.366169)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ne27"]
 radius = 18.0
@@ -52,7 +52,7 @@ scale = Vector2(3.2786884, 3.2786884)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/AttackArea" unique_id=2010956223]
-position = Vector2(20.765953, -4.7683716e-07)
+position = Vector2(-59.624252, 0)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_abb4h")
 debug_color = Color(0.9764706, 0, 0, 0.41960785)

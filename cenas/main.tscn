@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://wig3gvmd4il6"]
 
-[ext_resource type="PackedScene" uid="uid://cag6dlg72b634" path="res://cenas/enemy.tscn" id="1_mtgg2"]
 [ext_resource type="PackedScene" uid="uid://c7myvvb3gsh5t" path="res://cenas/cannon_teste.tscn" id="2_b30p5"]
 [ext_resource type="Script" uid="uid://oob10hyg242h" path="res://gd/player_teste.gd" id="2_t4ukd"]
 [ext_resource type="PackedScene" uid="uid://t4n6p64qxp5d" path="res://cenas/base.tscn" id="3_4fhxt"]
@@ -24,12 +23,6 @@ size = Vector2(20, 20)
 
 [node name="Main" type="Node2D" unique_id=1501420038]
 
-[node name="Enemy" parent="." unique_id=519408120 instance=ExtResource("1_mtgg2")]
-position = Vector2(-517, 348)
-
-[node name="ProgressBar" parent="Enemy" index="3" unique_id=1835059122]
-metadata/_edit_use_anchors_ = true
-
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2034334671 groups=["Player"]]
 visible = false
 position = Vector2(499, -167)
@@ -43,12 +36,6 @@ texture = SubResource("PlaceholderTexture2D_mtgg2")
 
 [node name="Base" parent="." unique_id=1886608135 groups=["Base", "Player"] instance=ExtResource("3_4fhxt")]
 position = Vector2(973, 520)
-
-[node name="Enemy2" parent="." unique_id=2071312390 instance=ExtResource("1_mtgg2")]
-position = Vector2(513, 200)
-
-[node name="Enemy3" parent="." unique_id=1952201669 instance=ExtResource("1_mtgg2")]
-position = Vector2(451, 301)
 
 [node name="Enemy_fast" parent="." unique_id=1900647932 instance=ExtResource("8_v1d1r")]
 position = Vector2(-420, 1103)
@@ -124,5 +111,3 @@ torre = ExtResource("12_g6klm")
 
 [node name="Enemy4" parent="." unique_id=2128877228 instance=ExtResource("15_ocpn0")]
 position = Vector2(57, 508)
-
-[editable path="Enemy"]
