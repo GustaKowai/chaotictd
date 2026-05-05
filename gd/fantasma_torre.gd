@@ -32,4 +32,6 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		#print_debug(t)
 		#print_debug(get_parent())
 		get_parent().add_child(t)
+		GameManager.piece_count -= t.value
+		GameManager.piece_collected.emit()
 		queue_free()

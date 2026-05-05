@@ -15,6 +15,7 @@ bullet = ExtResource("2_ho27v")
 sprite2d = NodePath("Sprite2D")
 collision_shape = NodePath("CollisionShape2D")
 max_health = 50
+value = 5
 metadata/_custom_type_script = "uid://cigjf741pjw4n"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=840609154]

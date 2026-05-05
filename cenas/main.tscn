@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bjsjja478f7dv" path="res://sprites/torre base2.png" id="12_ocpn0"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="13_gl1un"]
 [ext_resource type="PackedScene" uid="uid://bjc66ers4cmw8" path="res://cenas/enemy_spawner.tscn" id="15_gl1un"]
-[ext_resource type="Script" uid="uid://drlrt3gt788xc" path="res://cenas/next_wave.gd" id="16_gl1un"]
+[ext_resource type="Script" uid="uid://drlrt3gt788xc" path="res://gd/next_wave.gd" id="16_gl1un"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtgg2"]
 radius = 39.8121
@@ -90,8 +90,10 @@ torre = ExtResource("12_g6klm")
 [node name="EnemySpawner" parent="." unique_id=959906953 instance=ExtResource("15_gl1un")]
 
 [node name="nextWave" type="Button" parent="." unique_id=1560289640]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 1869.0
+offset_top = 1040.0
+offset_right = 1914.0
+offset_bottom = 1071.0
 text = "Next"
 script = ExtResource("16_gl1un")
 
