@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dmvyghuhdgw5w" path="res://sprites/PlanetasBumerangue2.png" id="12_klgsu"]
 [ext_resource type="Texture2D" uid="uid://bjsjja478f7dv" path="res://sprites/torre base2.png" id="12_ocpn0"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="13_gl1un"]
+[ext_resource type="PackedScene" uid="uid://utweuuar87qt" path="res://cenas/armadeira_enemy.tscn" id="15_ocpn0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtgg2"]
 radius = 39.8121
@@ -120,5 +121,8 @@ icon = ExtResource("12_klgsu")
 icon_alignment = 1
 vertical_icon_alignment = 0
 torre = ExtResource("12_g6klm")
+
+[node name="Enemy4" parent="." unique_id=2128877228 instance=ExtResource("15_ocpn0")]
+position = Vector2(57, 508)
 
 [editable path="Enemy"]
