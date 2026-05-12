@@ -3,9 +3,60 @@
 [ext_resource type="Script" uid="uid://cigjf741pjw4n" path="res://gd/cannon_teste.gd" id="1_is2nt"]
 [ext_resource type="PackedScene" uid="uid://bkyyvpf4gndau" path="res://cenas/bullet_teste.tscn" id="2_slvgt"]
 [ext_resource type="Texture2D" uid="uid://bjsjja478f7dv" path="res://sprites/torre base2.png" id="3_ocafh"]
+[ext_resource type="Texture2D" uid="uid://b6x1lq47q6ynt" path="res://sprites/torre base.png" id="4_p00pg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_slvgt"]
 radius = 51.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iletb"]
+atlas = ExtResource("4_p00pg")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_baf7l"]
+atlas = ExtResource("4_p00pg")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psoph"]
+atlas = ExtResource("4_p00pg")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpa05"]
+atlas = ExtResource("4_p00pg")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1tct"]
+atlas = ExtResource("4_p00pg")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kxun"]
+atlas = ExtResource("4_p00pg")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8385t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iletb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_baf7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psoph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpa05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1tct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kxun")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="Cannon_teste" type="StaticBody2D" unique_id=747018379 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 collision_mask = 3
@@ -23,6 +74,11 @@ shape = SubResource("CircleShape2D_slvgt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1836009599]
 texture = ExtResource("3_ocafh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=877975832]
+sprite_frames = SubResource("SpriteFrames_8385t")
+autoplay = "default"
+frame_progress = 0.9503611
 
 [node name="Cannon" type="Sprite2D" parent="Sprite2D" unique_id=1500969869]
 position = Vector2(45, 37)
