@@ -5,7 +5,7 @@ class_name Enemy
 
 
 @onready var progress_bar: ProgressBar = $ProgressBar
-@onready var sprite: Sprite2D = $Sprite
+@onready var sprite = $Sprite
 @export_category("Life")
 #@export var distancia_colisao:float
 @export var max_health:int = 10

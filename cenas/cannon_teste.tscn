@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bkyyvpf4gndau" path="res://cenas/bullet_teste.tscn" id="2_slvgt"]
 [ext_resource type="Texture2D" uid="uid://bjsjja478f7dv" path="res://sprites/torre base2.png" id="3_ocafh"]
 [ext_resource type="Texture2D" uid="uid://b6x1lq47q6ynt" path="res://sprites/torre base.png" id="4_p00pg"]
+[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="5_baf7l"]
+[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="6_psoph"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_slvgt"]
 radius = 51.0
@@ -81,15 +83,16 @@ autoplay = "default"
 frame_progress = 0.9503611
 
 [node name="Cannon" type="Sprite2D" parent="Sprite2D" unique_id=1500969869]
-position = Vector2(45, 37)
+position = Vector2(44, 0)
 
 [node name="Mira" type="Marker2D" parent="Sprite2D/Cannon" unique_id=1614255656]
 unique_name_in_owner = true
 position = Vector2(6, 0)
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2017982163]
-offset_left = -9.0
-offset_top = 14.0
-offset_right = 12.0
-offset_bottom = 19.0
-show_percentage = false
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1274666815]
+offset_left = -66.0
+offset_top = 62.0
+offset_right = 62.0
+offset_bottom = 82.0
+texture_under = ExtResource("5_baf7l")
+texture_progress = ExtResource("6_psoph")

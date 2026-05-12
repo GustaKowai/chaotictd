@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cigjf741pjw4n" path="res://gd/cannon_teste.gd" id="1_8qm5g"]
 [ext_resource type="PackedScene" uid="uid://do7groqhlbflw" path="res://cenas/bullet_bumerangue.tscn" id="2_ho27v"]
 [ext_resource type="Texture2D" uid="uid://dmvyghuhdgw5w" path="res://sprites/PlanetasBumerangue2.png" id="3_4ljs1"]
+[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="4_5bc7n"]
+[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="5_0xaye"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ho27v"]
 radius = 40.0
@@ -32,9 +34,10 @@ position = Vector2(45, 8)
 unique_name_in_owner = true
 position = Vector2(5, 0)
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2071147825]
-offset_left = -9.0
-offset_top = 14.0
-offset_right = 12.0
-offset_bottom = 19.0
-show_percentage = false
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1145432466]
+offset_left = -64.0
+offset_top = 47.0
+offset_right = 64.0
+offset_bottom = 67.0
+texture_under = ExtResource("4_5bc7n")
+texture_progress = ExtResource("5_0xaye")

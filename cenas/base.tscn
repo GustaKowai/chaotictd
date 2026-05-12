@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://t4n6p64qxp5d"]
 
 [ext_resource type="Script" uid="uid://687nbbkelr7d" path="res://gd/base.gd" id="1_m2pul"]
+[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="2_l6ens"]
+[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="3_ubf62"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqtx0"]
 size = Vector2(88, 89)
@@ -24,12 +26,14 @@ shape = SubResource("RectangleShape2D_fqtx0")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1964487356]
 texture = SubResource("PlaceholderTexture2D_m2pul")
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1488286985]
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1622694890]
 offset_left = -68.0
 offset_top = -73.0
 offset_right = 71.0
 offset_bottom = -46.0
-show_percentage = false
+nine_patch_stretch = true
+texture_under = ExtResource("2_l6ens")
+texture_progress = ExtResource("3_ubf62")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=369362489]
 

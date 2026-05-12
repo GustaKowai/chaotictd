@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://j47akvxp3bkw" path="res://gd/heavy_Cannon_Torre.gd" id="1_133bx"]
 [ext_resource type="PackedScene" uid="uid://b8gx3dwhi4wxt" path="res://cenas/bullet_heavy_cannon.tscn" id="2_133bx"]
+[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_r85iu"]
+[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="4_vh0gn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_slvgt"]
 radius = 13.0
@@ -33,9 +35,10 @@ texture = SubResource("PlaceholderTexture2D_p00pg")
 unique_name_in_owner = true
 position = Vector2(6, 0)
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2017982163]
-offset_left = -9.0
-offset_top = 15.0
-offset_right = 11.0
-offset_bottom = 19.0
-show_percentage = false
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=312703314]
+offset_left = -64.0
+offset_top = 17.0
+offset_right = 64.0
+offset_bottom = 37.0
+texture_under = ExtResource("3_r85iu")
+texture_progress = ExtResource("4_vh0gn")
