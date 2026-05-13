@@ -65,6 +65,7 @@ func die():
 		death_object.position = position
 		get_parent().add_child(death_object)
 	await drop_pieces()
+	WaveManager.enemy_dead.emit()
 	queue_free()
 	
 	
