@@ -90,10 +90,10 @@ torre = ExtResource("12_g6klm")
 [node name="EnemySpawner" parent="." unique_id=959906953 instance=ExtResource("15_gl1un")]
 
 [node name="nextWave" type="Button" parent="." unique_id=1560289640]
-offset_left = 1869.0
-offset_top = 1040.0
-offset_right = 1914.0
-offset_bottom = 1071.0
+offset_left = 1650.0
+offset_top = 21.0
+offset_right = 1695.0
+offset_bottom = 52.0
 text = "Next"
 script = ExtResource("16_gl1un")
 
