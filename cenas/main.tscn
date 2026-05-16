@@ -3,15 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://c7myvvb3gsh5t" path="res://cenas/cannon_teste.tscn" id="2_b30p5"]
 [ext_resource type="Script" uid="uid://oob10hyg242h" path="res://gd/player_teste.gd" id="2_t4ukd"]
 [ext_resource type="PackedScene" uid="uid://t4n6p64qxp5d" path="res://cenas/base.tscn" id="3_4fhxt"]
-[ext_resource type="PackedScene" uid="uid://tgjpj17povjb" path="res://cenas/button_torre.tscn" id="5_5wwvk"]
 [ext_resource type="PackedScene" uid="uid://cvmxlps3fc4v1" path="res://cenas/planeta_dano_area.tscn" id="9_1yycb"]
 [ext_resource type="PackedScene" uid="uid://dpmp81xpx6xl1" path="res://cenas/heavy_cannon_torre.tscn" id="10_jdavq"]
 [ext_resource type="PackedScene" uid="uid://dj2eo5j6lmgkx" path="res://cenas/bumerangue_tower.tscn" id="12_g6klm"]
 [ext_resource type="PackedScene" uid="uid://blll4f2yqp03e" path="res://cenas/UI.tscn" id="12_iwfo7"]
-[ext_resource type="Texture2D" uid="uid://dmvyghuhdgw5w" path="res://sprites/PlanetasBumerangue2.png" id="12_klgsu"]
-[ext_resource type="Texture2D" uid="uid://bjsjja478f7dv" path="res://sprites/torre base2.png" id="12_ocpn0"]
-[ext_resource type="PackedScene" uid="uid://de4snsa6vh3g8" path="res://cenas/next_wave.tscn" id="13_g6klm"]
-[ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="13_gl1un"]
 [ext_resource type="PackedScene" uid="uid://bjc66ers4cmw8" path="res://cenas/enemy_spawner.tscn" id="15_gl1un"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtgg2"]
@@ -21,6 +16,8 @@ radius = 39.8121
 size = Vector2(20, 20)
 
 [node name="Main" type="Node2D" unique_id=1501420038]
+
+[node name="UI" parent="." unique_id=744365688 instance=ExtResource("12_iwfo7")]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2034334671 groups=["Player"]]
 visible = false
@@ -45,40 +42,7 @@ position = Vector2(861, 710)
 [node name="heavy_cannon_torre" parent="." unique_id=776932796 instance=ExtResource("10_jdavq")]
 position = Vector2(644, 605)
 
-[node name="Control" parent="." unique_id=949335040 instance=ExtResource("12_iwfo7")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
-
 [node name="Bumerangue_tower" parent="." unique_id=887835860 instance=ExtResource("12_g6klm")]
 position = Vector2(346, 565)
-
-[node name="Button" parent="." unique_id=493173635 instance=ExtResource("5_5wwvk")]
-offset_left = 1779.0
-offset_top = 4.0
-offset_right = 1915.0
-offset_bottom = 186.0
-icon = ExtResource("12_ocpn0")
-torre = ExtResource("2_b30p5")
-
-[node name="Button2" parent="." unique_id=1961303369 instance=ExtResource("5_5wwvk")]
-offset_left = 1768.0
-offset_top = 188.0
-offset_right = 1917.0
-offset_bottom = 370.0
-text = "planeta dano area"
-icon = ExtResource("13_gl1un")
-torre = ExtResource("9_1yycb")
-
-[node name="Button3" parent="." unique_id=223711624 instance=ExtResource("5_5wwvk")]
-offset_left = 1744.0
-offset_top = 367.0
-offset_right = 1915.0
-offset_bottom = 549.0
-text = "Planeta Bumerangue"
-icon = ExtResource("12_klgsu")
-torre = ExtResource("12_g6klm")
 
 [node name="EnemySpawner" parent="." unique_id=959906953 instance=ExtResource("15_gl1un")]

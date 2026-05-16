@@ -20,7 +20,6 @@ script = ExtResource("1_sbeh8")
 max_health = 50
 pieces = ExtResource("2_7fy4e")
 pieces_rate = 1.0
-number_pieces_max = 5
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=466451512]
 position = Vector2(-2, 3)

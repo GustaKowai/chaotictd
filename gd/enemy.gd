@@ -13,7 +13,7 @@ class_name Enemy
 @export var color_damage:Color
 @export_category("pieces")
 @export var pieces:PackedScene
-@export_range(0,1) var pieces_rate:float = 0.5
+@export_range(0,1) var pieces_rate:float = 1.0
 @export var number_pieces_min:int = 1
 @export var number_pieces_max:int = 1
 @export var spread_area_radius:float = 10.07

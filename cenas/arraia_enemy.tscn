@@ -64,7 +64,6 @@ max_health = 50
 color_damage = Color(0.99215686, 0.4627451, 0, 1)
 pieces = ExtResource("2_d2wt1")
 pieces_rate = 1.0
-number_pieces_max = 4
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=226990112]

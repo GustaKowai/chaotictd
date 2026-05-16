@@ -1,18 +1,12 @@
 [gd_scene format=3 uid="uid://blll4f2yqp03e"]
 
 [ext_resource type="Script" uid="uid://c8u7lc1ukkycy" path="res://gd/piece_counter.gd" id="1_67l2l"]
+[ext_resource type="PackedScene" uid="uid://de4snsa6vh3g8" path="res://cenas/next_wave.tscn" id="2_5auu7"]
 [ext_resource type="PackedScene" uid="uid://duhxritp57dma" path="res://cenas/UI_towers.tscn" id="2_ekiuc"]
 
-[node name="Control" type="Control" unique_id=949335040]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="UI" type="CanvasLayer" unique_id=744365688]
 
 [node name="Piece_counter" type="HBoxContainer" parent="." unique_id=432041142]
-layout_mode = 1
 offset_right = 124.0
 offset_bottom = 40.0
 script = ExtResource("1_67l2l")
@@ -36,13 +30,16 @@ layout_mode = 2
 text = "0"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2095912548]
-layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
+
+[node name="nextWave" parent="HBoxContainer" unique_id=1671281793 instance=ExtResource("2_5auu7")]
+layout_mode = 2
+size_flags_vertical = 0
 
 [node name="Control" parent="HBoxContainer" unique_id=13132552 instance=ExtResource("2_ekiuc")]
 layout_mode = 2

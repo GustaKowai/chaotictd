@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://s7yb3v25s7gt"]
 
-[ext_resource type="Script" uid="uid://bxk7ou5cwigkv" path="res://gd/enemy.gd" id="1_dcnyr"]
+[ext_resource type="Script" uid="uid://ur64x8of23wx" path="res://gd/suicida_enemy.gd" id="1_4bk5b"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="2_4bk5b"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_npfyb"]
 [ext_resource type="Script" uid="uid://cjtli66j3y46e" path="res://gd/EnemyHunt.gd" id="4_d1fw4"]
@@ -20,11 +20,14 @@ radius = 248.0163
 [sub_resource type="CircleShape2D" id="CircleShape2D_npfyb"]
 radius = 33.01515
 
-[node name="suicida_enemy" type="CharacterBody2D" unique_id=642258836]
+[node name="suicida_enemy" type="CharacterBody2D" unique_id=642258836 node_paths=PackedStringArray("area_dano")]
 collision_layer = 2
 collision_mask = 13
-script = ExtResource("1_dcnyr")
+script = ExtResource("1_4bk5b")
+area_dano = NodePath("Sprite/AttackArea")
+dano = 250
 max_health = 20
+pieces_rate = 1.0
 cost = 1
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
@@ -74,7 +77,7 @@ area_alerta = NodePath("../../Area2D")
 speed_hunting = 40.0
 enemy = NodePath("../..")
 move_speed = 40.0
-do_collided = "explode"
+do_collided = "die"
 metadata/_custom_type_script = "uid://cjtli66j3y46e"
 
 [node name="Idle" type="Node" parent="State_machine" unique_id=446802948 node_paths=PackedStringArray("enemy")]
@@ -82,11 +85,9 @@ script = ExtResource("6_w2y5f")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://cqvygmqemyqcq"
 
-[node name="Explode" type="Node" parent="State_machine" unique_id=1471433625 node_paths=PackedStringArray("enemy", "area_dano")]
+[node name="Die" type="Node" parent="State_machine" unique_id=2097192420 node_paths=PackedStringArray("enemy")]
 script = ExtResource("6_4bk5b")
 enemy = NodePath("../..")
-area_dano = NodePath("../../Sprite/AttackArea")
-dano = 250
 metadata/_custom_type_script = "uid://i546gccwghdh"
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=573586995]
