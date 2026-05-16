@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://blll4f2yqp03e" path="res://cenas/UI.tscn" id="12_iwfo7"]
 [ext_resource type="Texture2D" uid="uid://dmvyghuhdgw5w" path="res://sprites/PlanetasBumerangue2.png" id="12_klgsu"]
 [ext_resource type="Texture2D" uid="uid://bjsjja478f7dv" path="res://sprites/torre base2.png" id="12_ocpn0"]
+[ext_resource type="PackedScene" uid="uid://de4snsa6vh3g8" path="res://cenas/next_wave.tscn" id="13_g6klm"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="13_gl1un"]
 [ext_resource type="PackedScene" uid="uid://bjc66ers4cmw8" path="res://cenas/enemy_spawner.tscn" id="15_gl1un"]
-[ext_resource type="Script" path="res://gd/next_wave.gd" id="16_gl1un"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtgg2"]
 radius = 39.8121
@@ -83,12 +83,4 @@ torre = ExtResource("12_g6klm")
 
 [node name="EnemySpawner" parent="." unique_id=959906953 instance=ExtResource("15_gl1un")]
 
-[node name="nextWave" type="Button" parent="." unique_id=1560289640]
-offset_left = 1650.0
-offset_top = 21.0
-offset_right = 1695.0
-offset_bottom = 52.0
-text = "Next"
-script = ExtResource("16_gl1un")
-
-[connection signal="pressed" from="nextWave" to="nextWave" method="_on_pressed"]
+[node name="nextWave" parent="." unique_id=1671281793 instance=ExtResource("13_g6klm")]
