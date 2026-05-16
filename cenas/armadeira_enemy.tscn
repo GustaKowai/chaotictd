@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://utweuuar87qt"]
 
-[ext_resource type="Script" uid="uid://ci1b5smqx8e7s" path="res://cenas/armadeira_enemy.gd" id="1_5tgxc"]
+[ext_resource type="Script" uid="uid://ci1b5smqx8e7s" path="res://gd/armadeira_enemy.gd" id="1_5tgxc"]
 [ext_resource type="Texture2D" uid="uid://cc8hlvj5c0egm" path="res://sprites/inimigoAranha2.png" id="2_5tgxc"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_6j8yf"]
 [ext_resource type="Script" uid="uid://cjtli66j3y46e" path="res://gd/EnemyHunt.gd" id="4_0cyjq"]
