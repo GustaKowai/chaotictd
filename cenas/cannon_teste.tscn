@@ -81,8 +81,7 @@ texture = ExtResource("3_ocafh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=877975832]
 sprite_frames = SubResource("SpriteFrames_8385t")
 autoplay = "default"
-frame = 4
-frame_progress = 0.27748215
+frame_progress = 0.1968192
 
 [node name="Cannon" type="Sprite2D" parent="Sprite2D" unique_id=1500969869]
 position = Vector2(44, 0)
