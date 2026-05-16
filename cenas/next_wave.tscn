@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://de4snsa6vh3g8"]
+
+[ext_resource type="Script" path="res://gd/next_wave.gd" id="1_lxoxy"]
+
+[node name="nextWave" type="Button" unique_id=1671281793]
+offset_left = 1650.0
+offset_top = 21.0
+offset_right = 1695.0
+offset_bottom = 52.0
+text = "Next"
+script = ExtResource("1_lxoxy")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

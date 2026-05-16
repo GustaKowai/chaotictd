@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://blll4f2yqp03e" path="res://cenas/UI.tscn" id="12_iwfo7"]
 [ext_resource type="Texture2D" uid="uid://dmvyghuhdgw5w" path="res://sprites/PlanetasBumerangue2.png" id="12_klgsu"]
 [ext_resource type="Texture2D" uid="uid://bjsjja478f7dv" path="res://sprites/torre base2.png" id="12_ocpn0"]
+[ext_resource type="PackedScene" uid="uid://de4snsa6vh3g8" path="res://cenas/next_wave.tscn" id="13_g6klm"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="13_gl1un"]
 [ext_resource type="PackedScene" uid="uid://bjc66ers4cmw8" path="res://cenas/enemy_spawner.tscn" id="15_gl1un"]
 
