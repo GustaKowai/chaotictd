@@ -75,12 +75,14 @@ position = Vector2(-2, 2)
 shape = SubResource("CircleShape2D_slvgt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1836009599]
+self_modulate = Color(1, 1, 1, 0)
 texture = ExtResource("3_ocafh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=877975832]
 sprite_frames = SubResource("SpriteFrames_8385t")
 autoplay = "default"
-frame_progress = 0.9503611
+frame = 4
+frame_progress = 0.27748215
 
 [node name="Cannon" type="Sprite2D" parent="Sprite2D" unique_id=1500969869]
 position = Vector2(44, 0)
