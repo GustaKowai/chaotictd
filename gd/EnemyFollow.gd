@@ -39,7 +39,7 @@ func lost_target():
 func collided():
 	var collision := enemy.get_slide_collision(0)
 	var body := collision.get_collider()
-	print_debug("Alcancei",do_collided)
+	#print_debug("Alcancei",do_collided)
 	enemy.alvo = body
 	enemy.velocity = Vector2()
 	Transitioned.emit(self,do_collided)
