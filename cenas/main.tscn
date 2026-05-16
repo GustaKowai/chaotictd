@@ -11,9 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dmvyghuhdgw5w" path="res://sprites/PlanetasBumerangue2.png" id="12_klgsu"]
 [ext_resource type="Texture2D" uid="uid://bjsjja478f7dv" path="res://sprites/torre base2.png" id="12_ocpn0"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="13_gl1un"]
-[ext_resource type="PackedScene" uid="uid://s7yb3v25s7gt" path="res://cenas/suicida_enemy.tscn" id="14_klgsu"]
 [ext_resource type="PackedScene" uid="uid://bjc66ers4cmw8" path="res://cenas/enemy_spawner.tscn" id="15_gl1un"]
-[ext_resource type="Script" uid="uid://drlrt3gt788xc" path="res://gd/next_wave.gd" id="16_gl1un"]
+[ext_resource type="Script" path="res://gd/next_wave.gd" id="16_gl1un"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtgg2"]
 radius = 39.8121
@@ -91,8 +90,5 @@ offset_right = 1695.0
 offset_bottom = 52.0
 text = "Next"
 script = ExtResource("16_gl1un")
-
-[node name="suicida_enemy" parent="." unique_id=642258836 instance=ExtResource("14_klgsu")]
-position = Vector2(1064, 377)
 
 [connection signal="pressed" from="nextWave" to="nextWave" method="_on_pressed"]
