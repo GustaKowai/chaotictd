@@ -35,3 +35,8 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		GameManager.piece_count -= t.value
 		GameManager.piece_collected.emit()
 		queue_free()
+		
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		GameManager.posicionando = false
+		queue_free()
