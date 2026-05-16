@@ -14,12 +14,15 @@ size = Vector2(20, 20)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p00pg"]
 size = Vector2(10, 2)
 
-[node name="heavy_cannon_torre" type="StaticBody2D" unique_id=747018379 groups=["torre"]]
+[node name="heavy_cannon_torre" type="StaticBody2D" unique_id=747018379 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 collision_mask = 3
 script = ExtResource("1_133bx")
 delay_shoot = 5.5
 bullet = ExtResource("2_133bx")
+sprite2d = NodePath("Sprite2D")
+collision_shape = NodePath("CollisionShape2D")
 max_health = 50
+value = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=929075892]
 shape = SubResource("CircleShape2D_slvgt")

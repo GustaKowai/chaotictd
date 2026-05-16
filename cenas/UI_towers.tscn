@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://duhxritp57dma"]
+
+[ext_resource type="PackedScene" uid="uid://tgjpj17povjb" path="res://cenas/button_torre.tscn" id="1_42ip5"]
+[ext_resource type="PackedScene" uid="uid://c7myvvb3gsh5t" path="res://cenas/cannon_teste.tscn" id="2_kl3l3"]
+[ext_resource type="PackedScene" uid="uid://dj2eo5j6lmgkx" path="res://cenas/bumerangue_tower.tscn" id="3_pby11"]
+[ext_resource type="PackedScene" uid="uid://dpmp81xpx6xl1" path="res://cenas/heavy_cannon_torre.tscn" id="4_nrlti"]
+[ext_resource type="PackedScene" uid="uid://cvmxlps3fc4v1" path="res://cenas/planeta_dano_area.tscn" id="5_52s8d"]
+
+[node name="Control" type="Control" unique_id=13132552]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1745181277]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Button" parent="VBoxContainer" unique_id=1961303369 instance=ExtResource("1_42ip5")]
+layout_mode = 2
+torre = ExtResource("2_kl3l3")
+
+[node name="Button2" parent="VBoxContainer" unique_id=1687635896 instance=ExtResource("1_42ip5")]
+layout_mode = 2
+torre = ExtResource("3_pby11")
+
+[node name="Button3" parent="VBoxContainer" unique_id=1277169580 instance=ExtResource("1_42ip5")]
+layout_mode = 2
+torre = ExtResource("4_nrlti")
+
+[node name="Button4" parent="VBoxContainer" unique_id=240226560 instance=ExtResource("1_42ip5")]
+layout_mode = 2
+torre = ExtResource("5_52s8d")
