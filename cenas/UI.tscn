@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://blll4f2yqp03e"]
 
 [ext_resource type="Script" uid="uid://c8u7lc1ukkycy" path="res://gd/piece_counter.gd" id="1_67l2l"]
+[ext_resource type="PackedScene" uid="uid://duhxritp57dma" path="res://cenas/UI_towers.tscn" id="2_ekiuc"]
 
 [node name="Control" type="Control" unique_id=949335040]
 layout_mode = 3
@@ -11,8 +12,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Piece_counter" type="HBoxContainer" parent="." unique_id=432041142]
-layout_mode = 0
-offset_right = 40.0
+layout_mode = 1
+offset_right = 124.0
 offset_bottom = 40.0
 script = ExtResource("1_67l2l")
 
@@ -24,3 +25,24 @@ text = "Peças:"
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
+
+[node name="labelWave" type="Label" parent="Piece_counter" unique_id=744956442]
+layout_mode = 2
+text = "Wave"
+
+[node name="wave_number" type="Label" parent="Piece_counter" unique_id=1096816604]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2095912548]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Control" parent="HBoxContainer" unique_id=13132552 instance=ExtResource("2_ekiuc")]
+layout_mode = 2
