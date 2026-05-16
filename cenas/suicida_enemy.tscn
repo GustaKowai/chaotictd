@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ur64x8of23wx" path="res://gd/suicida_enemy.gd" id="1_4bk5b"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="2_4bk5b"]
+[ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="2_npfyb"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_npfyb"]
 [ext_resource type="Script" uid="uid://cjtli66j3y46e" path="res://gd/EnemyHunt.gd" id="4_d1fw4"]
 [ext_resource type="Script" uid="uid://i546gccwghdh" path="res://gd/EnemyExplode.gd" id="6_4bk5b"]
@@ -27,7 +28,8 @@ script = ExtResource("1_4bk5b")
 area_dano = NodePath("Sprite/AttackArea")
 dano = 250
 max_health = 20
-pieces_rate = 1.0
+pieces = ExtResource("2_npfyb")
+spread_area_radius = 50.0
 cost = 1
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 

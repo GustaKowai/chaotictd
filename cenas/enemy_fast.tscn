@@ -82,7 +82,6 @@ collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_tk4rn")
 pieces = ExtResource("2_2fvk4")
-pieces_rate = 1.0
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=183298999]

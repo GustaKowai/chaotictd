@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 func check_wave_end():
 	var enemies = get_tree().get_nodes_in_group("Enemy")
 	if enemies.size() <= 1:
-		print("fim da wave")
+		print_debug("fim da wave", wave)
 		wave_end.emit()
 	#print(enemies.size())
 	#for enemy in enemies:

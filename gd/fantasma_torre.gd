@@ -17,7 +17,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	global_position = get_global_mouse_position()
 	if get_overlapping_bodies().size()>0:
-		print_debug(get_overlapping_bodies())
+		#print_debug(get_overlapping_bodies())
 		pode_colocar = false
 		self.modulate = Color.RED
 	else:
@@ -30,7 +30,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		var t = torre.instantiate()
 		t.global_position = global_position
 		#print_debug(t)
-		print_debug(get_parent())
+		#print_debug(get_parent())
 		get_tree().root.add_child(t)
 		GameManager.piece_count -= t.value
 		GameManager.piece_collected.emit()

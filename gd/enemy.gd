@@ -73,7 +73,10 @@ func drop_pieces():
 	if not pieces:
 		#print ("Não dropo peças")
 		return
-	if randf() > pieces_rate: return #Checa se ele dropará um item baseado na taxa de drop do monstro
+	var rand = randf()
+	if  rand > pieces_rate:
+		print_debug(rand)
+		return #Checa se ele dropará um item baseado na taxa de drop do monstro
 	var number_pieces = randi_range(number_pieces_min,number_pieces_max)
 	for n in range(0,number_pieces):
 		var position_spread:Vector2 = Vector2(randf_range(-1,1),randf_range(-1,1))*spread_area_radius
