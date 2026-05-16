@@ -71,9 +71,9 @@ metadata/_custom_type_script = "uid://ba7rfbrlsl42t"
 [node name="Hunt" type="Node" parent="State_machine" unique_id=1678730874 node_paths=PackedStringArray("area_alerta", "enemy")]
 script = ExtResource("4_d1fw4")
 area_alerta = NodePath("../../Area2D")
-speed_hunting = 200.0
+speed_hunting = 40.0
 enemy = NodePath("../..")
-move_speed = 200.0
+move_speed = 40.0
 do_collided = "explode"
 metadata/_custom_type_script = "uid://cjtli66j3y46e"
 

@@ -26,7 +26,8 @@ initial_wave = 3
 [sub_resource type="Resource" id="Resource_nygbe"]
 script = ExtResource("2_6xrey")
 enemy = ExtResource("6_lipia")
-cost = 1
+cost = 5
+initial_wave = 4
 
 [sub_resource type="Curve2D" id="Curve2D_e8qxx"]
 _data = {
