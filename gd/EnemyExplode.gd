@@ -1,4 +1,4 @@
-extends Node
+extends State
 class_name EnemyExplode
 
 @export var enemy: Enemy

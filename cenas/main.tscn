@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="13_gl1un"]
 [ext_resource type="PackedScene" uid="uid://s7yb3v25s7gt" path="res://cenas/suicida_enemy.tscn" id="14_klgsu"]
 [ext_resource type="PackedScene" uid="uid://bjc66ers4cmw8" path="res://cenas/enemy_spawner.tscn" id="15_gl1un"]
-[ext_resource type="Script" path="res://gd/next_wave.gd" id="16_gl1un"]
+[ext_resource type="Script" uid="uid://drlrt3gt788xc" path="res://gd/next_wave.gd" id="16_gl1un"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtgg2"]
 radius = 39.8121
@@ -62,8 +62,6 @@ offset_top = 4.0
 offset_right = 1915.0
 offset_bottom = 186.0
 icon = ExtResource("12_ocpn0")
-icon_alignment = 1
-vertical_icon_alignment = 0
 torre = ExtResource("2_b30p5")
 
 [node name="Button2" parent="." unique_id=1961303369 instance=ExtResource("5_5wwvk")]
@@ -73,8 +71,6 @@ offset_right = 1917.0
 offset_bottom = 370.0
 text = "planeta dano area"
 icon = ExtResource("13_gl1un")
-icon_alignment = 1
-vertical_icon_alignment = 0
 torre = ExtResource("9_1yycb")
 
 [node name="Button3" parent="." unique_id=223711624 instance=ExtResource("5_5wwvk")]
@@ -84,8 +80,6 @@ offset_right = 1915.0
 offset_bottom = 549.0
 text = "Planeta Bumerangue"
 icon = ExtResource("12_klgsu")
-icon_alignment = 1
-vertical_icon_alignment = 0
 torre = ExtResource("12_g6klm")
 
 [node name="EnemySpawner" parent="." unique_id=959906953 instance=ExtResource("15_gl1un")]
@@ -99,6 +93,6 @@ text = "Next"
 script = ExtResource("16_gl1un")
 
 [node name="suicida_enemy" parent="." unique_id=642258836 instance=ExtResource("14_klgsu")]
-position = Vector2(664, 745)
+position = Vector2(1064, 377)
 
 [connection signal="pressed" from="nextWave" to="nextWave" method="_on_pressed"]
