@@ -1,29 +1,32 @@
 [gd_scene format=3 uid="uid://bjc66ers4cmw8"]
 
 [ext_resource type="Script" uid="uid://c1c0vwaprttm0" path="res://gd/enemySpawner.gd" id="1_pr3b6"]
-[ext_resource type="Script" uid="uid://cs0eajybywg8w" path="res://gd/enemy_spawn_char.gd" id="2_6xrey"]
+[ext_resource type="Script" path="res://gd/enemy_spawn_char.gd" id="2_6xrey"]
 [ext_resource type="PackedScene" uid="uid://bij78peujw27q" path="res://cenas/enemy_fast.tscn" id="2_e8qxx"]
 [ext_resource type="PackedScene" uid="uid://utweuuar87qt" path="res://cenas/armadeira_enemy.tscn" id="3_lipia"]
 [ext_resource type="PackedScene" uid="uid://cpr4xsnla50fm" path="res://cenas/arraia_enemy.tscn" id="4_nygbe"]
+[ext_resource type="PackedScene" uid="uid://s7yb3v25s7gt" path="res://cenas/suicida_enemy.tscn" id="6_lipia"]
 
 [sub_resource type="Resource" id="Resource_uwef1"]
 script = ExtResource("2_6xrey")
 enemy = ExtResource("4_nygbe")
 cost = 1
-metadata/_custom_type_script = "uid://cs0eajybywg8w"
 
 [sub_resource type="Resource" id="Resource_e8qxx"]
 script = ExtResource("2_6xrey")
 enemy = ExtResource("2_e8qxx")
 cost = 1
-metadata/_custom_type_script = "uid://cs0eajybywg8w"
 
 [sub_resource type="Resource" id="Resource_lipia"]
 script = ExtResource("2_6xrey")
 enemy = ExtResource("3_lipia")
 cost = 2
 initial_wave = 3
-metadata/_custom_type_script = "uid://cs0eajybywg8w"
+
+[sub_resource type="Resource" id="Resource_nygbe"]
+script = ExtResource("2_6xrey")
+enemy = ExtResource("6_lipia")
+cost = 1
 
 [sub_resource type="Curve2D" id="Curve2D_e8qxx"]
 _data = {
@@ -33,7 +36,7 @@ point_count = 5
 
 [node name="EnemySpawner" type="Node2D" unique_id=959906953]
 script = ExtResource("1_pr3b6")
-enemys = Array[ExtResource("2_6xrey")]([SubResource("Resource_uwef1"), SubResource("Resource_e8qxx"), SubResource("Resource_lipia")])
+enemys = Array[ExtResource("2_6xrey")]([SubResource("Resource_uwef1"), SubResource("Resource_e8qxx"), SubResource("Resource_lipia"), SubResource("Resource_nygbe")])
 wave_duration = 5.0
 
 [node name="Path2D" type="Path2D" parent="." unique_id=139336870]
