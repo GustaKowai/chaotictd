@@ -1,26 +1,8 @@
-extends Building
-class_name Cannon_tower
-@onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var cannon_teste: StaticBody2D = $"."
-@onready var mira: Marker2D = %Mira
+extends Cannon_tower
 @onready var upgrade_ui: upgrade_UI = $Upgrade_UI
 
-@export var delay_shoot: float = 5
-@export var bullet: PackedScene
-var delay:float
-
-
-func _process(delta: float) -> void:
-	sprite_2d.look_at(get_global_mouse_position())
-
-func _physics_process(delta: float) -> void:
-	delay -= delta
-	if delay <= 0:
-		shoot()
-		delay = delay_shoot
-		
-func shoot():
-	var b = bullet.instantiate()
-	get_tree().root.add_child(b)
-	b.transform = mira.global_transform
-	b.scale = Vector2(1.0,1.0)
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		upgrade_ui.show()
+		# Use o seguinte para os upgrades:
+		#print_debug(upgrade_ui.rota_1_1.button_pressed)
