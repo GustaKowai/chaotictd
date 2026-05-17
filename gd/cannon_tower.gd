@@ -1,13 +1,13 @@
 extends Building
-
-class_name Heavy_Cannon_Torre
-
+class_name Cannon_tower
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var cannon_teste: StaticBody2D = $"."
 @onready var mira: Marker2D = %Mira
 
-@export var delay_shoot: float = 5 #Delay do tiro do canhao
+@export var delay_shoot: float = 5
 @export var bullet: PackedScene
-var delay: float
+var delay:float
+
 
 func _process(delta: float) -> void:
 	sprite_2d.look_at(get_global_mouse_position())
@@ -17,11 +17,9 @@ func _physics_process(delta: float) -> void:
 	if delay <= 0:
 		shoot()
 		delay = delay_shoot
-
+		
 func shoot():
 	var b = bullet.instantiate()
 	get_tree().root.add_child(b)
 	b.transform = mira.global_transform
-	
-func _on_rota_1_1_pressed() -> void:
-	pass # Replace with function body.
+	b.scale = Vector2(1.0,1.0)

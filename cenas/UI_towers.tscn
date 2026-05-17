@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://duhxritp57dma"]
 
 [ext_resource type="PackedScene" uid="uid://tgjpj17povjb" path="res://cenas/button_torre.tscn" id="1_42ip5"]
-[ext_resource type="PackedScene" uid="uid://c7myvvb3gsh5t" path="res://cenas/cannon_teste.tscn" id="2_kl3l3"]
-[ext_resource type="PackedScene" uid="uid://dj2eo5j6lmgkx" path="res://cenas/bumerangue_tower.tscn" id="3_pby11"]
-[ext_resource type="PackedScene" uid="uid://dpmp81xpx6xl1" path="res://cenas/heavy_cannon_torre.tscn" id="4_nrlti"]
-[ext_resource type="PackedScene" uid="uid://cvmxlps3fc4v1" path="res://cenas/planeta_dano_area.tscn" id="5_52s8d"]
+[ext_resource type="PackedScene" uid="uid://c7myvvb3gsh5t" path="res://cenas/torres/cannon_teste.tscn" id="2_kl3l3"]
+[ext_resource type="PackedScene" uid="uid://dj2eo5j6lmgkx" path="res://cenas/torres/bumerangue_tower.tscn" id="3_pby11"]
+[ext_resource type="PackedScene" uid="uid://dpmp81xpx6xl1" path="res://cenas/torres/heavy_cannon_torre.tscn" id="4_nrlti"]
+[ext_resource type="PackedScene" uid="uid://cvmxlps3fc4v1" path="res://cenas/torres/planeta_dano_area.tscn" id="5_52s8d"]
 
 [node name="Tower_buildings" type="PanelContainer" unique_id=2031302956]
 anchors_preset = 11

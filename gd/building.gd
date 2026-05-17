@@ -1,6 +1,7 @@
 extends StaticBody2D
 class_name Building
 
+@onready var upgrade_ui: upgrade_UI = $Upgrade_UI
 @onready var progress_bar: TextureProgressBar = $ProgressBar
 @export var sprite2d:Sprite2D
 @export var collision_shape:CollisionShape2D
@@ -14,7 +15,7 @@ var current_health: int :
 	set(new_value):
 		current_health = new_value
 		progress_bar.value = new_value
-		
+		connect_upgrades()
 func _ready() -> void:
 	progress_bar.max_value = max_health
 	current_health = max_health
@@ -59,3 +60,42 @@ func add_shield(amount:int):
 	
 func set_shield(amount:int):
 	shield = amount
+	
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		upgrade_ui.show()
+		# Use o seguinte para os upgrades:
+		#print_debug(upgrade_ui.rota_1_1.button_pressed)
+		
+#region upgrades
+func connect_upgrades():
+	upgrade_ui.rota_1_1.pressed.connect(upgrade_1_1)
+	upgrade_ui.rota_1_2.pressed.connect(upgrade_1_2)
+	upgrade_ui.rota_1_3.pressed.connect(upgrade_1_3)
+	upgrade_ui.rota_2_1.pressed.connect(upgrade_2_1)
+	upgrade_ui.rota_2_2.pressed.connect(upgrade_2_2)
+	upgrade_ui.rota_2_3.pressed.connect(upgrade_2_3)
+	upgrade_ui.rota_3_1.pressed.connect(upgrade_3_1)
+	upgrade_ui.rota_3_2.pressed.connect(upgrade_3_2)
+	upgrade_ui.rota_3_3.pressed.connect(upgrade_3_3)
+	
+func upgrade_1_1():
+	print_debug("upado 1_1")
+func upgrade_1_2():
+	print_debug("upado 1_2")
+func upgrade_1_3():
+	print_debug("upado 1_3")
+func upgrade_2_1():
+	print_debug("upado 2_1")
+func upgrade_2_2():
+	print_debug("upado 2_2")
+func upgrade_2_3():
+	print_debug("upado 2_3")
+func upgrade_3_1():
+	print_debug("upado 3_1")
+func upgrade_3_2():
+	print_debug("upado 3_2")
+func upgrade_3_3():
+	print_debug("upado 3_3")
+#endregion
+		

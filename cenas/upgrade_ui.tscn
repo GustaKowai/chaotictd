@@ -2,21 +2,27 @@
 
 [ext_resource type="Script" uid="uid://ci4wvjswopke3" path="res://cenas/upgrade_ui.gd" id="1_6c760"]
 
-[node name="Upgrade_UI" type="Control" unique_id=653696189]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Upgrade_UI" type="PopupPanel" unique_id=594738499]
+oversampling_override = 1.0
+size = Vector2i(211, 122)
+visible = true
 script = ExtResource("1_6c760")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=2063916154]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -57.0
+offset_right = 207.0
+offset_bottom = 57.0
+grow_vertical = 2
+size_flags_horizontal = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1380811641]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer" unique_id=1191990760]
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=2132879750]
@@ -29,6 +35,7 @@ text = "rota 1"
 [node name="rota1_1" type="CheckBox" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=461505187]
 unique_name_in_owner = true
 layout_mode = 2
+text = "asasas"
 
 [node name="rota1_2" type="CheckBox" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=229798728]
 unique_name_in_owner = true
@@ -82,7 +89,6 @@ unique_name_in_owner = true
 layout_mode = 2
 disabled = true
 
-[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/rota1_1" to="." method="_on_rota_1_1_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/rota1_2" to="." method="_on_rota_1_2_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/rota1_3" to="." method="_on_rota_1_3_pressed"]

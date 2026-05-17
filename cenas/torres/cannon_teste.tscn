@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://c7myvvb3gsh5t"]
 
 [ext_resource type="Script" uid="uid://cigjf741pjw4n" path="res://gd/cannon_teste.gd" id="1_is2nt"]
-[ext_resource type="PackedScene" uid="uid://bkyyvpf4gndau" path="res://cenas/bullet_teste.tscn" id="2_slvgt"]
+[ext_resource type="PackedScene" uid="uid://bkyyvpf4gndau" path="res://cenas/balas/bullet_teste.tscn" id="2_slvgt"]
 [ext_resource type="Texture2D" uid="uid://bjsjja478f7dv" path="res://sprites/torre base2.png" id="3_ocafh"]
 [ext_resource type="Texture2D" uid="uid://b6x1lq47q6ynt" path="res://sprites/torre base.png" id="4_p00pg"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="5_baf7l"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="6_psoph"]
+[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/upgrade_ui.tscn" id="7_psoph"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_slvgt"]
 radius = 51.0
@@ -98,5 +99,18 @@ offset_right = 62.0
 offset_bottom = 82.0
 texture_under = ExtResource("5_baf7l")
 texture_progress = ExtResource("6_psoph")
+
+[node name="Upgrade_UI" parent="." unique_id=653696189 node_paths=PackedStringArray("torre") instance=ExtResource("7_psoph")]
+torre = NodePath("..")
+rota_1_1_text = "a"
+rota_1_2_text = "b"
+rota_1_3_text = "c"
+rota_2_1_text = "d"
+rota_2_2_text = "e"
+rota_2_3_text = "f"
+rota_3_1_text = "g"
+rota_3_2_text = "h"
+rota_3_3_text = "i"
+rota_1_1_price = 1
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
