@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://oob10hyg242h" path="res://gd/player_teste.gd" id="2_t4ukd"]
 [ext_resource type="PackedScene" uid="uid://t4n6p64qxp5d" path="res://cenas/base.tscn" id="3_4fhxt"]
 [ext_resource type="PackedScene" uid="uid://cvmxlps3fc4v1" path="res://cenas/planeta_dano_area.tscn" id="9_1yycb"]
+[ext_resource type="Texture2D" uid="uid://b2mdngu4sswkk" path="res://sprites/Fundo_Space_Shooter_TD.png" id="9_jdavq"]
 [ext_resource type="PackedScene" uid="uid://dpmp81xpx6xl1" path="res://cenas/heavy_cannon_torre.tscn" id="10_jdavq"]
 [ext_resource type="PackedScene" uid="uid://dj2eo5j6lmgkx" path="res://cenas/bumerangue_tower.tscn" id="12_g6klm"]
 [ext_resource type="PackedScene" uid="uid://blll4f2yqp03e" path="res://cenas/UI.tscn" id="12_iwfo7"]
@@ -16,6 +17,15 @@ radius = 39.8121
 size = Vector2(20, 20)
 
 [node name="Main" type="Node2D" unique_id=1501420038]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=193963748]
+repeat_size = Vector2(1890, 0)
+autoscroll = Vector2(50, 0)
+repeat_times = 2
+
+[node name="FundoSpaceShooterTd" type="Sprite2D" parent="Parallax2D" unique_id=143886057]
+position = Vector2(964, 536)
+texture = ExtResource("9_jdavq")
 
 [node name="UI" parent="." unique_id=744365688 instance=ExtResource("12_iwfo7")]
 

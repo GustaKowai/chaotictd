@@ -81,6 +81,7 @@ radius = 18.0
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_tk4rn")
+color_damage = Color(1, 0, 0, 1)
 pieces = ExtResource("2_2fvk4")
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 

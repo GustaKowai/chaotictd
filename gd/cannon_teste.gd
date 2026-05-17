@@ -3,6 +3,7 @@ class_name Cannon_tower
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var cannon_teste: StaticBody2D = $"."
 @onready var mira: Marker2D = %Mira
+@onready var upgrade_ui: upgrade_UI = $Upgrade_UI
 
 @export var delay_shoot: float = 5
 @export var bullet: PackedScene

@@ -28,6 +28,7 @@ script = ExtResource("1_4bk5b")
 area_dano = NodePath("Sprite/AttackArea")
 dano = 250
 max_health = 20
+color_damage = Color(0.8942446, 1, 0.8064035, 1)
 pieces = ExtResource("2_npfyb")
 spread_area_radius = 50.0
 cost = 1

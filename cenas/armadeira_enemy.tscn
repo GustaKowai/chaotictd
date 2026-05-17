@@ -24,6 +24,7 @@ height = 68.000626
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_5tgxc")
+color_damage = Color(1, 0, 0, 1)
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="HitBox" type="Area2D" parent="." unique_id=258182809 groups=["Enemy"]]

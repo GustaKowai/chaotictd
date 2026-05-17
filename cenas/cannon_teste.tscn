@@ -62,6 +62,7 @@ animations = [{
 
 [node name="Cannon_teste" type="StaticBody2D" unique_id=747018379 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 collision_mask = 3
+input_pickable = true
 script = ExtResource("1_is2nt")
 delay_shoot = 0.3
 bullet = ExtResource("2_slvgt")
@@ -97,3 +98,5 @@ offset_right = 62.0
 offset_bottom = 82.0
 texture_under = ExtResource("5_baf7l")
 texture_progress = ExtResource("6_psoph")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
