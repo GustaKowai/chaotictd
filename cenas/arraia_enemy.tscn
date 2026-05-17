@@ -70,6 +70,7 @@ texture = ExtResource("3_qtwt8")
 hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1721174049]
+visible = false
 position = Vector2(147, 8)
 scale = Vector2(49.80001, 44.520004)
 shape = SubResource("CircleShape2D_sfe5s")
@@ -78,6 +79,7 @@ shape = SubResource("CircleShape2D_sfe5s")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=732585819]
+visible = false
 position = Vector2(15, -10)
 shape = SubResource("CircleShape2D_vlms2")
 
@@ -106,11 +108,9 @@ delay_attack = 3.0
 metadata/_custom_type_script = "uid://da3rkekrhcba0"
 
 [node name="AreaAtaque" type="Area2D" parent="." unique_id=1404639723]
-visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque" unique_id=2393644]
-visible = false
 position = Vector2(593, 7)
 shape = SubResource("RectangleShape2D_qtwt8")
 
