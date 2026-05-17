@@ -33,6 +33,16 @@ class_name upgrade_UI
 @export var rota_3_2_price:int
 @export var rota_3_3_price:int
 
+var rota_1_1_disable = false
+var rota_1_2_disable = true
+var rota_1_3_disable = true
+var rota_2_1_disable = false
+var rota_2_2_disable = true
+var rota_2_3_disable = true
+var rota_3_1_disable = false
+var rota_3_2_disable = true
+var rota_3_3_disable = true
+
 const MAX_UPGRADES:int = 4
 var atual_upgade:int = 0
 # Called when the node enters the scene tree for the first time.
@@ -62,33 +72,30 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	check_upgrades_ables()
 
 
 func _on_rota_1_1_pressed() -> void:
-	if GameManager.piece_count < rota_1_1_price: return
-	rota_1_1.disabled = true
+	rota_1_1_disable = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
 		disable_all()
 		return
-	rota_1_2.disabled = false
+	rota_1_2_disable = false
 	
 
 
 func _on_rota_1_2_pressed() -> void:
-	if GameManager.piece_count < rota_1_2_price: return
-	rota_1_2.disabled = true
+	rota_1_2_disable = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
 		disable_all()
 		return
-	rota_1_3.disabled = false
+	rota_1_3_disable = false
 
 
 func _on_rota_1_3_pressed() -> void:
-	if GameManager.piece_count < rota_1_3_price: return
-	rota_1_3.disabled = true
+	rota_1_3_disable = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
 		disable_all()
@@ -96,28 +103,25 @@ func _on_rota_1_3_pressed() -> void:
 
 
 func _on_rota_2_1_pressed() -> void:
-	if GameManager.piece_count < rota_2_1_price: return
-	rota_2_1.disabled = true
+	rota_2_1_disable = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
 		disable_all()
 		return
-	rota_2_2.disabled = false
+	rota_2_2_disable = false
 
 
 func _on_rota_2_2_pressed() -> void:
-	if GameManager.piece_count < rota_2_2_price: return
-	rota_2_2.disabled = true
+	rota_2_2_disable = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
 		disable_all()
 		return
-	rota_2_3.disabled = false
+	rota_2_3_disable = false
 
 
 func _on_rota_2_3_pressed() -> void:
-	if GameManager.piece_count < rota_2_3_price: return
-	rota_2_3.disabled = true
+	rota_2_3_disable = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
 		disable_all()
@@ -125,27 +129,24 @@ func _on_rota_2_3_pressed() -> void:
 
 
 func _on_rota_3_1_pressed() -> void:
-	if GameManager.piece_count < rota_3_1_price: return
-	rota_3_1.disabled = true
+	rota_3_1_disable = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
 		disable_all()
 		return
-	rota_3_2.disabled = false
+	rota_3_2_disable = false
 
 
 func _on_rota_3_2_pressed() -> void:
-	if GameManager.piece_count < rota_3_2_price: return
-	rota_3_2.disabled = true
+	rota_3_2_disable = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
 		disable_all()
 		return
-	rota_3_3.disabled = false
+	rota_3_3_disable = false
 
 
 func _on_rota_3_3_pressed() -> void:
-	if GameManager.piece_count < rota_3_3_price: return
 	rota_3_3.disabled = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
@@ -153,12 +154,23 @@ func _on_rota_3_3_pressed() -> void:
 		return
 
 func disable_all():
-	rota_1_1.disabled = true
-	rota_1_2.disabled = true
-	rota_1_3.disabled = true
-	rota_2_1.disabled = true
-	rota_2_2.disabled = true
-	rota_2_3.disabled = true
-	rota_3_1.disabled = true
-	rota_3_2.disabled = true
-	rota_3_3.disabled = true
+	rota_1_1_disable = true
+	rota_1_2_disable = true
+	rota_1_3_disable = true
+	rota_2_1_disable = true
+	rota_2_2_disable = true
+	rota_2_3_disable = true
+	rota_3_1_disable = true
+	rota_3_2_disable = true
+	rota_3_3_disable = true
+	
+func check_upgrades_ables():
+	rota_1_1.disabled = (GameManager.piece_count < rota_1_1_price) or rota_1_1_disable
+	rota_1_2.disabled = (GameManager.piece_count < rota_1_2_price) or rota_1_2_disable
+	rota_1_3.disabled = (GameManager.piece_count < rota_1_3_price) or rota_1_3_disable
+	rota_2_1.disabled = (GameManager.piece_count < rota_2_1_price) or rota_2_1_disable
+	rota_2_2.disabled = (GameManager.piece_count < rota_2_2_price) or rota_2_2_disable
+	rota_2_3.disabled = (GameManager.piece_count < rota_2_3_price) or rota_2_3_disable
+	rota_3_1.disabled = (GameManager.piece_count < rota_3_1_price) or rota_3_1_disable
+	rota_3_2.disabled = (GameManager.piece_count < rota_3_2_price) or rota_3_2_disable
+	rota_3_3.disabled = (GameManager.piece_count < rota_3_3_price) or rota_3_3_disable
