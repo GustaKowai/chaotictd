@@ -77,6 +77,8 @@ func _process(delta: float) -> void:
 
 func _on_rota_1_1_pressed() -> void:
 	rota_1_1_disable = true
+	GameManager.piece_count -=rota_1_1_price
+	GameManager.piece_collected.emit()
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
 		disable_all()
@@ -87,6 +89,8 @@ func _on_rota_1_1_pressed() -> void:
 
 func _on_rota_1_2_pressed() -> void:
 	rota_1_2_disable = true
+	GameManager.piece_count -=rota_1_2_price
+	GameManager.piece_collected.emit()
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
 		disable_all()
@@ -96,6 +100,8 @@ func _on_rota_1_2_pressed() -> void:
 
 func _on_rota_1_3_pressed() -> void:
 	rota_1_3_disable = true
+	GameManager.piece_count -=rota_1_3_price
+	GameManager.piece_collected.emit()
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
 		disable_all()
@@ -104,6 +110,8 @@ func _on_rota_1_3_pressed() -> void:
 
 func _on_rota_2_1_pressed() -> void:
 	rota_2_1_disable = true
+	GameManager.piece_count -=rota_2_1_price
+	GameManager.piece_collected.emit()
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
 		disable_all()
@@ -113,6 +121,8 @@ func _on_rota_2_1_pressed() -> void:
 
 func _on_rota_2_2_pressed() -> void:
 	rota_2_2_disable = true
+	GameManager.piece_count -=rota_2_2_price
+	GameManager.piece_collected.emit()
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
 		disable_all()
@@ -122,6 +132,8 @@ func _on_rota_2_2_pressed() -> void:
 
 func _on_rota_2_3_pressed() -> void:
 	rota_2_3_disable = true
+	GameManager.piece_count -=rota_2_3_price
+	GameManager.piece_collected.emit()
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
 		disable_all()
@@ -130,6 +142,8 @@ func _on_rota_2_3_pressed() -> void:
 
 func _on_rota_3_1_pressed() -> void:
 	rota_3_1_disable = true
+	GameManager.piece_count -=rota_3_1_price
+	GameManager.piece_collected.emit()
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
 		disable_all()
@@ -139,6 +153,8 @@ func _on_rota_3_1_pressed() -> void:
 
 func _on_rota_3_2_pressed() -> void:
 	rota_3_2_disable = true
+	GameManager.piece_count -=rota_3_2_price
+	GameManager.piece_collected.emit()
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
 		disable_all()
@@ -148,6 +164,8 @@ func _on_rota_3_2_pressed() -> void:
 
 func _on_rota_3_3_pressed() -> void:
 	rota_3_3.disabled = true
+	GameManager.piece_count -=rota_3_3_price
+	GameManager.piece_collected.emit()
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
 		disable_all()

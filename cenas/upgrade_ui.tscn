@@ -35,7 +35,7 @@ text = "rota 1"
 [node name="rota1_1" type="CheckBox" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=461505187]
 unique_name_in_owner = true
 layout_mode = 2
-text = "asasas"
+text = "0"
 
 [node name="rota1_2" type="CheckBox" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=229798728]
 unique_name_in_owner = true

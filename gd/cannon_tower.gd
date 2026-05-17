@@ -3,6 +3,7 @@ class_name Cannon_tower
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var cannon_teste: StaticBody2D = $"."
 @onready var mira: Marker2D = %Mira
+var bullet_extra_damage:int = 0
 
 @export var delay_shoot: float = 5
 @export var bullet: PackedScene
@@ -19,7 +20,8 @@ func _physics_process(delta: float) -> void:
 		delay = delay_shoot
 		
 func shoot():
-	var b = bullet.instantiate()
+	var b:Bullet = bullet.instantiate()
+	b.damage += bullet_extra_damage
 	get_tree().root.add_child(b)
 	b.transform = mira.global_transform
 	b.scale = Vector2(1.0,1.0)
