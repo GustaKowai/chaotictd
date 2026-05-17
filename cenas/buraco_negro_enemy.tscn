@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://vr8acvol4uvd"]
+
+[ext_resource type="Script" uid="uid://cdohxipu88atb" path="res://buraco_negro_enemy.gd" id="1_3gscd"]
+[ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="2_jnuf7"]
+[ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_ji2tb"]
+[ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_nh2so"]
+[ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="5_gy8lr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_puqim"]
+radius = 165.02727
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njp7x"]
+size = Vector2(354, 314)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ym6y"]
+size = Vector2(371, 330)
+
+[node name="buraco_negro_enemy" type="CharacterBody2D" unique_id=1508756033]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_3gscd")
+max_health = 350
+color_damage = Color(1, 0, 0, 1)
+cost = 40
+wave_appear = 10
+metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1727544358]
+modulate = Color(0.83594537, 0, 0.27775788, 1)
+position = Vector2(55.500008, -6.999981)
+scale = Vector2(2.7578127, 2.4687502)
+texture = ExtResource("2_jnuf7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1199135808]
+position = Vector2(53, -5)
+shape = SubResource("CircleShape2D_puqim")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=1110670401 groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=670248673]
+position = Vector2(54, -7)
+shape = SubResource("RectangleShape2D_njp7x")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1437445008]
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="State_machine" type="Node" parent="." unique_id=654654324 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_ji2tb")
+initial_state = NodePath("Follow")
+metadata/_custom_type_script = "uid://ba7rfbrlsl42t"
+
+[node name="Follow" type="Node" parent="State_machine" unique_id=407155186 node_paths=PackedStringArray("enemy")]
+script = ExtResource("4_nh2so")
+enemy = NodePath("../..")
+move_speed = 15.0
+metadata/_custom_type_script = "uid://cjnylbeht4a6i"
+
+[node name="Attack" type="Node" parent="State_machine" unique_id=866405428 node_paths=PackedStringArray("enemy", "area_dano")]
+script = ExtResource("5_gy8lr")
+enemy = NodePath("../..")
+area_dano = NodePath("../../AreaAtaque")
+metadata/_custom_type_script = "uid://da3rkekrhcba0"
+
+[node name="AreaAtaque" type="Area2D" parent="." unique_id=1500720533]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque" unique_id=1115696861]
+position = Vector2(53, -8)
+shape = SubResource("RectangleShape2D_8ym6y")
+
+[connection signal="body_entered" from="AreaAtaque" to="." method="_on_area_ataque_body_entered"]
