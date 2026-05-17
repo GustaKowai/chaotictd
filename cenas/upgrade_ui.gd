@@ -1,4 +1,4 @@
-extends Control
+extends PopupPanel
 class_name upgrade_UI
 
 @onready var rota_1_1: CheckBox = %rota1_1
@@ -10,12 +10,30 @@ class_name upgrade_UI
 @onready var rota_3_1: CheckBox = %rota3_1
 @onready var rota_3_2: CheckBox = %rota3_2
 @onready var rota_3_3: CheckBox = %rota3_3
+@export var rota_1_1_text: String
+@export var rota_1_2_text: String
+@export var rota_1_3_text: String
+@export var rota_2_1_text: String
+@export var rota_2_2_text: String
+@export var rota_2_3_text: String
+@export var rota_3_1_text: String
+@export var rota_3_2_text: String
+@export var rota_3_3_text: String
 
 const MAX_UPGRADES:int = 4
 var atual_upgade:int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	rota_1_1.tooltip_text = rota_1_1_text
+	rota_1_2.tooltip_text = rota_1_2_text
+	rota_1_3.tooltip_text = rota_1_3_text
+	rota_2_1.tooltip_text = rota_2_1_text
+	rota_2_2.tooltip_text = rota_2_2_text
+	rota_2_3.tooltip_text = rota_2_3_text
+	rota_3_1.tooltip_text = rota_3_1_text
+	rota_3_2.tooltip_text = rota_3_2_text
+	rota_3_3.tooltip_text = rota_3_3_text
+	self.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -111,7 +129,3 @@ func disable_all():
 	rota_3_1.disabled = true
 	rota_3_2.disabled = true
 	rota_3_3.disabled = true
-
-
-func _on_focus_exited() -> void:
-	visible = false
