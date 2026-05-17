@@ -12,6 +12,7 @@ class_name upgrade_UI
 @onready var rota_3_1: CheckBox = %rota3_1
 @onready var rota_3_2: CheckBox = %rota3_2
 @onready var rota_3_3: CheckBox = %rota3_3
+@export_category("Upgrades text")
 @export var rota_1_1_text: String
 @export var rota_1_2_text: String
 @export var rota_1_3_text: String
@@ -21,6 +22,16 @@ class_name upgrade_UI
 @export var rota_3_1_text: String
 @export var rota_3_2_text: String
 @export var rota_3_3_text: String
+@export_category("Upgrades price")
+@export var rota_1_1_price:int
+@export var rota_1_2_price:int
+@export var rota_1_3_price:int
+@export var rota_2_1_price:int
+@export var rota_2_2_price:int
+@export var rota_2_3_price:int
+@export var rota_3_1_price:int
+@export var rota_3_2_price:int
+@export var rota_3_3_price:int
 
 const MAX_UPGRADES:int = 4
 var atual_upgade:int = 0
@@ -37,6 +48,15 @@ func _ready() -> void:
 	rota_3_1.tooltip_text = rota_3_1_text
 	rota_3_2.tooltip_text = rota_3_2_text
 	rota_3_3.tooltip_text = rota_3_3_text
+	rota_1_1.text = str(rota_1_1_price)
+	rota_1_2.text = str(rota_1_2_price)
+	rota_1_3.text = str(rota_1_3_price)
+	rota_2_1.text = str(rota_2_1_price)
+	rota_2_2.text = str(rota_2_2_price)
+	rota_2_3.text = str(rota_2_3_price)
+	rota_3_1.text = str(rota_3_1_price)
+	rota_3_2.text = str(rota_3_2_price)
+	rota_3_3.text = str(rota_3_3_price)
 	self.hide()
 
 
@@ -46,6 +66,7 @@ func _process(delta: float) -> void:
 
 
 func _on_rota_1_1_pressed() -> void:
+	if GameManager.piece_count < rota_1_1_price: return
 	rota_1_1.disabled = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
@@ -56,6 +77,7 @@ func _on_rota_1_1_pressed() -> void:
 
 
 func _on_rota_1_2_pressed() -> void:
+	if GameManager.piece_count < rota_1_2_price: return
 	rota_1_2.disabled = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
@@ -65,6 +87,7 @@ func _on_rota_1_2_pressed() -> void:
 
 
 func _on_rota_1_3_pressed() -> void:
+	if GameManager.piece_count < rota_1_3_price: return
 	rota_1_3.disabled = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
@@ -73,6 +96,7 @@ func _on_rota_1_3_pressed() -> void:
 
 
 func _on_rota_2_1_pressed() -> void:
+	if GameManager.piece_count < rota_2_1_price: return
 	rota_2_1.disabled = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
@@ -82,6 +106,7 @@ func _on_rota_2_1_pressed() -> void:
 
 
 func _on_rota_2_2_pressed() -> void:
+	if GameManager.piece_count < rota_2_2_price: return
 	rota_2_2.disabled = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
@@ -91,6 +116,7 @@ func _on_rota_2_2_pressed() -> void:
 
 
 func _on_rota_2_3_pressed() -> void:
+	if GameManager.piece_count < rota_2_3_price: return
 	rota_2_3.disabled = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
@@ -99,6 +125,7 @@ func _on_rota_2_3_pressed() -> void:
 
 
 func _on_rota_3_1_pressed() -> void:
+	if GameManager.piece_count < rota_3_1_price: return
 	rota_3_1.disabled = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
@@ -108,6 +135,7 @@ func _on_rota_3_1_pressed() -> void:
 
 
 func _on_rota_3_2_pressed() -> void:
+	if GameManager.piece_count < rota_3_2_price: return
 	rota_3_2.disabled = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:
@@ -117,6 +145,7 @@ func _on_rota_3_2_pressed() -> void:
 
 
 func _on_rota_3_3_pressed() -> void:
+	if GameManager.piece_count < rota_3_3_price: return
 	rota_3_3.disabled = true
 	atual_upgade += 1
 	if atual_upgade >= MAX_UPGRADES:

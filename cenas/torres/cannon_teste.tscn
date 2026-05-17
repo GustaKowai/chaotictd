@@ -111,5 +111,6 @@ rota_2_3_text = "f"
 rota_3_1_text = "g"
 rota_3_2_text = "h"
 rota_3_3_text = "i"
+rota_1_1_price = 1
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
