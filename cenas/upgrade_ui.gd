@@ -1,6 +1,8 @@
 extends PopupPanel
 class_name upgrade_UI
 
+@export var torre: Building
+@onready var texture_rect: TextureRect = $PanelContainer/VBoxContainer/TextureRect
 @onready var rota_1_1: CheckBox = %rota1_1
 @onready var rota_1_2: CheckBox = %rota1_2
 @onready var rota_1_3: CheckBox = %rota1_3
@@ -24,6 +26,8 @@ const MAX_UPGRADES:int = 4
 var atual_upgade:int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#print_debug(torre.sprite2d,torre)
+	texture_rect.texture = torre.sprite2d.texture
 	rota_1_1.tooltip_text = rota_1_1_text
 	rota_1_2.tooltip_text = rota_1_2_text
 	rota_1_3.tooltip_text = rota_1_3_text

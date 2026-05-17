@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c3x452n30jyai"]
 
 [ext_resource type="Script" uid="uid://bxk7ou5cwigkv" path="res://gd/enemy.gd" id="1_y16js"]
-[ext_resource type="PackedScene" uid="uid://bij78peujw27q" path="res://cenas/enemy_fast.tscn" id="2_4c5jp"]
+[ext_resource type="PackedScene" uid="uid://bij78peujw27q" path="res://cenas/inimigos/enemy_fast.tscn" id="2_4c5jp"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_4c5jp"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="3_vhru5"]
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_gxl1r"]
@@ -18,7 +18,7 @@ size = Vector2(206, 195)
 
 [node name="porta_inimigos_enemy" type="CharacterBody2D" unique_id=1558024661]
 collision_layer = 2
-collision_mask = 13
+collision_mask = 12
 script = ExtResource("1_y16js")
 max_health = 50
 color_damage = Color(0, 0, 1, 1)

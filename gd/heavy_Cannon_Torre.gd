@@ -22,3 +22,6 @@ func shoot():
 	var b = bullet.instantiate()
 	get_tree().root.add_child(b)
 	b.transform = mira.global_transform
+	
+func _on_rota_1_1_pressed() -> void:
+	pass # Replace with function body.

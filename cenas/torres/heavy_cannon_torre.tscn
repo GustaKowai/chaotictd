@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dpmp81xpx6xl1"]
 
 [ext_resource type="Script" uid="uid://j47akvxp3bkw" path="res://gd/heavy_Cannon_Torre.gd" id="1_133bx"]
-[ext_resource type="PackedScene" uid="uid://b8gx3dwhi4wxt" path="res://cenas/bullet_heavy_cannon.tscn" id="2_133bx"]
+[ext_resource type="PackedScene" uid="uid://b8gx3dwhi4wxt" path="res://cenas/balas/bullet_heavy_cannon.tscn" id="2_133bx"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_r85iu"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="4_vh0gn"]
+[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/upgrade_ui.tscn" id="5_vh0gn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_slvgt"]
 radius = 13.0
@@ -16,6 +17,7 @@ size = Vector2(10, 2)
 
 [node name="heavy_cannon_torre" type="StaticBody2D" unique_id=747018379 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 collision_mask = 3
+input_pickable = true
 script = ExtResource("1_133bx")
 delay_shoot = 7.5
 bullet = ExtResource("2_133bx")
@@ -45,3 +47,8 @@ offset_right = 64.0
 offset_bottom = 37.0
 texture_under = ExtResource("3_r85iu")
 texture_progress = ExtResource("4_vh0gn")
+
+[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("5_vh0gn")]
+torre = NodePath("..")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
