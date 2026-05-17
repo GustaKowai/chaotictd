@@ -75,7 +75,7 @@ metadata/_custom_type_script = "uid://cjtli66j3y46e"
 script = ExtResource("5_oxkcr")
 enemy = NodePath("../..")
 area_dano = NodePath("../../Sprite/AttackArea")
-dano = 5
+dano = 15
 delay_attack = 0.7
 metadata/_custom_type_script = "uid://da3rkekrhcba0"
 

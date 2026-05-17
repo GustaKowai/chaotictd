@@ -46,10 +46,10 @@ position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_n3dg1")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1044182165]
-offset_left = -225.0
-offset_top = -378.0
-offset_right = 440.0
-offset_bottom = -316.0
+offset_left = -121.0
+offset_top = -114.0
+offset_right = 121.0
+offset_bottom = -86.0
 show_percentage = false
 
 [node name="StateMachine" type="Node" parent="." unique_id=2097734650 node_paths=PackedStringArray("initial_state")]
