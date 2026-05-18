@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://s7yb3v25s7gt" path="res://cenas/inimigos/suicida_enemy.tscn" id="6_lipia"]
 [ext_resource type="PackedScene" uid="uid://vr8acvol4uvd" path="res://cenas/inimigos/buraco_negro_enemy.tscn" id="7_nygbe"]
 [ext_resource type="PackedScene" uid="uid://c3x452n30jyai" path="res://cenas/inimigos/porta_inimigos_enemy.tscn" id="8_hyy8y"]
-[ext_resource type="PackedScene" uid="uid://lx85sn0v6apj" path="res://cenas/enemy_fast_base.tscn" id="9_2j6do"]
+[ext_resource type="PackedScene" uid="uid://lx85sn0v6apj" path="res://cenas/inimigos/enemy_fast_base.tscn" id="9_2j6do"]
 
 [sub_resource type="Resource" id="Resource_uwef1"]
 script = ExtResource("2_6xrey")
