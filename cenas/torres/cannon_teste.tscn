@@ -103,7 +103,7 @@ texture_progress = ExtResource("6_psoph")
 [node name="Upgrade_UI" parent="." unique_id=653696189 node_paths=PackedStringArray("torre") instance=ExtResource("7_psoph")]
 torre = NodePath("..")
 rota_1_1_text = "aumenta a velocidade de ataque"
-rota_1_2_text = "b"
+rota_1_2_text = "aumenta mais ainda a velocidade"
 rota_1_3_text = "c"
 rota_2_1_text = "aumenta o dano da pedra"
 rota_2_2_text = "e"
@@ -112,6 +112,7 @@ rota_3_1_text = "g"
 rota_3_2_text = "h"
 rota_3_3_text = "i"
 rota_1_1_price = 1
+rota_1_2_price = 3
 rota_2_1_price = 2
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -34,7 +34,7 @@ func _ready() -> void:
 	current_health = max_health
 
 func _physics_process(delta: float) -> void:
-	delta *=slow_time
+	velocity *=slow_time
 	move_and_slide()
 
 func _process(delta: float) -> void:
