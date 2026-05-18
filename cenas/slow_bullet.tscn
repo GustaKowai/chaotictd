@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="2_pgodg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h17c4"]
-radius = 14.0
+radius = 15.033297
 
 [node name="slow_bullet" type="Area2D" unique_id=1030125196]
 collision_layer = 4
@@ -14,6 +14,7 @@ speed = 400.0
 metadata/_custom_type_script = "uid://dfphxkt0fqq73"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2028706958]
+self_modulate = Color(0.6052139, 0.00029427142, 0.61266357, 1)
 position = Vector2(0.9999998, -0.84375054)
 scale = Vector2(0.21875003, 0.21630861)
 texture = ExtResource("2_pgodg")
@@ -26,4 +27,6 @@ shape = SubResource("CircleShape2D_h17c4")
 position = Vector2(2, -2)
 rect = Rect2(-15, -13, 29, 28)
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

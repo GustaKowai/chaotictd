@@ -50,18 +50,18 @@ offset_right = 270.0
 offset_bottom = -140.0
 show_percentage = false
 
-[node name="State_machine" type="Node" parent="." unique_id=654654324 node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=654654324 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_ji2tb")
 initial_state = NodePath("Follow")
 metadata/_custom_type_script = "uid://ba7rfbrlsl42t"
 
-[node name="Follow" type="Node" parent="State_machine" unique_id=407155186 node_paths=PackedStringArray("enemy")]
+[node name="Follow" type="Node" parent="StateMachine" unique_id=407155186 node_paths=PackedStringArray("enemy")]
 script = ExtResource("4_nh2so")
 enemy = NodePath("../..")
 move_speed = 15.0
 metadata/_custom_type_script = "uid://cjnylbeht4a6i"
 
-[node name="Attack" type="Node" parent="State_machine" unique_id=866405428 node_paths=PackedStringArray("enemy", "area_dano")]
+[node name="Attack" type="Node" parent="StateMachine" unique_id=866405428 node_paths=PackedStringArray("enemy", "area_dano")]
 script = ExtResource("5_gy8lr")
 enemy = NodePath("../..")
 area_dano = NodePath("../../AreaAtaque")

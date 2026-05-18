@@ -69,12 +69,12 @@ debug_color = Color(0.9999998, 0.016718408, 0.019342402, 0.41960785)
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_npfyb")
 
-[node name="State_machine" type="Node" parent="." unique_id=1108831530 node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=1108831530 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_npfyb")
 initial_state = NodePath("Hunt")
 metadata/_custom_type_script = "uid://ba7rfbrlsl42t"
 
-[node name="Hunt" type="Node" parent="State_machine" unique_id=1678730874 node_paths=PackedStringArray("area_alerta", "enemy")]
+[node name="Hunt" type="Node" parent="StateMachine" unique_id=1678730874 node_paths=PackedStringArray("area_alerta", "enemy")]
 script = ExtResource("4_d1fw4")
 area_alerta = NodePath("../../Area2D")
 speed_hunting = 40.0
@@ -83,12 +83,12 @@ move_speed = 40.0
 do_collided = "die"
 metadata/_custom_type_script = "uid://cjtli66j3y46e"
 
-[node name="Idle" type="Node" parent="State_machine" unique_id=446802948 node_paths=PackedStringArray("enemy")]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=446802948 node_paths=PackedStringArray("enemy")]
 script = ExtResource("6_w2y5f")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://cqvygmqemyqcq"
 
-[node name="Die" type="Node" parent="State_machine" unique_id=2097192420 node_paths=PackedStringArray("enemy")]
+[node name="Die" type="Node" parent="StateMachine" unique_id=2097192420 node_paths=PackedStringArray("enemy")]
 script = ExtResource("6_4bk5b")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://i546gccwghdh"
