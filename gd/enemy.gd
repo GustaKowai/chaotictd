@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Enemy
 ### Classe Inimigo, usado de base para todos os inimigos.
 ### A Classe base tem um Sprite, CollisionShape2D, State_Machine, ProgressBar e HitBox.
-
+var slow_time:float = 1.0
 @onready var state_machine: State_machine = $StateMachine
 
 @onready var progress_bar: ProgressBar = $ProgressBar
@@ -34,6 +34,7 @@ func _ready() -> void:
 	current_health = max_health
 
 func _physics_process(delta: float) -> void:
+	delta *=slow_time
 	move_and_slide()
 
 func _process(delta: float) -> void:

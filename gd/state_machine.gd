@@ -1,6 +1,5 @@
 extends Node
 class_name State_machine
-var slow_time:float = 1
 
 @export var initial_state: State
 
@@ -18,13 +17,11 @@ func _ready() -> void:
 		current_state = initial_state
 		
 func _process(delta: float) -> void:
-	delta *= slow_time
 	#print_debug(current_state)
 	if current_state:
 		current_state.Update(delta)
 	
 func _physics_process(delta: float) -> void:
-	delta *= slow_time
 	if current_state:
 		current_state.Physics_update(delta)
 
