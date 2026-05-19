@@ -2,18 +2,67 @@
 
 [ext_resource type="Script" uid="uid://j47akvxp3bkw" path="res://gd/heavy_Cannon_Torre.gd" id="1_133bx"]
 [ext_resource type="PackedScene" uid="uid://b8gx3dwhi4wxt" path="res://cenas/balas/bullet_heavy_cannon.tscn" id="2_133bx"]
+[ext_resource type="Texture2D" uid="uid://bgm43arellftn" path="res://sprites/torre forte.png" id="3_bp2nv"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_r85iu"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="4_vh0gn"]
 [ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/upgrade_ui.tscn" id="5_vh0gn"]
+[ext_resource type="Texture2D" uid="uid://31c6ir5a0u6i" path="res://sprites/torre forte - Copia.png" id="7_cacy1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_slvgt"]
-radius = 13.0
+radius = 12.655348
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ocafh"]
-size = Vector2(20, 20)
+[sub_resource type="Animation" id="Animation_cacy1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p00pg"]
-size = Vector2(10, 2)
+[sub_resource type="Animation" id="Animation_4uke3"]
+resource_name = "carregar"
+length = 7.5
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(7.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dnlp8"]
+_data = {
+&"RESET": SubResource("Animation_cacy1"),
+&"carregar": SubResource("Animation_4uke3")
+}
 
 [node name="heavy_cannon_torre" type="StaticBody2D" unique_id=747018379 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 collision_mask = 3
@@ -21,34 +70,43 @@ input_pickable = true
 script = ExtResource("1_133bx")
 delay_shoot = 7.5
 bullet = ExtResource("2_133bx")
-sprite2d = NodePath("Sprite2D")
+sprite2d = NodePath("Sprite2D2")
 collision_shape = NodePath("CollisionShape2D")
 max_health = 50
 value = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=929075892]
+scale = Vector2(6.439999, 6.2)
 shape = SubResource("CircleShape2D_slvgt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1836009599]
-texture = SubResource("PlaceholderTexture2D_ocafh")
+texture = ExtResource("3_bp2nv")
+hframes = 5
 
 [node name="Cannon" type="Sprite2D" parent="Sprite2D" unique_id=1500969869]
 position = Vector2(12, 0)
-texture = SubResource("PlaceholderTexture2D_p00pg")
 
 [node name="Mira" type="Marker2D" parent="Sprite2D/Cannon" unique_id=1614255656]
 unique_name_in_owner = true
-position = Vector2(6, 0)
+position = Vector2(69, 2)
 
 [node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=312703314]
-offset_left = -64.0
-offset_top = 17.0
-offset_right = 64.0
-offset_bottom = 37.0
+offset_left = -67.0
+offset_top = 83.0
+offset_right = 61.0
+offset_bottom = 103.0
 texture_under = ExtResource("3_r85iu")
 texture_progress = ExtResource("4_vh0gn")
 
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("5_vh0gn")]
 torre = NodePath("..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2083213803]
+libraries/ = SubResource("AnimationLibrary_dnlp8")
+autoplay = &"carregar"
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=167371705]
+visible = false
+texture = ExtResource("7_cacy1")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
