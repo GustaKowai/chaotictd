@@ -25,6 +25,7 @@ autoscroll = Vector2(50, 0)
 repeat_times = 2
 
 [node name="FundoSpaceShooterTd" type="Sprite2D" parent="Parallax2D" unique_id=143886057]
+texture_filter = 3
 position = Vector2(964, 536)
 texture = ExtResource("9_jdavq")
 
@@ -45,6 +46,7 @@ texture = SubResource("PlaceholderTexture2D_mtgg2")
 position = Vector2(973, 520)
 
 [node name="Cannon_teste2" parent="." unique_id=747018379 instance=ExtResource("2_b30p5")]
+texture_filter = 3
 position = Vector2(719, 895)
 
 [node name="heavy_cannon_torre" parent="." unique_id=776932796 instance=ExtResource("10_jdavq")]

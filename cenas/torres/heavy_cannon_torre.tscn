@@ -65,6 +65,7 @@ _data = {
 }
 
 [node name="heavy_cannon_torre" type="StaticBody2D" unique_id=747018379 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
+texture_filter = 3
 collision_mask = 3
 input_pickable = true
 script = ExtResource("1_133bx")
