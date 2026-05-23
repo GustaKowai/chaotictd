@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://lx85sn0v6apj"]
 
 [ext_resource type="Script" uid="uid://dfuplgvonmw5h" path="res://gd/enemy_fast_base.gd" id="1_mq0on"]
-[ext_resource type="Texture2D" uid="uid://b7dt2xg6nutu4" path="res://sprites/nave inimiga - movimento spritesheet2.png" id="3_gbbce"]
+[ext_resource type="Texture2D" uid="uid://bwf7a16mxdjfh" path="res://sprites/nave inimiga media rapida - movimento spritesheet png.png" id="2_qoiwx"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="4_fii6p"]
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="5_mclqu"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="6_gl5n2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sfe5s"]
-radius = 8.293445
+radius = 1.0243424
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vlms2"]
-radius = 608.0
+radius = 68.007355
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtwt8"]
-size = Vector2(260, 1069)
+size = Vector2(33, 123.0625)
 
 [sub_resource type="Animation" id="Animation_d2wt1"]
 length = 0.001
@@ -55,8 +55,6 @@ _data = {
 }
 
 [node name="Enemy_fast_base" type="CharacterBody2D" unique_id=1532225188]
-self_modulate = Color(1, 0, 0.5019608, 1)
-scale = Vector2(0.1, 0.1)
 collision_layer = 2
 collision_mask = 12
 script = ExtResource("1_mq0on")
@@ -65,12 +63,12 @@ color_damage = Color(0.99215686, 0.4627451, 0, 1)
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=226990112]
-self_modulate = Color(1, 0, 1, 1)
-texture = ExtResource("3_gbbce")
+texture = ExtResource("2_qoiwx")
 hframes = 3
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1721174049]
-position = Vector2(147, 8)
+position = Vector2(8, -1)
 scale = Vector2(49.80001, 44.520004)
 shape = SubResource("CircleShape2D_sfe5s")
 
@@ -78,14 +76,15 @@ shape = SubResource("CircleShape2D_sfe5s")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=732585819]
-position = Vector2(15, -10)
+position = Vector2(4, 0)
 shape = SubResource("CircleShape2D_vlms2")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=218358628]
-offset_left = -417.0
-offset_top = 422.0
-offset_right = 431.0
-offset_bottom = 449.0
+offset_left = -74.0
+offset_top = 75.0
+offset_right = 81.0
+offset_bottom = 91.0
+show_percentage = false
 
 [node name="StateMachine" type="Node" parent="." unique_id=874818024 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_fii6p")
@@ -111,9 +110,10 @@ metadata/_custom_type_script = "uid://da3rkekrhcba0"
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque" unique_id=2393644]
-position = Vector2(593, 7)
+position = Vector2(60.5, 4.53125)
 shape = SubResource("RectangleShape2D_qtwt8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1333043451]
 libraries/ = SubResource("AnimationLibrary_ct7dm")
 autoplay = &"moving"
+speed_scale = 1.5

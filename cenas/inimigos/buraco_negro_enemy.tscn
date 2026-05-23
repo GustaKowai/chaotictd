@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://vr8acvol4uvd"]
 
 [ext_resource type="Script" uid="uid://cdohxipu88atb" path="res://buraco_negro_enemy.gd" id="1_3gscd"]
+[ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="2_5i3nj"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="2_jnuf7"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_ji2tb"]
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_nh2so"]
@@ -21,21 +22,24 @@ collision_mask = 13
 script = ExtResource("1_3gscd")
 max_health = 350
 color_damage = Color(1, 0, 0, 1)
+pieces = ExtResource("2_5i3nj")
+number_pieces_min = 40
+number_pieces_max = 40
+spread_area_radius = 170.0
 cost = 40
 wave_appear = 10
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1727544358]
 modulate = Color(0.83594537, 0, 0.27775788, 1)
-position = Vector2(55.500008, -6.999981)
 scale = Vector2(2.7578127, 2.4687502)
 texture = ExtResource("2_jnuf7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1199135808]
-position = Vector2(53, -5)
 shape = SubResource("CircleShape2D_puqim")
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1110670401 groups=["Enemy"]]
+position = Vector2(-55, 5)
 collision_layer = 2
 collision_mask = 13
 
@@ -44,10 +48,10 @@ position = Vector2(54, -7)
 shape = SubResource("RectangleShape2D_njp7x")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1437445008]
-offset_left = -155.0
-offset_top = -177.0
-offset_right = 270.0
-offset_bottom = -140.0
+offset_left = -209.0
+offset_top = -208.0
+offset_right = 216.0
+offset_bottom = -171.0
 show_percentage = false
 
 [node name="StateMachine" type="Node" parent="." unique_id=654654324 node_paths=PackedStringArray("initial_state")]
@@ -70,7 +74,7 @@ metadata/_custom_type_script = "uid://da3rkekrhcba0"
 [node name="AreaAtaque" type="Area2D" parent="." unique_id=1500720533]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque" unique_id=1115696861]
-position = Vector2(53, -10)
+position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_8ym6y")
 
 [connection signal="body_entered" from="AreaAtaque" to="." method="_on_area_ataque_body_entered"]
