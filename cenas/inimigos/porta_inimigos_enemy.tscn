@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxk7ou5cwigkv" path="res://gd/enemy.gd" id="1_y16js"]
 [ext_resource type="PackedScene" uid="uid://bij78peujw27q" path="res://cenas/inimigos/enemy_fast.tscn" id="2_4c5jp"]
+[ext_resource type="PackedScene" uid="uid://bn3hmqsehhwo7" path="res://explosa_inimigo.tscn" id="2_ctbec"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_4c5jp"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="3_vhru5"]
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_gxl1r"]
@@ -21,6 +22,7 @@ collision_layer = 2
 collision_mask = 12
 script = ExtResource("1_y16js")
 max_health = 50
+death_prefab = ExtResource("2_ctbec")
 color_damage = Color(0, 0, 1, 1)
 pieces = ExtResource("2_4c5jp")
 number_pieces_min = 4

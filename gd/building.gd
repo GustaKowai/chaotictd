@@ -7,6 +7,7 @@ class_name Building
 @export var collision_shape:CollisionShape2D
 @export var max_health:int = 100
 @export var value:int
+@export var death_prefab:PackedScene
 var shield:int:
 	set(new_value):
 		current_health = new_value
@@ -40,6 +41,10 @@ func heal_damage(heal:int):
 		current_health = max_health
 
 func die():
+	if death_prefab:
+		var death_object = death_prefab.instantiate()
+		death_object.position = position
+		get_parent().add_child(death_object)
 	queue_free()
 	
 func damage_to_shield(amount:int):

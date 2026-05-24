@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://j47akvxp3bkw" path="res://gd/heavy_Cannon_Torre.gd" id="1_133bx"]
 [ext_resource type="PackedScene" uid="uid://b8gx3dwhi4wxt" path="res://cenas/balas/bullet_heavy_cannon.tscn" id="2_133bx"]
+[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://explosa_aliado.tscn" id="3_4uke3"]
 [ext_resource type="Texture2D" uid="uid://bgm43arellftn" path="res://sprites/torre forte.png" id="3_bp2nv"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_r85iu"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="4_vh0gn"]
@@ -75,6 +76,7 @@ sprite2d = NodePath("Sprite2D2")
 collision_shape = NodePath("CollisionShape2D")
 max_health = 50
 value = 10
+death_prefab = ExtResource("3_4uke3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=929075892]
 scale = Vector2(6.439999, 6.2)

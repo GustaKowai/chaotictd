@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cpr4xsnla50fm"]
 
 [ext_resource type="Script" uid="uid://bxk7ou5cwigkv" path="res://gd/enemy.gd" id="1_xju15"]
+[ext_resource type="PackedScene" uid="uid://bn3hmqsehhwo7" path="res://explosa_inimigo.tscn" id="2_8kiid"]
 [ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="2_d2wt1"]
 [ext_resource type="Texture2D" uid="uid://b7dt2xg6nutu4" path="res://sprites/nave inimiga - movimento spritesheet2.png" id="3_qtwt8"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_xju15"]
@@ -61,6 +62,7 @@ collision_layer = 2
 collision_mask = 12
 script = ExtResource("1_xju15")
 max_health = 50
+death_prefab = ExtResource("2_8kiid")
 color_damage = Color(0.99215686, 0.4627451, 0, 1)
 pieces = ExtResource("2_d2wt1")
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"

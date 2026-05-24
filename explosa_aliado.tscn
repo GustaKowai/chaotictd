@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c84cue2absm3u"]
+
+[ext_resource type="Texture2D" uid="uid://cjxxpgmtwtifi" path="res://sprites/explosão.png" id="1_iw3es"]
+[ext_resource type="Script" uid="uid://b6wkd67dj1x3n" path="res://explosa_aliado.gd" id="2_1ytiw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkqg4"]
+atlas = ExtResource("1_iw3es")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m671f"]
+atlas = ExtResource("1_iw3es")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j1al"]
+atlas = ExtResource("1_iw3es")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1mys"]
+atlas = ExtResource("1_iw3es")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7w2q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkqg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m671f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j1al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1mys")
+}],
+"loop": false,
+"name": &"default",
+"speed": 11.0
+}]
+
+[node name="explosa_aliado" type="AnimatedSprite2D" unique_id=344822981]
+sprite_frames = SubResource("SpriteFrames_u7w2q")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+script = ExtResource("2_1ytiw")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
