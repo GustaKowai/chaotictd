@@ -20,6 +20,7 @@ size = Vector2(20, 20)
 [node name="Main" type="Node2D" unique_id=1501420038]
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=193963748]
+scroll_offset = Vector2(0, 4)
 repeat_size = Vector2(1890, 0)
 autoscroll = Vector2(50, 0)
 repeat_times = 2

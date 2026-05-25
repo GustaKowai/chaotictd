@@ -1,11 +1,20 @@
 [gd_scene format=3 uid="uid://duhxritp57dma"]
 
 [ext_resource type="PackedScene" uid="uid://tgjpj17povjb" path="res://cenas/button_torre.tscn" id="1_42ip5"]
+[ext_resource type="Texture2D" uid="uid://b4oralshl5tql" path="res://sprites/UI_towers.png" id="1_pby11"]
 [ext_resource type="PackedScene" uid="uid://c7myvvb3gsh5t" path="res://cenas/torres/cannon_teste.tscn" id="2_kl3l3"]
 [ext_resource type="PackedScene" uid="uid://dj2eo5j6lmgkx" path="res://cenas/torres/bumerangue_tower.tscn" id="3_pby11"]
 [ext_resource type="PackedScene" uid="uid://dpmp81xpx6xl1" path="res://cenas/torres/heavy_cannon_torre.tscn" id="4_nrlti"]
 [ext_resource type="PackedScene" uid="uid://cvmxlps3fc4v1" path="res://cenas/torres/planeta_dano_area.tscn" id="5_52s8d"]
 [ext_resource type="PackedScene" uid="uid://iublgt6shdge" path="res://cenas/torres/stun_tower.tscn" id="6_kl3l3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pby11"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pby11"]
+texture = ExtResource("1_pby11")
+
+[sub_resource type="Theme" id="Theme_52s8d"]
+FoldableContainer/styles/panel = SubResource("StyleBoxTexture_pby11")
 
 [node name="Tower_buildings" type="PanelContainer" unique_id=2031302956]
 anchors_preset = 11
@@ -15,9 +24,11 @@ anchor_bottom = 1.0
 offset_left = -48.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pby11")
 
 [node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=211616600]
 layout_mode = 2
+theme = SubResource("Theme_52s8d")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="FoldableContainer" unique_id=1745181277]
 layout_mode = 2

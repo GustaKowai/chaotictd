@@ -1,22 +1,37 @@
 [gd_scene format=3 uid="uid://1o81x8cq10t5"]
 
 [ext_resource type="Script" uid="uid://ci4wvjswopke3" path="res://cenas/upgrade_ui.gd" id="1_6c760"]
+[ext_resource type="Texture2D" uid="uid://cmfifbvisfxwv" path="res://sprites/upgrade_able.png" id="2_8kndy"]
+[ext_resource type="Texture2D" uid="uid://d2lcwklj4fpj0" path="res://sprites/upgrade_active.png" id="2_gi5ev"]
+[ext_resource type="Texture2D" uid="uid://bu8ay7p3wd8n8" path="res://sprites/upgrade_disable.png" id="4_xukmb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xukmb"]
+
+[sub_resource type="Theme" id="Theme_20nwl"]
+CheckBox/icons/checked_disabled = ExtResource("2_gi5ev")
+CheckBox/icons/unchecked = ExtResource("2_8kndy")
+CheckBox/icons/unchecked_disabled = ExtResource("4_xukmb")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gi5ev"]
 
 [node name="Upgrade_UI" type="PopupPanel" unique_id=594738499]
 oversampling_override = 1.0
 size = Vector2i(211, 122)
 visible = true
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xukmb")
 script = ExtResource("1_6c760")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=2063916154]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -57.0
-offset_right = 203.0
-offset_bottom = 57.0
+offset_top = -61.0
+offset_right = 211.0
+offset_bottom = 61.0
 grow_vertical = 2
 size_flags_horizontal = 0
+theme = SubResource("Theme_20nwl")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gi5ev")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1380811641]
 layout_mode = 2
@@ -33,6 +48,7 @@ text = "rota 1"
 
 [node name="rota1_1" type="CheckBox" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=461505187]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(15, 15)
 layout_mode = 2
 text = "0"
 
