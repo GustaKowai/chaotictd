@@ -20,7 +20,7 @@ var current_health: int :
 func _ready() -> void:
 	progress_bar.max_value = max_health
 	current_health = max_health
-
+	GameManager.game_over.connect(game_over)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -71,7 +71,10 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		upgrade_ui.show()
 		# Use o seguinte para os upgrades:
 		#print_debug(upgrade_ui.rota_1_1.button_pressed)
-		
+
+func game_over():
+	die()
+
 #region upgrades
 func connect_upgrades():
 	upgrade_ui.rota_1_1.pressed.connect(upgrade_1_1)

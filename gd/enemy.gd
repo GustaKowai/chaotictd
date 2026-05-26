@@ -30,6 +30,7 @@ var current_health: int :
 		progress_bar.value = new_value
 
 func _ready() -> void:
+	GameManager.restart_game.connect(queue_free)
 	progress_bar.max_value = max_health
 	current_health = max_health
 

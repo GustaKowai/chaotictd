@@ -7,7 +7,7 @@ extends HBoxContainer
 func _ready() -> void:
 	GameManager.piece_collected.connect(update)
 	WaveManager.start_wave.connect(update_wave)
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
