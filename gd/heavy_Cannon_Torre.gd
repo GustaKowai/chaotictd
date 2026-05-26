@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	pass
 	
 func shoot():
-	print_debug(animation_player.speed_scale)
+	#print_debug(animation_player.speed_scale)
 	var b = bullet.instantiate()
 	get_tree().root.add_child(b)
 	b.transform = mira.global_transform

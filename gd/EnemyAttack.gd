@@ -10,7 +10,9 @@ class_name EnemyAttack
 var delay:float
 
 func Enter():
-	#print_debug("Modo de ataque")
+	if enemy.sprite.has_method("play"):
+		enemy.sprite.play("attack")
+	print_debug("Modo de ataque",enemy)
 	delay = delay_attack
 
 func Exit():

@@ -9,6 +9,9 @@ class_name  EnemyFollow
 var base: PhysicsBody2D
 
 func Enter():
+	if enemy.sprite:
+		if enemy.sprite.has_method("play"):
+			enemy.sprite.play("default")
 	base = get_tree().get_first_node_in_group("Base")
 	#print_debug("Follow")
 	enemy.alvo = base

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cdbf6sjaksk3c" path="res://sprites/InimigoAranhaaprite.png" id="3_2fvk4"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_5w5ak"]
 [ext_resource type="Script" uid="uid://cjtli66j3y46e" path="res://gd/EnemyHunt.gd" id="4_abb4h"]
+[ext_resource type="Texture2D" uid="uid://ckxl0eknlhj70" path="res://sprites/InimigoAranha3-Sheet-sheet.png" id="4_g42ph"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="5_5w5ak"]
 [ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="6_3ne27"]
 
@@ -14,6 +15,26 @@ radius = 198.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2fvk4"]
 radius = 25.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkudn"]
+atlas = ExtResource("4_g42ph")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3if4y"]
+atlas = ExtResource("4_g42ph")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du8na"]
+atlas = ExtResource("4_g42ph")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tmln"]
+atlas = ExtResource("4_g42ph")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50h5c"]
+atlas = ExtResource("4_g42ph")
+region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2fvk4"]
 atlas = ExtResource("3_2fvk4")
@@ -45,6 +66,26 @@ region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kdtis"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkudn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3if4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du8na")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tmln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50h5c")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2fvk4")
@@ -103,8 +144,9 @@ shape = SubResource("CircleShape2D_2fvk4")
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=740497630]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_kdtis")
+animation = &"attack"
 autoplay = "default"
-frame_progress = 0.27024055
+frame_progress = 0.35717478
 
 [node name="AttackArea" type="Area2D" parent="Sprite" unique_id=1944355732]
 position = Vector2(231.48935, 0)
