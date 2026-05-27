@@ -8,14 +8,14 @@
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_6qwg1"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="5_ct7dm"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtwt8"]
+size = Vector2(257.00018, 1540.0002)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_sfe5s"]
 radius = 8.293445
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vlms2"]
 radius = 608.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtwt8"]
-size = Vector2(257.00018, 1540.0002)
 
 [sub_resource type="Animation" id="Animation_d2wt1"]
 length = 0.001
@@ -68,21 +68,31 @@ pieces = ExtResource("2_d2wt1")
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=226990112]
+position = Vector2(-1.5258789e-05, 0)
 texture = ExtResource("3_qtwt8")
+offset = Vector2(-189.99997, 0)
 hframes = 3
 
+[node name="AreaAtaque" type="Area2D" parent="Sprite" unique_id=1404639723]
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/AreaAtaque" unique_id=2393644]
+position = Vector2(591.4998, -5.4836262e-05)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_qtwt8")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1721174049]
-visible = false
-position = Vector2(147, 8)
+position = Vector2(1.5258789e-05, 0)
 scale = Vector2(49.80001, 44.520004)
 shape = SubResource("CircleShape2D_sfe5s")
 
 [node name="HitBox" type="Area2D" parent="." unique_id=2028237609 groups=["Enemy"]]
+position = Vector2(-1.5258789e-05, -9.536743e-07)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=732585819]
-visible = false
-position = Vector2(15, -10)
+position = Vector2(-169.99997, 1.9073486e-06)
 shape = SubResource("CircleShape2D_vlms2")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=218358628]
@@ -104,18 +114,10 @@ metadata/_custom_type_script = "uid://cjnylbeht4a6i"
 [node name="Attack" type="Node" parent="StateMachine" unique_id=1529928686 node_paths=PackedStringArray("enemy", "area_dano")]
 script = ExtResource("5_ct7dm")
 enemy = NodePath("../..")
-area_dano = NodePath("../../AreaAtaque")
-dano = 5
-delay_attack = 3.0
+area_dano = NodePath("../../Sprite/AreaAtaque")
+dano = 10
+delay_attack = 0.5
 metadata/_custom_type_script = "uid://da3rkekrhcba0"
-
-[node name="AreaAtaque" type="Area2D" parent="." unique_id=1404639723]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque" unique_id=2393644]
-position = Vector2(591.4998, -5.4836262e-05)
-scale = Vector2(0.99999976, 0.99999976)
-shape = SubResource("RectangleShape2D_qtwt8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1333043451]
 libraries/ = SubResource("AnimationLibrary_ct7dm")

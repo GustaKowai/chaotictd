@@ -11,12 +11,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c872j"]
 size = Vector2(49, 45)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4bk5b"]
+radius = 248.0163
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dcr57"]
 radius = 66.0
 height = 312.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_4bk5b"]
-radius = 248.0163
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_npfyb"]
 radius = 33.01515
@@ -46,13 +46,6 @@ position = Vector2(0.5, -1.5)
 shape = SubResource("RectangleShape2D_c872j")
 debug_color = Color(0, 1, 0, 0.41960785)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1441026510]
-position = Vector2(4, 2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=344522788]
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_dcr57")
-
 [node name="Sprite" type="Sprite2D" parent="." unique_id=65343910]
 self_modulate = Color(1, 0, 0, 1)
 position = Vector2(2.2737368e-13, -1)
@@ -67,6 +60,14 @@ collision_mask = 13
 shape = SubResource("CircleShape2D_4bk5b")
 debug_color = Color(0.9999998, 0.016718408, 0.019342402, 0.41960785)
 
+[node name="Area2D" type="Area2D" parent="Sprite" unique_id=1441026510]
+position = Vector2(10.666666, 8.533333)
+scale = Vector2(2.6666665, 2.8444443)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D" unique_id=344522788]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_dcr57")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1349895766]
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_npfyb")
@@ -78,7 +79,7 @@ metadata/_custom_type_script = "uid://ba7rfbrlsl42t"
 
 [node name="Hunt" type="Node" parent="StateMachine" unique_id=1678730874 node_paths=PackedStringArray("area_alerta", "enemy")]
 script = ExtResource("4_d1fw4")
-area_alerta = NodePath("../../Area2D")
+area_alerta = NodePath("../../Sprite/Area2D")
 speed_hunting = 40.0
 enemy = NodePath("../..")
 move_speed = 40.0

@@ -9,6 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://cvmxlps3fc4v1" path="res://cenas/torres/planeta_dano_area.tscn" id="5_52s8d"]
 [ext_resource type="PackedScene" uid="uid://iublgt6shdge" path="res://cenas/torres/stun_tower.tscn" id="6_kl3l3"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nrlti"]
+
+[sub_resource type="Theme" id="Theme_letcd"]
+Button/styles/normal = SubResource("StyleBoxEmpty_nrlti")
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pby11"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pby11"]
@@ -25,6 +30,7 @@ anchor_bottom = 1.0
 offset_left = -48.0
 grow_horizontal = 0
 grow_vertical = 2
+theme = SubResource("Theme_letcd")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_pby11")
 script = ExtResource("1_nrlti")
 

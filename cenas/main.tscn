@@ -49,6 +49,7 @@ position = Vector2(562, 747)
 position = Vector2(899, 774)
 
 [node name="GameOverUi" parent="." unique_id=70370010 instance=ExtResource("11_vhipe")]
+visible = false
 
 [node name="BasePosition" type="Marker2D" parent="." unique_id=789107849 groups=["base_position"]]
 position = Vector2(973, 520)

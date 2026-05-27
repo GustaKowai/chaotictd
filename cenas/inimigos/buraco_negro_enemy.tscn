@@ -8,14 +8,14 @@
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_nh2so"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="5_gy8lr"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ym6y"]
+size = Vector2(371, 330)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_puqim"]
 radius = 165.02727
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njp7x"]
 size = Vector2(354, 314)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ym6y"]
-size = Vector2(371, 330)
 
 [node name="buraco_negro_enemy" type="CharacterBody2D" unique_id=1508756033]
 collision_layer = 2
@@ -37,16 +37,23 @@ modulate = Color(0.83594537, 0, 0.27775788, 1)
 scale = Vector2(2.7578127, 2.4687502)
 texture = ExtResource("2_jnuf7")
 
+[node name="AreaAtaque" type="Area2D" parent="Sprite" unique_id=1500720533]
+scale = Vector2(0.36260617, 0.4050632)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/AreaAtaque" unique_id=1115696861]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_8ym6y")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1199135808]
 shape = SubResource("CircleShape2D_puqim")
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1110670401 groups=["Enemy"]]
-position = Vector2(-55, 5)
+position = Vector2(0, 1)
 collision_layer = 2
 collision_mask = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=670248673]
-position = Vector2(54, -7)
+position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_njp7x")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1437445008]
@@ -70,13 +77,7 @@ metadata/_custom_type_script = "uid://cjnylbeht4a6i"
 [node name="Attack" type="Node" parent="StateMachine" unique_id=866405428 node_paths=PackedStringArray("enemy", "area_dano")]
 script = ExtResource("5_gy8lr")
 enemy = NodePath("../..")
-area_dano = NodePath("../../AreaAtaque")
+area_dano = NodePath("../../Sprite/AreaAtaque")
 metadata/_custom_type_script = "uid://da3rkekrhcba0"
 
-[node name="AreaAtaque" type="Area2D" parent="." unique_id=1500720533]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque" unique_id=1115696861]
-position = Vector2(-2, 0)
-shape = SubResource("RectangleShape2D_8ym6y")
-
-[connection signal="body_entered" from="AreaAtaque" to="." method="_on_area_ataque_body_entered"]
+[connection signal="body_entered" from="Sprite/AreaAtaque" to="." method="_on_area_ataque_body_entered"]

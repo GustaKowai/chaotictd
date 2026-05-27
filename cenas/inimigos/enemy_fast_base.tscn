@@ -8,14 +8,14 @@
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="5_mclqu"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="6_gl5n2"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtwt8"]
+size = Vector2(33, 123.0625)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_sfe5s"]
 radius = 1.0243424
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vlms2"]
 radius = 68.007355
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtwt8"]
-size = Vector2(33, 123.0625)
 
 [sub_resource type="Animation" id="Animation_d2wt1"]
 length = 0.001
@@ -71,6 +71,13 @@ texture = ExtResource("2_qoiwx")
 hframes = 3
 frame = 2
 
+[node name="AreaAtaque" type="Area2D" parent="Sprite" unique_id=1404639723]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/AreaAtaque" unique_id=2393644]
+position = Vector2(60.5, 4.53125)
+shape = SubResource("RectangleShape2D_qtwt8")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1721174049]
 position = Vector2(8, -1)
 scale = Vector2(49.80001, 44.520004)
@@ -109,13 +116,6 @@ dano = 5
 delay_attack = 1.5
 lost_target_try_first = "follow"
 metadata/_custom_type_script = "uid://da3rkekrhcba0"
-
-[node name="AreaAtaque" type="Area2D" parent="." unique_id=1404639723]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque" unique_id=2393644]
-position = Vector2(60.5, 4.53125)
-shape = SubResource("RectangleShape2D_qtwt8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1333043451]
 libraries/ = SubResource("AnimationLibrary_ct7dm")

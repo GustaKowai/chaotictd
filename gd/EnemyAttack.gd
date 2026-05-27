@@ -38,6 +38,9 @@ func charge_attack(delta):
 		
 func attack():
 	#print_debug("ataquei")
+	if enemy.velocity.is_zero_approx():
+		enemy.sprite.look_at(enemy.alvo.global_position)
+	print_debug(enemy.alvo.global_position)
 	var alvos = area_dano.get_overlapping_bodies()
 	for alvo in alvos:
 		if alvo.is_in_group("torre"):

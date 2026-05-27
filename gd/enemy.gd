@@ -4,6 +4,7 @@ class_name Enemy
 ### A Classe base tem um Sprite, CollisionShape2D, State_Machine, ProgressBar e HitBox.
 var slow_time:float = 1.0
 @onready var state_machine: State_machine = $StateMachine
+@onready var hit_box: Area2D = $HitBox
 
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var sprite = $Sprite
@@ -39,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(delta: float) -> void:
+	hit_box.transform = sprite.transform
 	if !velocity.is_zero_approx():
 		sprite.look_at(global_position+velocity)
 
