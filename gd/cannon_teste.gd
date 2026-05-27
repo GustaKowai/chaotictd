@@ -11,3 +11,6 @@ func upgrade_1_3():
 	pass
 func upgrade_2_1():
 	bullet_extra_damage += 2
+
+func upgrade_3_1():
+	can_see_cammo = true

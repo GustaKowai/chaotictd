@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://vr8acvol4uvd" path="res://cenas/inimigos/buraco_negro_enemy.tscn" id="7_nygbe"]
 [ext_resource type="PackedScene" uid="uid://c3x452n30jyai" path="res://cenas/inimigos/porta_inimigos_enemy.tscn" id="8_hyy8y"]
 [ext_resource type="PackedScene" uid="uid://lx85sn0v6apj" path="res://cenas/inimigos/enemy_fast_base.tscn" id="9_2j6do"]
+[ext_resource type="PackedScene" uid="uid://b3uxdxfuskpns" path="res://cenas/inimigos/arraia_enemy_camuflada.tscn" id="10_0d7bd"]
 
 [sub_resource type="Resource" id="Resource_uwef1"]
 script = ExtResource("2_6xrey")
@@ -51,6 +52,13 @@ cost = 1
 initial_wave = 5
 metadata/_custom_type_script = "uid://cs0eajybywg8w"
 
+[sub_resource type="Resource" id="Resource_ggatb"]
+script = ExtResource("2_6xrey")
+enemy = ExtResource("10_0d7bd")
+cost = 1
+initial_wave = 1
+metadata/_custom_type_script = "uid://cs0eajybywg8w"
+
 [sub_resource type="Curve2D" id="Curve2D_e8qxx"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -36, -14, 0, 0, 0, 0, -78, 1117, 0, 0, 0, 0, 1959, 1166, 0, 0, 0, 0, 1968, -16, 0, 0, 0, 0, -21, -25)
@@ -59,7 +67,7 @@ point_count = 5
 
 [node name="EnemySpawner" type="Node2D" unique_id=959906953]
 script = ExtResource("1_pr3b6")
-enemys = Array[ExtResource("2_6xrey")]([SubResource("Resource_uwef1"), SubResource("Resource_e8qxx"), SubResource("Resource_lipia"), SubResource("Resource_nygbe"), SubResource("Resource_hyy8y"), SubResource("Resource_2j6do"), SubResource("Resource_0d7bd")])
+enemys = Array[ExtResource("2_6xrey")]([SubResource("Resource_uwef1"), SubResource("Resource_e8qxx"), SubResource("Resource_lipia"), SubResource("Resource_nygbe"), SubResource("Resource_hyy8y"), SubResource("Resource_2j6do"), SubResource("Resource_0d7bd"), SubResource("Resource_ggatb")])
 wave_duration = 5.0
 
 [node name="Path2D" type="Path2D" parent="." unique_id=139336870]
