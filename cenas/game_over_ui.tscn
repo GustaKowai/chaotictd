@@ -80,5 +80,41 @@ offset_right = 999.0
 offset_bottom = 866.0
 text = "reiniciar"
 
+[node name="RecordeWaves" type="VBoxContainer" parent="." unique_id=1861653134]
+unique_name_in_owner = true
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -23.0
+offset_right = 92.0
+offset_bottom = 23.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="RecordeWaves" unique_id=668710509]
+layout_mode = 2
+text = "Recordes:"
+
+[node name="PopupRecorde" type="AcceptDialog" parent="." unique_id=1418365776]
+oversampling_override = 1.0
+title = "Novo recorde!"
+initial_position = 1
+size = Vector2i(500, 100)
+visible = true
+ok_button_text = "Salvar"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupRecorde" unique_id=934350850]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 492.0
+offset_bottom = 51.0
+
+[node name="NomeJogador" type="LineEdit" parent="PopupRecorde" unique_id=116130821]
+unique_name_in_owner = true
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 492.0
+offset_bottom = 51.0
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="confirmed" from="PopupRecorde" to="." method="_on_popup_recorde_confirmed"]

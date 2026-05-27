@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 GameManager="*uid://h61yfsbnewh1"
 WaveManager="*uid://dxer41x3yml61"
+SaveLoadArcade="*uid://cl8vcoh6xp6bq"
 
 [display]
 

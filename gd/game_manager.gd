@@ -8,6 +8,7 @@ var pieces_started:int = 15
 var posicionando:bool
 var is_game_over:bool = false
 var posicao_base:Vector2
+var pontuacao_waves:Array = [["name",1],["name2",0]]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
