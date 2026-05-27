@@ -73,6 +73,8 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		#print_debug(upgrade_ui.rota_1_1.button_pressed)
 
 func game_over():
+	var tempo = global_position.distance_to(GameManager.posicao_base)/800
+	await get_tree().create_timer(tempo).timeout
 	die()
 
 #region upgrades

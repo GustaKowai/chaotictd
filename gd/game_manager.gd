@@ -7,11 +7,13 @@ signal restart_game()
 var pieces_started:int = 15
 var posicionando:bool
 var is_game_over:bool = false
+var posicao_base:Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	posicao_base = get_tree().get_first_node_in_group("base_position").global_position 
 	posicionando = false
-	piece_count = 0
+	piece_count = pieces_started
 	pass # Replace with function body.
 
 
@@ -28,6 +30,6 @@ func restart():
 	WaveManager.start_wave.emit(WaveManager.wave)
 	is_game_over = false
 	var b = base.instantiate()
-	b.global_position = Vector2(973,520)
+	b.global_position = posicao_base #Vector2(973,520)
 	get_tree().root.add_child(b)
 	
