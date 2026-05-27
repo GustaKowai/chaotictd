@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://qkfpnnyl763x"]
+
+[ext_resource type="Script" uid="uid://cb8m2etlq51wa" path="res://gd/building.gd" id="1_wah4h"]
+[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://explosa_aliado.tscn" id="2_ioks7"]
+[ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="2_qj8f2"]
+[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_oitro"]
+[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="4_ioks7"]
+[ext_resource type="Script" uid="uid://jifw41e63ymv" path="res://cenas/torres/area_escudo.gd" id="5_qj8f2"]
+[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/upgrade_ui.tscn" id="6_oitro"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_etlvp"]
+radius = 73.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wah4h"]
+radius = 421.14368
+
+[node name="Building" type="StaticBody2D" unique_id=1437004689 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
+script = ExtResource("1_wah4h")
+sprite2d = NodePath("Sprite2D")
+collision_shape = NodePath("CollisionShape2D")
+value = 15
+death_prefab = ExtResource("2_ioks7")
+metadata/_custom_type_script = "uid://cb8m2etlq51wa"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=394974234]
+shape = SubResource("CircleShape2D_etlvp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1717193690]
+texture = ExtResource("2_qj8f2")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1117434270]
+offset_left = -64.0
+offset_top = 69.0
+offset_right = 64.0
+offset_bottom = 89.0
+value = 40.0
+texture_under = ExtResource("3_oitro")
+texture_progress = ExtResource("4_ioks7")
+
+[node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=376789069]
+offset_left = -64.0
+offset_top = 69.0
+offset_right = 64.0
+offset_bottom = 89.0
+texture_progress = ExtResource("4_ioks7")
+tint_progress = Color(0.001, 7.574, 7, 1)
+
+[node name="AreaEscudo" type="Area2D" parent="." unique_id=1948713512]
+script = ExtResource("5_qj8f2")
+shield_value = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEscudo" unique_id=807040822]
+shape = SubResource("CircleShape2D_wah4h")
+
+[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("6_oitro")]
+size = Vector2i(308, 608)
+torre = NodePath("..")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

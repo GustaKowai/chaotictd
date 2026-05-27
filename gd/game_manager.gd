@@ -12,7 +12,10 @@ var pontuacao_waves:Array = [["name",1],["name2",0]]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	posicao_base = get_tree().get_first_node_in_group("base_position").global_position 
+	if get_tree().get_first_node_in_group("base_position"):
+		posicao_base = get_tree().get_first_node_in_group("base_position").global_position
+	else:
+		posicao_base = Vector2(0,0)
 	posicionando = false
 	piece_count = pieces_started
 	pass # Replace with function body.

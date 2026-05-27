@@ -42,6 +42,14 @@ value = 40.0
 texture_under = ExtResource("3_wrkmi")
 texture_progress = ExtResource("4_koxe4")
 
+[node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=573501421]
+offset_left = -64.0
+offset_top = 34.0
+offset_right = 64.0
+offset_bottom = 54.0
+texture_progress = ExtResource("4_koxe4")
+tint_progress = Color(0.001, 7.574, 7, 1)
+
 [node name="area_dano" type="Area2D" parent="." unique_id=1978986120]
 collision_mask = 2
 script = ExtResource("3_rcaev")
@@ -55,6 +63,7 @@ wait_time = 0.7
 autostart = true
 
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("6_koxe4")]
+size = Vector2i(308, 608)
 torre = NodePath("..")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

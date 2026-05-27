@@ -12,7 +12,7 @@ var delay:float
 func Enter():
 	if enemy.sprite.has_method("play"):
 		enemy.sprite.play("attack")
-	print_debug("Modo de ataque",enemy)
+	#print_debug("Modo de ataque",enemy)
 	delay = delay_attack
 
 func Exit():
@@ -40,7 +40,7 @@ func attack():
 	#print_debug("ataquei")
 	if enemy.velocity.is_zero_approx():
 		enemy.sprite.look_at(enemy.alvo.global_position)
-	print_debug(enemy.alvo.global_position)
+	#print_debug(enemy.alvo.global_position)
 	var alvos = area_dano.get_overlapping_bodies()
 	for alvo in alvos:
 		if alvo.is_in_group("torre"):

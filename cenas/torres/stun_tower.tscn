@@ -44,6 +44,14 @@ offset_bottom = 86.0
 texture_under = ExtResource("3_oblbw")
 texture_progress = ExtResource("4_ho7ho")
 
+[node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=1098075280]
+offset_left = -65.0
+offset_top = 59.0
+offset_right = 63.0
+offset_bottom = 86.0
+texture_progress = ExtResource("4_ho7ho")
+tint_progress = Color(0.001, 7.574, 7, 1)
+
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("5_garpn")]
 visible = false
 torre = NodePath("..")

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b2mdngu4sswkk" path="res://sprites/Fundo_Space_Shooter_TD.png" id="9_jdavq"]
 [ext_resource type="PackedScene" uid="uid://dpmp81xpx6xl1" path="res://cenas/torres/heavy_cannon_torre.tscn" id="10_jdavq"]
 [ext_resource type="PackedScene" uid="uid://iublgt6shdge" path="res://cenas/torres/stun_tower.tscn" id="10_vhipe"]
+[ext_resource type="PackedScene" uid="uid://qkfpnnyl763x" path="res://cenas/torres/torre_escudo.tscn" id="11_iwfo7"]
 [ext_resource type="PackedScene" uid="uid://dhxtpf1oy4cby" path="res://cenas/game_over_ui.tscn" id="11_vhipe"]
 [ext_resource type="PackedScene" uid="uid://dj2eo5j6lmgkx" path="res://cenas/torres/bumerangue_tower.tscn" id="12_g6klm"]
 [ext_resource type="PackedScene" uid="uid://blll4f2yqp03e" path="res://cenas/UI.tscn" id="12_iwfo7"]
@@ -53,3 +54,6 @@ visible = false
 
 [node name="BasePosition" type="Marker2D" parent="." unique_id=789107849 groups=["base_position"]]
 position = Vector2(973, 520)
+
+[node name="Building" parent="." unique_id=1437004689 instance=ExtResource("11_iwfo7")]
+position = Vector2(842, 614)

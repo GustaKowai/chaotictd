@@ -39,6 +39,15 @@ nine_patch_stretch = true
 texture_under = ExtResource("2_l6ens")
 texture_progress = ExtResource("3_ubf62")
 
+[node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=701700590]
+offset_left = -68.0
+offset_top = -73.0
+offset_right = 71.0
+offset_bottom = -46.0
+nine_patch_stretch = true
+texture_progress = ExtResource("3_ubf62")
+tint_progress = Color(0.0005019968, 7.573818, 7.0002875, 1)
+
 [node name="Area2D" type="Area2D" parent="." unique_id=369362489]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1772929820]
@@ -46,6 +55,7 @@ position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_m2pul")
 
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("4_ubf62")]
+size = Vector2i(308, 608)
 torre = NodePath("..")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

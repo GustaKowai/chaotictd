@@ -102,7 +102,16 @@ offset_bottom = 82.0
 texture_under = ExtResource("5_baf7l")
 texture_progress = ExtResource("6_psoph")
 
+[node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=1452762307]
+offset_left = -66.0
+offset_top = 62.0
+offset_right = 62.0
+offset_bottom = 82.0
+texture_progress = ExtResource("6_psoph")
+tint_progress = Color(0.001, 7.574, 7, 1)
+
 [node name="Upgrade_UI" parent="." unique_id=653696189 node_paths=PackedStringArray("torre") instance=ExtResource("7_psoph")]
+size = Vector2i(308, 608)
 torre = NodePath("..")
 rota_1_1_text = "aumenta a velocidade de ataque"
 rota_1_2_text = "aumenta mais ainda a velocidade"

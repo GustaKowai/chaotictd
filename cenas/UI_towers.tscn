@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dpmp81xpx6xl1" path="res://cenas/torres/heavy_cannon_torre.tscn" id="4_nrlti"]
 [ext_resource type="PackedScene" uid="uid://cvmxlps3fc4v1" path="res://cenas/torres/planeta_dano_area.tscn" id="5_52s8d"]
 [ext_resource type="PackedScene" uid="uid://iublgt6shdge" path="res://cenas/torres/stun_tower.tscn" id="6_kl3l3"]
+[ext_resource type="PackedScene" uid="uid://qkfpnnyl763x" path="res://cenas/torres/torre_escudo.tscn" id="9_52s8d"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nrlti"]
 
@@ -35,28 +36,41 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_pby11")
 script = ExtResource("1_nrlti")
 
 [node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=211616600]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme = SubResource("Theme_52s8d")
+title_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="FoldableContainer" unique_id=1745181277]
+[node name="ScrollContainer" type="ScrollContainer" parent="FoldableContainer" unique_id=954542665]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="Button" parent="FoldableContainer/VBoxContainer" unique_id=1961303369 instance=ExtResource("1_42ip5")]
+[node name="VBoxContainer" type="VBoxContainer" parent="FoldableContainer/ScrollContainer" unique_id=1745181277]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+alignment = 1
+
+[node name="Button" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=1961303369 instance=ExtResource("1_42ip5")]
 layout_mode = 2
 torre = ExtResource("2_kl3l3")
 
-[node name="Button2" parent="FoldableContainer/VBoxContainer" unique_id=1687635896 instance=ExtResource("1_42ip5")]
+[node name="Button2" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=1687635896 instance=ExtResource("1_42ip5")]
 layout_mode = 2
 torre = ExtResource("3_pby11")
 
-[node name="Button3" parent="FoldableContainer/VBoxContainer" unique_id=1277169580 instance=ExtResource("1_42ip5")]
+[node name="Button3" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=1277169580 instance=ExtResource("1_42ip5")]
 layout_mode = 2
 torre = ExtResource("4_nrlti")
 
-[node name="Button4" parent="FoldableContainer/VBoxContainer" unique_id=240226560 instance=ExtResource("1_42ip5")]
+[node name="Button4" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=240226560 instance=ExtResource("1_42ip5")]
 layout_mode = 2
 torre = ExtResource("5_52s8d")
 
-[node name="Button5" parent="FoldableContainer/VBoxContainer" unique_id=51560110 instance=ExtResource("1_42ip5")]
+[node name="Button5" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=51560110 instance=ExtResource("1_42ip5")]
 layout_mode = 2
 torre = ExtResource("6_kl3l3")
+
+[node name="Button6" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=512007538 instance=ExtResource("1_42ip5")]
+layout_mode = 2
+torre = ExtResource("9_52s8d")

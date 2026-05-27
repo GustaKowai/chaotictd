@@ -3,6 +3,7 @@ class_name Building
 
 @onready var upgrade_ui: upgrade_UI = $Upgrade_UI
 @onready var progress_bar: TextureProgressBar = $ProgressBar
+@onready var progress_bar2: TextureProgressBar = $ProgressBar2
 @export var sprite2d:Sprite2D
 @export var collision_shape:CollisionShape2D
 @export var max_health:int = 100
@@ -10,18 +11,19 @@ class_name Building
 @export var death_prefab:PackedScene
 var shield:int:
 	set(new_value):
-		current_health = new_value
-		#progress_bar.value = new_value #Se for usar uma barra de escudo também, sendo em baixo ou sobre a vida
+		shield = new_value
+		progress_bar2.value = new_value #Se for usar uma barra de escudo também, sendo em baixo ou sobre a vida
 var current_health: int :
 	set(new_value):
 		current_health = new_value
 		progress_bar.value = new_value
-		connect_upgrades()
 func _ready() -> void:
 	progress_bar.max_value = max_health
+	progress_bar2.max_value = max_health
 	current_health = max_health
 	GameManager.game_over.connect(game_over)
-
+	connect_upgrades()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -60,10 +62,12 @@ func damage_to_shield(amount:int):
 		amount -= shield
 		shield = 0
 		take_damage(amount)
+		
 func add_shield(amount:int):
 	shield += amount
 	
 func set_shield(amount:int):
+	print_debug(self)
 	shield = amount
 	
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
