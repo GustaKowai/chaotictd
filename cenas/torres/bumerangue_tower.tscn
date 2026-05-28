@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://dnfpk0t25ujlq" path="res://gd/bumerangue_tower.gd" id="1_hwfcf"]
 [ext_resource type="PackedScene" uid="uid://do7groqhlbflw" path="res://cenas/balas/bullet_bumerangue.tscn" id="2_ho27v"]
 [ext_resource type="Texture2D" uid="uid://dmvyghuhdgw5w" path="res://sprites/PlanetasBumerangue2.png" id="3_4ljs1"]
-[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://explosa_aliado.tscn" id="3_add4o"]
+[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="3_add4o"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="4_5bc7n"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="5_0xaye"]
-[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/upgrade_ui.tscn" id="6_0xaye"]
+[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="6_0xaye"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ho27v"]
 radius = 40.0

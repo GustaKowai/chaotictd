@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://vr8acvol4uvd"]
 
-[ext_resource type="Script" uid="uid://cdohxipu88atb" path="res://buraco_negro_enemy.gd" id="1_3gscd"]
+[ext_resource type="Script" uid="uid://cdohxipu88atb" path="res://gd/buraco_negro_enemy.gd" id="1_3gscd"]
 [ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="2_5i3nj"]
-[ext_resource type="PackedScene" uid="uid://bn3hmqsehhwo7" path="res://explosa_inimigo.tscn" id="2_5qptq"]
+[ext_resource type="PackedScene" uid="uid://bn3hmqsehhwo7" path="res://cenas/explosa_inimigo.tscn" id="2_5qptq"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="2_jnuf7"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_ji2tb"]
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_nh2so"]

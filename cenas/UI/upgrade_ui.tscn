@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1o81x8cq10t5"]
 
-[ext_resource type="Script" uid="uid://ci4wvjswopke3" path="res://cenas/upgrade_ui.gd" id="1_6c760"]
+[ext_resource type="Script" uid="uid://ci4wvjswopke3" path="res://gd/upgrade_ui.gd" id="1_6c760"]
 [ext_resource type="Texture2D" uid="uid://bumbll3pe8bfj" path="res://sprites/upgrade_active2.png" id="2_gi5ev"]
 [ext_resource type="Texture2D" uid="uid://d0djytqo4pmef" path="res://sprites/upgrade_able2.png" id="3_xukmb"]
 [ext_resource type="Texture2D" uid="uid://dy0i1828lsqjv" path="res://sprites/upgrade_disable2.png" id="4_gi5ev"]

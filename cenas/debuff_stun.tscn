@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bgf13w05juyr2"]
+
+[ext_resource type="Script" uid="uid://bumymt4atkpy" path="res://gd/debuff_stun.gd" id="1_2f2wd"]
+[ext_resource type="Texture2D" uid="uid://dy0i1828lsqjv" path="res://sprites/upgrade_disable2.png" id="2_psac1"]
+[ext_resource type="Texture2D" uid="uid://d0djytqo4pmef" path="res://sprites/upgrade_able2.png" id="3_bxek7"]
+[ext_resource type="Texture2D" uid="uid://bumbll3pe8bfj" path="res://sprites/upgrade_active2.png" id="4_gjsbl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2fmyj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_psac1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bxek7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gjsbl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Debuff_stun" type="Node2D" unique_id=662213296]
+script = ExtResource("1_2f2wd")
+metadata/_custom_type_script = "uid://b0vpvrdmx81vo"
+
+[node name="Timer" type="Timer" parent="." unique_id=2083247191]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1914745187]
+sprite_frames = SubResource("SpriteFrames_2fmyj")
+autoplay = "default"
+frame_progress = 0.8720241
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

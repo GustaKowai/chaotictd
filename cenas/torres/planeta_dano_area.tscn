@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cvmxlps3fc4v1"]
 
 [ext_resource type="Script" uid="uid://cb8m2etlq51wa" path="res://gd/building.gd" id="1_qlp5y"]
-[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://explosa_aliado.tscn" id="2_aad67"]
+[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="2_aad67"]
 [ext_resource type="Texture2D" uid="uid://cyke5gux0316n" path="res://sprites/torre-area.png" id="3_a6kdn"]
 [ext_resource type="Script" uid="uid://ddlwi8gohf47d" path="res://gd/area_dano.gd" id="3_rcaev"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_wrkmi"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="4_koxe4"]
-[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/upgrade_ui.tscn" id="6_koxe4"]
+[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="6_koxe4"]
 [ext_resource type="Texture2D" uid="uid://ni5jyd1s88jo" path="res://sprites/torre-area-temp-area.png" id="7_ohx4t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6krs8"]

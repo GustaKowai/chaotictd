@@ -3,6 +3,7 @@ class_name Enemy
 ### Classe Inimigo, usado de base para todos os inimigos.
 ### A Classe base tem um Sprite, CollisionShape2D, State_Machine, ProgressBar e HitBox.
 var slow_time:float = 1.0
+var stun:bool
 @onready var state_machine: State_machine = $StateMachine
 @onready var hit_box: Area2D = $HitBox
 
@@ -37,7 +38,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	velocity *=slow_time
-	move_and_slide()
+	if not stun:
+		move_and_slide()
 
 func _process(delta: float) -> void:
 	hit_box.transform = sprite.transform

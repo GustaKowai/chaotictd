@@ -67,7 +67,7 @@ func add_shield(amount:int):
 	shield += amount
 	
 func set_shield(amount:int):
-	print_debug(self)
+	#print_debug(self)
 	shield = amount
 	
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

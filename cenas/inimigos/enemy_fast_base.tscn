@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://lx85sn0v6apj"]
 
 [ext_resource type="Script" uid="uid://dfuplgvonmw5h" path="res://gd/enemy_fast_base.gd" id="1_mq0on"]
-[ext_resource type="PackedScene" uid="uid://bn3hmqsehhwo7" path="res://explosa_inimigo.tscn" id="2_3mm6k"]
+[ext_resource type="PackedScene" uid="uid://bn3hmqsehhwo7" path="res://cenas/explosa_inimigo.tscn" id="2_3mm6k"]
 [ext_resource type="Texture2D" uid="uid://bwf7a16mxdjfh" path="res://sprites/nave inimiga media rapida - movimento spritesheet png.png" id="2_qoiwx"]
 [ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="3_faknw"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="4_fii6p"]

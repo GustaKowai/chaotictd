@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://l0e0qls7mxqf" path="res://gd/cannon_tower.gd" id="1_30417"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="2_h0v8u"]
 [ext_resource type="PackedScene" uid="uid://56s0ps1ruwju" path="res://cenas/balas/slow_bullet.tscn" id="2_oblbw"]
-[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://explosa_aliado.tscn" id="3_jt7f8"]
+[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="3_jt7f8"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_oblbw"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="4_ho7ho"]
-[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/upgrade_ui.tscn" id="5_garpn"]
+[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="5_garpn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sqqsk"]
 radius = 59.07622

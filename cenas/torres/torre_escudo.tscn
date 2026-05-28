@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://qkfpnnyl763x"]
 
 [ext_resource type="Script" uid="uid://cb8m2etlq51wa" path="res://gd/building.gd" id="1_wah4h"]
-[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://explosa_aliado.tscn" id="2_ioks7"]
+[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="2_ioks7"]
 [ext_resource type="Texture2D" uid="uid://brd5q8yhnka3i" path="res://sprites/torre_escudo_tempsprite.png" id="3_etlvp"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_oitro"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="4_ioks7"]
 [ext_resource type="Script" uid="uid://jifw41e63ymv" path="res://gd/area_escudo.gd" id="5_qj8f2"]
-[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/upgrade_ui.tscn" id="6_oitro"]
+[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="6_oitro"]
 [ext_resource type="Texture2D" uid="uid://dxop8gmap0f64" path="res://sprites/torre_escudo_temp.png" id="8_etlvp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_etlvp"]

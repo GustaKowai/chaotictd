@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://j47akvxp3bkw" path="res://gd/heavy_Cannon_Torre.gd" id="1_133bx"]
 [ext_resource type="PackedScene" uid="uid://b8gx3dwhi4wxt" path="res://cenas/balas/bullet_heavy_cannon.tscn" id="2_133bx"]
-[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://explosa_aliado.tscn" id="3_4uke3"]
+[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="3_4uke3"]
 [ext_resource type="Texture2D" uid="uid://bgm43arellftn" path="res://sprites/torre forte.png" id="3_bp2nv"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_r85iu"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="4_vh0gn"]
-[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/upgrade_ui.tscn" id="5_vh0gn"]
+[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="5_vh0gn"]
 [ext_resource type="Texture2D" uid="uid://31c6ir5a0u6i" path="res://sprites/torre forte - Copia.png" id="7_cacy1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_slvgt"]

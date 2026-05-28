@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c8u7lc1ukkycy" path="res://gd/piece_counter.gd" id="1_67l2l"]
 [ext_resource type="Texture2D" uid="uid://drrkkodh5c7gl" path="res://sprites/UI_Space_shooter_td.png" id="1_b3efl"]
-[ext_resource type="PackedScene" uid="uid://de4snsa6vh3g8" path="res://cenas/next_wave.tscn" id="2_5auu7"]
-[ext_resource type="PackedScene" uid="uid://duhxritp57dma" path="res://cenas/UI_towers.tscn" id="2_ekiuc"]
+[ext_resource type="PackedScene" uid="uid://de4snsa6vh3g8" path="res://cenas/UI/next_wave.tscn" id="2_5auu7"]
+[ext_resource type="PackedScene" uid="uid://duhxritp57dma" path="res://cenas/UI/UI_towers.tscn" id="2_ekiuc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lxbms"]
 texture = ExtResource("1_b3efl")
