@@ -11,12 +11,12 @@ func _on_area_entered(body):
 	#print_debug(body)
 	if body.is_in_group("Enemy"):
 		var target:Enemy = body.get_parent()
-		print_debug(target)
+		#print_debug(target)
 		var d:Debuff = debuff.instantiate()
-		print_debug(d)
+		#print_debug(d)
+		d.debuff_time = debuff_time
 		target.add_child(d)
-		d.timer.wait_time = debuff_time
-		d.timer.start()
-		print_debug(target.get_children())
+		#d.timer.start()
+		#print_debug(target.get_children())
 		target.take_damage(damage)
 		hit()

@@ -1,11 +1,14 @@
 class_name Debuff
 extends Node2D
 var enemy:Enemy
+var debuff_time:float
 @onready var timer: Timer = $Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	timer.wait_time = debuff_time
 	enemy = self.get_parent()
+	timer.start()
 	#print_debug(enemy)
 
 

@@ -8,18 +8,18 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_8aidw"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.3,
 "texture": ExtResource("2_mhw1f")
 }, {
-"duration": 1.0,
+"duration": 0.3,
 "texture": ExtResource("3_et6do")
 }, {
-"duration": 1.0,
+"duration": 0.3,
 "texture": ExtResource("4_nr2f5")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ixwne"]
@@ -36,7 +36,7 @@ metadata/_custom_type_script = "uid://b0vpvrdmx81vo"
 scale = Vector2(1.8499997, 1.8499997)
 sprite_frames = SubResource("SpriteFrames_8aidw")
 autoplay = "default"
-frame_progress = 0.15744855
+frame_progress = 0.37873283
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2134330044]
 collision_layer = 4
