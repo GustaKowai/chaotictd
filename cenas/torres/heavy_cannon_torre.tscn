@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://31c6ir5a0u6i" path="res://sprites/torre forte - Copia.png" id="7_cacy1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_slvgt"]
-radius = 12.655348
+radius = 82.006096
 
 [sub_resource type="Animation" id="Animation_cacy1"]
 length = 0.001
@@ -79,7 +79,6 @@ value = 10
 death_prefab = ExtResource("3_4uke3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=929075892]
-scale = Vector2(6.439999, 6.2)
 shape = SubResource("CircleShape2D_slvgt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1836009599]

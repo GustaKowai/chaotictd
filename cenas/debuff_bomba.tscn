@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dardn5ps0awe7"]
+
+[ext_resource type="Script" uid="uid://cc1jreqys13u1" path="res://debuff_bomba.gd" id="1_8vfqv"]
+[ext_resource type="Texture2D" uid="uid://bu8ay7p3wd8n8" path="res://sprites/upgrade_disable.png" id="2_mhw1f"]
+[ext_resource type="Texture2D" uid="uid://cmfifbvisfxwv" path="res://sprites/upgrade_able.png" id="3_et6do"]
+[ext_resource type="Texture2D" uid="uid://d2lcwklj4fpj0" path="res://sprites/upgrade_active.png" id="4_nr2f5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8aidw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mhw1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_et6do")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nr2f5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ixwne"]
+radius = 70.0
+
+[node name="Debuff_bomba" type="Node2D" unique_id=278530036]
+script = ExtResource("1_8vfqv")
+damage = 200
+metadata/_custom_type_script = "uid://b0vpvrdmx81vo"
+
+[node name="Timer" type="Timer" parent="." unique_id=1318015607]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=437509075]
+scale = Vector2(1.8499997, 1.8499997)
+sprite_frames = SubResource("SpriteFrames_8aidw")
+autoplay = "default"
+frame_progress = 0.15744855
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2134330044]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1964978284]
+shape = SubResource("CircleShape2D_ixwne")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
