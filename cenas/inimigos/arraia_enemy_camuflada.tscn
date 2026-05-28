@@ -9,13 +9,13 @@
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="7_sww0s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtwt8"]
-size = Vector2(257.00018, 1540.0002)
+size = Vector2(21.000053, 123.50006)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sfe5s"]
-radius = 8.293445
+radius = 0.92369455
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vlms2"]
-radius = 608.0
+radius = 62.072536
 
 [sub_resource type="Animation" id="Animation_d2wt1"]
 length = 0.001
@@ -57,7 +57,6 @@ _data = {
 }
 
 [node name="ArraiaEnemy" type="CharacterBody2D" unique_id=1532225188]
-scale = Vector2(0.1, 0.1)
 collision_layer = 2
 collision_mask = 12
 script = ExtResource("1_jfx07")
@@ -69,9 +68,9 @@ metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=226990112]
 self_modulate = Color(1, 1, 1, 0.20500001)
-position = Vector2(-1.5258789e-05, 0)
+position = Vector2(-1, 0)
 texture = ExtResource("4_whvv8")
-offset = Vector2(-189.99997, 0)
+offset = Vector2(-19.99997, 0)
 hframes = 3
 
 [node name="AreaAtaque" type="Area2D" parent="Sprite" unique_id=1404639723]
@@ -79,28 +78,27 @@ scale = Vector2(0.99999994, 0.99999994)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/AreaAtaque" unique_id=2393644]
-position = Vector2(591.4998, -5.4836262e-05)
-scale = Vector2(0.99999976, 0.99999976)
+position = Vector2(64, 0.99999905)
+scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_qtwt8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1721174049]
-position = Vector2(1.5258789e-05, 0)
 scale = Vector2(49.80001, 44.520004)
 shape = SubResource("CircleShape2D_sfe5s")
 
 [node name="HitBox" type="Area2D" parent="." unique_id=2028237609 groups=["Enemy"]]
-position = Vector2(-1.5258789e-05, -9.536743e-07)
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=732585819]
-position = Vector2(-169.99997, 1.9073486e-06)
+position = Vector2(-12.999985, -0.99999905)
 shape = SubResource("CircleShape2D_vlms2")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=218358628]
-offset_left = -417.0
-offset_top = 422.0
-offset_right = 431.0
-offset_bottom = 449.0
+offset_left = -75.0
+offset_top = 67.0
+offset_right = 73.0
+offset_bottom = 81.0
+show_percentage = false
 
 [node name="StateMachine" type="Node" parent="." unique_id=874818024 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("5_afyo5")
