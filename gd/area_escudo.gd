@@ -1,5 +1,6 @@
 extends Area2D
 @export var shield_value:int
+@onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,6 +12,7 @@ func _process(delta: float) -> void:
 	pass
 
 func criar_escudo(wave):
+	animated_sprite_2d.play("smile")
 	print_debug("tentou criar escudo")
 	var torres = get_overlapping_bodies()
 	#print_debug(inimigos)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://duhxritp57dma"]
 
 [ext_resource type="PackedScene" uid="uid://tgjpj17povjb" path="res://cenas/button_torre.tscn" id="1_42ip5"]
-[ext_resource type="Script" uid="uid://bm0of4ysplgkn" path="res://cenas/ui_towers.gd" id="1_nrlti"]
+[ext_resource type="Script" uid="uid://bm0of4ysplgkn" path="res://gd/ui_towers.gd" id="1_nrlti"]
 [ext_resource type="Texture2D" uid="uid://b4oralshl5tql" path="res://sprites/UI_towers.png" id="1_pby11"]
 [ext_resource type="PackedScene" uid="uid://c7myvvb3gsh5t" path="res://cenas/torres/cannon_teste.tscn" id="2_kl3l3"]
 [ext_resource type="PackedScene" uid="uid://dj2eo5j6lmgkx" path="res://cenas/torres/bumerangue_tower.tscn" id="3_pby11"]
