@@ -41,6 +41,7 @@ animations = [{
 }]
 
 [node name="Building" type="StaticBody2D" unique_id=1437004689 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
+input_pickable = true
 script = ExtResource("1_wah4h")
 sprite2d = NodePath("Sprite2D")
 collision_shape = NodePath("CollisionShape2D")

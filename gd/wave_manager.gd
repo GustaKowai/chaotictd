@@ -2,7 +2,7 @@ extends Node
 signal start_wave(int)
 signal wave_end
 signal enemy_dead()
-var wave:int = 0
+var wave:int = 10
 var time_to_check_wave_end:float = 5.0
 var time_down:float = 0
 # Called when the node enters the scene tree for the first time.
@@ -19,8 +19,8 @@ func _process(delta: float) -> void:
 
 func check_wave_end():
 	var enemies = get_tree().get_nodes_in_group("Enemy")
-	if enemies.size() <= 1:
-		print_debug("fim da wave ", wave)
+	if enemies.size() < 1:
+		print_debug("fim da wave ", wave, enemies)
 		wave_end.emit()
 	#print(enemies.size())
 	#for enemy in enemies:
