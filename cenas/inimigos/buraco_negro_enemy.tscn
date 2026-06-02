@@ -38,6 +38,7 @@ scale = Vector2(2.7578127, 2.4687502)
 texture = ExtResource("2_jnuf7")
 
 [node name="AreaAtaque" type="Area2D" parent="Sprite" unique_id=1500720533]
+unique_name_in_owner = true
 scale = Vector2(0.36260617, 0.4050632)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/AreaAtaque" unique_id=1115696861]

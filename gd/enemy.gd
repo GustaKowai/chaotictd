@@ -90,4 +90,5 @@ func drop_pieces():
 		#print_debug(position_spread)
 		var item = pieces.instantiate()
 		item.position = position+position_spread
-		get_parent().add_child(item)
+		get_parent().call_deferred("add_child",item)
+		#get_parent().add_child(item)
