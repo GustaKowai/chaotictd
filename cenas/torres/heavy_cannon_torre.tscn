@@ -109,7 +109,6 @@ texture_progress = ExtResource("4_vh0gn")
 tint_progress = Color(0.001, 7.574, 7, 1)
 
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("5_vh0gn")]
-size = Vector2i(308, 608)
 torre = NodePath("..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2083213803]

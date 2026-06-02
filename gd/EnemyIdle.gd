@@ -12,6 +12,8 @@ func randomize_wander():
 	wander_time = randf_range(1,3)
 	
 func Enter():
+	if enemy.sprite.has_method("play"):
+		enemy.sprite.play("follow")
 	randomize_wander()
 	
 func Update(delta:float):

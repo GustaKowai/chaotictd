@@ -21,6 +21,8 @@ func Physics_update(_delta: float):
 func chase():
 	if chasing:
 		return
+	if enemy.sprite.has_method("play"):
+		enemy.sprite.play("hunt")
 	var alvos = area_alerta.get_overlapping_bodies()
 	for alvo in alvos:
 		if alvo.is_in_group("torre"):
@@ -29,6 +31,8 @@ func chase():
 			chasing = true
 			
 func lost_target():
+	if enemy.sprite.has_method("play"):
+		enemy.sprite.play("follow")
 	#print_debug("Perdi o alvo")
 	if base:
 		chasing = false

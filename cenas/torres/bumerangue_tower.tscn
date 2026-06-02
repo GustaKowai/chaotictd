@@ -55,7 +55,6 @@ texture_progress = ExtResource("5_0xaye")
 tint_progress = Color(0.001, 7.574, 7, 1)
 
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("6_0xaye")]
-size = Vector2i(308, 608)
 torre = NodePath("..")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

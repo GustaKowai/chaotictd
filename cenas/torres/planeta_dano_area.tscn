@@ -110,7 +110,6 @@ sprite_frames = SubResource("SpriteFrames_d5so0")
 animation = &"attack"
 
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("6_koxe4")]
-size = Vector2i(308, 608)
 torre = NodePath("..")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
