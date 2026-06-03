@@ -2,6 +2,7 @@ extends PopupPanel
 class_name upgrade_UI
 
 @export var torre: Building
+@onready var vender: Button = $PanelContainer/VBoxContainer/vender
 @onready var texture_rect: TextureRect = $PanelContainer/VBoxContainer/TextureRect
 @onready var rota_1_1: CheckBox = %rota1_1
 @onready var rota_1_2: CheckBox = %rota1_2

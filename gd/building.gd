@@ -92,6 +92,7 @@ func connect_upgrades():
 	upgrade_ui.rota_3_1.pressed.connect(upgrade_3_1)
 	upgrade_ui.rota_3_2.pressed.connect(upgrade_3_2)
 	upgrade_ui.rota_3_3.pressed.connect(upgrade_3_3)
+	upgrade_ui.vender.pressed.connect(vender)
 	
 func upgrade_1_1():
 	print_debug("upado 1_1")
@@ -111,5 +112,10 @@ func upgrade_3_2():
 	print_debug("upado 3_2")
 func upgrade_3_3():
 	print_debug("upado 3_3")
+	
+func vender():
+	GameManager.piece_count += ceil(value/2)
+	GameManager.piece_collected.emit()
+	die()
 #endregion
 		

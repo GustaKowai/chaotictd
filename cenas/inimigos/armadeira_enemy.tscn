@@ -232,8 +232,7 @@ shape = SubResource("CircleShape2D_5jeqr")
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=148648559]
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_gp8rl")
-animation = &"hunt"
-frame_progress = 0.17686246
+animation = &"follow"
 
 [node name="AttackArea" type="Area2D" parent="Sprite" unique_id=1974067635]
 collision_layer = 2
