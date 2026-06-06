@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_xju15"]
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_6qwg1"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="5_ct7dm"]
+[ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="8_2ychb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtwt8"]
 size = Vector2(25.749947, 132.50003)
@@ -113,6 +114,10 @@ area_dano = NodePath("../../Sprite/AreaAtaque")
 dano = 10
 delay_attack = 0.5
 metadata/_custom_type_script = "uid://da3rkekrhcba0"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=132599695]
+script = ExtResource("8_2ychb")
+metadata/_custom_type_script = "uid://cqvygmqemyqcq"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1333043451]
 libraries/ = SubResource("AnimationLibrary_ct7dm")

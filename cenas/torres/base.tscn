@@ -1,18 +1,16 @@
 [gd_scene format=3 uid="uid://t4n6p64qxp5d"]
 
 [ext_resource type="Script" uid="uid://687nbbkelr7d" path="res://gd/base.gd" id="1_m2pul"]
+[ext_resource type="Texture2D" uid="uid://b85q76mheea3w" path="res://sprites/torre principal.png" id="2_gy3w1"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="2_l6ens"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="3_ubf62"]
 [ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="4_ubf62"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqtx0"]
-size = Vector2(88, 89)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ykcco"]
+radius = 119.00105
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_m2pul"]
-size = Vector2(90, 90)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2pul"]
-size = Vector2(90, 91)
+[sub_resource type="CircleShape2D" id="CircleShape2D_6eodh"]
+radius = 120.001045
 
 [node name="Base" type="StaticBody2D" unique_id=1670237934 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 collision_layer = 9
@@ -25,25 +23,25 @@ max_health = 1000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1133035403]
 position = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_fqtx0")
+shape = SubResource("CircleShape2D_ykcco")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1964487356]
-texture = SubResource("PlaceholderTexture2D_m2pul")
+texture = ExtResource("2_gy3w1")
 
 [node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1622694890]
-offset_left = -68.0
-offset_top = -73.0
-offset_right = 71.0
-offset_bottom = -46.0
+offset_left = -65.0
+offset_top = -150.0
+offset_right = 74.0
+offset_bottom = -123.0
 nine_patch_stretch = true
 texture_under = ExtResource("2_l6ens")
 texture_progress = ExtResource("3_ubf62")
 
 [node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=701700590]
-offset_left = -68.0
-offset_top = -73.0
-offset_right = 71.0
-offset_bottom = -46.0
+offset_left = -65.0
+offset_top = -150.0
+offset_right = 74.0
+offset_bottom = -123.0
 nine_patch_stretch = true
 texture_progress = ExtResource("3_ubf62")
 tint_progress = Color(0.0005019968, 7.573818, 7.0002875, 1)
@@ -51,8 +49,7 @@ tint_progress = Color(0.0005019968, 7.573818, 7.0002875, 1)
 [node name="Area2D" type="Area2D" parent="." unique_id=369362489]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1772929820]
-position = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_m2pul")
+shape = SubResource("CircleShape2D_6eodh")
 
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("4_ubf62")]
 torre = NodePath("..")

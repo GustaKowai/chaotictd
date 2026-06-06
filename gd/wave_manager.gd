@@ -2,7 +2,7 @@ extends Node
 signal start_wave(int)
 signal wave_end
 signal enemy_dead()
-var wave:int = 10
+var wave:int = 1
 var time_to_check_wave_end:float = 5.0
 var time_down:float = 0
 # Called when the node enters the scene tree for the first time.

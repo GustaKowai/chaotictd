@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="4_fii6p"]
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="5_mclqu"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="6_gl5n2"]
+[ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="8_to4gm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtwt8"]
 size = Vector2(33, 123.0625)
@@ -116,6 +117,10 @@ dano = 5
 delay_attack = 1.5
 lost_target_try_first = "follow"
 metadata/_custom_type_script = "uid://da3rkekrhcba0"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1803447841]
+script = ExtResource("8_to4gm")
+metadata/_custom_type_script = "uid://cqvygmqemyqcq"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1333043451]
 libraries/ = SubResource("AnimationLibrary_ct7dm")

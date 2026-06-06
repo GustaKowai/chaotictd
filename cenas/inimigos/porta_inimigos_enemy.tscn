@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="3_vhru5"]
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_gxl1r"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="5_5wlbm"]
+[ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="8_v4xsw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ol254"]
 size = Vector2(206, 195)
@@ -79,3 +80,7 @@ area_dano = NodePath("../../Sprite/AreaAtaque")
 dano = 5
 delay_attack = 3.0
 metadata/_custom_type_script = "uid://da3rkekrhcba0"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=702095824]
+script = ExtResource("8_v4xsw")
+metadata/_custom_type_script = "uid://cqvygmqemyqcq"

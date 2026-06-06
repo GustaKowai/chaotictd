@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_ji2tb"]
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_nh2so"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="5_gy8lr"]
+[ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="8_hxr62"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ym6y"]
 size = Vector2(371, 330)
@@ -82,5 +83,9 @@ script = ExtResource("5_gy8lr")
 enemy = NodePath("../..")
 area_dano = NodePath("../../Sprite/AreaAtaque")
 metadata/_custom_type_script = "uid://da3rkekrhcba0"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1120386391]
+script = ExtResource("8_hxr62")
+metadata/_custom_type_script = "uid://cqvygmqemyqcq"
 
 [connection signal="body_entered" from="Sprite/AreaAtaque" to="." method="_on_area_ataque_body_entered"]
