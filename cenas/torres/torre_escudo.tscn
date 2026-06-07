@@ -15,6 +15,9 @@ radius = 52.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_wah4h"]
 radius = 250.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_y1xac"]
+radius = 88.362885
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1xac"]
 atlas = ExtResource("8_etlvp")
 region = Rect2(0, 0, 128, 128)
@@ -44,7 +47,7 @@ animations = [{
 input_pickable = true
 script = ExtResource("1_wah4h")
 sprite2d = NodePath("Sprite2D")
-collision_shape = NodePath("CollisionShape2D")
+collision_shape = NodePath("AreaEscudo/AreaDeExclusao/AreaDeexclusaoShape")
 max_health = 1000
 value = 20
 death_prefab = ExtResource("2_ioks7")
@@ -80,6 +83,11 @@ shield_value = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEscudo" unique_id=807040822]
 shape = SubResource("CircleShape2D_wah4h")
+
+[node name="AreaDeExclusao" type="Area2D" parent="AreaEscudo" unique_id=1467757106]
+
+[node name="AreaDeexclusaoShape" type="CollisionShape2D" parent="AreaEscudo/AreaDeExclusao" unique_id=347011120]
+shape = SubResource("CircleShape2D_y1xac")
 
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("6_oitro")]
 torre = NodePath("..")

@@ -29,9 +29,10 @@ func shoot():
 	var b = bullet.instantiate()
 	get_tree().root.add_child(b)
 	b.transform = mira.global_transform
-	
-func _on_rota_1_1_pressed() -> void:
-	pass # Replace with function body.
+
 
 func charge():
 	animation_player.play("carregar")
+
+func upgrade_1_1():
+	animation_player.speed_scale = 1.2

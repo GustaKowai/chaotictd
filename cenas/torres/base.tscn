@@ -12,6 +12,9 @@ radius = 119.00105
 [sub_resource type="CircleShape2D" id="CircleShape2D_6eodh"]
 radius = 120.001045
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gy3w1"]
+radius = 192.00261
+
 [node name="Base" type="StaticBody2D" unique_id=1670237934 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 collision_layer = 9
 collision_mask = 3
@@ -56,8 +59,13 @@ torre = NodePath("..")
 rota_1_1_text = "Aumenta a vida máxima em 10%"
 rota_1_2_text = "Noo início de cada rodada, cura 2% da vida máxima"
 rota_2_1_text = "Aumenta o ganho de dinheiro no início de cada rodada de 20 x nivel da onda para 50 x nivel da onda"
-rota_1_1_price = 5
-rota_1_2_price = 6
+rota_1_1_price = 500
+rota_1_2_price = 600
 rota_2_1_price = 1000
+
+[node name="AreaDeExclusao" type="Area2D" parent="." unique_id=357707933]
+
+[node name="AreaDeexclusaoShape" type="CollisionShape2D" parent="AreaDeExclusao" unique_id=565851291]
+shape = SubResource("CircleShape2D_gy3w1")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

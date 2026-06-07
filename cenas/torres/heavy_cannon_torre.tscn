@@ -65,6 +65,9 @@ _data = {
 &"carregar": SubResource("Animation_4uke3")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4uke3"]
+radius = 139.12944
+
 [node name="heavy_cannon_torre" type="StaticBody2D" unique_id=747018379 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 texture_filter = 3
 collision_mask = 3
@@ -73,7 +76,7 @@ script = ExtResource("1_133bx")
 delay_shoot = 7.5
 bullet = ExtResource("2_133bx")
 sprite2d = NodePath("Sprite2D2")
-collision_shape = NodePath("CollisionShape2D")
+collision_shape = NodePath("AreaDeExclusao/AreaDeexclusaoShape")
 max_health = 500
 value = 100
 death_prefab = ExtResource("3_4uke3")
@@ -110,6 +113,8 @@ tint_progress = Color(0.001, 7.574, 7, 1)
 
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("5_vh0gn")]
 torre = NodePath("..")
+rota_1_1_text = "Aumenta a velocidade de carga em 20%"
+rota_1_1_price = 300
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2083213803]
 libraries/ = SubResource("AnimationLibrary_dnlp8")
@@ -118,5 +123,10 @@ autoplay = &"carregar"
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=167371705]
 visible = false
 texture = ExtResource("7_cacy1")
+
+[node name="AreaDeExclusao" type="Area2D" parent="." unique_id=2130026752]
+
+[node name="AreaDeexclusaoShape" type="CollisionShape2D" parent="AreaDeExclusao" unique_id=2051524261]
+shape = SubResource("CircleShape2D_4uke3")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

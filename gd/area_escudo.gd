@@ -17,16 +17,24 @@ func criar_escudo(wave):
 	#torres = get_overlapping_bodies()
 	#print_debug(torres)
 	#print_debug(inimigos)
-	for torre in torres:
-		if torre.is_in_group("torre"):
-			torre.set_shield(shield_value)
+	var teste = get_parent().get_parent().get_children()
+	print_debug(teste)
+	for subject in teste:
+		if subject.is_in_group("torre"):
+			print_debug(global_position.distance_to(subject.global_position))
+			if global_position.distance_to(subject.global_position) < 250:
+				subject.set_shield(shield_value)
+		
+	#for torre in torres:
+		#if torre.is_in_group("torre"):
+			#torre.set_shield(shield_value)
 
 #
-func _on_body_entered(body: Node2D) -> void:
-	print_debug(body)
-	torres.append(body)
-
-
-func _on_body_exited(body: Node2D) -> void:
-	print_debug(body)
-	torres.erase(body)
+#func _on_body_entered(body: Node2D) -> void:
+	#print_debug(body)
+	#torres.append(body)
+#
+#
+#func _on_body_exited(body: Node2D) -> void:
+	#print_debug(body)
+	#torres.erase(body)
