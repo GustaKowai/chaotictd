@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://f7bbx5pbm5t8"]
 
-[ext_resource type="Texture2D" uid="uid://caqy0mde87qnk" path="res://sprites/peca_temp.jpg" id="1_wdwfm"]
 [ext_resource type="Script" uid="uid://bj33bhsg33454" path="res://gd/piece.gd" id="1_wyrut"]
+[ext_resource type="Texture2D" uid="uid://dtxcpnlhdd4dl" path="res://sprites/Pecas1.png" id="2_cyi53"]
+[ext_resource type="Texture2D" uid="uid://cwlm26i0la4lr" path="res://sprites/Pecas2.png" id="3_x5q1f"]
+[ext_resource type="Texture2D" uid="uid://cx0fxp5aou383" path="res://sprites/Pecas3.png" id="4_dd12n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wyrut"]
 radius = 67.06713
@@ -12,14 +14,13 @@ z_index = 2
 collision_layer = 16
 collision_mask = 0
 script = ExtResource("1_wyrut")
+sprites = Array[Texture2D]([ExtResource("2_cyi53"), ExtResource("3_x5q1f"), ExtResource("4_dd12n")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=105374640]
 position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_wyrut")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=738292096]
-position = Vector2(0.9999695, -0.9999695)
-scale = Vector2(0.044921875, 0.04993679)
-texture = ExtResource("1_wdwfm")
+scale = Vector2(0.1, 0.1)
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

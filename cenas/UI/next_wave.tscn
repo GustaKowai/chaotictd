@@ -1,13 +1,33 @@
 [gd_scene format=3 uid="uid://de4snsa6vh3g8"]
 
+[ext_resource type="Texture2D" uid="uid://dwb2y7ynyy61y" path="res://sprites/Botão next wave aceso.png" id="1_ams8a"]
 [ext_resource type="Script" uid="uid://drlrt3gt788xc" path="res://gd/next_wave.gd" id="1_lxoxy"]
+[ext_resource type="Texture2D" uid="uid://drbj3qysn1n86" path="res://sprites/Botão next wave.png" id="2_uu08l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uu08l"]
+texture = ExtResource("1_ams8a")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uu08l"]
+load_path = "res://.godot/imported/Botão next wave aceso.png-74db6bdb756a49f58665daa07b3676fa.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5lf6g"]
+texture = SubResource("CompressedTexture2D_uu08l")
+modulate_color = Color(0.73333335, 0.73333335, 0.73333335, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5gg2v"]
+texture = ExtResource("2_uu08l")
 
 [node name="nextWave" type="Button" unique_id=1671281793]
 offset_left = 1650.0
 offset_top = 21.0
 offset_right = 1695.0
 offset_bottom = 52.0
-text = "Next"
+theme_override_styles/normal = SubResource("StyleBoxTexture_uu08l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uu08l")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5lf6g")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_5gg2v")
+text = "
+"
 script = ExtResource("1_lxoxy")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

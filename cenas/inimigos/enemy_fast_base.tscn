@@ -118,8 +118,9 @@ delay_attack = 1.5
 lost_target_try_first = "follow"
 metadata/_custom_type_script = "uid://da3rkekrhcba0"
 
-[node name="Idle" type="Node" parent="StateMachine" unique_id=1803447841]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1803447841 node_paths=PackedStringArray("enemy")]
 script = ExtResource("8_to4gm")
+enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://cqvygmqemyqcq"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1333043451]

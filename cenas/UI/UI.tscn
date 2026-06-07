@@ -63,17 +63,24 @@ size_flags_horizontal = 2
 text = "0"
 label_settings = SubResource("LabelSettings_yk6h3")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2095912548]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=96470351]
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -268.0
 grow_horizontal = 0
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
 
 [node name="nextWave" parent="HBoxContainer" unique_id=1671281793 instance=ExtResource("2_5auu7")]
+custom_minimum_size = Vector2(64, 56)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 0
+text = ""
 
 [node name="Control" parent="HBoxContainer" unique_id=13132552 instance=ExtResource("2_ekiuc")]
 layout_mode = 2
+size_flags_vertical = 2

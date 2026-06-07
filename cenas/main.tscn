@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dhxtpf1oy4cby" path="res://cenas/UI/game_over_ui.tscn" id="11_vhipe"]
 [ext_resource type="PackedScene" uid="uid://dj2eo5j6lmgkx" path="res://cenas/torres/bumerangue_tower.tscn" id="12_g6klm"]
 [ext_resource type="PackedScene" uid="uid://blll4f2yqp03e" path="res://cenas/UI/UI.tscn" id="12_iwfo7"]
+[ext_resource type="PackedScene" uid="uid://utweuuar87qt" path="res://cenas/inimigos/armadeira_enemy.tscn" id="12_klgsu"]
 [ext_resource type="PackedScene" uid="uid://bjc66ers4cmw8" path="res://cenas/enemy_spawner.tscn" id="15_gl1un"]
 
 [node name="Main" type="Node2D" unique_id=1501420038]
@@ -57,3 +58,6 @@ position = Vector2(973, 520)
 
 [node name="Building" parent="." unique_id=1437004689 instance=ExtResource("11_iwfo7")]
 position = Vector2(805, 641)
+
+[node name="Enemy" parent="." unique_id=2128877228 instance=ExtResource("12_klgsu")]
+position = Vector2(-173, 579)

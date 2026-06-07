@@ -81,6 +81,7 @@ dano = 5
 delay_attack = 3.0
 metadata/_custom_type_script = "uid://da3rkekrhcba0"
 
-[node name="Idle" type="Node" parent="StateMachine" unique_id=702095824]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=702095824 node_paths=PackedStringArray("enemy")]
 script = ExtResource("8_v4xsw")
+enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://cqvygmqemyqcq"
