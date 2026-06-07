@@ -135,6 +135,7 @@ rota_3_2_price = 99999
 rota_3_3_price = 99999
 
 [node name="AreaDeExclusao" type="Area2D" parent="." unique_id=191637833]
+visible = false
 
 [node name="AreaDeexclusaoShape" type="CollisionShape2D" parent="AreaDeExclusao" unique_id=1577349732]
 shape = SubResource("CircleShape2D_0cxfh")
