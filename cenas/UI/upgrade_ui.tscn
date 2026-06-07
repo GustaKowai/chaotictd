@@ -8,6 +8,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv5da"]
 
 [sub_resource type="Theme" id="Theme_20nwl"]
+CheckBox/colors/font_color = Color(0, 0, 0, 1)
 CheckBox/icons/checked_disabled = ExtResource("2_gi5ev")
 CheckBox/icons/unchecked = ExtResource("3_xukmb")
 CheckBox/icons/unchecked_disabled = ExtResource("4_gi5ev")

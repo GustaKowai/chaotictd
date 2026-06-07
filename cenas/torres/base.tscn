@@ -61,7 +61,13 @@ rota_1_2_text = "Noo início de cada rodada, cura 2% da vida máxima"
 rota_2_1_text = "Aumenta o ganho de dinheiro no início de cada rodada de 20 x nivel da onda para 50 x nivel da onda"
 rota_1_1_price = 500
 rota_1_2_price = 600
+rota_1_3_price = 99999
 rota_2_1_price = 1000
+rota_2_2_price = 99999
+rota_2_3_price = 99999
+rota_3_1_price = 99999
+rota_3_2_price = 99999
+rota_3_3_price = 99999
 
 [node name="AreaDeExclusao" type="Area2D" parent="." unique_id=357707933]
 

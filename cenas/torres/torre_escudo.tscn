@@ -49,7 +49,7 @@ script = ExtResource("1_wah4h")
 sprite2d = NodePath("Sprite2D")
 collision_shape = NodePath("AreaEscudo/AreaDeExclusao/AreaDeexclusaoShape")
 max_health = 1000
-value = 20
+value = 120
 death_prefab = ExtResource("2_ioks7")
 metadata/_custom_type_script = "uid://cb8m2etlq51wa"
 
@@ -91,6 +91,15 @@ shape = SubResource("CircleShape2D_y1xac")
 
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("6_oitro")]
 torre = NodePath("..")
+rota_1_1_price = 99999
+rota_1_2_price = 99999
+rota_1_3_price = 99999
+rota_2_1_price = 99999
+rota_2_2_price = 99999
+rota_2_3_price = 99999
+rota_3_1_price = 99999
+rota_3_2_price = 99999
+rota_3_3_price = 99999
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1441225428]
 position = Vector2(2, -2)

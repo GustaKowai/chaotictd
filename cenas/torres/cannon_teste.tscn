@@ -126,8 +126,13 @@ rota_3_2_text = "h"
 rota_3_3_text = "i"
 rota_1_1_price = 10
 rota_1_2_price = 30
+rota_1_3_price = 99999
 rota_2_1_price = 20
+rota_2_2_price = 99999
+rota_2_3_price = 99999
 rota_3_1_price = 20
+rota_3_2_price = 99999
+rota_3_3_price = 99999
 
 [node name="AreaDeExclusao" type="Area2D" parent="." unique_id=191637833]
 
