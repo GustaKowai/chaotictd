@@ -4,7 +4,7 @@ var piece_count:int
 signal piece_collected()
 signal game_over()
 signal restart_game()
-var pieces_started:int = 15
+var pieces_started:int = 150
 var posicionando:bool
 var is_game_over:bool = false
 var posicao_base:Vector2

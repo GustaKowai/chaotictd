@@ -31,7 +31,7 @@ func chase():
 	for alvo in alvos:
 		if alvo.is_in_group("torre"):
 			enemy.alvo = alvo
-			print_debug(enemy.alvo)
+			#print_debug(enemy.alvo)
 			move_speed = speed_hunting
 			if enemy.sprite.has_method("play"):
 				enemy.sprite.play("hunt")

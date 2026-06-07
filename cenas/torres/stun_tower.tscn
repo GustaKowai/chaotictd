@@ -19,7 +19,8 @@ delay_shoot = 1.0
 bullet = ExtResource("2_oblbw")
 sprite2d = NodePath("Sprite2D")
 collision_shape = NodePath("CollisionShape2D")
-value = 4
+max_health = 1000
+value = 40
 death_prefab = ExtResource("3_jt7f8")
 metadata/_custom_type_script = "uid://l0e0qls7mxqf"
 

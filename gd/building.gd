@@ -119,3 +119,7 @@ func vender():
 	die()
 #endregion
 		
+
+
+func _on_area_escudo_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

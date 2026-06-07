@@ -19,7 +19,7 @@ input_pickable = true
 script = ExtResource("1_m2pul")
 sprite2d = NodePath("Sprite2D")
 collision_shape = NodePath("CollisionShape2D")
-max_health = 1000
+max_health = 10000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1133035403]
 position = Vector2(1, 0.5)
@@ -29,19 +29,19 @@ shape = SubResource("CircleShape2D_ykcco")
 texture = ExtResource("2_gy3w1")
 
 [node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1622694890]
-offset_left = -65.0
-offset_top = -150.0
-offset_right = 74.0
-offset_bottom = -123.0
+offset_left = -69.0
+offset_top = -157.0
+offset_right = 70.0
+offset_bottom = -130.0
 nine_patch_stretch = true
 texture_under = ExtResource("2_l6ens")
 texture_progress = ExtResource("3_ubf62")
 
 [node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=701700590]
-offset_left = -65.0
-offset_top = -150.0
-offset_right = 74.0
-offset_bottom = -123.0
+offset_left = -69.0
+offset_top = -157.0
+offset_right = 70.0
+offset_bottom = -130.0
 nine_patch_stretch = true
 texture_progress = ExtResource("3_ubf62")
 tint_progress = Color(0.0005019968, 7.573818, 7.0002875, 1)

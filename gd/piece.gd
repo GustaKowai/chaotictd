@@ -1,5 +1,8 @@
 extends Area2D
 @export var sprites:Array[Texture2D]
+
+@export var piece_value:int = 5
+
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 # Called when the node enters the scene tree for the first time.
@@ -14,6 +17,6 @@ func _process(delta: float) -> void:
 
 
 func _on_mouse_entered() -> void:
-	GameManager.piece_count += 1
+	GameManager.piece_count += piece_value
 	GameManager.piece_collected.emit()
 	queue_free()

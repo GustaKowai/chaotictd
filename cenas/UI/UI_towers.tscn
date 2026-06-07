@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://tgjpj17povjb" path="res://cenas/UI/button_torre.tscn" id="1_42ip5"]
 [ext_resource type="Script" uid="uid://bm0of4ysplgkn" path="res://gd/ui_towers.gd" id="1_nrlti"]
-[ext_resource type="Texture2D" uid="uid://b4oralshl5tql" path="res://sprites/UI_towers.png" id="1_pby11"]
+[ext_resource type="Texture2D" uid="uid://cf3d0bgklckpf" path="res://sprites/Loja de planetas.png" id="2_c0h12"]
 [ext_resource type="PackedScene" uid="uid://c7myvvb3gsh5t" path="res://cenas/torres/cannon_teste.tscn" id="2_kl3l3"]
 [ext_resource type="Texture2D" uid="uid://geqcwcmi00ge" path="res://sprites/Botão novos planetas.png" id="3_c0h12"]
 [ext_resource type="PackedScene" uid="uid://dj2eo5j6lmgkx" path="res://cenas/torres/bumerangue_tower.tscn" id="3_pby11"]
@@ -19,14 +19,27 @@ Button/styles/normal = SubResource("StyleBoxEmpty_nrlti")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pby11"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pby11"]
-texture = ExtResource("1_pby11")
+texture = ExtResource("2_c0h12")
+expand_margin_left = 40.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dhe58"]
 texture = ExtResource("3_c0h12")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c0h12"]
+bg_color = Color(0.1254902, 0.015686275, 0.34901962, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhe58"]
+bg_color = Color(0.043137256, 0.007843138, 0.14901961, 1)
+
 [sub_resource type="Theme" id="Theme_52s8d"]
 FoldableContainer/styles/panel = SubResource("StyleBoxTexture_pby11")
 FoldableContainer/styles/title_collapsed_panel = SubResource("StyleBoxTexture_dhe58")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_c0h12")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_dhe58")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c0h12"]
 load_path = "res://.godot/imported/Botão novos planetas.png-17b1eb3ee9b5a63a7c04adc023325ad3.ctex"

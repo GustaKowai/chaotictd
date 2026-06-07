@@ -149,9 +149,13 @@ radius = 18.0
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_tk4rn")
+max_health = 100
 death_prefab = ExtResource("2_cje2y")
 color_damage = Color(1, 0, 0, 1)
 pieces = ExtResource("2_2fvk4")
+number_pieces_min = 2
+number_pieces_max = 2
+spread_area_radius = 25.0
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=183298999]
@@ -204,7 +208,7 @@ metadata/_custom_type_script = "uid://cjtli66j3y46e"
 script = ExtResource("5_5w5ak")
 enemy = NodePath("../..")
 area_dano = NodePath("../../Sprite/AttackArea")
-dano = 5
+dano = 50
 delay_attack = 1.0
 metadata/_custom_type_script = "uid://da3rkekrhcba0"
 

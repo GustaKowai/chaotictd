@@ -45,7 +45,8 @@ input_pickable = true
 script = ExtResource("1_wah4h")
 sprite2d = NodePath("Sprite2D")
 collision_shape = NodePath("CollisionShape2D")
-value = 15
+max_health = 1000
+value = 20
 death_prefab = ExtResource("2_ioks7")
 metadata/_custom_type_script = "uid://cb8m2etlq51wa"
 
@@ -75,7 +76,7 @@ tint_progress = Color(0.001, 7.574, 7, 1)
 
 [node name="AreaEscudo" type="Area2D" parent="." unique_id=1948713512]
 script = ExtResource("5_qj8f2")
-shield_value = 30
+shield_value = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEscudo" unique_id=807040822]
 shape = SubResource("CircleShape2D_wah4h")
@@ -91,3 +92,5 @@ frame = 2
 frame_progress = 1.0
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="body_entered" from="AreaEscudo" to="AreaEscudo" method="_on_body_entered"]
+[connection signal="body_exited" from="AreaEscudo" to="AreaEscudo" method="_on_body_exited"]

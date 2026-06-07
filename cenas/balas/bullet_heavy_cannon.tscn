@@ -43,7 +43,7 @@ collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_axlfb")
 speed = 700.0
-damage = 50
+damage = 500
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=362243721]
 shape = SubResource("CircleShape2D_qwbpu")

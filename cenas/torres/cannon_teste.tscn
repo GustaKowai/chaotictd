@@ -70,8 +70,8 @@ delay_shoot = 0.3
 bullet = ExtResource("2_slvgt")
 sprite2d = NodePath("Sprite2D")
 collision_shape = NodePath("CollisionShape2D")
-max_health = 50
-value = 3
+max_health = 500
+value = 30
 death_prefab = ExtResource("3_0cxfh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=929075892]
@@ -121,8 +121,9 @@ rota_2_3_text = "f"
 rota_3_1_text = "consegue atingir inimigos camuflados"
 rota_3_2_text = "h"
 rota_3_3_text = "i"
-rota_1_1_price = 1
-rota_1_2_price = 3
-rota_2_1_price = 2
+rota_1_1_price = 10
+rota_1_2_price = 30
+rota_2_1_price = 20
+rota_3_1_price = 20
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
