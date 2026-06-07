@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ur64x8of23wx" path="res://gd/suicida_enemy.gd" id="1_4bk5b"]
 [ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="2_npfyb"]
-[ext_resource type="Texture2D" uid="uid://bl2r8km0qenua" path="res://sprites/Inimigo suicida.png" id="3_ka714"]
+[ext_resource type="Texture2D" uid="uid://def4g2eqnwnr0" path="res://sprites/Suicida movimento.png" id="3_ka714"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_npfyb"]
 [ext_resource type="Script" uid="uid://cjtli66j3y46e" path="res://gd/EnemyHunt.gd" id="4_d1fw4"]
 [ext_resource type="Script" uid="uid://i546gccwghdh" path="res://gd/EnemyExplode.gd" id="6_4bk5b"]
@@ -10,6 +10,35 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ka714"]
 radius = 23.505318
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svj1p"]
+atlas = ExtResource("3_ka714")
+region = Rect2(0, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8etu"]
+atlas = ExtResource("3_ka714")
+region = Rect2(120, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52d0u"]
+atlas = ExtResource("3_ka714")
+region = Rect2(240, 0, 120, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wmyqr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svj1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8etu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52d0u")
+}],
+"loop": true,
+"name": &"follow",
+"speed": 8.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4bk5b"]
 radius = 90.0
@@ -44,8 +73,11 @@ collision_mask = 13
 shape = SubResource("CircleShape2D_ka714")
 debug_color = Color(0, 1, 0, 0.41960785)
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=65343910]
-texture = ExtResource("3_ka714")
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=940082315]
+sprite_frames = SubResource("SpriteFrames_wmyqr")
+animation = &"follow"
+autoplay = "follow"
+frame_progress = 0.3394722
 offset = Vector2(-31, 1)
 
 [node name="AttackArea" type="Area2D" parent="Sprite" unique_id=1365165423]

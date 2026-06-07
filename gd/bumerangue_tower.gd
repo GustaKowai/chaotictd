@@ -1,4 +1,7 @@
 extends Cannon_tower
 
-func _on_rota_1_1_pressed() -> void:
-	pass # Replace with function body.
+func upgrade_1_1() -> void:
+	delay_shoot = 0.2
+
+func upgrade_3_1():
+	can_see_cammo = true

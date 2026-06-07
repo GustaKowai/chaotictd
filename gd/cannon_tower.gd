@@ -25,6 +25,6 @@ func shoot():
 	b.damage += bullet_extra_damage
 	if can_see_cammo:
 		b.set_collision_mask_value(6,true)
-	get_tree().root.add_child(b)
+	get_tree().root.get_node("Main").add_child(b)
 	b.transform = mira.global_transform
 	b.scale = Vector2(1.0,1.0)

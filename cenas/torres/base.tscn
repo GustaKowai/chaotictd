@@ -53,5 +53,11 @@ shape = SubResource("CircleShape2D_6eodh")
 
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("4_ubf62")]
 torre = NodePath("..")
+rota_1_1_text = "Aumenta a vida máxima em 10%"
+rota_1_2_text = "Noo início de cada rodada, cura 2% da vida máxima"
+rota_2_1_text = "Aumenta o ganho de dinheiro no início de cada rodada de 20 x nivel da onda para 50 x nivel da onda"
+rota_1_1_price = 5
+rota_1_2_price = 6
+rota_2_1_price = 1000
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

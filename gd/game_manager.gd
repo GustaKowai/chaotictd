@@ -36,4 +36,3 @@ func restart():
 	var b = base.instantiate()
 	b.global_position = posicao_base #Vector2(973,520)
 	get_tree().root.add_child(b)
-	

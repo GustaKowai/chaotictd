@@ -58,7 +58,7 @@ func blink_damage():
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN)
 	tween.set_trans(Tween.TRANS_QUINT)
-	tween.tween_property(self,"modulate",Color.WHITE,0.3)
+	tween.tween_property(self,"modulate",Color.WHITE,0.1)
 
 func heal_damage(heal:int):
 	if current_health+heal < max_health:

@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://iublgt6shdge"]
 
 [ext_resource type="Script" uid="uid://l0e0qls7mxqf" path="res://gd/cannon_tower.gd" id="1_30417"]
-[ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="2_h0v8u"]
 [ext_resource type="PackedScene" uid="uid://56s0ps1ruwju" path="res://cenas/balas/slow_bullet.tscn" id="2_oblbw"]
 [ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="3_jt7f8"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_oblbw"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="4_ho7ho"]
+[ext_resource type="Texture2D" uid="uid://ceh3a5ckij6pa" path="res://sprites/planeta gelo.png" id="4_jt7f8"]
 [ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="5_garpn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sqqsk"]
-radius = 59.07622
+radius = 75.0
 
 [node name="stun_tower" type="StaticBody2D" unique_id=573625044 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 collision_mask = 3
@@ -25,10 +25,10 @@ death_prefab = ExtResource("3_jt7f8")
 metadata/_custom_type_script = "uid://l0e0qls7mxqf"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1784118091]
-self_modulate = Color(1, 0.6862745, 0, 1)
-texture = ExtResource("2_h0v8u")
+texture = ExtResource("4_jt7f8")
 
 [node name="cannon" type="Sprite2D" parent="Sprite2D" unique_id=59488102]
+position = Vector2(77, 0)
 
 [node name="Mira" type="Marker2D" parent="Sprite2D/cannon" unique_id=744472269]
 unique_name_in_owner = true
@@ -39,17 +39,17 @@ shape = SubResource("CircleShape2D_sqqsk")
 
 [node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=122435067]
 offset_left = -65.0
-offset_top = 59.0
+offset_top = 77.0
 offset_right = 63.0
-offset_bottom = 86.0
+offset_bottom = 104.0
 texture_under = ExtResource("3_oblbw")
 texture_progress = ExtResource("4_ho7ho")
 
 [node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=1098075280]
 offset_left = -65.0
-offset_top = 59.0
+offset_top = 77.0
 offset_right = 63.0
-offset_bottom = 86.0
+offset_bottom = 104.0
 texture_progress = ExtResource("4_ho7ho")
 tint_progress = Color(0.001, 7.574, 7, 1)
 

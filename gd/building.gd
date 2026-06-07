@@ -32,11 +32,21 @@ func take_damage(damage:int):
 	if shield > 0:
 		damage_to_shield(damage)
 		return
+	blink_damage(Color.RED)
 	current_health -= damage
 	if current_health <= 0:
 		die()
 
+func blink_damage(color:Color):
+	modulate = color
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_IN)
+	tween.set_trans(Tween.TRANS_QUINT)
+	tween.tween_property(self,"modulate",Color.WHITE,0.2)
+
 func heal_damage(heal:int):
+	#print_debug(max_health," ",heal," ",current_health)
+	blink_damage(Color.GREEN)
 	if current_health+heal < max_health:
 		current_health += heal
 	else:
@@ -50,6 +60,7 @@ func die():
 	queue_free()
 	
 func damage_to_shield(amount:int):
+	blink_damage(Color.AQUA)
 	if amount < shield:
 		shield -= amount
 		#modulate = Color.CYAN
