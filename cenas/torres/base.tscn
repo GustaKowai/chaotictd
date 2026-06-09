@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="2_l6ens"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="3_ubf62"]
 [ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="4_ubf62"]
+[ext_resource type="Texture2D" uid="uid://bumbll3pe8bfj" path="res://sprites/upgrade_active2.png" id="6_ykcco"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ykcco"]
 radius = 119.00105
@@ -14,6 +15,17 @@ radius = 120.001045
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gy3w1"]
 radius = 192.00261
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6eodh"]
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 117.28
+angle_min = -416.5
+angle_max = 387.2
+spread = 87.353
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 38.069996
+radial_accel_max = 70.09
 
 [node name="Base" type="StaticBody2D" unique_id=1670237934 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 collision_layer = 9
@@ -73,5 +85,13 @@ rota_3_3_price = 99999
 
 [node name="AreaDeexclusaoShape" type="CollisionShape2D" parent="AreaDeExclusao" unique_id=565851291]
 shape = SubResource("CircleShape2D_gy3w1")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1658482102]
+emitting = false
+amount = 20
+texture = ExtResource("6_ykcco")
+one_shot = true
+speed_scale = 1.65
+process_material = SubResource("ParticleProcessMaterial_6eodh")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

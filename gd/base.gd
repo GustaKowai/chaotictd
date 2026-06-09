@@ -2,6 +2,7 @@ extends Building
 class_name Base
 @export var dinheiro_por_rodada:int = 20
 @export var turn_heal:float = 0.02
+@onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
 
 func _ready() -> void:
 	super()
@@ -33,3 +34,4 @@ func upgrade_2_1():
 
 func heal_at_start(_wave):
 	heal_damage(max_health*turn_heal)
+	gpu_particles_2d.emitting = true

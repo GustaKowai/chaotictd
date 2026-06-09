@@ -20,6 +20,6 @@ func _process(delta: float) -> void:
 	##print_debug(body)
 	#if body.is_in_group("Enemy"):
 		#body.take_damage(damage)
-		
-func hit():
-	pass
+		#
+#func hit():
+	#pass
