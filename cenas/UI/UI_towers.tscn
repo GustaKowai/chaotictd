@@ -91,24 +91,30 @@ alignment = 1
 
 [node name="Button" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=1961303369 instance=ExtResource("1_42ip5")]
 layout_mode = 2
+hotkey = "1"
 torre = ExtResource("2_kl3l3")
 
 [node name="Button2" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=1687635896 instance=ExtResource("1_42ip5")]
 layout_mode = 2
+hotkey = "2"
 torre = ExtResource("3_pby11")
 
 [node name="Button3" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=1277169580 instance=ExtResource("1_42ip5")]
 layout_mode = 2
+hotkey = "3"
 torre = ExtResource("4_nrlti")
 
 [node name="Button4" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=240226560 instance=ExtResource("1_42ip5")]
 layout_mode = 2
+hotkey = "4"
 torre = ExtResource("5_52s8d")
 
 [node name="Button5" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=51560110 instance=ExtResource("1_42ip5")]
 layout_mode = 2
+hotkey = "5"
 torre = ExtResource("6_kl3l3")
 
 [node name="Button6" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=512007538 instance=ExtResource("1_42ip5")]
 layout_mode = 2
+hotkey = "6"
 torre = ExtResource("9_52s8d")
