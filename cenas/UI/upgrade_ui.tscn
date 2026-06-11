@@ -24,123 +24,154 @@ bg_color = Color(0.49135482, 0.0640175, 0.067186385, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wl874"]
 bg_color = Color(0.8403283, 2.887845e-06, 1.4439225e-06, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_kv5da"]
+
 [node name="Upgrade_UI" type="PopupPanel" unique_id=594738499]
 oversampling_override = 1.0
 initial_position = 1
-size = Vector2i(308, 251)
+size = Vector2i(304, 243)
 visible = true
 theme_override_styles/panel = SubResource("StyleBoxFlat_kv5da")
 script = ExtResource("1_6c760")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2063916154]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=83065445]
+offset_right = 304.0
+offset_bottom = 243.0
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=2063916154]
 custom_minimum_size = Vector2(300, 100)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -154.0
-offset_top = -125.5
-offset_right = 154.0
-offset_bottom = 125.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 size_flags_horizontal = 0
 theme = SubResource("Theme_20nwl")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_gi5ev")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1380811641]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer" unique_id=1380811641]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer" unique_id=1191990760]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=1191990760]
+unique_name_in_owner = true
 layout_mode = 2
 stretch_mode = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=2132879750]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=2132879750]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1602076593]
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1602076593]
 layout_mode = 2
 text = "rota 1"
 
-[node name="rota1_1" type="CheckBox" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=461505187]
+[node name="rota1_1" type="CheckBox" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=461505187]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(15, 15)
 layout_mode = 2
 text = "0"
 
-[node name="rota1_2" type="CheckBox" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=229798728]
+[node name="rota1_2" type="CheckBox" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=229798728]
 unique_name_in_owner = true
 layout_mode = 2
 disabled = true
 text = "0"
 
-[node name="rota1_3" type="CheckBox" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1904290961]
+[node name="rota1_3" type="CheckBox" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1904290961]
 unique_name_in_owner = true
 layout_mode = 2
 disabled = true
 text = "0"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=996503535]
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=996503535]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1382780040]
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1382780040]
 layout_mode = 2
 text = "rota 2"
 
-[node name="rota2_1" type="CheckBox" parent="PanelContainer/VBoxContainer/HBoxContainer2" unique_id=134640015]
+[node name="rota2_1" type="CheckBox" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=134640015]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 
-[node name="rota2_2" type="CheckBox" parent="PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1150804918]
-unique_name_in_owner = true
-layout_mode = 2
-disabled = true
-text = "0"
-
-[node name="rota2_3" type="CheckBox" parent="PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1927529010]
+[node name="rota2_2" type="CheckBox" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1150804918]
 unique_name_in_owner = true
 layout_mode = 2
 disabled = true
 text = "0"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1379202501]
+[node name="rota2_3" type="CheckBox" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1927529010]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "0"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=1379202501]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer3" unique_id=465425070]
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=465425070]
 layout_mode = 2
 text = "rota 3"
 
-[node name="rota3_1" type="CheckBox" parent="PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1522060309]
+[node name="rota3_1" type="CheckBox" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1522060309]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 
-[node name="rota3_2" type="CheckBox" parent="PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1597241942]
+[node name="rota3_2" type="CheckBox" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1597241942]
 unique_name_in_owner = true
 layout_mode = 2
 disabled = true
 text = "0"
 
-[node name="rota3_3" type="CheckBox" parent="PanelContainer/VBoxContainer/HBoxContainer3" unique_id=255082369]
+[node name="rota3_3" type="CheckBox" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=255082369]
 unique_name_in_owner = true
 layout_mode = 2
 disabled = true
 
-[node name="vender" type="Button" parent="PanelContainer/VBoxContainer" unique_id=443435920]
+[node name="vender" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=443435920]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_vgcp1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jos7y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wl874")
 text = "Vender"
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/rota1_1" to="." method="_on_rota_1_1_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/rota1_2" to="." method="_on_rota_1_2_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/rota1_3" to="." method="_on_rota_1_3_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/rota2_1" to="." method="_on_rota_2_1_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/rota2_2" to="." method="_on_rota_2_2_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/rota2_3" to="." method="_on_rota_2_3_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer3/rota3_1" to="." method="_on_rota_3_1_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer3/rota3_2" to="." method="_on_rota_3_2_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer3/rota3_3" to="." method="_on_rota_3_3_pressed"]
+[node name="info_container" type="PanelContainer" parent="HBoxContainer" unique_id=1897410639]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+theme = SubResource("Theme_20nwl")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gi5ev")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/info_container" unique_id=1669796793]
+layout_mode = 2
+
+[node name="upgrade_texture" type="TextureRect" parent="HBoxContainer/info_container/VBoxContainer" unique_id=818363892]
+unique_name_in_owner = true
+layout_mode = 2
+stretch_mode = 5
+
+[node name="upgrade_text" type="Label" parent="HBoxContainer/info_container/VBoxContainer" unique_id=1566559607]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_kv5da")
+autowrap_mode = 3
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="mouse_entered" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_1" to="." method="_on_rota_1_1_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_1" to="." method="_on_rota_1_1_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_2" to="." method="_on_rota_1_2_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_2" to="." method="_on_rota_1_2_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_3" to="." method="_on_rota_1_3_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_3" to="." method="_on_rota_1_3_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_1" to="." method="_on_rota_2_1_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_1" to="." method="_on_rota_2_1_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_2" to="." method="_on_rota_2_2_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_2" to="." method="_on_rota_2_2_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_3" to="." method="_on_rota_2_3_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_3" to="." method="_on_rota_2_3_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_1" to="." method="_on_rota_3_1_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_1" to="." method="_on_rota_3_1_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_2" to="." method="_on_rota_3_2_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_2" to="." method="_on_rota_3_2_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3" to="." method="_on_rota_3_3_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3" to="." method="_on_rota_3_3_pressed"]

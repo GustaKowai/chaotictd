@@ -34,4 +34,4 @@ visible = false
 position = Vector2(973, 520)
 
 [node name="ArraiaEnemy" parent="." unique_id=1532225188 instance=ExtResource("6_bhvw8")]
-position = Vector2(198, 884)
+position = Vector2(681, 650)
