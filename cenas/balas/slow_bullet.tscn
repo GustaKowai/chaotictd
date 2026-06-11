@@ -10,7 +10,6 @@ radius = 9.0
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_py63h")
-slow_value = 0.5
 speed = 400.0
 metadata/_custom_type_script = "uid://dfphxkt0fqq73"
 
