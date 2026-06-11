@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cvmxlps3fc4v1"]
 
-[ext_resource type="Script" uid="uid://cb8m2etlq51wa" path="res://gd/building.gd" id="1_qlp5y"]
+[ext_resource type="Script" uid="uid://c74ffxasj0ptc" path="res://gd/planeta_dano_area.gd" id="1_a6kdn"]
 [ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="2_aad67"]
 [ext_resource type="Texture2D" uid="uid://cyke5gux0316n" path="res://sprites/torre-area.png" id="3_a6kdn"]
 [ext_resource type="Script" uid="uid://ddlwi8gohf47d" path="res://gd/area_dano.gd" id="3_rcaev"]
@@ -63,7 +63,7 @@ radius = 74.02702
 
 [node name="planeta_dano_area" type="StaticBody2D" unique_id=40702169 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 input_pickable = true
-script = ExtResource("1_qlp5y")
+script = ExtResource("1_a6kdn")
 sprite2d = NodePath("Sprite2D")
 collision_shape = NodePath("area_dano/AreaDeExclusao/AreaDeexclusaoShape")
 max_health = 500
@@ -111,6 +111,8 @@ autostart = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="area_dano" unique_id=1690157820]
 sprite_frames = SubResource("SpriteFrames_d5so0")
 animation = &"attack"
+frame = 8
+frame_progress = 1.0
 
 [node name="AreaDeExclusao" type="Area2D" parent="area_dano" unique_id=828761745]
 
@@ -119,13 +121,18 @@ shape = SubResource("CircleShape2D_a6kdn")
 
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("6_koxe4")]
 torre = NodePath("..")
-rota_1_1_price = 99999
+rota_1_1_text = "Aumenta o dano"
+rota_2_1_text = "Aumenta o alcance da torre"
+rota_2_2_text = "Permite que a torre atinja os inimigos"
+rota_2_3_text = "Retira camuflagem de inimigos atingidos"
+rota_3_1_text = "Aumenta a frequencia dos ataques"
+rota_1_1_price = 200
 rota_1_2_price = 99999
 rota_1_3_price = 99999
-rota_2_1_price = 99999
-rota_2_2_price = 99999
-rota_2_3_price = 99999
-rota_3_1_price = 99999
+rota_2_1_price = 200
+rota_2_2_price = 300
+rota_2_3_price = 2000
+rota_3_1_price = 100
 rota_3_2_price = 99999
 rota_3_3_price = 99999
 

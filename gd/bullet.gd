@@ -5,7 +5,7 @@ class_name Bullet
 @export var damage:int
 @export var perfuracao:int = 0 #quantidade de inimigos além do primeiro que a bala pode acertar antes de desaparecer. Número negatico de perfuração indica que ela é infinita.
 var inimigos_atingidos:int = 0
-# Called when the node enters the scene tree for the first time.
+var retira_cammo:bool = false
 func _ready() -> void:
 	pass # Replace with function body.
 
@@ -22,6 +22,9 @@ func _on_area_entered(body):
 	if body.is_in_group("Enemy"):
 		var target = body.get_parent()
 		target.take_damage(damage)
+		if retira_cammo:
+			body.set_collision_layer_value(2,true)
+			target.sprite.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 		hit()
 		
 func hit():

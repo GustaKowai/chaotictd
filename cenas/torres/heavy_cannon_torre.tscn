@@ -114,10 +114,11 @@ tint_progress = Color(0.001, 7.574, 7, 1)
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("5_vh0gn")]
 torre = NodePath("..")
 rota_1_1_text = "Aumenta a velocidade de carga em 20%"
+rota_2_1_text = "O tiro de energia se dissipa apenas após acertar pelo menos dois inimigos"
 rota_1_1_price = 300
 rota_1_2_price = 99999
 rota_1_3_price = 99999
-rota_2_1_price = 99999
+rota_2_1_price = 200
 rota_2_2_price = 99999
 rota_2_3_price = 99999
 rota_3_1_price = 99999
