@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://wig3gvmd4il6"]
 
 [ext_resource type="PackedScene" uid="uid://t4n6p64qxp5d" path="res://cenas/torres/base.tscn" id="3_4fhxt"]
-[ext_resource type="PackedScene" uid="uid://b3uxdxfuskpns" path="res://cenas/inimigos/arraia_enemy_camuflada.tscn" id="6_bhvw8"]
 [ext_resource type="Texture2D" uid="uid://b2mdngu4sswkk" path="res://sprites/Fundo_Space_Shooter_TD.png" id="9_jdavq"]
 [ext_resource type="PackedScene" uid="uid://dhxtpf1oy4cby" path="res://cenas/UI/game_over_ui.tscn" id="11_vhipe"]
 [ext_resource type="PackedScene" uid="uid://blll4f2yqp03e" path="res://cenas/UI/UI.tscn" id="12_iwfo7"]
@@ -32,6 +31,3 @@ visible = false
 
 [node name="BasePosition" type="Marker2D" parent="." unique_id=789107849 groups=["base_position"]]
 position = Vector2(973, 520)
-
-[node name="ArraiaEnemy" parent="." unique_id=1532225188 instance=ExtResource("6_bhvw8")]
-position = Vector2(681, 650)
