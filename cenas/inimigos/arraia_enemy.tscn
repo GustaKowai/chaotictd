@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_6qwg1"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="5_ct7dm"]
 [ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="8_2ychb"]
+[ext_resource type="PackedScene" uid="uid://cltyrduyes4vp" path="res://cenas/alert.tscn" id="8_6cei5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtwt8"]
 size = Vector2(25.749947, 132.50003)
@@ -116,6 +117,7 @@ enemy = NodePath("../..")
 area_dano = NodePath("../../Sprite/AreaAtaque")
 dano = 100
 delay_attack = 0.5
+alert = ExtResource("8_6cei5")
 metadata/_custom_type_script = "uid://da3rkekrhcba0"
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=132599695 node_paths=PackedStringArray("enemy")]

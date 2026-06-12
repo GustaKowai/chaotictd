@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ckxl0eknlhj70" path="res://sprites/InimigoAranha3-Sheet-sheet.png" id="4_g42ph"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="5_5w5ak"]
 [ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="6_3ne27"]
+[ext_resource type="PackedScene" uid="uid://cltyrduyes4vp" path="res://cenas/alert.tscn" id="9_rkudn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_abb4h"]
 radius = 198.0
@@ -210,6 +211,7 @@ enemy = NodePath("../..")
 area_dano = NodePath("../../Sprite/AttackArea")
 dano = 50
 delay_attack = 1.0
+alert = ExtResource("9_rkudn")
 metadata/_custom_type_script = "uid://da3rkekrhcba0"
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=366427699 node_paths=PackedStringArray("enemy")]
