@@ -1,5 +1,6 @@
 extends Area2D
 class_name Bullet
+@export var impact:PackedScene
 
 @export var speed:float
 @export var damage:int
@@ -28,6 +29,10 @@ func _on_area_entered(body):
 		hit()
 		
 func hit():
+	if impact:
+		var i = impact.instantiate()
+		i.transform = transform
+		get_tree().root.get_node("Main").add_child(i)
 	if perfuracao <0:
 		return
 	if inimigos_atingidos >= perfuracao:

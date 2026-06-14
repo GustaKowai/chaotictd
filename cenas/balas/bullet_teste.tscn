@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bkyyvpf4gndau"]
 
 [ext_resource type="Script" uid="uid://cxcw8ygpqinfj" path="res://gd/bullet_teste.gd" id="1_xx1y1"]
+[ext_resource type="PackedScene" uid="uid://3g5wbdv1ufug" path="res://cenas/impact.tscn" id="2_ow0nb"]
 [ext_resource type="Texture2D" uid="uid://cd5gh8d6bbhkw" path="res://sprites/projetil.png" id="2_u4xik"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qwbpu"]
@@ -10,6 +11,7 @@ radius = 12.0
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_xx1y1")
+impact = ExtResource("2_ow0nb")
 speed = 400.0
 damage = 20
 
