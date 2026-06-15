@@ -1,4 +1,5 @@
 extends Bullet
+class_name bullet_bumerangue
 @export var bullet_duracao = 0.48
 var bullet_tempodevida = 0
 
