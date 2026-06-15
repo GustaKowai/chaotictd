@@ -131,9 +131,8 @@ torre = NodePath("..")
 rota_1_1_text = "aumenta a velocidade de ataque"
 rota_1_2_text = "aumenta mais ainda a velocidade"
 rota_2_1_text = "aumenta o dano da pedra"
-rota_2_2_text = "aumenta mais ainda o dano"
+rota_2_2_text = "Permite o tiro atingir dois inimigos extras"
 rota_3_1_text = "consegue atingir inimigos camuflados"
-rota_3_2_text = "aumenta a perfuração do ataque em 2"
 rota_1_1_price = 30
 rota_1_2_price = 60
 rota_1_3_price = 99999
@@ -141,7 +140,7 @@ rota_2_1_price = 30
 rota_2_2_price = 90
 rota_2_3_price = 99999
 rota_3_1_price = 60
-rota_3_2_price = 100
+rota_3_2_price = 99999
 rota_3_3_price = 99999
 
 [node name="AreaDeExclusao" type="Area2D" parent="." unique_id=191637833]

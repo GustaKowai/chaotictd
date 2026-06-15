@@ -73,16 +73,19 @@ position = Vector2(5, 0)
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("6_0xaye")]
 torre = NodePath("..")
 rota_1_1_text = "Aumenta um pouco a velocidade de ataque"
+rota_1_2_text = "Aumenta o dano"
 rota_2_1_text = "Permite que o bumerangue atinja até 5 alvos antes de desaparecer"
+rota_2_2_text = "O bumerangue não desaparece ao atingir alvos"
 rota_3_1_text = "Permite que os bumerangues atinjam inimigos camuflados"
+rota_3_2_text = "Aumenta o alcance do bumerangue e a velocidade dos projéteis"
 rota_1_1_price = 100
-rota_1_2_price = 99999
+rota_1_2_price = 150
 rota_1_3_price = 99999
 rota_2_1_price = 130
-rota_2_2_price = 99999
+rota_2_2_price = 300
 rota_2_3_price = 99999
 rota_3_1_price = 50
-rota_3_2_price = 99999
+rota_3_2_price = 300
 rota_3_3_price = 99999
 
 [node name="AreaDeExclusao" type="Area2D" parent="." unique_id=1043563095]
