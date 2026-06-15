@@ -59,6 +59,7 @@ radial_center_offset = Vector2(0, -80)
 texture_progress = ExtResource("6_f2un3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=705764391]
+texture_filter = 3
 texture = ExtResource("3_4ljs1")
 offset = Vector2(2.9999962, -6.9999924)
 
