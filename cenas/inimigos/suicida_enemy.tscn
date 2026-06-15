@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ur64x8of23wx" path="res://gd/suicida_enemy.gd" id="1_4bk5b"]
 [ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="2_npfyb"]
+[ext_resource type="PackedScene" uid="uid://dk661vonkumgx" path="res://cenas/explosa_suicida.tscn" id="2_svj1p"]
 [ext_resource type="Texture2D" uid="uid://def4g2eqnwnr0" path="res://sprites/Suicida movimento.png" id="3_ka714"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_npfyb"]
 [ext_resource type="Script" uid="uid://cjtli66j3y46e" path="res://gd/EnemyHunt.gd" id="4_d1fw4"]
@@ -57,6 +58,7 @@ script = ExtResource("1_4bk5b")
 area_dano = NodePath("Sprite/AttackArea")
 dano = 2500
 max_health = 200
+death_prefab = ExtResource("2_svj1p")
 color_damage = Color(0.8942446, 1, 0.8064035, 1)
 pieces = ExtResource("2_npfyb")
 number_pieces_min = 5

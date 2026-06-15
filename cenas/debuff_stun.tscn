@@ -151,7 +151,7 @@ animations = [{
 "speed": 25.0
 }]
 
-[node name="Debuff_stun" type="Node2D" unique_id=662213296]
+[node name="Debuff_stun" type="Node2D" unique_id=662213296 groups=["stun"]]
 script = ExtResource("1_2f2wd")
 metadata/_custom_type_script = "uid://b0vpvrdmx81vo"
 

@@ -11,7 +11,15 @@ func _on_area_entered(body):
 	#print_debug(body)
 	if body.is_in_group("Enemy"):
 		var target:Enemy = body.get_parent()
-		apply_debuff(target)
+		var is_stuned:bool = false
+		var search_stun = target.get_children()
+		for stun in search_stun:
+			print_debug(stun.is_in_group("stun"))
+			if stun.is_in_group("stun"):
+				print_debug("ta stunado")
+				is_stuned = true
+		if not is_stuned:
+			apply_debuff(target)
 	super(body)
 	
 	

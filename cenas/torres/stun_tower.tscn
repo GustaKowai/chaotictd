@@ -4,11 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://56s0ps1ruwju" path="res://cenas/balas/slow_bullet.tscn" id="2_oblbw"]
 [ext_resource type="PackedScene" uid="uid://b1dsfouxm3738" path="res://cenas/balas/bullet_stun.tscn" id="2_vlbyx"]
 [ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="3_jt7f8"]
-[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_oblbw"]
 [ext_resource type="PackedScene" uid="uid://dtpp1c2sr3vyd" path="res://cenas/balas/bullet_bomba.tscn" id="3_yr74h"]
-[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="4_ho7ho"]
 [ext_resource type="Texture2D" uid="uid://ceh3a5ckij6pa" path="res://sprites/planeta gelo.png" id="4_jt7f8"]
 [ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="5_garpn"]
+[ext_resource type="Texture2D" uid="uid://dsa51xcf7rieb" path="res://sprites/barra_curva_empty.png" id="6_yr74h"]
+[ext_resource type="Texture2D" uid="uid://bmlylcnmroyfc" path="res://sprites/barra_curva_full.png" id="7_d2j70"]
+[ext_resource type="Texture2D" uid="uid://c11c7ma0x22u2" path="res://sprites/barra_curva_full_shield.png" id="8_bbpho"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sqqsk"]
 radius = 75.0
@@ -32,6 +33,32 @@ value = 40
 death_prefab = ExtResource("3_jt7f8")
 metadata/_custom_type_script = "uid://l0e0qls7mxqf"
 
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=122435067]
+offset_left = -97.0
+offset_top = -83.0
+offset_right = 67.0
+offset_bottom = 81.0
+scale = Vector2(1.2, 1.2)
+value = 50.0
+fill_mode = 5
+radial_initial_angle = 238.0
+radial_fill_degrees = 115.0
+radial_center_offset = Vector2(0, -80)
+texture_under = ExtResource("6_yr74h")
+texture_progress = ExtResource("7_d2j70")
+
+[node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=1098075280]
+offset_left = -97.0
+offset_top = -83.0
+offset_right = 67.0
+offset_bottom = 81.0
+scale = Vector2(1.2, 1.2)
+fill_mode = 5
+radial_initial_angle = 238.0
+radial_fill_degrees = 115.0
+radial_center_offset = Vector2(0, -80)
+texture_progress = ExtResource("8_bbpho")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1784118091]
 texture = ExtResource("4_jt7f8")
 
@@ -43,23 +70,8 @@ unique_name_in_owner = true
 position = Vector2(-1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=511840853]
+visible = false
 shape = SubResource("CircleShape2D_sqqsk")
-
-[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=122435067]
-offset_left = -65.0
-offset_top = 77.0
-offset_right = 63.0
-offset_bottom = 104.0
-texture_under = ExtResource("3_oblbw")
-texture_progress = ExtResource("4_ho7ho")
-
-[node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=1098075280]
-offset_left = -65.0
-offset_top = 77.0
-offset_right = 63.0
-offset_bottom = 104.0
-texture_progress = ExtResource("4_ho7ho")
-tint_progress = Color(0.001, 7.574, 7, 1)
 
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("5_garpn")]
 visible = false
@@ -82,6 +94,7 @@ rota_3_2_price = 200
 rota_3_3_price = 2000
 
 [node name="AreaDeExclusao" type="Area2D" parent="." unique_id=2045248020]
+visible = false
 
 [node name="AreaDeexclusaoShape" type="CollisionShape2D" parent="AreaDeExclusao" unique_id=1273982263]
 shape = SubResource("CircleShape2D_jt7f8")

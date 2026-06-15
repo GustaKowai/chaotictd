@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://687nbbkelr7d" path="res://gd/base.gd" id="1_m2pul"]
 [ext_resource type="Texture2D" uid="uid://b85q76mheea3w" path="res://sprites/torre principal.png" id="2_gy3w1"]
-[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="2_l6ens"]
-[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="3_ubf62"]
+[ext_resource type="Texture2D" uid="uid://dsa51xcf7rieb" path="res://sprites/barra_curva_empty.png" id="2_ykcco"]
+[ext_resource type="Texture2D" uid="uid://bmlylcnmroyfc" path="res://sprites/barra_curva_full.png" id="3_6eodh"]
+[ext_resource type="Texture2D" uid="uid://c11c7ma0x22u2" path="res://sprites/barra_curva_full_shield.png" id="4_6eodh"]
 [ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="4_ubf62"]
 [ext_resource type="Texture2D" uid="uid://bpvcdyne782m5" path="res://sprites/heal-particle.png" id="6_ykcco"]
 
@@ -37,31 +38,43 @@ collision_shape = NodePath("CollisionShape2D")
 max_health = 10000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1133035403]
+visible = false
 position = Vector2(1, 0.5)
 shape = SubResource("CircleShape2D_ykcco")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1622694890]
+offset_left = -160.0
+offset_top = -130.0
+offset_right = 160.0
+offset_bottom = 190.0
+pivot_offset = Vector2(155, 285)
+value = 100.0
+fill_mode = 5
+radial_initial_angle = 243.0
+radial_fill_degrees = 126.0
+radial_center_offset = Vector2(0, -50)
+nine_patch_stretch = true
+texture_under = ExtResource("2_ykcco")
+texture_progress = ExtResource("3_6eodh")
+
+[node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=413799275]
+offset_left = -160.0
+offset_top = -130.0
+offset_right = 160.0
+offset_bottom = 190.0
+value = 30.0
+fill_mode = 5
+radial_initial_angle = 243.0
+radial_fill_degrees = 126.0
+radial_center_offset = Vector2(0, -50)
+nine_patch_stretch = true
+texture_progress = ExtResource("4_6eodh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1964487356]
 texture = ExtResource("2_gy3w1")
 
-[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1622694890]
-offset_left = -69.0
-offset_top = -157.0
-offset_right = 70.0
-offset_bottom = -130.0
-nine_patch_stretch = true
-texture_under = ExtResource("2_l6ens")
-texture_progress = ExtResource("3_ubf62")
-
-[node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=701700590]
-offset_left = -69.0
-offset_top = -157.0
-offset_right = 70.0
-offset_bottom = -130.0
-nine_patch_stretch = true
-texture_progress = ExtResource("3_ubf62")
-tint_progress = Color(0.0005019968, 7.573818, 7.0002875, 1)
-
 [node name="Area2D" type="Area2D" parent="." unique_id=369362489]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1772929820]
 shape = SubResource("CircleShape2D_6eodh")
@@ -82,6 +95,7 @@ rota_3_2_price = 99999
 rota_3_3_price = 99999
 
 [node name="AreaDeExclusao" type="Area2D" parent="." unique_id=357707933]
+visible = false
 
 [node name="AreaDeexclusaoShape" type="CollisionShape2D" parent="AreaDeExclusao" unique_id=565851291]
 shape = SubResource("CircleShape2D_gy3w1")

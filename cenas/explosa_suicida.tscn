@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dk661vonkumgx"]
+
+[ext_resource type="Texture2D" uid="uid://dhx4m8x3o6u6x" path="res://sprites/explosão suicida.png" id="1_ia2ga"]
+[ext_resource type="Script" uid="uid://b7w1h4450y48x" path="res://cenas/explosa_suicida.gd" id="2_uuye5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq8kf"]
+atlas = ExtResource("1_ia2ga")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ohsc"]
+atlas = ExtResource("1_ia2ga")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uand4"]
+atlas = ExtResource("1_ia2ga")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ot5u2"]
+atlas = ExtResource("1_ia2ga")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7w2q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq8kf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ohsc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uand4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ot5u2")
+}],
+"loop": false,
+"name": &"default",
+"speed": 11.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ia2ga"]
+radius = 90.0
+
+[node name="explosa_suicida" type="AnimatedSprite2D" unique_id=344822981]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_u7w2q")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+script = ExtResource("2_uuye5")
+
+[node name="AreaDano" type="Area2D" parent="." unique_id=1324110725]
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDano" unique_id=1020019628]
+shape = SubResource("CircleShape2D_ia2ga")
+debug_color = Color(0.9999998, 0.016718408, 0.019342402, 0.41960785)
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
