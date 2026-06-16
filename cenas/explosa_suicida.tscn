@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dk661vonkumgx"]
 
 [ext_resource type="Texture2D" uid="uid://dhx4m8x3o6u6x" path="res://sprites/explosão suicida.png" id="1_ia2ga"]
-[ext_resource type="Script" uid="uid://b7w1h4450y48x" path="res://cenas/explosa_suicida.gd" id="2_uuye5"]
+[ext_resource type="Script" uid="uid://b7w1h4450y48x" path="res://gd/explosa_suicida.gd" id="2_uuye5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wq8kf"]
 atlas = ExtResource("1_ia2ga")

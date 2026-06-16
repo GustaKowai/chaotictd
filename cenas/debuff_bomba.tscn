@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dardn5ps0awe7"]
 
-[ext_resource type="Script" uid="uid://cc1jreqys13u1" path="res://debuff_bomba.gd" id="1_8vfqv"]
+[ext_resource type="Script" uid="uid://cc1jreqys13u1" path="res://gd/debuff_bomba.gd" id="1_8vfqv"]
 [ext_resource type="Texture2D" uid="uid://bu8ay7p3wd8n8" path="res://sprites/upgrade_disable.png" id="2_mhw1f"]
 [ext_resource type="Texture2D" uid="uid://cmfifbvisfxwv" path="res://sprites/upgrade_able.png" id="3_et6do"]
 [ext_resource type="Texture2D" uid="uid://d2lcwklj4fpj0" path="res://sprites/upgrade_active.png" id="4_nr2f5"]

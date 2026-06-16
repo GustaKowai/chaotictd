@@ -20,15 +20,15 @@ class_name upgrade_UI
 #region export_vars
 
 @export_category("Upgrades text")
-@export var rota_1_1_text: String
-@export var rota_1_2_text: String
-@export var rota_1_3_text: String
-@export var rota_2_1_text: String
-@export var rota_2_2_text: String
-@export var rota_2_3_text: String
-@export var rota_3_1_text: String
-@export var rota_3_2_text: String
-@export var rota_3_3_text: String
+@export_multiline var rota_1_1_text: String
+@export_multiline var rota_1_2_text: String
+@export_multiline var rota_1_3_text: String
+@export_multiline var rota_2_1_text: String
+@export_multiline var rota_2_2_text: String
+@export_multiline var rota_2_3_text: String
+@export_multiline var rota_3_1_text: String
+@export_multiline var rota_3_2_text: String
+@export_multiline var rota_3_3_text: String
 @export_category("Upgrades price")
 @export var rota_1_1_price:int
 @export var rota_1_2_price:int

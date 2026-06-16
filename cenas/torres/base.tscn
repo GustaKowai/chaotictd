@@ -6,10 +6,47 @@
 [ext_resource type="Texture2D" uid="uid://bmlylcnmroyfc" path="res://sprites/barra_curva_full.png" id="3_6eodh"]
 [ext_resource type="Texture2D" uid="uid://c11c7ma0x22u2" path="res://sprites/barra_curva_full_shield.png" id="4_6eodh"]
 [ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="4_ubf62"]
+[ext_resource type="Texture2D" uid="uid://bujshp5yp3dgn" path="res://sprites/torre principal ociosa.png" id="5_8c4wd"]
 [ext_resource type="Texture2D" uid="uid://bpvcdyne782m5" path="res://sprites/heal-particle.png" id="6_ykcco"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ykcco"]
 radius = 119.00105
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o80od"]
+atlas = ExtResource("5_8c4wd")
+region = Rect2(0, 0, 264, 264)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qypd"]
+atlas = ExtResource("5_8c4wd")
+region = Rect2(264, 0, 264, 264)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b477h"]
+atlas = ExtResource("5_8c4wd")
+region = Rect2(528, 0, 264, 264)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qh7o"]
+atlas = ExtResource("5_8c4wd")
+region = Rect2(792, 0, 264, 264)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cmtwd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o80od")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qypd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b477h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qh7o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6eodh"]
 radius = 120.001045
@@ -70,7 +107,13 @@ radial_center_offset = Vector2(0, -50)
 nine_patch_stretch = true
 texture_progress = ExtResource("4_6eodh")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1077658672]
+sprite_frames = SubResource("SpriteFrames_cmtwd")
+autoplay = "default"
+frame_progress = 0.9435837
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1964487356]
+visible = false
 texture = ExtResource("2_gy3w1")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=369362489]
