@@ -16,6 +16,10 @@ func _process(delta: float) -> void:
 	bullet_tempodevida += delta
 	if bullet_tempodevida > bullet_duracao:
 		queue_free()
+		
+func _physics_process(delta: float) -> void:
+	#print_debug(transform.x)
+	position += transform.x * speed * delta
 
 #func _on_body_entered(body):
 	##print_debug(body)
