@@ -37,7 +37,7 @@ func hit():
 		get_tree().root.get_node("Main").add_child(i)
 	if perfuracao <0:
 		return
-	if inimigos_atingidos > perfuracao:
+	if inimigos_atingidos >= perfuracao:
 		queue_free()
 	else:
 		inimigos_atingidos += 1

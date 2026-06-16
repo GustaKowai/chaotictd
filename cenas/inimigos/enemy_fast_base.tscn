@@ -101,8 +101,8 @@ metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1655705128]
 sprite_frames = SubResource("SpriteFrames_y3qpn")
-animation = &"attack"
-frame_progress = 0.29560304
+animation = &"follow"
+autoplay = "follow"
 
 [node name="AreaAtaque" type="Area2D" parent="Sprite" unique_id=1404639723]
 collision_layer = 2

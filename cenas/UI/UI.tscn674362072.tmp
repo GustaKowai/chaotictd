@@ -157,7 +157,7 @@ script = ExtResource("5_2dd7u")
 position = Vector2(37, 27)
 sprite_frames = SubResource("SpriteFrames_7xo3x")
 autoplay = "default"
-frame_progress = 0.0034597649
+frame_progress = 0.637184
 
 [node name="Control" parent="HBoxContainer" unique_id=13132552 instance=ExtResource("2_ekiuc")]
 layout_mode = 2
