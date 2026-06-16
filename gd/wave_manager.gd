@@ -1,7 +1,7 @@
 extends Node
 signal start_wave(int)
 signal wave_end
-signal enemy_dead()
+signal enemy_dead(int)
 var wave:int = 0
 var time_to_check_wave_end:float = 5.0
 var time_down:float = 0
@@ -14,13 +14,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	time_down += delta
 	if time_down >= time_to_check_wave_end:
-		check_wave_end()
+		check_wave_end(0)
 		time_down = 0
 
-func check_wave_end():
+func check_wave_end(enemy_count):
 	var enemies = get_tree().get_nodes_in_group("Enemy")
-	if enemies.size() <= 1:
-		print_debug("fim da wave ", wave)
+	if enemies.size() <= enemy_count:
+		print_debug("fim da wave ", wave, enemies)
 		wave_end.emit()
 	#print(enemies.size())
 	#for enemy in enemies:

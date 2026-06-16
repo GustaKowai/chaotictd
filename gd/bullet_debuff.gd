@@ -1,4 +1,4 @@
-extends Bullet
+extends Bullet_slow
 class_name bullet_debuff
 
 @export var debuff:PackedScene
@@ -11,12 +11,19 @@ func _on_area_entered(body):
 	#print_debug(body)
 	if body.is_in_group("Enemy"):
 		var target:Enemy = body.get_parent()
-		#print_debug(target)
-		var d:Debuff = debuff.instantiate()
-		#print_debug(d)
-		d.debuff_time = debuff_time
-		target.add_child(d)
-		#d.timer.start()
-		#print_debug(target.get_children())
-		target.take_damage(damage)
-		hit()
+		var is_stuned:bool = false
+		var search_stun = target.get_children()
+		for stun in search_stun:
+			print_debug(stun.is_in_group("stun"))
+			if stun.is_in_group("stun"):
+				print_debug("ta stunado")
+				is_stuned = true
+		if not is_stuned:
+			apply_debuff(target)
+	super(body)
+	
+	
+func apply_debuff(target):
+	var d:Debuff = debuff.instantiate()
+	d.debuff_time = debuff_time
+	target.add_child(d)

@@ -2,8 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://tgjpj17povjb" path="res://cenas/UI/button_torre.tscn" id="1_42ip5"]
 [ext_resource type="Script" uid="uid://bm0of4ysplgkn" path="res://gd/ui_towers.gd" id="1_nrlti"]
-[ext_resource type="Texture2D" uid="uid://b4oralshl5tql" path="res://sprites/UI_towers.png" id="1_pby11"]
+[ext_resource type="Texture2D" uid="uid://cf3d0bgklckpf" path="res://sprites/Loja de planetas.png" id="2_c0h12"]
 [ext_resource type="PackedScene" uid="uid://c7myvvb3gsh5t" path="res://cenas/torres/cannon_teste.tscn" id="2_kl3l3"]
+[ext_resource type="Texture2D" uid="uid://geqcwcmi00ge" path="res://sprites/Botão novos planetas.png" id="3_c0h12"]
 [ext_resource type="PackedScene" uid="uid://dj2eo5j6lmgkx" path="res://cenas/torres/bumerangue_tower.tscn" id="3_pby11"]
 [ext_resource type="PackedScene" uid="uid://dpmp81xpx6xl1" path="res://cenas/torres/heavy_cannon_torre.tscn" id="4_nrlti"]
 [ext_resource type="PackedScene" uid="uid://cvmxlps3fc4v1" path="res://cenas/torres/planeta_dano_area.tscn" id="5_52s8d"]
@@ -18,10 +19,73 @@ Button/styles/normal = SubResource("StyleBoxEmpty_nrlti")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pby11"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pby11"]
-texture = ExtResource("1_pby11")
+texture = ExtResource("2_c0h12")
+expand_margin_left = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dhe58"]
+texture = ExtResource("3_c0h12")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c0h12"]
+bg_color = Color(0.1254902, 0.015686275, 0.34901962, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhe58"]
+bg_color = Color(0.043137256, 0.007843138, 0.14901961, 1)
 
 [sub_resource type="Theme" id="Theme_52s8d"]
 FoldableContainer/styles/panel = SubResource("StyleBoxTexture_pby11")
+FoldableContainer/styles/title_collapsed_panel = SubResource("StyleBoxTexture_dhe58")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_c0h12")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_dhe58")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c0h12"]
+load_path = "res://.godot/imported/Botão novos planetas.png-17b1eb3ee9b5a63a7c04adc023325ad3.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ely3r"]
+texture = SubResource("CompressedTexture2D_c0h12")
+modulate_color = Color(0.78039217, 0.77254903, 0.7921569, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sybcf"]
+texture = SubResource("CompressedTexture2D_c0h12")
+
+[sub_resource type="InputEventAction" id="InputEventAction_c0h12"]
+action = &"add_tower_1"
+
+[sub_resource type="Shortcut" id="Shortcut_dhe58"]
+events = [SubResource("InputEventAction_c0h12")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_dhe58"]
+action = &"add_tower_2"
+
+[sub_resource type="Shortcut" id="Shortcut_ely3r"]
+events = [SubResource("InputEventAction_dhe58")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_ely3r"]
+action = &"add_tower_3"
+
+[sub_resource type="Shortcut" id="Shortcut_7yw7f"]
+events = [SubResource("InputEventAction_ely3r")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_7yw7f"]
+action = &"add_tower_4"
+
+[sub_resource type="Shortcut" id="Shortcut_sybcf"]
+events = [SubResource("InputEventAction_7yw7f")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_sybcf"]
+action = &"add_tower_5"
+
+[sub_resource type="Shortcut" id="Shortcut_xvtu6"]
+events = [SubResource("InputEventAction_sybcf")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_xvtu6"]
+action = &"add_tower_6"
+
+[sub_resource type="Shortcut" id="Shortcut_sv7bf"]
+events = [SubResource("InputEventAction_xvtu6")]
 
 [node name="Tower_buildings" type="PanelContainer" unique_id=2031302956]
 anchors_preset = 11
@@ -36,41 +100,63 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_pby11")
 script = ExtResource("1_nrlti")
 
 [node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=211616600]
-custom_minimum_size = Vector2(50, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 1
 theme = SubResource("Theme_52s8d")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/title_panel = SubResource("StyleBoxTexture_dhe58")
+theme_override_styles/title_hover_panel = SubResource("StyleBoxTexture_ely3r")
+theme_override_styles/title_collapsed_panel = SubResource("StyleBoxTexture_dhe58")
+theme_override_styles/title_collapsed_hover_panel = SubResource("StyleBoxTexture_ely3r")
+theme_override_styles/focus = SubResource("StyleBoxTexture_sybcf")
+title = " "
 title_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="FoldableContainer" unique_id=954542665]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(200, 950)
 layout_mode = 2
+size_flags_vertical = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="FoldableContainer/ScrollContainer" unique_id=1745181277]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 2
+size_flags_vertical = 3
 alignment = 1
 
 [node name="Button" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=1961303369 instance=ExtResource("1_42ip5")]
 layout_mode = 2
+shortcut = SubResource("Shortcut_dhe58")
+hotkey = "1"
 torre = ExtResource("2_kl3l3")
 
 [node name="Button2" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=1687635896 instance=ExtResource("1_42ip5")]
 layout_mode = 2
+shortcut = SubResource("Shortcut_ely3r")
+hotkey = "2"
 torre = ExtResource("3_pby11")
 
 [node name="Button3" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=1277169580 instance=ExtResource("1_42ip5")]
 layout_mode = 2
+shortcut = SubResource("Shortcut_7yw7f")
+hotkey = "3"
 torre = ExtResource("4_nrlti")
 
 [node name="Button4" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=240226560 instance=ExtResource("1_42ip5")]
 layout_mode = 2
+shortcut = SubResource("Shortcut_sybcf")
+hotkey = "4"
 torre = ExtResource("5_52s8d")
 
 [node name="Button5" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=51560110 instance=ExtResource("1_42ip5")]
 layout_mode = 2
+shortcut = SubResource("Shortcut_xvtu6")
+hotkey = "5"
 torre = ExtResource("6_kl3l3")
 
 [node name="Button6" parent="FoldableContainer/ScrollContainer/VBoxContainer" unique_id=512007538 instance=ExtResource("1_42ip5")]
 layout_mode = 2
+shortcut = SubResource("Shortcut_sv7bf")
+hotkey = "6"
 torre = ExtResource("9_52s8d")

@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ckxl0eknlhj70" path="res://sprites/InimigoAranha3-Sheet-sheet.png" id="4_g42ph"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="5_5w5ak"]
 [ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="6_3ne27"]
+[ext_resource type="PackedScene" uid="uid://cltyrduyes4vp" path="res://cenas/alert.tscn" id="9_rkudn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_abb4h"]
 radius = 198.0
@@ -111,6 +112,32 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fvk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jawnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mcvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53h8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjgrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6a7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k8qe")
+}],
+"loop": true,
+"name": &"hunt",
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abb4h"]
@@ -123,9 +150,13 @@ radius = 18.0
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_tk4rn")
+max_health = 100
 death_prefab = ExtResource("2_cje2y")
 color_damage = Color(1, 0, 0, 1)
 pieces = ExtResource("2_2fvk4")
+number_pieces_min = 2
+number_pieces_max = 2
+spread_area_radius = 25.0
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=183298999]
@@ -144,9 +175,8 @@ shape = SubResource("CircleShape2D_2fvk4")
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=740497630]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_kdtis")
-animation = &"attack"
+animation = &"hunt"
 autoplay = "default"
-frame_progress = 0.35717478
 
 [node name="AttackArea" type="Area2D" parent="Sprite" unique_id=1944355732]
 position = Vector2(231.48935, 0)
@@ -179,8 +209,9 @@ metadata/_custom_type_script = "uid://cjtli66j3y46e"
 script = ExtResource("5_5w5ak")
 enemy = NodePath("../..")
 area_dano = NodePath("../../Sprite/AttackArea")
-dano = 5
+dano = 50
 delay_attack = 1.0
+alert = ExtResource("9_rkudn")
 metadata/_custom_type_script = "uid://da3rkekrhcba0"
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=366427699 node_paths=PackedStringArray("enemy")]

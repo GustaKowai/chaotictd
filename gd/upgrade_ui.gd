@@ -2,7 +2,8 @@ extends PopupPanel
 class_name upgrade_UI
 
 @export var torre: Building
-@onready var texture_rect: TextureRect = $PanelContainer/VBoxContainer/TextureRect
+@onready var texture_rect: TextureRect = %TextureRect
+@onready var vender: Button = %vender
 @onready var rota_1_1: CheckBox = %rota1_1
 @onready var rota_1_2: CheckBox = %rota1_2
 @onready var rota_1_3: CheckBox = %rota1_3
@@ -12,6 +13,12 @@ class_name upgrade_UI
 @onready var rota_3_1: CheckBox = %rota3_1
 @onready var rota_3_2: CheckBox = %rota3_2
 @onready var rota_3_3: CheckBox = %rota3_3
+@onready var upgrade_text: Label = %upgrade_text
+@onready var info_container: PanelContainer = %info_container
+
+
+#region export_vars
+
 @export_category("Upgrades text")
 @export var rota_1_1_text: String
 @export var rota_1_2_text: String
@@ -33,6 +40,8 @@ class_name upgrade_UI
 @export var rota_3_2_price:int
 @export var rota_3_3_price:int
 
+#endregion export_vars
+
 var rota_1_1_disable = false
 var rota_1_2_disable = true
 var rota_1_3_disable = true
@@ -42,6 +51,8 @@ var rota_2_3_disable = true
 var rota_3_1_disable = false
 var rota_3_2_disable = true
 var rota_3_3_disable = true
+
+var upgrade_size:Vector2
 
 const MAX_UPGRADES:int = 4
 var atual_upgade:int = 0
@@ -67,6 +78,7 @@ func _ready() -> void:
 	rota_3_1.text = str(rota_3_1_price)
 	rota_3_2.text = str(rota_3_2_price)
 	rota_3_3.text = str(rota_3_3_price)
+	upgrade_size = size
 	self.hide()
 
 
@@ -74,6 +86,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	check_upgrades_ables()
 
+#region on_pressed
 
 func _on_rota_1_1_pressed() -> void:
 	rota_1_1_disable = true
@@ -84,7 +97,6 @@ func _on_rota_1_1_pressed() -> void:
 		disable_all()
 		return
 	rota_1_2_disable = false
-	
 
 
 func _on_rota_1_2_pressed() -> void:
@@ -195,3 +207,61 @@ func check_upgrades_ables():
 	rota_3_1.disabled = (GameManager.piece_count < rota_3_1_price) or rota_3_1_disable
 	rota_3_2.disabled = (GameManager.piece_count < rota_3_2_price) or rota_3_2_disable
 	rota_3_3.disabled = (GameManager.piece_count < rota_3_3_price) or rota_3_3_disable
+
+#endregion on_pressed
+
+
+func show_info(info):
+	info_container.visible = true
+	print_debug(info)
+	upgrade_text.text = info
+	
+func hide_info():
+	if info_container:
+		info_container.visible = false
+		size = upgrade_size
+
+func _on_visibility_changed() -> void:
+	hide_info()
+
+func _on_rota_1_1_mouse_entered() -> void:
+	print_debug("entrou o mouse")
+	show_info(rota_1_1_text)
+
+func _on_rota_1_2_mouse_entered() -> void:
+	print_debug("entrou o mouse")
+	show_info(rota_1_2_text)
+
+func _on_rota_1_3_mouse_entered() -> void:
+	print_debug("entrou o mouse")
+	show_info(rota_1_3_text)
+
+
+func _on_rota_2_1_mouse_entered() -> void:
+	print_debug("entrou o mouse")
+	show_info(rota_2_1_text)
+
+
+func _on_rota_2_2_mouse_entered() -> void:
+	print_debug("entrou o mouse")
+	show_info(rota_2_2_text)
+
+
+func _on_rota_2_3_mouse_entered() -> void:
+	print_debug("entrou o mouse")
+	show_info(rota_2_3_text)
+
+
+func _on_rota_3_1_mouse_entered() -> void:
+	print_debug("entrou o mouse")
+	show_info(rota_3_1_text)
+
+
+func _on_rota_3_2_mouse_entered() -> void:
+	print_debug("entrou o mouse")
+	show_info(rota_3_2_text)
+
+
+func _on_rota_3_3_mouse_entered() -> void:
+	print_debug("entrou o mouse")
+	show_info(rota_3_3_text)

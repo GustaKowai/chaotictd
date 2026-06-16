@@ -4,7 +4,7 @@ var piece_count:int
 signal piece_collected()
 signal game_over()
 signal restart_game()
-var pieces_started:int = 15
+var pieces_started:int = 150
 var posicionando:bool
 var is_game_over:bool = false
 var posicao_base:Vector2
@@ -36,4 +36,3 @@ func restart():
 	var b = base.instantiate()
 	b.global_position = posicao_base #Vector2(973,520)
 	get_tree().root.add_child(b)
-	

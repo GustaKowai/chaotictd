@@ -7,11 +7,20 @@ class_name EnemyAttack
 @export var delay_attack:float #Tempo entre os ataques
 @export var lost_target_try_first:String = "hunt"
 @export var lost_target_try_second:String = "follow"
+@export var alert:PackedScene
 var delay:float
 
 func Enter():
 	if enemy.sprite.has_method("play"):
 		enemy.sprite.play("attack")
+	if alert:
+		print_debug("cheguei no alerta")
+		var alert_signal = alert.instantiate()
+		var alvos = area_dano.get_overlapping_bodies()
+		for alvo in alvos:
+			print_debug("alertei o ", alvo)
+			alert_signal.global_position = alvo.global_position
+			alvo.call_deferred("add_child",alert_signal)
 	#print_debug("Modo de ataque",enemy)
 	delay = delay_attack
 

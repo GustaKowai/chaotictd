@@ -31,7 +31,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		t.global_position = global_position
 		#print_debug(t)
 		#print_debug(get_parent())
-		get_tree().root.add_child(t)
+		get_tree().root.get_node("Main").add_child(t)
 		GameManager.piece_count -= t.value
 		GameManager.piece_collected.emit()
 		queue_free()

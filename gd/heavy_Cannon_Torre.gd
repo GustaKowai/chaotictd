@@ -9,6 +9,9 @@ class_name Heavy_Cannon_Torre
 @export var delay_shoot: float = 5 #Delay do tiro do canhao
 @export var bullet: PackedScene
 var delay: float
+var perfuracao_bonus:int = 0
+var can_see_cammo:bool
+var bullet_extra_damage:int = 0
 
 func _ready() -> void:
 	super()
@@ -26,12 +29,20 @@ func _physics_process(delta: float) -> void:
 	
 func shoot():
 	#print_debug(animation_player.speed_scale)
-	var b = bullet.instantiate()
-	get_tree().root.add_child(b)
+	var b:Bullet = bullet.instantiate()
+	b.damage += bullet_extra_damage
+	b.perfuracao = perfuracao_bonus
+	if can_see_cammo:
+		b.set_collision_mask_value(6,true)
+	get_tree().root.get_node("Main").add_child(b)
 	b.transform = mira.global_transform
-	
-func _on_rota_1_1_pressed() -> void:
-	pass # Replace with function body.
+
 
 func charge():
 	animation_player.play("carregar")
+
+func upgrade_1_1():
+	animation_player.speed_scale = 1.2
+
+func upgrade_2_1():
+	perfuracao_bonus = 1

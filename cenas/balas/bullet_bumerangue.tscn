@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cju1mfu60b65w" path="res://gd/bullet_bumerangue.gd" id="1_k0fcg"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="2_lgxiu"]
+[ext_resource type="PackedScene" uid="uid://3g5wbdv1ufug" path="res://cenas/impact.tscn" id="2_sshfp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lgxiu"]
 
@@ -10,8 +11,10 @@ collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_k0fcg")
 bullet_duracao = 6.0
+impact = ExtResource("2_sshfp")
 speed = 400.0
-damage = 1
+damage = 10
+perfuracao = -1
 metadata/_custom_type_script = "uid://dfphxkt0fqq73"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=275368755]

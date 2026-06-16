@@ -4,7 +4,10 @@ class_name Cannon_tower
 @onready var cannon_teste: StaticBody2D = $"."
 @onready var mira: Marker2D = %Mira
 var bullet_extra_damage:int = 0
+var perfuracao_bonus:int = 0
+var speed_bonus:int = 0
 var can_see_cammo:bool
+var retira_cammo:bool
 
 @export var delay_shoot: float = 5
 @export var bullet: PackedScene
@@ -23,8 +26,12 @@ func _physics_process(delta: float) -> void:
 func shoot():
 	var b:Bullet = bullet.instantiate()
 	b.damage += bullet_extra_damage
+	b.perfuracao = perfuracao_bonus
+	b.speed += speed_bonus
 	if can_see_cammo:
 		b.set_collision_mask_value(6,true)
-	get_tree().root.add_child(b)
+	if retira_cammo:
+		b.retira_cammo = true
+	get_tree().root.get_node("Main").add_child(b)
 	b.transform = mira.global_transform
 	b.scale = Vector2(1.0,1.0)

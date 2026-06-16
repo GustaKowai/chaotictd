@@ -9,8 +9,13 @@ func upgrade_1_2():
 	animated_sprite_2d.speed_scale *= 2
 func upgrade_1_3():
 	pass
+	
 func upgrade_2_1():
-	bullet_extra_damage += 2
+	bullet_extra_damage +=2
+func upgrade_2_2():
+	perfuracao_bonus= 2
 
 func upgrade_3_1():
 	can_see_cammo = true
+func upgrade_3_2():
+	pass

@@ -58,7 +58,7 @@ func blink_damage():
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN)
 	tween.set_trans(Tween.TRANS_QUINT)
-	tween.tween_property(self,"modulate",Color.WHITE,0.3)
+	tween.tween_property(self,"modulate",Color.WHITE,0.1)
 
 func heal_damage(heal:int):
 	if current_health+heal < max_health:
@@ -72,7 +72,7 @@ func die():
 		death_object.position = position
 		get_parent().add_child(death_object)
 	await drop_pieces()
-	WaveManager.enemy_dead.emit()
+	WaveManager.enemy_dead.emit(1)
 	queue_free()
 	
 	
@@ -90,4 +90,5 @@ func drop_pieces():
 		#print_debug(position_spread)
 		var item = pieces.instantiate()
 		item.position = position+position_spread
-		get_parent().add_child(item)
+		get_parent().call_deferred("add_child",item)
+		#get_parent().add_child(item)
