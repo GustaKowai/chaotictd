@@ -213,7 +213,7 @@ func check_upgrades_ables():
 
 func show_info(info):
 	info_container.visible = true
-	print_debug(info)
+	#print_debug(info)
 	upgrade_text.text = info
 	
 func hide_info():
@@ -223,45 +223,53 @@ func hide_info():
 
 func _on_visibility_changed() -> void:
 	hide_info()
+	#print_debug(size)
+	#if texture_rect:
+		#print_debug(texture_rect.size)
 
 func _on_rota_1_1_mouse_entered() -> void:
-	print_debug("entrou o mouse")
+	#print_debug("entrou o mouse")
 	show_info(rota_1_1_text)
 
 func _on_rota_1_2_mouse_entered() -> void:
-	print_debug("entrou o mouse")
+	#print_debug("entrou o mouse")
 	show_info(rota_1_2_text)
 
 func _on_rota_1_3_mouse_entered() -> void:
-	print_debug("entrou o mouse")
+	#print_debug("entrou o mouse")
 	show_info(rota_1_3_text)
 
 
 func _on_rota_2_1_mouse_entered() -> void:
-	print_debug("entrou o mouse")
+	#print_debug("entrou o mouse")
 	show_info(rota_2_1_text)
 
 
 func _on_rota_2_2_mouse_entered() -> void:
-	print_debug("entrou o mouse")
+	#print_debug("entrou o mouse")
 	show_info(rota_2_2_text)
 
 
 func _on_rota_2_3_mouse_entered() -> void:
-	print_debug("entrou o mouse")
+	#print_debug("entrou o mouse")
 	show_info(rota_2_3_text)
 
 
 func _on_rota_3_1_mouse_entered() -> void:
-	print_debug("entrou o mouse")
+	#print_debug("entrou o mouse")
 	show_info(rota_3_1_text)
 
 
 func _on_rota_3_2_mouse_entered() -> void:
-	print_debug("entrou o mouse")
+	#print_debug("entrou o mouse")
 	show_info(rota_3_2_text)
 
 
 func _on_rota_3_3_mouse_entered() -> void:
-	print_debug("entrou o mouse")
+	#print_debug("entrou o mouse")
 	show_info(rota_3_3_text)
+
+
+func _on_info_container_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		self.hide()

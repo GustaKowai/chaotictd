@@ -130,18 +130,18 @@ position = Vector2(6, 0)
 
 [node name="Upgrade_UI" parent="." unique_id=653696189 node_paths=PackedStringArray("torre") instance=ExtResource("7_psoph")]
 torre = NodePath("..")
-rota_1_1_text = "aumenta a velocidade de ataque"
-rota_1_2_text = "aumenta mais ainda a velocidade"
-rota_2_1_text = "aumenta o dano da pedra"
+rota_1_1_text = "Aumenta a velocidade de ataque"
+rota_1_2_text = "Aumenta mais ainda a velocidade"
+rota_2_1_text = "Aumenta o dano da pedra"
 rota_2_2_text = "Permite o tiro atingir dois inimigos extras"
 rota_2_3_text = "Aumenta o número de alvos possiveis de se atingir antes de desaparecer em um. Além disso, ricocheteia nas paredes da tela. Cada ricochete conta como um alvo atingido."
-rota_3_1_text = "consegue atingir inimigos camuflados"
-rota_1_1_price = 30
-rota_1_2_price = 60
+rota_3_1_text = "Consegue atingir inimigos camuflados"
+rota_1_1_price = 60
+rota_1_2_price = 100
 rota_1_3_price = 99999
-rota_2_1_price = 3
-rota_2_2_price = 9
-rota_2_3_price = 10
+rota_2_1_price = 30
+rota_2_2_price = 180
+rota_2_3_price = 1000
 rota_3_1_price = 60
 rota_3_2_price = 99999
 rota_3_3_price = 99999
