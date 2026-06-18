@@ -86,8 +86,9 @@ size = Vector2(25.749947, 132.50003)
 [sub_resource type="CircleShape2D" id="CircleShape2D_sfe5s"]
 radius = 49.999996
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vlms2"]
-radius = 69.99999
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wkv8c"]
+radius = 49.0
+height = 130.0
 
 [node name="ArraiaEnemy" type="CharacterBody2D" unique_id=1532225188]
 collision_layer = 2
@@ -124,8 +125,8 @@ shape = SubResource("CircleShape2D_sfe5s")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=732585819]
-position = Vector2(-9.999999, 9.094947e-13)
-shape = SubResource("CircleShape2D_vlms2")
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_wkv8c")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=218358628]
 offset_left = -80.0

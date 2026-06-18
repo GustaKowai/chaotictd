@@ -3,18 +3,21 @@
 [ext_resource type="Script" uid="uid://ci4wvjswopke3" path="res://gd/upgrade_ui.gd" id="1_6c760"]
 [ext_resource type="Texture2D" uid="uid://bumbll3pe8bfj" path="res://sprites/upgrade_active2.png" id="2_gi5ev"]
 [ext_resource type="Texture2D" uid="uid://dwb2y7ynyy61y" path="res://sprites/Botão next wave aceso.png" id="2_xjlh6"]
+[ext_resource type="FontFile" uid="uid://d4cf6y3onsbjy" path="res://fontes/good_old_dos/Good Old DOS.ttf" id="3_0sb7q"]
 [ext_resource type="Texture2D" uid="uid://d0djytqo4pmef" path="res://sprites/upgrade_able2.png" id="3_xukmb"]
 [ext_resource type="Texture2D" uid="uid://dy0i1828lsqjv" path="res://sprites/upgrade_disable2.png" id="4_gi5ev"]
 [ext_resource type="Texture2D" uid="uid://c3d8mrh8in6bg" path="res://sprites/upgrade_torres.png" id="5_vgcp1"]
 [ext_resource type="Texture2D" uid="uid://dcstxe6qh1obr" path="res://sprites/info.png" id="6_jos7y"]
 [ext_resource type="Shader" uid="uid://b836olpr6ijh0" path="res://crt.gdshader" id="6_wl874"]
 [ext_resource type="Shader" uid="uid://s5mkuf3raieb" path="res://crt2.gdshader" id="9_o00e7"]
+[ext_resource type="FontFile" uid="uid://410jicgrt5i" path="res://fontes/good_old_dos/Good Old DOS Distorted.ttf" id="11_0sb7q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vgcp1"]
 
 [sub_resource type="Theme" id="Theme_20nwl"]
 CheckBox/colors/font_color = Color(0.8089983, 0.8089983, 0.8089982, 1)
 CheckBox/colors/font_disabled_color = Color(0.76862746, 0.79607844, 0.8, 0.4627451)
+CheckBox/fonts/font = ExtResource("3_0sb7q")
 CheckBox/icons/checked_disabled = ExtResource("2_gi5ev")
 CheckBox/icons/unchecked = ExtResource("3_xukmb")
 CheckBox/icons/unchecked_disabled = ExtResource("4_gi5ev")
@@ -95,6 +98,7 @@ shader_parameter/vignette_opacity = 0.5
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wl874"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kv5da"]
+font = ExtResource("11_0sb7q")
 
 [node name="Upgrade_UI" type="PopupPanel" unique_id=594738499 node_paths=PackedStringArray("rotas", "rota_disable")]
 oversampling_override = 1.0
