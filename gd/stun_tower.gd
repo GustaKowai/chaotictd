@@ -29,6 +29,9 @@ func upgrade_1_3():
 func upgrade_2_1():
 	can_see_cammo = true
 
+func upgrade_2_2():
+	perfuracao_bonus = 2
+
 func upgrade_2_3():
 	retira_cammo = true
 
