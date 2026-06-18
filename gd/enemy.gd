@@ -23,7 +23,8 @@ var stun:bool
 @export_category("waves")
 @export var cost:int
 @export var wave_appear:int
-
+var morto:bool = false
+#var teste:int = 0
 var alvo:Building  #Utilizado para inimigos que podem mudar de alvo
 
 var current_health: int :
@@ -67,6 +68,11 @@ func heal_damage(heal:int):
 		current_health = max_health
 		
 func die():
+	if morto:
+		return
+	#print_debug("morri ", teste)
+	morto = true
+	#teste += 1
 	if death_prefab:
 		var death_object = death_prefab.instantiate()
 		death_object.position = position

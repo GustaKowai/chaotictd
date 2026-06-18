@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
 
-uniform sampler2D SCREEN_TEXTURE2 : hint_screen_texture, filter_linear_mipmap;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
 
 uniform bool overlay = false;
@@ -105,14 +105,14 @@ void fragment()
 
     //vec4 text;
     if (roll){
-        text.r = texture(SCREEN_TEXTURE2, text_uv + roll_uv * 0.8 + vec2(aberration, 0.0) * .1).r;
-        text.g = texture(SCREEN_TEXTURE2, text_uv + roll_uv * 1.2 - vec2(aberration, 0.0) * .1).g;
-        text.b = texture(SCREEN_TEXTURE2, text_uv + roll_uv).b;
+        text.r = texture(TEXTURE, text_uv + roll_uv * 0.8 + vec2(aberration, 0.0) * .1).r;
+        text.g = texture(TEXTURE, text_uv + roll_uv * 1.2 - vec2(aberration, 0.0) * .1).g;
+        text.b = texture(TEXTURE, text_uv + roll_uv).b;
         text.a = 1.0;
     } else {
-        text.r = texture(SCREEN_TEXTURE2, text_uv + vec2(aberration, 0.0) * .1).r;
-        text.g = texture(SCREEN_TEXTURE2, text_uv - vec2(aberration, 0.0) * .1).g;
-        text.b = texture(SCREEN_TEXTURE2, text_uv).b;
+        text.r = texture(TEXTURE, text_uv + vec2(aberration, 0.0) * .1).r;
+        text.g = texture(TEXTURE, text_uv - vec2(aberration, 0.0) * .1).g;
+        text.b = texture(TEXTURE, text_uv).b;
         text.a = 1.0;
     }
 

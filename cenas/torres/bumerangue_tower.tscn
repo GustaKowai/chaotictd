@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dnfpk0t25ujlq" path="res://gd/bumerangue_tower.gd" id="1_hwfcf"]
 [ext_resource type="PackedScene" uid="uid://do7groqhlbflw" path="res://cenas/balas/bullet_bumerangue.tscn" id="2_ho27v"]
+[ext_resource type="PackedScene" uid="uid://dhfcmpbyjxoqs" path="res://cenas/balas/bullet_bumerangue_dano_duplo.tscn" id="2_xcans"]
 [ext_resource type="Texture2D" uid="uid://dmvyghuhdgw5w" path="res://sprites/PlanetasBumerangue2.png" id="3_4ljs1"]
 [ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="3_add4o"]
 [ext_resource type="Texture2D" uid="uid://dsa51xcf7rieb" path="res://sprites/barra_curva_empty.png" id="4_hobp6"]
@@ -19,6 +20,7 @@ radius = 105.11898
 collision_mask = 3
 input_pickable = true
 script = ExtResource("1_hwfcf")
+bala_bumerangue_dano_duplo = ExtResource("2_xcans")
 delay_shoot = 0.3
 bullet = ExtResource("2_ho27v")
 sprite2d = NodePath("Sprite2D")
@@ -70,20 +72,32 @@ position = Vector2(45, 8)
 unique_name_in_owner = true
 position = Vector2(5, 0)
 
-[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("6_0xaye")]
+[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre", "rota_disable") instance=ExtResource("6_0xaye")]
 torre = NodePath("..")
+rota_disable = {
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): true
+}
 rota_1_1_text = "Aumenta um pouco a velocidade de ataque"
 rota_1_2_text = "Aumenta o dano"
 rota_2_1_text = "Permite que o bumerangue atinja até 5 alvos antes de desaparecer"
 rota_2_2_text = "O bumerangue não desaparece ao atingir alvos"
+rota_2_3_text = "O bumerangue causa dano ao entrar e ao sair do alvo"
 rota_3_1_text = "Permite que os bumerangues atinjam inimigos camuflados"
 rota_3_2_text = "Aumenta o alcance do bumerangue e a velocidade dos projéteis"
 rota_1_1_price = 100
 rota_1_2_price = 150
 rota_1_3_price = 99999
-rota_2_1_price = 130
-rota_2_2_price = 300
-rota_2_3_price = 99999
+rota_2_1_price = 13
+rota_2_2_price = 30
+rota_2_3_price = 30
 rota_3_1_price = 50
 rota_3_2_price = 300
 rota_3_3_price = 99999

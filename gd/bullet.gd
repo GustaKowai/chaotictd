@@ -22,13 +22,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_entered(body):
 	#print_debug(body)
-	if body.is_in_group("Enemy"):
-		var target = body.get_parent()
-		target.take_damage(damage)
-		if retira_cammo:
-			body.set_collision_layer_value(2,true)
-			target.sprite.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
-		hit()
+	damage_enemy(body)
 		
 func hit():
 	if impact:
@@ -41,3 +35,12 @@ func hit():
 		queue_free()
 	else:
 		inimigos_atingidos += 1
+
+func damage_enemy(body):
+	if body.is_in_group("Enemy"):
+		var target = body.get_parent()
+		target.take_damage(damage)
+		if retira_cammo:
+			body.set_collision_layer_value(2,true)
+			target.sprite.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+		hit()

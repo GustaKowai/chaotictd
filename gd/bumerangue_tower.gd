@@ -1,4 +1,5 @@
 extends Cannon_tower
+@export var bala_bumerangue_dano_duplo:PackedScene
 
 func _ready() -> void:
 	super()
@@ -16,7 +17,9 @@ func upgrade_2_1():
 func upgrade_2_2():
 	perfuracao_bonus = -1
 	
-
+func upgrade_2_3():
+	bullet = bala_bumerangue_dano_duplo
+	
 func upgrade_3_1():
 	can_see_cammo = true
 
