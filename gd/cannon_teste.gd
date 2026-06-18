@@ -1,6 +1,7 @@
 extends Cannon_tower
 @onready var animated_sprite_2d: AnimatedSprite2D = $Sprite2D/AnimatedSprite2D
 @export var bullet_ricochete:PackedScene
+@export var bullet_teleguiada:PackedScene
 
 func upgrade_1_1():
 	delay_shoot *= 0.5
@@ -24,3 +25,5 @@ func upgrade_3_1():
 	can_see_cammo = true
 func upgrade_3_2():
 	pass
+func upgrade_3_3():
+	bullet = bullet_teleguiada

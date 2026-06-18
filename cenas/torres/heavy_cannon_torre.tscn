@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://j47akvxp3bkw" path="res://gd/heavy_Cannon_Torre.gd" id="1_133bx"]
 [ext_resource type="PackedScene" uid="uid://b8gx3dwhi4wxt" path="res://cenas/balas/bullet_heavy_cannon.tscn" id="2_133bx"]
+[ext_resource type="PackedScene" uid="uid://22ldq21vaqet" path="res://cenas/balas/bullet_heavy_cannon_chain_reaction.tscn" id="3_4ovom"]
 [ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="3_4uke3"]
 [ext_resource type="Texture2D" uid="uid://bgm43arellftn" path="res://sprites/torre forte.png" id="3_bp2nv"]
 [ext_resource type="Texture2D" uid="uid://dsa51xcf7rieb" path="res://sprites/barra_curva_empty.png" id="4_dnlp8"]
@@ -76,6 +77,7 @@ input_pickable = true
 script = ExtResource("1_133bx")
 delay_shoot = 7.5
 bullet = ExtResource("2_133bx")
+bullet_chain = ExtResource("3_4ovom")
 sprite2d = NodePath("Sprite2D2")
 collision_shape = NodePath("AreaDeExclusao/AreaDeexclusaoShape")
 max_health = 500
@@ -123,19 +125,31 @@ position = Vector2(12, 0)
 unique_name_in_owner = true
 position = Vector2(69, 2)
 
-[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("5_vh0gn")]
+[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre", "rota_disable") instance=ExtResource("5_vh0gn")]
 torre = NodePath("..")
+rota_disable = {
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): true
+}
 rota_1_1_text = "Aumenta a velocidade de carga em 20%"
 rota_2_1_text = "O tiro de energia se dissipa apenas após acertar pelo menos dois inimigos"
+rota_3_3_text = "Reação em cadeia"
 rota_1_1_price = 300
 rota_1_2_price = 99999
 rota_1_3_price = 99999
 rota_2_1_price = 200
 rota_2_2_price = 99999
 rota_2_3_price = 99999
-rota_3_1_price = 99999
-rota_3_2_price = 99999
-rota_3_3_price = 99999
+rota_3_1_price = 1
+rota_3_2_price = 1
+rota_3_3_price = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2083213803]
 libraries/ = SubResource("AnimationLibrary_dnlp8")

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bkyyvpf4gndau" path="res://cenas/balas/bullet_teste.tscn" id="2_slvgt"]
 [ext_resource type="PackedScene" uid="uid://bgksifto576q2" path="res://cenas/balas/pedra_ricochete.tscn" id="2_w7g3a"]
 [ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="3_0cxfh"]
+[ext_resource type="PackedScene" uid="uid://bcbjjqgft1ukh" path="res://cenas/balas/bullet_chase.tscn" id="3_1o2wj"]
 [ext_resource type="Texture2D" uid="uid://bjsjja478f7dv" path="res://sprites/torre base2.png" id="3_ocafh"]
 [ext_resource type="Texture2D" uid="uid://dsa51xcf7rieb" path="res://sprites/barra_curva_empty.png" id="4_aupty"]
 [ext_resource type="Texture2D" uid="uid://b6x1lq47q6ynt" path="res://sprites/torre base.png" id="4_p00pg"]
@@ -72,6 +73,7 @@ collision_mask = 3
 input_pickable = true
 script = ExtResource("1_is2nt")
 bullet_ricochete = ExtResource("2_w7g3a")
+bullet_teleguiada = ExtResource("3_1o2wj")
 delay_shoot = 0.3
 bullet = ExtResource("2_slvgt")
 sprite2d = NodePath("Sprite2D")
@@ -128,23 +130,35 @@ position = Vector2(44, 0)
 unique_name_in_owner = true
 position = Vector2(6, 0)
 
-[node name="Upgrade_UI" parent="." unique_id=653696189 node_paths=PackedStringArray("torre") instance=ExtResource("7_psoph")]
+[node name="Upgrade_UI" parent="." unique_id=653696189 node_paths=PackedStringArray("torre", "rota_disable") instance=ExtResource("7_psoph")]
 torre = NodePath("..")
+rota_disable = {
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): true
+}
 rota_1_1_text = "Aumenta a velocidade de ataque"
 rota_1_2_text = "Aumenta mais ainda a velocidade"
 rota_2_1_text = "Aumenta o dano da pedra"
 rota_2_2_text = "Permite o tiro atingir dois inimigos extras"
 rota_2_3_text = "Aumenta o número de alvos possiveis de se atingir antes de desaparecer em um. Além disso, ricocheteia nas paredes da tela. Cada ricochete conta como um alvo atingido."
 rota_3_1_text = "Consegue atingir inimigos camuflados"
+rota_3_3_text = "A bala é substituida por uma bala teleguiada que segue o alvo que passar perto dela"
 rota_1_1_price = 60
 rota_1_2_price = 100
 rota_1_3_price = 99999
 rota_2_1_price = 30
 rota_2_2_price = 180
 rota_2_3_price = 1000
-rota_3_1_price = 60
-rota_3_2_price = 99999
-rota_3_3_price = 99999
+rota_3_1_price = 6
+rota_3_2_price = 1
+rota_3_3_price = 1
 
 [node name="AreaDeExclusao" type="Area2D" parent="." unique_id=191637833]
 visible = false

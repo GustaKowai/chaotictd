@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dhfcmpbyjxoqs"]
 
-[ext_resource type="Script" uid="uid://owfo0wildnqx" path="res://cenas/balas/bullet_bumerangue_dano_duplo.gd" id="1_jv8xg"]
+[ext_resource type="Script" uid="uid://owfo0wildnqx" path="res://gd/bullet_bumerangue_dano_duplo.gd" id="1_jv8xg"]
 [ext_resource type="PackedScene" uid="uid://3g5wbdv1ufug" path="res://cenas/impact.tscn" id="2_la6i2"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="3_rnunp"]
 

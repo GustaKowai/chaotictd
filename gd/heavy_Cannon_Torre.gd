@@ -8,6 +8,7 @@ class_name Heavy_Cannon_Torre
 
 @export var delay_shoot: float = 5 #Delay do tiro do canhao
 @export var bullet: PackedScene
+@export var bullet_chain:PackedScene
 var delay: float
 var perfuracao_bonus:int = 0
 var can_see_cammo:bool
@@ -46,3 +47,9 @@ func upgrade_1_1():
 
 func upgrade_2_1():
 	perfuracao_bonus = 1
+
+func upgrade_3_2():
+	animation_player.speed_scale = 3.0
+	
+func upgrade_3_3():
+	bullet = bullet_chain
