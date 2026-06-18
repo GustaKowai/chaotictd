@@ -47,6 +47,9 @@ func upgrade_1_1():
 
 func upgrade_2_1():
 	perfuracao_bonus = 1
+	
+func upgrade_2_3():
+	perfuracao_bonus = -1
 
 func upgrade_3_2():
 	animation_player.speed_scale = 3.0

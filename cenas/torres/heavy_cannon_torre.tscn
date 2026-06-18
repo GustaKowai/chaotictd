@@ -140,6 +140,7 @@ NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): t
 }
 rota_1_1_text = "Aumenta a velocidade de carga em 20%"
 rota_2_1_text = "O tiro de energia se dissipa apenas após acertar pelo menos dois inimigos"
+rota_2_3_text = "O tiro de energia não se dissipa ao atingir inimigos"
 rota_3_3_text = "Reação em cadeia"
 rota_1_1_price = 300
 rota_1_2_price = 99999

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://56s0ps1ruwju"]
 
 [ext_resource type="Script" uid="uid://bfp1vafshodgg" path="res://gd/slow_bullet.gd" id="1_py63h"]
+[ext_resource type="PackedScene" uid="uid://gp06j4y1pfbh" path="res://cenas/impact_snow.tscn" id="2_tw0sy"]
 [ext_resource type="Texture2D" uid="uid://5uihwu02fl4a" path="res://sprites/Gelo projétil.png" id="2_u30ii"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h17c4"]
@@ -10,6 +11,7 @@ radius = 9.0
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_py63h")
+impact = ExtResource("2_tw0sy")
 speed = 400.0
 metadata/_custom_type_script = "uid://dfphxkt0fqq73"
 
