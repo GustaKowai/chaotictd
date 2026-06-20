@@ -89,8 +89,19 @@ shape = SubResource("CircleShape2D_wah4h")
 [node name="AreaDeexclusaoShape" type="CollisionShape2D" parent="AreaEscudo/AreaDeExclusao" unique_id=347011120]
 shape = SubResource("CircleShape2D_y1xac")
 
-[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("6_oitro")]
+[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre", "rota_disable") instance=ExtResource("6_oitro")]
 torre = NodePath("..")
+rota_disable = {
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): true
+}
 rota_1_1_text = "Aumenta o escudo"
 rota_2_1_text = "Aumenta o raio de proteção"
 rota_1_1_price = 300

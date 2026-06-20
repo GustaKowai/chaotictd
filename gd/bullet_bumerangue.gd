@@ -34,7 +34,7 @@ func hit():
 		var i = impact.instantiate()
 		i.transform = transform
 		i.flip_h = sprite_2d.flip_h
-		get_tree().root.get_node("Main").add_child(i)
+		get_tree().root.get_node("Main").add_child.call_deferred(i)
 	if perfuracao <0:
 		return
 	if inimigos_atingidos >= perfuracao:

@@ -31,4 +31,4 @@ func put_tower():
 		t.torre = torre
 		t.sprite2D = tower.sprite2d
 		t.collision_shape = tower.collision_shape
-		owner.add_child(t)
+		get_tree().root.get_node("Main").add_child(t)

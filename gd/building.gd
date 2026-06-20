@@ -12,10 +12,14 @@ class_name Building
 var shield:int:
 	set(new_value):
 		shield = new_value
+		if new_value > max_health:
+			shield = max_health
 		progress_bar2.value = new_value #Se for usar uma barra de escudo também, sendo em baixo ou sobre a vida
 var current_health: int :
 	set(new_value):
 		current_health = new_value
+		if new_value > max_health:
+			current_health = max_health
 		progress_bar.value = new_value
 func _ready() -> void:
 	progress_bar.max_value = max_health

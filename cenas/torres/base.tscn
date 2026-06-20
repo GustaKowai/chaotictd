@@ -122,14 +122,26 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1772929820]
 shape = SubResource("CircleShape2D_6eodh")
 
-[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("4_ubf62")]
+[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre", "rota_disable") instance=ExtResource("4_ubf62")]
 torre = NodePath("..")
+rota_disable = {
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): true
+}
 rota_1_1_text = "Aumenta a vida máxima em 10%"
 rota_1_2_text = "No início de cada rodada, cura 2% da vida máxima"
+rota_1_3_text = "Ganha um escudo de 5% da vida atual, acumula a cada rodada até o máximo de 20% da vida máxima"
 rota_2_1_text = "Aumenta o ganho de dinheiro no início de cada rodada de 20 x nivel da onda para 50 x nivel da onda"
-rota_1_1_price = 500
-rota_1_2_price = 600
-rota_1_3_price = 99999
+rota_1_1_price = 50
+rota_1_2_price = 60
+rota_1_3_price = 30
 rota_2_1_price = 1000
 rota_2_2_price = 99999
 rota_2_3_price = 99999

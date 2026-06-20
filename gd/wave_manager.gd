@@ -5,10 +5,12 @@ signal enemy_dead(int)
 var wave:int = 0
 var time_to_check_wave_end:float = 5.0
 var time_down:float = 0
+var is_wave:bool
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	enemy_dead.connect(check_wave_end)
-
+	start_wave.connect(wave_start)
+	wave_end.connect(end_wave)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -25,3 +27,8 @@ func check_wave_end(enemy_count):
 	#print(enemies.size())
 	#for enemy in enemies:
 		#print(enemy.get_parent())
+func wave_start(_wave):
+	is_wave = true
+	
+func end_wave():
+	is_wave = false

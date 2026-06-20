@@ -29,7 +29,7 @@ void fragment( )
 	<	shake_rate
 	);
 
-	vec2 fixed_uv = SCREEN_UV;
+	vec2 fixed_uv = UV;
 	fixed_uv.x += (
 		random(
 			( trunc( SCREEN_UV.y * shake_block_size ) / shake_block_size )
@@ -37,15 +37,15 @@ void fragment( )
 		) - 0.5
 	) * shake_power * enable_shift;
 
-	vec4 pixel_color = textureLod( SCREEN_TEXTURE, fixed_uv, 0.0 );
+	vec4 pixel_color = textureLod( TEXTURE, fixed_uv, 0.0 );
 	pixel_color.r = mix(
 		pixel_color.r
-	,	textureLod( SCREEN_TEXTURE, fixed_uv + vec2( shake_color_rate, 0.0 ), 0.0 ).r
+	,	textureLod( TEXTURE, fixed_uv + vec2( shake_color_rate, 0.0 ), 0.0 ).r
 	,	enable_shift
 	);
 	pixel_color.b = mix(
 		pixel_color.b
-	,	textureLod( SCREEN_TEXTURE, fixed_uv + vec2( -shake_color_rate, 0.0 ), 0.0 ).b
+	,	textureLod( TEXTURE, fixed_uv + vec2( -shake_color_rate, 0.0 ), 0.0 ).b
 	,	enable_shift
 	);
 	COLOR = pixel_color;

@@ -1,7 +1,9 @@
 extends Area2D
 @export var dano_area:int 
+@export var pieces:PackedScene
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 var retira_cammo:bool = false
+var upgrade_money:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,7 +25,12 @@ func causar_dano():
 	#print_debug(inimigos)
 	for inimigo in inimigos:
 		if inimigo.is_in_group("Enemy"):
-			inimigo.get_parent().take_damage(dano_area)
+			var inimigo_body:Enemy = inimigo.get_parent()
+			inimigo_body.take_damage(dano_area)
 			if retira_cammo:
 				inimigo.set_collision_layer_value(2,true)
-				inimigo.get_parent().sprite.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+				inimigo_body.sprite.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+			if upgrade_money:
+				if inimigo_body.pieces == pieces:
+					inimigo_body.number_pieces_max = 2*inimigo_body.number_pieces_min
+					

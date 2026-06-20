@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://c74ffxasj0ptc" path="res://gd/planeta_dano_area.gd" id="1_a6kdn"]
 [ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="2_aad67"]
+[ext_resource type="PackedScene" uid="uid://d2gjm8xil17yh" path="res://cenas/bomba.tscn" id="2_chpb1"]
 [ext_resource type="Texture2D" uid="uid://cyke5gux0316n" path="res://sprites/torre-area.png" id="3_a6kdn"]
 [ext_resource type="Script" uid="uid://ddlwi8gohf47d" path="res://gd/area_dano.gd" id="3_rcaev"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_wrkmi"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="4_koxe4"]
 [ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="6_koxe4"]
+[ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="7_chpb1"]
 [ext_resource type="Texture2D" uid="uid://ni5jyd1s88jo" path="res://sprites/torre-area-temp-area.png" id="7_ohx4t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6krs8"]
@@ -64,6 +66,8 @@ radius = 74.02702
 [node name="planeta_dano_area" type="StaticBody2D" unique_id=40702169 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 input_pickable = true
 script = ExtResource("1_a6kdn")
+bomba = ExtResource("2_chpb1")
+spread_area_radius = 100.0
 sprite2d = NodePath("Sprite2D")
 collision_shape = NodePath("area_dano/AreaDeExclusao/AreaDeexclusaoShape")
 max_health = 500
@@ -100,6 +104,7 @@ tint_progress = Color(0.001, 7.574, 7, 1)
 collision_mask = 2
 script = ExtResource("3_rcaev")
 dano_area = 30
+pieces = ExtResource("7_chpb1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_dano" unique_id=1239509862]
 shape = SubResource("CircleShape2D_6krs8")
@@ -119,22 +124,36 @@ frame_progress = 1.0
 [node name="AreaDeexclusaoShape" type="CollisionShape2D" parent="area_dano/AreaDeExclusao" unique_id=1790111150]
 shape = SubResource("CircleShape2D_a6kdn")
 
-[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("6_koxe4")]
+[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre", "rota_disable") instance=ExtResource("6_koxe4")]
 torre = NodePath("..")
+rota_disable = {
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): true
+}
 rota_1_1_text = "Aumenta o dano"
+rota_1_3_text = "Inimigos atingidos pela torre tem chance de dropar até o dobro de peças ao morrerem"
 rota_2_1_text = "Aumenta o alcance da torre"
 rota_2_2_text = "Permite que a torre atinja os inimigos"
 rota_2_3_text = "Retira camuflagem de inimigos atingidos"
 rota_3_1_text = "Aumenta a frequencia dos ataques"
-rota_1_1_price = 200
-rota_1_2_price = 99999
-rota_1_3_price = 99999
+rota_3_2_text = "Causa duas instâncias de dano no inimigo quando ele entra no alcance da torre"
+rota_3_3_text = "Libera pequenas bombas que explodem ao contato, causando dano em quem a ativou"
+rota_1_1_price = 1
+rota_1_2_price = 1
+rota_1_3_price = 1
 rota_2_1_price = 200
 rota_2_2_price = 300
 rota_2_3_price = 2000
-rota_3_1_price = 100
-rota_3_2_price = 99999
-rota_3_3_price = 99999
+rota_3_1_price = 1
+rota_3_2_price = 1
+rota_3_3_price = 1
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="area_dano/Timer" to="area_dano" method="_on_timer_timeout"]
