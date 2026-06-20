@@ -29,6 +29,7 @@ pieces = ExtResource("2_4c5jp")
 number_pieces_min = 4
 number_pieces_max = 4
 spread_area_radius = 135.0
+wave_appear = 3
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=265042889]

@@ -13,5 +13,5 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	inimigos_atingidos += 1
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	pass # Replace with function body.

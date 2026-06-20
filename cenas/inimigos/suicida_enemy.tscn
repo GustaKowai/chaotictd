@@ -65,6 +65,7 @@ number_pieces_min = 5
 number_pieces_max = 5
 spread_area_radius = 50.0
 cost = 1
+wave_appear = 4
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="HitBox" type="Area2D" parent="." unique_id=537918643 groups=["Enemy"]]

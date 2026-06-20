@@ -28,9 +28,13 @@ func spawn_wave(wave:int):
 
 func spawn():
 	if enemies_to_spawn.size()> 0:
-		var enemy_spawning = enemies_to_spawn[0].instantiate()
+		var enemy_spawning:Enemy = enemies_to_spawn[0].instantiate()
 		enemy_position.progress_ratio = randf()
 		enemy_spawning.global_position = enemy_position.global_position
+		if (WaveManager.wave - enemy_spawning.wave_appear) % 10 == 0:
+			@warning_ignore("narrowing_conversion")
+			enemy_spawning.max_health*= 1.1
+			print_debug("a vida máxima aumentou! ", enemy_spawning.max_health)
 		get_parent().add_child(enemy_spawning)
 		enemies_to_spawn.remove_at(0)
 		spawn_timer = spawn_interval

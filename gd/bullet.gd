@@ -1,5 +1,6 @@
 extends Area2D
 class_name Bullet
+@warning_ignore("shadowed_global_identifier")
 @export var impact:PackedScene
 
 @export var speed:float
@@ -13,7 +14,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	
 func _physics_process(delta: float) -> void:

@@ -305,6 +305,7 @@ pieces = ExtResource("2_fagjp")
 number_pieces_min = 4
 number_pieces_max = 4
 spread_area_radius = 40.0
+wave_appear = 6
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="HitBox" type="Area2D" parent="." unique_id=258182809 groups=["Enemy"]]

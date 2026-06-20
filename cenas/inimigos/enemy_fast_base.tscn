@@ -98,6 +98,7 @@ death_prefab = ExtResource("2_3mm6k")
 color_damage = Color(0.99215686, 0.4627451, 0, 1)
 pieces = ExtResource("3_faknw")
 spread_area_radius = 65.0
+wave_appear = 5
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1655705128]

@@ -23,6 +23,7 @@ func give_pieces(wave):
 
 func upgrade_1_1():
 	var vida_antes = max_health
+	@warning_ignore("narrowing_conversion")
 	max_health *= 1.1
 	heal_damage(max_health-vida_antes)
 	
@@ -36,13 +37,16 @@ func upgrade_2_1():
 	dinheiro_por_rodada = 20
 
 func heal_at_start(_wave):
+	@warning_ignore("narrowing_conversion")
 	heal_damage(max_health*turn_heal)
 	gpu_particles_2d.emitting = true
 
 func shield_at_start(_wave):
 	print_debug("shield")
+	@warning_ignore("integer_division")
 	var bonus_shield:int = current_health/20
 	if shield + bonus_shield > max_health*0.2:
+		@warning_ignore("narrowing_conversion")
 		shield = max_health*0.2
 	else:
 		shield += bonus_shield

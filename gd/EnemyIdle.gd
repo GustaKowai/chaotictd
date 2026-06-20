@@ -23,7 +23,7 @@ func Update(delta:float):
 	else:
 		randomize_wander()
 		
-func Physics_update(delta:float):
+func Physics_update(_delta:float):
 	if enemy:
 		enemy.velocity = move_direction*move_speed
 		

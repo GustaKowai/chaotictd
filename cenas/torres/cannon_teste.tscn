@@ -153,12 +153,12 @@ rota_3_3_text = "A bala é substituida por uma bala teleguiada que segue o alvo 
 rota_1_1_price = 60
 rota_1_2_price = 100
 rota_1_3_price = 99999
-rota_2_1_price = 30
+rota_2_1_price = 60
 rota_2_2_price = 180
-rota_2_3_price = 1000
-rota_3_1_price = 6
+rota_2_3_price = 2000
+rota_3_1_price = 50
 rota_3_2_price = 1
-rota_3_3_price = 1
+rota_3_3_price = 900
 
 [node name="AreaDeExclusao" type="Area2D" parent="." unique_id=191637833]
 visible = false

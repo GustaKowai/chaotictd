@@ -14,7 +14,7 @@ var retira_cammo:bool
 var delay:float
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	sprite_2d.look_at(get_global_mouse_position())
 
 func _physics_process(delta: float) -> void:

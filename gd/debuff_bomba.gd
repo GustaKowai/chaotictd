@@ -11,11 +11,11 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if damage == 200:
-		var bodies = area_2d.get_overlapping_areas()
-		damage += 1
-	
+func _process(_delta: float) -> void:
+	#if damage == 200:
+		#var bodies = area_2d.get_overlapping_areas()
+		#damage += 1
+	pass
 
 
 func _on_timer_timeout() -> void:  #TODO quando tiver um efeito de explosão, substituir por tree_exiting

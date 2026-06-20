@@ -10,9 +10,9 @@
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_k0fcg")
-bullet_duracao = 6.0
+bullet_duracao = 3.0
 impact = ExtResource("2_sshfp")
-speed = 400.0
+speed = 800.0
 damage = 10
 perfuracao = 3
 metadata/_custom_type_script = "uid://dfphxkt0fqq73"

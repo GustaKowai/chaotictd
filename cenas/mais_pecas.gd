@@ -1,15 +1,17 @@
-extends Resource
-class_name enemy_spawn_char
-@export var enemy:PackedScene
-@export var cost:int
-@export var initial_wave:int
+extends Node2D
+@onready var label: Label = $Node2D/Label
+
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	print_debug("dinheiro", global_position)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+
+
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	queue_free()

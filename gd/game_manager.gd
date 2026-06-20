@@ -1,7 +1,9 @@
 extends Node
 var base:PackedScene = preload("uid://t4n6p64qxp5d")
 var piece_count:int
+@warning_ignore("unused_signal")
 signal piece_collected()
+@warning_ignore("unused_signal")
 signal game_over()
 signal restart_game()
 var pieces_started:int = 150
@@ -22,7 +24,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func restart():

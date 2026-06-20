@@ -12,7 +12,7 @@ func _ready() -> void:
 	tooltip_text = "Tecla de colocação rápida: "+hotkey
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if GameManager.piece_count < tower.value:
 		self.disabled = true
 	else:

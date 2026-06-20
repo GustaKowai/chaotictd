@@ -100,6 +100,7 @@ pieces = ExtResource("3_btro5")
 number_pieces_min = 4
 number_pieces_max = 4
 spread_area_radius = 65.0
+wave_appear = 11
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1359069013]

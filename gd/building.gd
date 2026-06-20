@@ -29,7 +29,7 @@ func _ready() -> void:
 	connect_upgrades()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func take_damage(damage:int):
@@ -85,7 +85,7 @@ func set_shield(amount:int):
 	#print_debug(self)
 	shield = amount
 	
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		upgrade_ui.show()
 		# Use o seguinte para os upgrades:
@@ -129,6 +129,7 @@ func upgrade_3_3():
 	print_debug("upado 3_3")
 	
 func vender():
+	@warning_ignore("integer_division")
 	GameManager.piece_count += ceil(value/2)
 	GameManager.piece_collected.emit()
 	die()
@@ -136,5 +137,5 @@ func vender():
 		
 
 
-func _on_area_escudo_body_entered(body: Node2D) -> void:
+func _on_area_escudo_body_entered(_body: Node2D) -> void:
 	pass # Replace with function body.

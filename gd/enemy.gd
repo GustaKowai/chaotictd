@@ -37,12 +37,12 @@ func _ready() -> void:
 	progress_bar.max_value = max_health
 	current_health = max_health
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	velocity *=slow_time
 	if not stun:
 		move_and_slide()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	hit_box.transform = sprite.transform
 	if !velocity.is_zero_approx():
 		sprite.look_at(global_position+velocity)

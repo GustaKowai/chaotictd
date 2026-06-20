@@ -17,7 +17,7 @@ func _on_area_entered(body):
 		hit()
 
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	pass # Replace with function body.
 
 func apply_slow(target):

@@ -24,4 +24,4 @@ func upgrade_3_1():
 	can_see_cammo = true
 
 func upgrade_3_2():
-	speed_bonus = 300
+	speed_bonus = 400
