@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dtpp1c2sr3vyd"]
 
 [ext_resource type="Script" uid="uid://csvubehbb88mk" path="res://gd/bullet_debuff.gd" id="1_ybw3y"]
-[ext_resource type="PackedScene" uid="uid://dardn5ps0awe7" path="res://cenas/debuff_bomba.tscn" id="2_1xiak"]
+[ext_resource type="PackedScene" uid="uid://dardn5ps0awe7" path="res://cenas/debuffs/debuff_bomba.tscn" id="2_1xiak"]
+[ext_resource type="PackedScene" uid="uid://bgf13w05juyr2" path="res://cenas/debuffs/debuff_stun.tscn" id="3_7hanc"]
 [ext_resource type="PackedScene" uid="uid://3g5wbdv1ufug" path="res://cenas/impact.tscn" id="3_vtjmn"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1xiak"]
@@ -16,6 +17,7 @@ collision_mask = 2
 script = ExtResource("1_ybw3y")
 debuff = ExtResource("2_1xiak")
 debuff_time = 3.0
+debuff_stun = ExtResource("3_7hanc")
 impact = ExtResource("3_vtjmn")
 speed = 300.0
 metadata/_custom_type_script = "uid://csvubehbb88mk"

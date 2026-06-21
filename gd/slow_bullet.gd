@@ -1,6 +1,6 @@
 extends Bullet
 class_name Bullet_slow
-var slow_value:float
+var slow_value:float = 1.0
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()

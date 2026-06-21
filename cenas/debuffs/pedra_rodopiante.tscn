@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://0vk8874vmcc0"]
+
+[ext_resource type="Script" uid="uid://bq7dt08xig6ys" path="res://cenas/debuffs/pedra_rodopiante.gd" id="1_we7yi"]
+[ext_resource type="PackedScene" uid="uid://3g5wbdv1ufug" path="res://cenas/impact.tscn" id="2_7hy1t"]
+[ext_resource type="Texture2D" uid="uid://cd5gh8d6bbhkw" path="res://sprites/projetil.png" id="2_ufp4a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_we7yi"]
+radius = 14.0
+
+[sub_resource type="Animation" id="Animation_ufp4a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_7hy1t"]
+resource_name = "rodar"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.2831855]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ck3p8"]
+_data = {
+&"RESET": SubResource("Animation_ufp4a"),
+&"rodar": SubResource("Animation_7hy1t")
+}
+
+[node name="pedra_rodopiante" type="Node2D" unique_id=1898966780]
+script = ExtResource("1_we7yi")
+damage = 5
+impact_scene = ExtResource("2_7hy1t")
+metadata/_custom_type_script = "uid://b0vpvrdmx81vo"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=297061899]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=686860040]
+position = Vector2(100, 0)
+texture = ExtResource("2_ufp4a")
+
+[node name="Area2D" type="Area2D" parent="Node2D/Sprite2D" unique_id=637170941]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sprite2D/Area2D" unique_id=1346452067]
+shape = SubResource("CircleShape2D_we7yi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1457795780]
+libraries/ = SubResource("AnimationLibrary_ck3p8")
+autoplay = &"rodar"
+
+[node name="Timer" type="Timer" parent="." unique_id=642678836]
+
+[connection signal="area_entered" from="Node2D/Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

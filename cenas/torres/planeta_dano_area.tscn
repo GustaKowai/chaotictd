@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c74ffxasj0ptc" path="res://gd/planeta_dano_area.gd" id="1_a6kdn"]
 [ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="2_aad67"]
-[ext_resource type="PackedScene" uid="uid://d2gjm8xil17yh" path="res://cenas/bomba.tscn" id="2_chpb1"]
+[ext_resource type="PackedScene" uid="uid://d2gjm8xil17yh" path="res://cenas/debuffs/bomba.tscn" id="2_chpb1"]
 [ext_resource type="Texture2D" uid="uid://cyke5gux0316n" path="res://sprites/torre-area.png" id="3_a6kdn"]
 [ext_resource type="Script" uid="uid://ddlwi8gohf47d" path="res://gd/area_dano.gd" id="3_rcaev"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_wrkmi"]
