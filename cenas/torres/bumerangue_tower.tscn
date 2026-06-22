@@ -3,15 +3,53 @@
 [ext_resource type="Script" uid="uid://dnfpk0t25ujlq" path="res://gd/bumerangue_tower.gd" id="1_hwfcf"]
 [ext_resource type="PackedScene" uid="uid://do7groqhlbflw" path="res://cenas/balas/bullet_bumerangue.tscn" id="2_ho27v"]
 [ext_resource type="PackedScene" uid="uid://dhfcmpbyjxoqs" path="res://cenas/balas/bullet_bumerangue_dano_duplo.tscn" id="2_xcans"]
-[ext_resource type="Texture2D" uid="uid://dmvyghuhdgw5w" path="res://sprites/PlanetasBumerangue2.png" id="3_4ljs1"]
 [ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="3_add4o"]
+[ext_resource type="PackedScene" uid="uid://b6pep2sgw0n5b" path="res://cenas/balas/bullet_bumerangue_aumento_dano.tscn" id="3_f2un3"]
 [ext_resource type="Texture2D" uid="uid://dsa51xcf7rieb" path="res://sprites/barra_curva_empty.png" id="4_hobp6"]
 [ext_resource type="Texture2D" uid="uid://bmlylcnmroyfc" path="res://sprites/barra_curva_full.png" id="5_xcans"]
 [ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="6_0xaye"]
 [ext_resource type="Texture2D" uid="uid://c11c7ma0x22u2" path="res://sprites/barra_curva_full_shield.png" id="6_f2un3"]
+[ext_resource type="Texture2D" uid="uid://bnffcsskljdxt" path="res://sprites/PlanetasBumerangue-new1.png" id="9_7brqx"]
+[ext_resource type="Texture2D" uid="uid://c4w2ff31bjpk7" path="res://sprites/PlanetasBumerangue-new-sheet.png" id="9_k1co4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ho27v"]
 radius = 40.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7brqx"]
+atlas = ExtResource("9_k1co4")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8446s"]
+atlas = ExtResource("9_k1co4")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl7jv"]
+atlas = ExtResource("9_k1co4")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kiqs"]
+atlas = ExtResource("9_k1co4")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q7mwk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7brqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8446s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl7jv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kiqs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 13.3
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_add4o"]
 radius = 105.11898
@@ -21,6 +59,7 @@ collision_mask = 3
 input_pickable = true
 script = ExtResource("1_hwfcf")
 bala_bumerangue_dano_duplo = ExtResource("2_xcans")
+bala_bumerangue_aumenta_dano = ExtResource("3_f2un3")
 delay_shoot = 0.3
 bullet = ExtResource("2_ho27v")
 sprite2d = NodePath("Sprite2D")
@@ -61,9 +100,16 @@ radial_center_offset = Vector2(0, -80)
 texture_progress = ExtResource("6_f2un3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=705764391]
+self_modulate = Color(1, 1, 1, 0)
 texture_filter = 3
-texture = ExtResource("3_4ljs1")
+texture = ExtResource("9_7brqx")
 offset = Vector2(2.9999962, -6.9999924)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=1193893638]
+position = Vector2(3, -7)
+sprite_frames = SubResource("SpriteFrames_q7mwk")
+autoplay = "default"
+frame_progress = 0.30572662
 
 [node name="Cannon" type="Sprite2D" parent="Sprite2D" unique_id=1979164218]
 position = Vector2(45, 8)
@@ -87,14 +133,15 @@ NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): t
 }
 rota_1_1_text = "Aumenta um pouco a velocidade de ataque"
 rota_1_2_text = "Aumenta o dano"
+rota_1_3_text = "O bumerangue aumenta de dano, tamanho e velocidade a cada alvo que atinge"
 rota_2_1_text = "Permite que o bumerangue atinja até 5 alvos antes de desaparecer"
 rota_2_2_text = "O bumerangue não desaparece ao atingir alvos"
 rota_2_3_text = "O bumerangue causa dano ao entrar e ao sair do alvo"
 rota_3_1_text = "Permite que os bumerangues atinjam inimigos camuflados"
 rota_3_2_text = "Aumenta o alcance do bumerangue e a velocidade dos projéteis"
-rota_1_1_price = 100
-rota_1_2_price = 150
-rota_1_3_price = 99999
+rota_1_1_price = 150
+rota_1_2_price = 200
+rota_1_3_price = 1000
 rota_2_1_price = 130
 rota_2_2_price = 300
 rota_2_3_price = 3000

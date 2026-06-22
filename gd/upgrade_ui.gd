@@ -246,6 +246,8 @@ func hide_info():
 		size = upgrade_size
 
 func _on_visibility_changed() -> void:
+	if texture_rect:
+		texture_rect.texture = torre.sprite2d.texture
 	hide_info()
 	#print_debug(size)
 	#if texture_rect:

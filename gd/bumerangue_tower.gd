@@ -1,5 +1,8 @@
 extends Cannon_tower
 @export var bala_bumerangue_dano_duplo:PackedScene
+@export var bala_bumerangue_aumenta_dano:PackedScene
+@export var texture_upada:Texture2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $Sprite2D/AnimatedSprite2D
 
 func _ready() -> void:
 	super()
@@ -7,9 +10,13 @@ func _ready() -> void:
 
 func upgrade_1_1() -> void:
 	delay_shoot = 0.2
+	animated_sprite_2d.speed_scale = 1.5
 	
 func upgrade_1_2():
 	bullet_extra_damage += 20
+	
+func upgrade_1_3():
+	bullet = bala_bumerangue_aumenta_dano
 
 func upgrade_2_1():
 	perfuracao_bonus = 4

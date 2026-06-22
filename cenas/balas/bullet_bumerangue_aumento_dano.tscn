@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b6pep2sgw0n5b"]
+
+[ext_resource type="Script" uid="uid://ci617jwq6rp7d" path="res://cenas/balas/bullet_bumerangue_aumento_dano.gd" id="1_c0ugl"]
+[ext_resource type="Texture2D" uid="uid://duu2h00qm13dg" path="res://sprites/bala_bumerangue.png" id="2_o76ol"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ofrpv"]
+
+[node name="bullet_bumerangue_aumento_dano" type="Area2D" unique_id=651615781]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_c0ugl")
+bullet_duracao = 3.0
+speed = 800.0
+damage = 10
+perfuracao = 3
+metadata/_custom_type_script = "uid://cju1mfu60b65w"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1577110256]
+shape = SubResource("CircleShape2D_ofrpv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2051940041]
+position = Vector2(2, 0)
+texture = ExtResource("2_o76ol")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

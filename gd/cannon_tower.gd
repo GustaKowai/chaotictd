@@ -8,6 +8,7 @@ var perfuracao_bonus:int = 0
 var speed_bonus:int = 0
 var can_see_cammo:bool
 var retira_cammo:bool
+var cor_da_municao:Color = Color.WHITE
 
 @export var delay_shoot: float = 5
 @export var bullet: PackedScene
@@ -28,6 +29,7 @@ func shoot():
 	b.damage += bullet_extra_damage
 	b.perfuracao = perfuracao_bonus
 	b.speed += speed_bonus
+	b.modulate = cor_da_municao
 	if can_see_cammo:
 		b.set_collision_mask_value(6,true)
 	if retira_cammo:

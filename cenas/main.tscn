@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://blll4f2yqp03e" path="res://cenas/UI/UI.tscn" id="12_iwfo7"]
 [ext_resource type="PackedScene" uid="uid://bjc66ers4cmw8" path="res://cenas/enemy_spawner.tscn" id="15_gl1un"]
 
+[sub_resource type="Environment" id="Environment_bhvw8"]
+
 [node name="Main" type="Node2D" unique_id=1501420038]
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=193963748]
@@ -38,3 +40,6 @@ autoplay = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=397640874]
 position = Vector2(957, 542)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2036050511]
+environment = SubResource("Environment_bhvw8")
