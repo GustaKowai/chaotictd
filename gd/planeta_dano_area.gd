@@ -13,6 +13,7 @@ func upgrade_1_3():
 	
 func upgrade_2_1():
 	area_dano.scale = Vector2(1.5,1.5)
+	spread_area_radius *= 1.5
 	
 func upgrade_2_2():
 	area_dano.set_collision_mask_value(6,true)

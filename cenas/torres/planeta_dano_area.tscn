@@ -3,16 +3,84 @@
 [ext_resource type="Script" uid="uid://c74ffxasj0ptc" path="res://gd/planeta_dano_area.gd" id="1_a6kdn"]
 [ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="2_aad67"]
 [ext_resource type="PackedScene" uid="uid://d2gjm8xil17yh" path="res://cenas/debuffs/bomba.tscn" id="2_chpb1"]
-[ext_resource type="Texture2D" uid="uid://cyke5gux0316n" path="res://sprites/torre-area.png" id="3_a6kdn"]
 [ext_resource type="Script" uid="uid://ddlwi8gohf47d" path="res://gd/area_dano.gd" id="3_rcaev"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_wrkmi"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="4_koxe4"]
+[ext_resource type="Texture2D" uid="uid://d0n554p0f2vcp" path="res://sprites/PlanetaRaioSprite-sheet2.png" id="5_5ikv0"]
 [ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="6_koxe4"]
 [ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="7_chpb1"]
 [ext_resource type="Texture2D" uid="uid://ni5jyd1s88jo" path="res://sprites/torre-area-temp-area.png" id="7_ohx4t"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6krs8"]
-size = Vector2(50, 48)
+[sub_resource type="CircleShape2D" id="CircleShape2D_d5so0"]
+radius = 22.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgs41"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e58gw"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(201, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3naom"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(268, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nq0ws"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(335, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipinv"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(402, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbkfu"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(469, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hclay"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(0, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkgd2"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(67, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v03hf"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(134, 0, 67, 67)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jhexb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e58gw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3naom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nq0ws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipinv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbkfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hclay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkgd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v03hf")
+}],
+"loop": false,
+"name": &"chock",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6krs8"]
 radius = 74.02702
@@ -24,6 +92,38 @@ region = Rect2(150, 0, 150, 150)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ikv0"]
 atlas = ExtResource("7_ohx4t")
 region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5so0"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(201, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhexb"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(268, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vek8x"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(335, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_salcn"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(402, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2mn6"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(469, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p33uj"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(0, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cx33"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(67, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bq3j"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(134, 0, 67, 67)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d5so0"]
 animations = [{
@@ -58,6 +158,35 @@ animations = [{
 "loop": false,
 "name": &"attack",
 "speed": 27.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5so0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhexb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vek8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_salcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2mn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p33uj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cx33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bq3j")
+}],
+"loop": false,
+"name": &"chock",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a6kdn"]
@@ -76,12 +205,16 @@ death_prefab = ExtResource("2_aad67")
 metadata/_custom_type_script = "uid://cb8m2etlq51wa"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1106354335]
-position = Vector2(-1, -1)
-shape = SubResource("RectangleShape2D_6krs8")
+shape = SubResource("CircleShape2D_d5so0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1068359886]
-position = Vector2(-0.99999905, -0.99999905)
-texture = ExtResource("3_a6kdn")
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(2, 1)
+texture = SubResource("AtlasTexture_bgs41")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=695492518]
+sprite_frames = SubResource("SpriteFrames_jhexb")
+animation = &"chock"
 
 [node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=375576532]
 offset_left = -64.0
@@ -114,9 +247,10 @@ wait_time = 0.7
 autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="area_dano" unique_id=1690157820]
+position = Vector2(2, 1)
 sprite_frames = SubResource("SpriteFrames_d5so0")
-animation = &"attack"
-frame = 8
+animation = &"chock"
+frame = 7
 frame_progress = 1.0
 
 [node name="AreaDeExclusao" type="Area2D" parent="area_dano" unique_id=828761745]

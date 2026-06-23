@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dcblr1s7xybnt"]
+
+[ext_resource type="Script" uid="uid://rsym48sx71py" path="res://cenas/trail.gd" id="1_ssbac"]
+
+[sub_resource type="Curve" id="Curve_jxt3g"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_ssbac"]
+colors = PackedColorArray(0.77254903, 0.6784314, 0.5803922, 1, 0.37254903, 0.3019608, 0.22745098, 1)
+
+[node name="trail" type="Line2D" unique_id=1107045996]
+show_behind_parent = true
+width_curve = SubResource("Curve_jxt3g")
+default_color = Color(0.40784314, 0.40784314, 0.40784314, 0.5568628)
+gradient = SubResource("Gradient_ssbac")
+script = ExtResource("1_ssbac")

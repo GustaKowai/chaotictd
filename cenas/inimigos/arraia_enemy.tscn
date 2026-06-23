@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://cpr4xsnla50fm"]
 
-[ext_resource type="Script" uid="uid://bxk7ou5cwigkv" path="res://gd/enemy.gd" id="1_xju15"]
+[ext_resource type="Script" uid="uid://dpagr3g08pqmx" path="res://cenas/inimigos/arraia_enemy.gd" id="1_yvjpy"]
 [ext_resource type="PackedScene" uid="uid://bn3hmqsehhwo7" path="res://cenas/explosa_inimigo.tscn" id="2_8kiid"]
-[ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="2_d2wt1"]
 [ext_resource type="Texture2D" uid="uid://b7dt2xg6nutu4" path="res://sprites/nave inimiga - movimento spritesheet2.png" id="3_qtwt8"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_xju15"]
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_6qwg1"]
 [ext_resource type="Texture2D" uid="uid://byc3rdp7hf53b" path="res://sprites/nave inimiga media ataque.png" id="4_wkv8c"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="5_ct7dm"]
+[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="6_3toxa"]
+[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="7_8m0q7"]
 [ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="8_2ychb"]
 [ext_resource type="PackedScene" uid="uid://cltyrduyes4vp" path="res://cenas/alert.tscn" id="8_6cei5"]
 
@@ -93,11 +94,10 @@ height = 130.0
 [node name="ArraiaEnemy" type="CharacterBody2D" unique_id=1532225188]
 collision_layer = 2
 collision_mask = 12
-script = ExtResource("1_xju15")
+script = ExtResource("1_yvjpy")
 max_health = 500
 death_prefab = ExtResource("2_8kiid")
 color_damage = Color(0.99215686, 0.4627451, 0, 1)
-pieces = ExtResource("2_d2wt1")
 number_pieces_min = 2
 number_pieces_max = 2
 spread_area_radius = 65.0
@@ -128,12 +128,13 @@ collision_layer = 2
 position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_wkv8c")
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=218358628]
-offset_left = -80.0
-offset_top = 70.0
-offset_right = 70.0
-offset_bottom = 90.0
-show_percentage = false
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1501280818]
+offset_left = -63.0
+offset_top = -65.0
+offset_right = 65.0
+offset_bottom = -45.0
+texture_under = ExtResource("6_3toxa")
+texture_progress = ExtResource("7_8m0q7")
 
 [node name="StateMachine" type="Node" parent="." unique_id=874818024 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_xju15")
@@ -159,3 +160,6 @@ metadata/_custom_type_script = "uid://da3rkekrhcba0"
 script = ExtResource("8_2ychb")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://cqvygmqemyqcq"
+
+[connection signal="mouse_entered" from="HitBox" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HitBox" to="." method="_on_mouse_exited"]

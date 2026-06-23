@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="3_vhru5"]
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_gxl1r"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="5_5wlbm"]
+[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="5_71dcr"]
+[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="6_us7tv"]
 [ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="8_v4xsw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ol254"]
@@ -57,12 +59,14 @@ collision_mask = 13
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_n3dg1")
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1044182165]
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=527987750]
 offset_left = -121.0
 offset_top = -114.0
 offset_right = 121.0
 offset_bottom = -86.0
-show_percentage = false
+nine_patch_stretch = true
+texture_under = ExtResource("5_71dcr")
+texture_progress = ExtResource("6_us7tv")
 
 [node name="StateMachine" type="Node" parent="." unique_id=2097734650 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_4c5jp")
@@ -86,3 +90,6 @@ metadata/_custom_type_script = "uid://da3rkekrhcba0"
 script = ExtResource("8_v4xsw")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://cqvygmqemyqcq"
+
+[connection signal="mouse_entered" from="HitBox" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HitBox" to="." method="_on_mouse_exited"]

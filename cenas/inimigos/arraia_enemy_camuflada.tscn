@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://byc3rdp7hf53b" path="res://sprites/nave inimiga media ataque.png" id="4_btro5"]
 [ext_resource type="Texture2D" uid="uid://b7dt2xg6nutu4" path="res://sprites/nave inimiga - movimento spritesheet2.png" id="4_whvv8"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="5_afyo5"]
+[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="6_afyo5"]
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="6_hqckq"]
+[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="7_hqckq"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="7_sww0s"]
 [ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="8_bwqkt"]
 
@@ -131,12 +133,13 @@ collision_layer = 32
 position = Vector2(-7, 0)
 shape = SubResource("CapsuleShape2D_btro5")
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=218358628]
-offset_left = -75.0
-offset_top = 67.0
-offset_right = 73.0
-offset_bottom = 81.0
-show_percentage = false
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1017885502]
+offset_left = -64.0
+offset_top = -62.0
+offset_right = 64.0
+offset_bottom = -42.0
+texture_under = ExtResource("6_afyo5")
+texture_progress = ExtResource("7_hqckq")
 
 [node name="StateMachine" type="Node" parent="." unique_id=874818024 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("5_afyo5")
@@ -160,3 +163,6 @@ metadata/_custom_type_script = "uid://da3rkekrhcba0"
 script = ExtResource("8_bwqkt")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://cqvygmqemyqcq"
+
+[connection signal="mouse_entered" from="HitBox" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HitBox" to="." method="_on_mouse_exited"]

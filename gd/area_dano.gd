@@ -19,7 +19,7 @@ func _on_timer_timeout():
 	causar_dano()
 	
 func causar_dano():
-	animated_sprite_2d.play("attack")
+	animated_sprite_2d.play("chock")
 	#print_debug("tentou_causar_dano")
 	var inimigos = get_overlapping_areas()
 	#print_debug(inimigos)

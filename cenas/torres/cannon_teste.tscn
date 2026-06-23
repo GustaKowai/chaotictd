@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c7myvvb3gsh5t"]
 
 [ext_resource type="Script" uid="uid://cigjf741pjw4n" path="res://gd/cannon_teste.gd" id="1_is2nt"]
-[ext_resource type="PackedScene" uid="uid://bkyyvpf4gndau" path="res://cenas/balas/bullet_teste.tscn" id="2_slvgt"]
 [ext_resource type="PackedScene" uid="uid://bgksifto576q2" path="res://cenas/balas/pedra_ricochete.tscn" id="2_w7g3a"]
 [ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="3_0cxfh"]
 [ext_resource type="PackedScene" uid="uid://bcbjjqgft1ukh" path="res://cenas/balas/bullet_chase.tscn" id="3_1o2wj"]
@@ -77,7 +76,7 @@ bullet_ricochete = ExtResource("2_w7g3a")
 bullet_teleguiada = ExtResource("3_1o2wj")
 bullet_pedra = ExtResource("4_wvtn8")
 delay_shoot = 0.3
-bullet = ExtResource("2_slvgt")
+bullet = ExtResource("3_1o2wj")
 sprite2d = NodePath("Sprite2D")
 collision_shape = NodePath("AreaDeExclusao/AreaDeexclusaoShape")
 max_health = 500

@@ -7,7 +7,7 @@ var stun:bool
 @onready var state_machine: State_machine = $StateMachine
 @onready var hit_box: Area2D = $HitBox
 
-@onready var progress_bar: ProgressBar = $ProgressBar
+@onready var progress_bar: TextureProgressBar = $ProgressBar
 @onready var sprite = $Sprite
 @export_category("Life")
 #@export var distancia_colisao:float
@@ -36,6 +36,7 @@ func _ready() -> void:
 	GameManager.restart_game.connect(queue_free)
 	progress_bar.max_value = max_health
 	current_health = max_health
+	progress_bar.visible = false
 
 func _physics_process(_delta: float) -> void:
 	velocity *=slow_time
@@ -98,3 +99,11 @@ func drop_pieces():
 		item.position = position+position_spread
 		get_parent().call_deferred("add_child",item)
 		#get_parent().add_child(item)
+		
+func _on_mouse_entered() -> void:
+	print_debug("o mouse entrou")
+	progress_bar.visible = true
+	
+func _on_mouse_exited() -> void:
+	print_debug("o mouse saiu")
+	progress_bar.visible = false

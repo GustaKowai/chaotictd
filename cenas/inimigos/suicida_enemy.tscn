@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://cjtli66j3y46e" path="res://gd/EnemyHunt.gd" id="4_d1fw4"]
 [ext_resource type="Script" uid="uid://i546gccwghdh" path="res://gd/EnemyExplode.gd" id="6_4bk5b"]
 [ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="6_w2y5f"]
+[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="9_52d0u"]
+[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="10_wmyqr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ka714"]
 radius = 23.505318
@@ -125,9 +127,14 @@ script = ExtResource("6_4bk5b")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://i546gccwghdh"
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=573586995]
-offset_left = -28.0
-offset_top = -28.0
-offset_right = 31.0
-offset_bottom = -20.0
-show_percentage = false
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=2007040514]
+offset_left = -68.0
+offset_top = -50.0
+offset_right = 30.0
+offset_bottom = -38.0
+nine_patch_stretch = true
+texture_under = ExtResource("9_52d0u")
+texture_progress = ExtResource("10_wmyqr")
+
+[connection signal="mouse_entered" from="HitBox" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HitBox" to="." method="_on_mouse_exited"]
