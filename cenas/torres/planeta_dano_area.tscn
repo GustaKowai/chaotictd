@@ -186,7 +186,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"chock",
-"speed": 5.0
+"speed": 14.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a6kdn"]
@@ -243,7 +243,6 @@ pieces = ExtResource("7_chpb1")
 shape = SubResource("CircleShape2D_6krs8")
 
 [node name="Timer" type="Timer" parent="area_dano" unique_id=545405562]
-wait_time = 0.7
 autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="area_dano" unique_id=1690157820]
