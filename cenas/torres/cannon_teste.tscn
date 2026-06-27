@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://c7myvvb3gsh5t"]
 
 [ext_resource type="Script" uid="uid://cigjf741pjw4n" path="res://gd/cannon_teste.gd" id="1_is2nt"]
-[ext_resource type="PackedScene" uid="uid://bkyyvpf4gndau" path="res://cenas/balas/bullet_teste.tscn" id="2_slvgt"]
+[ext_resource type="PackedScene" uid="uid://bgksifto576q2" path="res://cenas/balas/pedra_ricochete.tscn" id="2_w7g3a"]
+[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="3_0cxfh"]
+[ext_resource type="PackedScene" uid="uid://bcbjjqgft1ukh" path="res://cenas/balas/bullet_chase.tscn" id="3_1o2wj"]
 [ext_resource type="Texture2D" uid="uid://bjsjja478f7dv" path="res://sprites/torre base2.png" id="3_ocafh"]
+[ext_resource type="Texture2D" uid="uid://dsa51xcf7rieb" path="res://sprites/barra_curva_empty.png" id="4_aupty"]
 [ext_resource type="Texture2D" uid="uid://b6x1lq47q6ynt" path="res://sprites/torre base.png" id="4_p00pg"]
-[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="5_baf7l"]
-[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="6_psoph"]
-[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/upgrade_ui.tscn" id="7_psoph"]
+[ext_resource type="PackedScene" uid="uid://7vwv0bybyog0" path="res://cenas/balas/bullet_stone.tscn" id="4_wvtn8"]
+[ext_resource type="Texture2D" uid="uid://bmlylcnmroyfc" path="res://sprites/barra_curva_full.png" id="5_w7g3a"]
+[ext_resource type="Texture2D" uid="uid://c11c7ma0x22u2" path="res://sprites/barra_curva_full_shield.png" id="6_1o2wj"]
+[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="7_psoph"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_slvgt"]
 radius = 51.0
@@ -61,29 +65,64 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0cxfh"]
+radius = 115.35164
+
 [node name="Cannon_teste" type="StaticBody2D" unique_id=747018379 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 collision_mask = 3
 input_pickable = true
 script = ExtResource("1_is2nt")
+bullet_ricochete = ExtResource("2_w7g3a")
+bullet_teleguiada = ExtResource("3_1o2wj")
+bullet_pedra = ExtResource("4_wvtn8")
 delay_shoot = 0.3
-bullet = ExtResource("2_slvgt")
+bullet = ExtResource("3_1o2wj")
 sprite2d = NodePath("Sprite2D")
-collision_shape = NodePath("CollisionShape2D")
-max_health = 50
-value = 3
+collision_shape = NodePath("AreaDeExclusao/AreaDeexclusaoShape")
+max_health = 500
+value = 30
+death_prefab = ExtResource("3_0cxfh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=929075892]
 position = Vector2(-2, 2)
 shape = SubResource("CircleShape2D_slvgt")
 
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1274666815]
+offset_left = -70.99999
+offset_top = -58.0
+offset_right = 93.00001
+offset_bottom = 106.0
+scale = Vector2(0.85, 0.85)
+value = 100.0
+fill_mode = 5
+radial_initial_angle = 237.5
+radial_fill_degrees = 115.0
+radial_center_offset = Vector2(0, -100)
+texture_under = ExtResource("4_aupty")
+texture_progress = ExtResource("5_w7g3a")
+
+[node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=1452762307]
+offset_left = -70.99999
+offset_top = -58.0
+offset_right = 93.00001
+offset_bottom = 106.0
+scale = Vector2(0.85, 0.85)
+fill_mode = 5
+radial_initial_angle = 237.5
+radial_fill_degrees = 115.0
+radial_center_offset = Vector2(0, -100)
+texture_progress = ExtResource("6_1o2wj")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1836009599]
-self_modulate = Color(1, 1, 1, 0)
+position = Vector2(-2, 2)
 texture = ExtResource("3_ocafh")
+offset = Vector2(2, -2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=877975832]
 sprite_frames = SubResource("SpriteFrames_8385t")
 autoplay = "default"
 frame_progress = 0.1968192
+offset = Vector2(2, -2)
 
 [node name="Cannon" type="Sprite2D" parent="Sprite2D" unique_id=1500969869]
 position = Vector2(44, 0)
@@ -92,27 +131,41 @@ position = Vector2(44, 0)
 unique_name_in_owner = true
 position = Vector2(6, 0)
 
-[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1274666815]
-offset_left = -66.0
-offset_top = 62.0
-offset_right = 62.0
-offset_bottom = 82.0
-texture_under = ExtResource("5_baf7l")
-texture_progress = ExtResource("6_psoph")
-
-[node name="Upgrade_UI" parent="." unique_id=653696189 node_paths=PackedStringArray("torre") instance=ExtResource("7_psoph")]
+[node name="Upgrade_UI" parent="." unique_id=653696189 node_paths=PackedStringArray("torre", "rota_disable") instance=ExtResource("7_psoph")]
 torre = NodePath("..")
-rota_1_1_text = "aumenta a velocidade de ataque"
-rota_1_2_text = "aumenta mais ainda a velocidade"
-rota_1_3_text = "c"
-rota_2_1_text = "aumenta o dano da pedra"
-rota_2_2_text = "e"
-rota_2_3_text = "f"
-rota_3_1_text = "g"
-rota_3_2_text = "h"
-rota_3_3_text = "i"
-rota_1_1_price = 1
-rota_1_2_price = 3
-rota_2_1_price = 2
+rota_disable = {
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): true
+}
+rota_1_1_text = "Aumenta a velocidade de ataque"
+rota_1_2_text = "Aumenta mais ainda a velocidade"
+rota_1_3_text = "Pedras que atingirem os oponentes ficam orbitando eles causando dano em outros inimigos próximos"
+rota_2_1_text = "Aumenta o dano da pedra"
+rota_2_2_text = "Permite o tiro atingir dois inimigos extras"
+rota_2_3_text = "Aumenta o número de alvos possiveis de se atingir antes de desaparecer em um. Além disso, ricocheteia nas paredes da tela. Cada ricochete conta como um alvo atingido."
+rota_3_1_text = "Consegue atingir inimigos camuflados"
+rota_3_3_text = "A bala é substituida por uma bala teleguiada que segue o alvo que passar perto dela"
+rota_1_1_price = 60
+rota_1_2_price = 200
+rota_1_3_price = 1200
+rota_2_1_price = 60
+rota_2_2_price = 180
+rota_2_3_price = 2000
+rota_3_1_price = 50
+rota_3_2_price = 1
+rota_3_3_price = 900
+
+[node name="AreaDeExclusao" type="Area2D" parent="." unique_id=191637833]
+visible = false
+
+[node name="AreaDeexclusaoShape" type="CollisionShape2D" parent="AreaDeExclusao" unique_id=1577349732]
+shape = SubResource("CircleShape2D_0cxfh")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

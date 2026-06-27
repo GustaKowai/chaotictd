@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bl3tofypl6i18"]
+
+[ext_resource type="Script" uid="uid://csvubehbb88mk" path="res://gd/bullet_debuff.gd" id="1_e7nc3"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_e7nc3"]
+size = Vector2(28, 28)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e7nc3"]
+radius = 15.0
+
+[node name="Bullet_debuff" type="Area2D" unique_id=246790371]
+script = ExtResource("1_e7nc3")
+metadata/_custom_type_script = "uid://dfphxkt0fqq73"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1340930053]
+texture = SubResource("PlaceholderTexture2D_e7nc3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1714875347]
+shape = SubResource("CircleShape2D_e7nc3")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=73524037]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://do7groqhlbflw"]
 
 [ext_resource type="Script" uid="uid://cju1mfu60b65w" path="res://gd/bullet_bumerangue.gd" id="1_k0fcg"]
-[ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="2_lgxiu"]
+[ext_resource type="PackedScene" uid="uid://ctkusupnnysr3" path="res://cenas/bumerangue_rastro.tscn" id="2_g7anc"]
+[ext_resource type="PackedScene" uid="uid://3g5wbdv1ufug" path="res://cenas/impact.tscn" id="2_sshfp"]
+[ext_resource type="Texture2D" uid="uid://duu2h00qm13dg" path="res://sprites/bala_bumerangue.png" id="3_sshfp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lgxiu"]
 
@@ -9,18 +11,21 @@
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_k0fcg")
-bullet_duracao = 6.0
-speed = 470.0
-damage = 2
+bullet_duracao = 3.0
+rastro = ExtResource("2_g7anc")
+rastro_tempo = 0.1
+impact = ExtResource("2_sshfp")
+speed = 800.0
+damage = 10
+perfuracao = 3
 metadata/_custom_type_script = "uid://dfphxkt0fqq73"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=275368755]
 shape = SubResource("CircleShape2D_lgxiu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1768558595]
-position = Vector2(-3.8146973e-06, 3.8146973e-06)
-scale = Vector2(0.1171875, 0.109375)
-texture = ExtResource("2_lgxiu")
+position = Vector2(2, 0)
+texture = ExtResource("3_sshfp")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://b3uxdxfuskpns"]
+
+[ext_resource type="Script" uid="uid://bxk7ou5cwigkv" path="res://gd/enemy.gd" id="1_jfx07"]
+[ext_resource type="PackedScene" uid="uid://bn3hmqsehhwo7" path="res://cenas/explosa_inimigo.tscn" id="2_bwqkt"]
+[ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="3_btro5"]
+[ext_resource type="Texture2D" uid="uid://byc3rdp7hf53b" path="res://sprites/nave inimiga media ataque.png" id="4_btro5"]
+[ext_resource type="Texture2D" uid="uid://b7dt2xg6nutu4" path="res://sprites/nave inimiga - movimento spritesheet2.png" id="4_whvv8"]
+[ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="5_afyo5"]
+[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="6_afyo5"]
+[ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="6_hqckq"]
+[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="7_hqckq"]
+[ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="7_sww0s"]
+[ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="8_bwqkt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whvv8"]
+atlas = ExtResource("4_btro5")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afyo5"]
+atlas = ExtResource("4_btro5")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqckq"]
+atlas = ExtResource("4_btro5")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sww0s"]
+atlas = ExtResource("4_whvv8")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4khu"]
+atlas = ExtResource("4_whvv8")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwmp4"]
+atlas = ExtResource("4_whvv8")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ey2d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whvv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afyo5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqckq")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sww0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4khu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwmp4")
+}],
+"loop": true,
+"name": &"follow",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sww0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4khu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwmp4")
+}],
+"loop": true,
+"name": &"hunt",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtwt8"]
+size = Vector2(21.000053, 123.50006)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sfe5s"]
+radius = 0.92369455
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_btro5"]
+radius = 49.0
+height = 130.0
+
+[node name="ArraiaEnemy" type="CharacterBody2D" unique_id=1532225188]
+collision_layer = 2
+collision_mask = 12
+script = ExtResource("1_jfx07")
+max_health = 500
+death_prefab = ExtResource("2_bwqkt")
+color_damage = Color(0.99215686, 0.4627451, 0, 1)
+pieces = ExtResource("3_btro5")
+number_pieces_min = 4
+number_pieces_max = 4
+spread_area_radius = 65.0
+wave_appear = 11
+metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1359069013]
+self_modulate = Color(1, 1, 1, 0.20500001)
+position = Vector2(-1, 0)
+sprite_frames = SubResource("SpriteFrames_1ey2d")
+animation = &"attack"
+frame_progress = 0.7006803
+offset = Vector2(-19.99997, 0)
+
+[node name="AreaAtaque" type="Area2D" parent="Sprite" unique_id=1404639723]
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/AreaAtaque" unique_id=2393644]
+position = Vector2(64, 0.99999905)
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("RectangleShape2D_qtwt8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1721174049]
+scale = Vector2(49.80001, 44.520004)
+shape = SubResource("CircleShape2D_sfe5s")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=2028237609 groups=["Enemy"]]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=439474836]
+position = Vector2(-7, 0)
+shape = SubResource("CapsuleShape2D_btro5")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1017885502]
+offset_left = -64.0
+offset_top = -62.0
+offset_right = 64.0
+offset_bottom = -42.0
+texture_under = ExtResource("6_afyo5")
+texture_progress = ExtResource("7_hqckq")
+
+[node name="StateMachine" type="Node" parent="." unique_id=874818024 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("5_afyo5")
+initial_state = NodePath("Follow")
+metadata/_custom_type_script = "uid://ba7rfbrlsl42t"
+
+[node name="Follow" type="Node" parent="StateMachine" unique_id=1890026106 node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_hqckq")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://cjnylbeht4a6i"
+
+[node name="Attack" type="Node" parent="StateMachine" unique_id=1529928686 node_paths=PackedStringArray("enemy", "area_dano")]
+script = ExtResource("7_sww0s")
+enemy = NodePath("../..")
+area_dano = NodePath("../../Sprite/AreaAtaque")
+dano = 100
+delay_attack = 0.5
+metadata/_custom_type_script = "uid://da3rkekrhcba0"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=612854666 node_paths=PackedStringArray("enemy")]
+script = ExtResource("8_bwqkt")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://cqvygmqemyqcq"
+
+[connection signal="mouse_entered" from="HitBox" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HitBox" to="." method="_on_mouse_exited"]

@@ -3,8 +3,11 @@ extends Enemy
 @export var dano:int
 
 func die():
-	var alvos = area_dano.get_overlapping_bodies()
-	for alvo in alvos:
-		if alvo.is_in_group("torre"):
-			alvo.take_damage(dano)
-	super()
+	if death_prefab:
+		var death_object = death_prefab.instantiate()
+		death_object.position = position
+		death_object.dano = dano
+		get_parent().call_deferred("add_child",death_object)
+	await drop_pieces()
+	WaveManager.enemy_dead.emit(1)
+	queue_free()

@@ -7,13 +7,14 @@ extends HBoxContainer
 func _ready() -> void:
 	GameManager.piece_collected.connect(update)
 	WaveManager.start_wave.connect(update_wave)
-
+	piece_number.text = str(GameManager.piece_count)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func update():
 	piece_number.text = str(GameManager.piece_count)
 
-func update_wave(num):
+func update_wave(_num):
 	wave_number.text =str(WaveManager.wave)

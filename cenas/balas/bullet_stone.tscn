@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://7vwv0bybyog0"]
+
+[ext_resource type="Script" uid="uid://bxf62fgfc6bqs" path="res://bullet_stone.gd" id="1_yyjjd"]
+[ext_resource type="PackedScene" uid="uid://0vk8874vmcc0" path="res://cenas/debuffs/pedra_rodopiante.tscn" id="2_lmeqp"]
+[ext_resource type="PackedScene" uid="uid://bgf13w05juyr2" path="res://cenas/debuffs/debuff_stun.tscn" id="2_y7irn"]
+[ext_resource type="Texture2D" uid="uid://cd5gh8d6bbhkw" path="res://sprites/projetil.png" id="2_yb6yd"]
+[ext_resource type="PackedScene" uid="uid://3g5wbdv1ufug" path="res://cenas/impact.tscn" id="4_lmeqp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y7irn"]
+radius = 14.0
+
+[node name="bullet_stone" type="Area2D" unique_id=1182583783]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_yyjjd")
+debuff = ExtResource("2_lmeqp")
+debuff_time = 10.0
+debuff_stun = ExtResource("2_y7irn")
+impact = ExtResource("4_lmeqp")
+speed = 400.0
+damage = 10
+metadata/_custom_type_script = "uid://csvubehbb88mk"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=210314888]
+texture = ExtResource("2_yb6yd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1981159128]
+shape = SubResource("CircleShape2D_y7irn")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=709223011]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

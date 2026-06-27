@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d2gjm8xil17yh"]
+
+[ext_resource type="Script" uid="uid://4vjv5e4ji1pk" path="res://gd/bomba.gd" id="1_5g8ca"]
+[ext_resource type="Texture2D" uid="uid://bu8ay7p3wd8n8" path="res://sprites/upgrade_disable.png" id="2_xcx0s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mlp3t"]
+
+[node name="Bomba" type="Area2D" unique_id=1422895135]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_5g8ca")
+damage = 50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=154883250]
+shape = SubResource("CircleShape2D_mlp3t")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1005942543]
+modulate = Color(18.892157, 18.892157, 0, 1)
+texture = ExtResource("2_xcx0s")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

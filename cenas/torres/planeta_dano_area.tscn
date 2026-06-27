@@ -1,35 +1,220 @@
 [gd_scene format=3 uid="uid://cvmxlps3fc4v1"]
 
-[ext_resource type="Script" uid="uid://cb8m2etlq51wa" path="res://gd/building.gd" id="1_qlp5y"]
-[ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="2_rcaev"]
+[ext_resource type="Script" uid="uid://c74ffxasj0ptc" path="res://gd/planeta_dano_area.gd" id="1_a6kdn"]
+[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="2_aad67"]
+[ext_resource type="PackedScene" uid="uid://d2gjm8xil17yh" path="res://cenas/debuffs/bomba.tscn" id="2_chpb1"]
 [ext_resource type="Script" uid="uid://ddlwi8gohf47d" path="res://gd/area_dano.gd" id="3_rcaev"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_wrkmi"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="4_koxe4"]
-[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/upgrade_ui.tscn" id="6_koxe4"]
+[ext_resource type="Texture2D" uid="uid://d0n554p0f2vcp" path="res://sprites/PlanetaRaioSprite-sheet2.png" id="5_5ikv0"]
+[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="6_koxe4"]
+[ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="7_chpb1"]
+[ext_resource type="Texture2D" uid="uid://ni5jyd1s88jo" path="res://sprites/torre-area-temp-area.png" id="7_ohx4t"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6krs8"]
-size = Vector2(50, 48)
+[sub_resource type="CircleShape2D" id="CircleShape2D_d5so0"]
+radius = 22.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgs41"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e58gw"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(201, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3naom"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(268, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nq0ws"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(335, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipinv"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(402, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbkfu"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(469, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hclay"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(0, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkgd2"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(67, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v03hf"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(134, 0, 67, 67)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jhexb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e58gw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3naom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nq0ws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipinv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbkfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hclay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkgd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v03hf")
+}],
+"loop": false,
+"name": &"chock",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6krs8"]
 radius = 74.02702
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_chpb1"]
+atlas = ExtResource("7_ohx4t")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ikv0"]
+atlas = ExtResource("7_ohx4t")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5so0"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(201, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhexb"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(268, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vek8x"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(335, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_salcn"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(402, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2mn6"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(469, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p33uj"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(0, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cx33"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(67, 0, 67, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bq3j"]
+atlas = ExtResource("5_5ikv0")
+region = Rect2(134, 0, 67, 67)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5so0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chpb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ikv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chpb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ikv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chpb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ikv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chpb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ikv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chpb1")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 27.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5so0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhexb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vek8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_salcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2mn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p33uj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cx33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bq3j")
+}],
+"loop": false,
+"name": &"chock",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a6kdn"]
+radius = 74.02702
+
 [node name="planeta_dano_area" type="StaticBody2D" unique_id=40702169 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 input_pickable = true
-script = ExtResource("1_qlp5y")
+script = ExtResource("1_a6kdn")
+bomba = ExtResource("2_chpb1")
+spread_area_radius = 100.0
 sprite2d = NodePath("Sprite2D")
-collision_shape = NodePath("CollisionShape2D")
-max_health = 50
-value = 4
+collision_shape = NodePath("area_dano/AreaDeExclusao/AreaDeexclusaoShape")
+max_health = 500
+value = 40
+death_prefab = ExtResource("2_aad67")
 metadata/_custom_type_script = "uid://cb8m2etlq51wa"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1106354335]
-position = Vector2(-1, -1)
-shape = SubResource("RectangleShape2D_6krs8")
+shape = SubResource("CircleShape2D_d5so0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1068359886]
-position = Vector2(-0.99999905, -0.99999905)
-scale = Vector2(0.390625, 0.375)
-texture = ExtResource("2_rcaev")
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(2, 1)
+texture = SubResource("AtlasTexture_bgs41")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=695492518]
+sprite_frames = SubResource("SpriteFrames_jhexb")
+animation = &"chock"
 
 [node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=375576532]
 offset_left = -64.0
@@ -40,10 +225,19 @@ value = 40.0
 texture_under = ExtResource("3_wrkmi")
 texture_progress = ExtResource("4_koxe4")
 
+[node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=573501421]
+offset_left = -64.0
+offset_top = 34.0
+offset_right = 64.0
+offset_bottom = 54.0
+texture_progress = ExtResource("4_koxe4")
+tint_progress = Color(0.001, 7.574, 7, 1)
+
 [node name="area_dano" type="Area2D" parent="." unique_id=1978986120]
 collision_mask = 2
 script = ExtResource("3_rcaev")
-dano_area = 3
+dano_area = 30
+pieces = ExtResource("7_chpb1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_dano" unique_id=1239509862]
 shape = SubResource("CircleShape2D_6krs8")
@@ -52,8 +246,48 @@ shape = SubResource("CircleShape2D_6krs8")
 wait_time = 0.7
 autostart = true
 
-[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("6_koxe4")]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="area_dano" unique_id=1690157820]
+position = Vector2(2, 1)
+sprite_frames = SubResource("SpriteFrames_d5so0")
+animation = &"chock"
+frame = 7
+frame_progress = 1.0
+
+[node name="AreaDeExclusao" type="Area2D" parent="area_dano" unique_id=828761745]
+
+[node name="AreaDeexclusaoShape" type="CollisionShape2D" parent="area_dano/AreaDeExclusao" unique_id=1790111150]
+shape = SubResource("CircleShape2D_a6kdn")
+
+[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre", "rota_disable") instance=ExtResource("6_koxe4")]
 torre = NodePath("..")
+rota_disable = {
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): true
+}
+rota_1_1_text = "Aumenta o dano"
+rota_1_3_text = "Inimigos atingidos pela torre tem chance de dropar até o dobro de peças ao morrerem"
+rota_2_1_text = "Aumenta o alcance da torre"
+rota_2_2_text = "Permite que a torre atinja os inimigos"
+rota_2_3_text = "Retira camuflagem de inimigos atingidos"
+rota_3_1_text = "Aumenta a frequencia dos ataques"
+rota_3_2_text = "Causa duas instâncias de dano no inimigo quando ele entra no alcance da torre"
+rota_3_3_text = "Libera pequenas bombas que explodem ao contato, causando dano em quem a ativou"
+rota_1_1_price = 1
+rota_1_2_price = 1
+rota_1_3_price = 1
+rota_2_1_price = 200
+rota_2_2_price = 300
+rota_2_3_price = 2000
+rota_3_1_price = 1
+rota_3_2_price = 1
+rota_3_3_price = 1
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="area_dano/Timer" to="area_dano" method="_on_timer_timeout"]

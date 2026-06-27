@@ -3,9 +3,11 @@ class_name Enemy
 ### Classe Inimigo, usado de base para todos os inimigos.
 ### A Classe base tem um Sprite, CollisionShape2D, State_Machine, ProgressBar e HitBox.
 var slow_time:float = 1.0
+var stun:bool
 @onready var state_machine: State_machine = $StateMachine
+@onready var hit_box: Area2D = $HitBox
 
-@onready var progress_bar: ProgressBar = $ProgressBar
+@onready var progress_bar: TextureProgressBar = $ProgressBar
 @onready var sprite = $Sprite
 @export_category("Life")
 #@export var distancia_colisao:float
@@ -21,7 +23,8 @@ var slow_time:float = 1.0
 @export_category("waves")
 @export var cost:int
 @export var wave_appear:int
-
+var morto:bool = false
+#var teste:int = 0
 var alvo:Building  #Utilizado para inimigos que podem mudar de alvo
 
 var current_health: int :
@@ -30,14 +33,18 @@ var current_health: int :
 		progress_bar.value = new_value
 
 func _ready() -> void:
+	GameManager.restart_game.connect(queue_free)
 	progress_bar.max_value = max_health
 	current_health = max_health
+	progress_bar.visible = false
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	velocity *=slow_time
-	move_and_slide()
+	if not stun:
+		move_and_slide()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
+	hit_box.transform = sprite.transform
 	if !velocity.is_zero_approx():
 		sprite.look_at(global_position+velocity)
 
@@ -53,7 +60,7 @@ func blink_damage():
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN)
 	tween.set_trans(Tween.TRANS_QUINT)
-	tween.tween_property(self,"modulate",Color.WHITE,0.3)
+	tween.tween_property(self,"modulate",Color.WHITE,0.1)
 
 func heal_damage(heal:int):
 	if current_health+heal < max_health:
@@ -62,12 +69,17 @@ func heal_damage(heal:int):
 		current_health = max_health
 		
 func die():
+	if morto:
+		return
+	#print_debug("morri ", teste)
+	morto = true
+	#teste += 1
 	if death_prefab:
 		var death_object = death_prefab.instantiate()
 		death_object.position = position
 		get_parent().add_child(death_object)
 	await drop_pieces()
-	WaveManager.enemy_dead.emit()
+	WaveManager.enemy_dead.emit(1)
 	queue_free()
 	
 	
@@ -85,4 +97,13 @@ func drop_pieces():
 		#print_debug(position_spread)
 		var item = pieces.instantiate()
 		item.position = position+position_spread
-		get_parent().add_child(item)
+		get_parent().call_deferred("add_child",item)
+		#get_parent().add_child(item)
+		
+func _on_mouse_entered() -> void:
+	print_debug("o mouse entrou")
+	progress_bar.visible = true
+	
+func _on_mouse_exited() -> void:
+	print_debug("o mouse saiu")
+	progress_bar.visible = false

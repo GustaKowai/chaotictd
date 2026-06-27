@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://bpusvoqu02mjk"]
+
+[ext_resource type="Shader" uid="uid://cgd8nrgbpl5y2" path="res://glitch.gdshader" id="1_4obv8"]
+[ext_resource type="Shader" uid="uid://s5mkuf3raieb" path="res://crt2.gdshader" id="2_4ctl3"]
+[ext_resource type="Texture2D" uid="uid://b85q76mheea3w" path="res://sprites/torre principal.png" id="2_4obv8"]
+[ext_resource type="Texture2D" uid="uid://ceh3a5ckij6pa" path="res://sprites/planeta gelo.png" id="2_gh030"]
+[ext_resource type="Shader" uid="uid://b836olpr6ijh0" path="res://crt.gdshader" id="2_x55li"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6r87"]
+shader = ExtResource("1_4obv8")
+shader_parameter/shake_power = 0.05
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 1.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.0150000007125
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4obv8"]
+shader = ExtResource("2_4ctl3")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.0
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ctl3"]
+resource_local_to_scene = true
+shader = ExtResource("2_x55li")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.19600000931
+shader_parameter/scanlines_width = 0.0830000039425
+shader_parameter/grille_opacity = 0.24400001159
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 16.85200080047
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c6r87"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x55li"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x55li"]
+
+[node name="testes_de_shaders" type="Node2D" unique_id=37283084]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=982467295]
+material = SubResource("ShaderMaterial_c6r87")
+position = Vector2(569, 115)
+texture = ExtResource("2_gh030")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=330931213]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 152.0
+offset_bottom = 152.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1458612699]
+
+[node name="upgrade_texture" type="TextureRect" parent="VBoxContainer" unique_id=2047826992]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_4obv8")
+layout_mode = 2
+texture = ExtResource("2_4obv8")
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer" unique_id=1406376825]
+material = SubResource("ShaderMaterial_4ctl3")
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1261821217]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_c6r87")
+
+[node name="upgrade_text" type="Label" parent="VBoxContainer/PanelContainer" unique_id=1134514333]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "aaaaaaaaaaaaaaaaa
+aaaaaaaaaa
+aaaaaaa
+"
+label_settings = SubResource("LabelSettings_x55li")
+autowrap_mode = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer" unique_id=350224519]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_x55li")
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/PanelContainer/PanelContainer" unique_id=727500962]
+material = SubResource("ShaderMaterial_4ctl3")
+layout_mode = 2

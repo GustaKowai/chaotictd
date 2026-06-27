@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://blll4f2yqp03e"]
+
+[ext_resource type="Script" uid="uid://c8u7lc1ukkycy" path="res://gd/piece_counter.gd" id="1_67l2l"]
+[ext_resource type="Texture2D" uid="uid://drrkkodh5c7gl" path="res://sprites/UI_Space_shooter_td.png" id="1_b3efl"]
+[ext_resource type="PackedScene" uid="uid://de4snsa6vh3g8" path="res://cenas/UI/next_wave.tscn" id="2_5auu7"]
+[ext_resource type="PackedScene" uid="uid://duhxritp57dma" path="res://cenas/UI/UI_towers.tscn" id="2_ekiuc"]
+[ext_resource type="Texture2D" uid="uid://bg8b5f6u11lvb" path="res://sprites/button_auto_wave1.png" id="4_uoe5a"]
+[ext_resource type="Script" uid="uid://doka67do3cdvj" path="res://cenas/UI/auto_wave.gd" id="5_2dd7u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lxbms"]
+texture = ExtResource("1_b3efl")
+texture_margin_left = 60.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_b3efl"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_lxbms"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_k48pe"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_yk6h3"]
+font_size = 30
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dd7u"]
+atlas = ExtResource("4_uoe5a")
+region = Rect2(65, 5, 62, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3jl7"]
+atlas = ExtResource("4_uoe5a")
+region = Rect2(1, 5, 62, 49)
+
+[sub_resource type="Theme" id="Theme_rslxl"]
+CheckButton/icons/checked = SubResource("AtlasTexture_2dd7u")
+CheckButton/icons/unchecked = SubResource("AtlasTexture_v3jl7")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wlhr"]
+atlas = ExtResource("4_uoe5a")
+region = Rect2(128, 0, 64, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lkr7"]
+atlas = ExtResource("4_uoe5a")
+region = Rect2(192, 0, 64, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed6m2"]
+atlas = ExtResource("4_uoe5a")
+region = Rect2(256, 0, 64, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocoib"]
+atlas = ExtResource("4_uoe5a")
+region = Rect2(320, 0, 64, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sr46u"]
+atlas = ExtResource("4_uoe5a")
+region = Rect2(384, 0, 64, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbip5"]
+atlas = ExtResource("4_uoe5a")
+region = Rect2(448, 0, 64, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7xo3x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wlhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lkr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed6m2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocoib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sr46u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbip5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="UI" type="CanvasLayer" unique_id=744365688]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=774651216]
+texture_filter = 3
+custom_minimum_size = Vector2(708, 56)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_lxbms")
+
+[node name="Piece_counter" type="HBoxContainer" parent="PanelContainer" unique_id=432041142]
+layout_mode = 2
+script = ExtResource("1_67l2l")
+
+[node name="Label" type="Label" parent="PanelContainer/Piece_counter" unique_id=1529720057]
+visible = false
+layout_mode = 2
+text = "Peças:"
+label_settings = SubResource("LabelSettings_b3efl")
+
+[node name="Piece_number" type="Label" parent="PanelContainer/Piece_counter" unique_id=544016334]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+label_settings = SubResource("LabelSettings_lxbms")
+
+[node name="labelWave" type="Label" parent="PanelContainer/Piece_counter" unique_id=744956442]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Wave:"
+label_settings = SubResource("LabelSettings_k48pe")
+
+[node name="wave_number" type="Label" parent="PanelContainer/Piece_counter" unique_id=1096816604]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+text = "0"
+label_settings = SubResource("LabelSettings_yk6h3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=96470351]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -268.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1358126945]
+layout_mode = 2
+
+[node name="nextWave" parent="HBoxContainer/VBoxContainer" unique_id=1671281793 instance=ExtResource("2_5auu7")]
+custom_minimum_size = Vector2(64, 56)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = ""
+
+[node name="autoWave" type="CheckButton" parent="HBoxContainer/VBoxContainer" unique_id=440543010]
+layout_mode = 2
+theme = SubResource("Theme_rslxl")
+script = ExtResource("5_2dd7u")
+
+[node name="animated_button" type="AnimatedSprite2D" parent="HBoxContainer/VBoxContainer/autoWave" unique_id=1283767919]
+position = Vector2(37, 27)
+sprite_frames = SubResource("SpriteFrames_7xo3x")
+autoplay = "default"
+frame_progress = 0.637184
+
+[node name="Control" parent="HBoxContainer" unique_id=13132552 instance=ExtResource("2_ekiuc")]
+layout_mode = 2
+size_flags_vertical = 2
+
+[connection signal="toggled" from="HBoxContainer/VBoxContainer/autoWave" to="HBoxContainer/VBoxContainer/autoWave" method="_on_toggled"]

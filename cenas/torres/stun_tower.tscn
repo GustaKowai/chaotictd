@@ -1,49 +1,115 @@
 [gd_scene format=3 uid="uid://iublgt6shdge"]
 
-[ext_resource type="Script" uid="uid://l0e0qls7mxqf" path="res://gd/cannon_tower.gd" id="1_30417"]
-[ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="2_h0v8u"]
+[ext_resource type="Script" uid="uid://de80qeqdfuw5r" path="res://gd/stun_tower.gd" id="1_jt7f8"]
 [ext_resource type="PackedScene" uid="uid://56s0ps1ruwju" path="res://cenas/balas/slow_bullet.tscn" id="2_oblbw"]
-[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_oblbw"]
-[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="4_ho7ho"]
-[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/upgrade_ui.tscn" id="5_garpn"]
+[ext_resource type="PackedScene" uid="uid://b1dsfouxm3738" path="res://cenas/balas/bullet_stun.tscn" id="2_vlbyx"]
+[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="3_jt7f8"]
+[ext_resource type="PackedScene" uid="uid://dtpp1c2sr3vyd" path="res://cenas/balas/bullet_bomba.tscn" id="3_yr74h"]
+[ext_resource type="Texture2D" uid="uid://ceh3a5ckij6pa" path="res://sprites/planeta gelo.png" id="4_jt7f8"]
+[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="5_garpn"]
+[ext_resource type="Texture2D" uid="uid://dsa51xcf7rieb" path="res://sprites/barra_curva_empty.png" id="6_yr74h"]
+[ext_resource type="Texture2D" uid="uid://bmlylcnmroyfc" path="res://sprites/barra_curva_full.png" id="7_d2j70"]
+[ext_resource type="Texture2D" uid="uid://c11c7ma0x22u2" path="res://sprites/barra_curva_full_shield.png" id="8_bbpho"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sqqsk"]
-radius = 59.07622
+radius = 75.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jt7f8"]
+radius = 131.00381
 
 [node name="stun_tower" type="StaticBody2D" unique_id=573625044 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 collision_mask = 3
 input_pickable = true
-script = ExtResource("1_30417")
+script = ExtResource("1_jt7f8")
+slow_value = 0.5
+bullet_stun = ExtResource("2_vlbyx")
+bullet_bomb = ExtResource("3_yr74h")
 delay_shoot = 1.0
 bullet = ExtResource("2_oblbw")
 sprite2d = NodePath("Sprite2D")
-collision_shape = NodePath("CollisionShape2D")
-value = 4
+collision_shape = NodePath("AreaDeExclusao/AreaDeexclusaoShape")
+max_health = 1000
+value = 40
+death_prefab = ExtResource("3_jt7f8")
 metadata/_custom_type_script = "uid://l0e0qls7mxqf"
 
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=122435067]
+offset_left = -97.0
+offset_top = -83.0
+offset_right = 67.0
+offset_bottom = 81.0
+scale = Vector2(1.2, 1.2)
+value = 50.0
+fill_mode = 5
+radial_initial_angle = 238.0
+radial_fill_degrees = 115.0
+radial_center_offset = Vector2(0, -80)
+texture_under = ExtResource("6_yr74h")
+texture_progress = ExtResource("7_d2j70")
+
+[node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=1098075280]
+offset_left = -97.0
+offset_top = -83.0
+offset_right = 67.0
+offset_bottom = 81.0
+scale = Vector2(1.2, 1.2)
+fill_mode = 5
+radial_initial_angle = 238.0
+radial_fill_degrees = 115.0
+radial_center_offset = Vector2(0, -80)
+texture_progress = ExtResource("8_bbpho")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1784118091]
-self_modulate = Color(1, 0.6862745, 0, 1)
-texture = ExtResource("2_h0v8u")
+texture = ExtResource("4_jt7f8")
 
 [node name="cannon" type="Sprite2D" parent="Sprite2D" unique_id=59488102]
+position = Vector2(77, 0)
 
 [node name="Mira" type="Marker2D" parent="Sprite2D/cannon" unique_id=744472269]
 unique_name_in_owner = true
 position = Vector2(-1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=511840853]
+visible = false
 shape = SubResource("CircleShape2D_sqqsk")
 
-[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=122435067]
-offset_left = -65.0
-offset_top = 59.0
-offset_right = 63.0
-offset_bottom = 86.0
-texture_under = ExtResource("3_oblbw")
-texture_progress = ExtResource("4_ho7ho")
-
-[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("5_garpn")]
+[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre", "rota_disable") instance=ExtResource("5_garpn")]
 visible = false
 torre = NodePath("..")
+rota_disable = {
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): true
+}
+rota_1_1_text = "Aumenta a velocidade de ataque"
+rota_1_2_text = "Aumenta o slow"
+rota_1_3_text = "Inimigos atingidos ficam paralizados por um curto período de tempo"
+rota_2_1_text = "Permite atingir inimigos camuflados"
+rota_2_2_text = "A bola de neve pode atingir até dois inimigos adicionais"
+rota_2_3_text = "Retira camuflagem de inimigos atingidos"
+rota_3_1_text = "A bola de neve passa a causar dano"
+rota_3_2_text = "Aumenta o dano causado pelas bolas de neve"
+rota_3_3_text = "Adiciona uma \"bomba\" no inimigo atingido, que explode depois de certo tempo causando dano no inimigo e nos arredores"
+rota_1_1_price = 60
+rota_1_2_price = 150
+rota_1_3_price = 1200
+rota_2_1_price = 5
+rota_2_2_price = 20
+rota_2_3_price = 1500
+rota_3_1_price = 100
+rota_3_2_price = 200
+rota_3_3_price = 2000
+
+[node name="AreaDeExclusao" type="Area2D" parent="." unique_id=2045248020]
+visible = false
+
+[node name="AreaDeexclusaoShape" type="CollisionShape2D" parent="AreaDeExclusao" unique_id=1273982263]
+shape = SubResource("CircleShape2D_jt7f8")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

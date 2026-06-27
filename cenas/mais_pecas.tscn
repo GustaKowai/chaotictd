@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://bipuqwcdodwxn"]
+
+[ext_resource type="Script" uid="uid://d05ixo24aq1oh" path="res://cenas/mais_pecas.gd" id="1_8blyl"]
+[ext_resource type="Texture2D" uid="uid://dtxcpnlhdd4dl" path="res://sprites/Pecas1.png" id="1_v5s47"]
+[ext_resource type="Texture2D" uid="uid://cwlm26i0la4lr" path="res://sprites/Pecas2.png" id="2_8blyl"]
+[ext_resource type="Texture2D" uid="uid://cx0fxp5aou383" path="res://sprites/Pecas3.png" id="3_ch4gy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v5s47"]
+font_size = 40
+
+[sub_resource type="Animation" id="Animation_8blyl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ch4gy"]
+resource_name = "aparecer"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(0.225, 1.0000017),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -106)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_snghm"]
+_data = {
+&"RESET": SubResource("Animation_8blyl"),
+&"aparecer": SubResource("Animation_ch4gy")
+}
+
+[node name="mais_pecas" type="Node2D" unique_id=1381804385]
+z_index = 1
+script = ExtResource("1_8blyl")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2082164790]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1471621581]
+position = Vector2(-5.999999, -14)
+rotation = 0.6049229
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_v5s47")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D" unique_id=1619156140]
+position = Vector2(-39, -19.000002)
+rotation = -0.3831492
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_8blyl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D" unique_id=244124990]
+position = Vector2(-22.999998, -6.9999995)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_ch4gy")
+
+[node name="Label" type="Label" parent="Node2D" unique_id=785222067]
+offset_left = 24.0
+offset_top = -32.0
+offset_right = 116.0
+offset_bottom = 23.0
+text = "+300"
+label_settings = SubResource("LabelSettings_v5s47")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D" unique_id=1179228734]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_snghm")
+autoplay = &"aparecer"
+
+[connection signal="animation_finished" from="Node2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

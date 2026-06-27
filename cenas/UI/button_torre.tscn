@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://tgjpj17povjb"]
+
+[ext_resource type="Script" uid="uid://d1acouyvco1en" path="res://gd/button_torre.gd" id="1_8sa5k"]
+[ext_resource type="FontFile" uid="uid://d4cf6y3onsbjy" path="res://fontes/good_old_dos/Good Old DOS.ttf" id="1_56a0s"]
+[ext_resource type="PackedScene" uid="uid://fudqwumtu2ly" path="res://cenas/fantasma_torre.tscn" id="2_lettw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56a0s"]
+
+[node name="Button" type="Button" unique_id=1961303369]
+offset_right = 58.0
+offset_bottom = 37.0
+theme_override_colors/icon_hover_color = Color(1.5720325, 1.5720325, 1.5720325, 1)
+theme_override_fonts/font = ExtResource("1_56a0s")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_56a0s")
+text = "torre"
+icon_alignment = 1
+vertical_icon_alignment = 0
+script = ExtResource("1_8sa5k")
+fantasma_torre = ExtResource("2_lettw")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

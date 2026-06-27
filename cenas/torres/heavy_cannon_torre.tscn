@@ -2,14 +2,17 @@
 
 [ext_resource type="Script" uid="uid://j47akvxp3bkw" path="res://gd/heavy_Cannon_Torre.gd" id="1_133bx"]
 [ext_resource type="PackedScene" uid="uid://b8gx3dwhi4wxt" path="res://cenas/balas/bullet_heavy_cannon.tscn" id="2_133bx"]
+[ext_resource type="PackedScene" uid="uid://22ldq21vaqet" path="res://cenas/balas/bullet_heavy_cannon_chain_reaction.tscn" id="3_4ovom"]
+[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="3_4uke3"]
 [ext_resource type="Texture2D" uid="uid://bgm43arellftn" path="res://sprites/torre forte.png" id="3_bp2nv"]
-[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_r85iu"]
-[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="4_vh0gn"]
-[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/upgrade_ui.tscn" id="5_vh0gn"]
+[ext_resource type="Texture2D" uid="uid://dsa51xcf7rieb" path="res://sprites/barra_curva_empty.png" id="4_dnlp8"]
+[ext_resource type="Texture2D" uid="uid://bmlylcnmroyfc" path="res://sprites/barra_curva_full.png" id="5_4ovom"]
+[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="5_vh0gn"]
+[ext_resource type="Texture2D" uid="uid://c11c7ma0x22u2" path="res://sprites/barra_curva_full_shield.png" id="6_ivrw8"]
 [ext_resource type="Texture2D" uid="uid://31c6ir5a0u6i" path="res://sprites/torre forte - Copia.png" id="7_cacy1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_slvgt"]
-radius = 12.655348
+radius = 82.006096
 
 [sub_resource type="Animation" id="Animation_cacy1"]
 length = 0.001
@@ -58,26 +61,91 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_4ovom"]
+resource_name = "carregar_6"
+length = 7.5
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(7.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot6"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dnlp8"]
 _data = {
 &"RESET": SubResource("Animation_cacy1"),
-&"carregar": SubResource("Animation_4uke3")
+&"carregar": SubResource("Animation_4uke3"),
+&"carregar_6": SubResource("Animation_4ovom")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4uke3"]
+radius = 139.12944
+
 [node name="heavy_cannon_torre" type="StaticBody2D" unique_id=747018379 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
+texture_filter = 3
 collision_mask = 3
 input_pickable = true
 script = ExtResource("1_133bx")
 delay_shoot = 7.5
 bullet = ExtResource("2_133bx")
+bullet_chain = ExtResource("3_4ovom")
 sprite2d = NodePath("Sprite2D2")
-collision_shape = NodePath("CollisionShape2D")
-max_health = 50
-value = 10
+collision_shape = NodePath("AreaDeExclusao/AreaDeexclusaoShape")
+max_health = 500
+value = 100
+death_prefab = ExtResource("3_4uke3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=929075892]
-scale = Vector2(6.439999, 6.2)
+visible = false
 shape = SubResource("CircleShape2D_slvgt")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=312703314]
+offset_left = -105.0
+offset_top = -90.0
+offset_right = 59.0
+offset_bottom = 74.0
+scale = Vector2(1.3, 1.3)
+value = 50.0
+fill_mode = 5
+radial_initial_angle = 237.2
+radial_fill_degrees = 114.5
+radial_center_offset = Vector2(-1.2, -130)
+texture_under = ExtResource("4_dnlp8")
+texture_progress = ExtResource("5_4ovom")
+
+[node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=110912055]
+offset_left = -105.0
+offset_top = -90.0
+offset_right = 59.0
+offset_bottom = 74.0
+scale = Vector2(1.3, 1.3)
+fill_mode = 5
+radial_initial_angle = 237.2
+radial_fill_degrees = 114.5
+radial_center_offset = Vector2(-1.2, -130)
+texture_progress = ExtResource("6_ivrw8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1836009599]
 texture = ExtResource("3_bp2nv")
@@ -90,16 +158,59 @@ position = Vector2(12, 0)
 unique_name_in_owner = true
 position = Vector2(69, 2)
 
-[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=312703314]
-offset_left = -67.0
-offset_top = 83.0
-offset_right = 61.0
-offset_bottom = 103.0
-texture_under = ExtResource("3_r85iu")
-texture_progress = ExtResource("4_vh0gn")
+[node name="Mira2" type="Marker2D" parent="Sprite2D/Cannon" unique_id=1779829865]
+unique_name_in_owner = true
+position = Vector2(-94, 0)
+rotation = -3.1396108
 
-[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("5_vh0gn")]
+[node name="Mira3" type="Marker2D" parent="Sprite2D/Cannon" unique_id=672678388]
+unique_name_in_owner = true
+position = Vector2(41, -61)
+rotation = -0.84779227
+
+[node name="Mira4" type="Marker2D" parent="Sprite2D/Cannon" unique_id=1951563280]
+unique_name_in_owner = true
+position = Vector2(-67, -61)
+rotation = -2.2234528
+
+[node name="Mira5" type="Marker2D" parent="Sprite2D/Cannon" unique_id=269399773]
+unique_name_in_owner = true
+position = Vector2(-63, 64)
+rotation = 2.2853713
+
+[node name="Mira6" type="Marker2D" parent="Sprite2D/Cannon" unique_id=276624906]
+unique_name_in_owner = true
+position = Vector2(40, 62)
+rotation = 0.92422694
+
+[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre", "rota_disable") instance=ExtResource("5_vh0gn")]
 torre = NodePath("..")
+rota_disable = {
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): true
+}
+rota_1_1_text = "Aumenta a velocidade de carga em 20%"
+rota_1_2_text = "Reduz o intervalo entre tiros para 4s"
+rota_1_3_text = "Substitui o tiro do canhão por 6 tiros menores, porém com o mesmo dano, que saem radialmente ao planeta"
+rota_2_2_text = "O tiro de energia se dissipa apenas após acertar pelo menos dois inimigos"
+rota_2_3_text = "O tiro de energia não se dissipa ao atingir inimigos"
+rota_3_3_text = "Reação em cadeia"
+rota_1_1_price = 1
+rota_1_2_price = 1
+rota_1_3_price = 1
+rota_2_1_price = 200
+rota_2_2_price = 99999
+rota_2_3_price = 3000
+rota_3_1_price = 1
+rota_3_2_price = 1
+rota_3_3_price = 5000
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2083213803]
 libraries/ = SubResource("AnimationLibrary_dnlp8")
@@ -108,5 +219,11 @@ autoplay = &"carregar"
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=167371705]
 visible = false
 texture = ExtResource("7_cacy1")
+
+[node name="AreaDeExclusao" type="Area2D" parent="." unique_id=2130026752]
+visible = false
+
+[node name="AreaDeexclusaoShape" type="CollisionShape2D" parent="AreaDeExclusao" unique_id=2051524261]
+shape = SubResource("CircleShape2D_4uke3")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

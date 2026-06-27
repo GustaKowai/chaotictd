@@ -2,32 +2,114 @@
 
 [ext_resource type="Script" uid="uid://dnfpk0t25ujlq" path="res://gd/bumerangue_tower.gd" id="1_hwfcf"]
 [ext_resource type="PackedScene" uid="uid://do7groqhlbflw" path="res://cenas/balas/bullet_bumerangue.tscn" id="2_ho27v"]
-[ext_resource type="Texture2D" uid="uid://dmvyghuhdgw5w" path="res://sprites/PlanetasBumerangue2.png" id="3_4ljs1"]
-[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="4_5bc7n"]
-[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="5_0xaye"]
-[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/upgrade_ui.tscn" id="6_0xaye"]
+[ext_resource type="PackedScene" uid="uid://dhfcmpbyjxoqs" path="res://cenas/balas/bullet_bumerangue_dano_duplo.tscn" id="2_xcans"]
+[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="3_add4o"]
+[ext_resource type="PackedScene" uid="uid://b6pep2sgw0n5b" path="res://cenas/balas/bullet_bumerangue_aumento_dano.tscn" id="3_f2un3"]
+[ext_resource type="Texture2D" uid="uid://dsa51xcf7rieb" path="res://sprites/barra_curva_empty.png" id="4_hobp6"]
+[ext_resource type="Texture2D" uid="uid://bmlylcnmroyfc" path="res://sprites/barra_curva_full.png" id="5_xcans"]
+[ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="6_0xaye"]
+[ext_resource type="Texture2D" uid="uid://c11c7ma0x22u2" path="res://sprites/barra_curva_full_shield.png" id="6_f2un3"]
+[ext_resource type="Texture2D" uid="uid://bnffcsskljdxt" path="res://sprites/PlanetasBumerangue-new1.png" id="9_7brqx"]
+[ext_resource type="Texture2D" uid="uid://c4w2ff31bjpk7" path="res://sprites/PlanetasBumerangue-new-sheet.png" id="9_k1co4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ho27v"]
 radius = 40.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7brqx"]
+atlas = ExtResource("9_k1co4")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8446s"]
+atlas = ExtResource("9_k1co4")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl7jv"]
+atlas = ExtResource("9_k1co4")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kiqs"]
+atlas = ExtResource("9_k1co4")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q7mwk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7brqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8446s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl7jv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kiqs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 13.3
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_add4o"]
+radius = 105.11898
 
 [node name="Bumerangue_tower" type="StaticBody2D" unique_id=887835860 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 collision_mask = 3
 input_pickable = true
 script = ExtResource("1_hwfcf")
-delay_shoot = 0.7
+bala_bumerangue_dano_duplo = ExtResource("2_xcans")
+bala_bumerangue_aumenta_dano = ExtResource("3_f2un3")
+delay_shoot = 0.3
 bullet = ExtResource("2_ho27v")
 sprite2d = NodePath("Sprite2D")
-collision_shape = NodePath("CollisionShape2D")
-max_health = 50
-value = 5
+collision_shape = NodePath("AreaDeExclusao/AreaDeexclusaoShape")
+max_health = 500
+value = 50
+death_prefab = ExtResource("3_add4o")
 metadata/_custom_type_script = "uid://cigjf741pjw4n"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=840609154]
+visible = false
 shape = SubResource("CircleShape2D_ho27v")
 
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1145432466]
+offset_left = -55.0
+offset_top = -49.0
+offset_right = 109.0
+offset_bottom = 115.0
+scale = Vector2(0.6788608, 0.6788608)
+fill_mode = 5
+radial_initial_angle = 238.0
+radial_fill_degrees = 115.5
+radial_center_offset = Vector2(0, -80)
+nine_patch_stretch = true
+texture_under = ExtResource("4_hobp6")
+texture_progress = ExtResource("5_xcans")
+
+[node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=842085463]
+offset_left = -54.999992
+offset_top = -49.0
+offset_right = 109.00001
+offset_bottom = 115.0
+scale = Vector2(0.679, 0.679)
+fill_mode = 5
+radial_initial_angle = 238.0
+radial_fill_degrees = 115.5
+radial_center_offset = Vector2(0, -80)
+texture_progress = ExtResource("6_f2un3")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=705764391]
-texture = ExtResource("3_4ljs1")
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 3
+texture = ExtResource("9_7brqx")
 offset = Vector2(2.9999962, -6.9999924)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=1193893638]
+position = Vector2(3, -7)
+sprite_frames = SubResource("SpriteFrames_q7mwk")
+autoplay = "default"
+frame_progress = 0.30572662
 
 [node name="Cannon" type="Sprite2D" parent="Sprite2D" unique_id=1979164218]
 position = Vector2(45, 8)
@@ -36,15 +118,41 @@ position = Vector2(45, 8)
 unique_name_in_owner = true
 position = Vector2(5, 0)
 
-[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1145432466]
-offset_left = -64.0
-offset_top = 47.0
-offset_right = 64.0
-offset_bottom = 67.0
-texture_under = ExtResource("4_5bc7n")
-texture_progress = ExtResource("5_0xaye")
-
-[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre") instance=ExtResource("6_0xaye")]
+[node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre", "rota_disable") instance=ExtResource("6_0xaye")]
 torre = NodePath("..")
+rota_disable = {
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/rota2_3"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_1"): false,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_2"): true,
+NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): true
+}
+rota_1_1_text = "Aumenta um pouco a velocidade de ataque"
+rota_1_2_text = "Aumenta o dano"
+rota_1_3_text = "O bumerangue aumenta de dano, tamanho e velocidade a cada alvo que atinge"
+rota_2_1_text = "Permite que o bumerangue atinja até 5 alvos antes de desaparecer"
+rota_2_2_text = "O bumerangue não desaparece ao atingir alvos"
+rota_2_3_text = "O bumerangue causa dano ao entrar e ao sair do alvo"
+rota_3_1_text = "Permite que os bumerangues atinjam inimigos camuflados"
+rota_3_2_text = "Aumenta o alcance do bumerangue e a velocidade dos projéteis"
+rota_1_1_price = 150
+rota_1_2_price = 200
+rota_1_3_price = 1000
+rota_2_1_price = 130
+rota_2_2_price = 300
+rota_2_3_price = 3000
+rota_3_1_price = 50
+rota_3_2_price = 300
+rota_3_3_price = 99999
+
+[node name="AreaDeExclusao" type="Area2D" parent="." unique_id=1043563095]
+visible = false
+
+[node name="AreaDeexclusaoShape" type="CollisionShape2D" parent="AreaDeExclusao" unique_id=357127349]
+shape = SubResource("CircleShape2D_add4o")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
