@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dhfcmpbyjxoqs" path="res://cenas/balas/bullet_bumerangue_dano_duplo.tscn" id="2_xcans"]
 [ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="3_add4o"]
 [ext_resource type="PackedScene" uid="uid://b6pep2sgw0n5b" path="res://cenas/balas/bullet_bumerangue_aumento_dano.tscn" id="3_f2un3"]
+[ext_resource type="PackedScene" uid="uid://cf5vcyhjk4yb2" path="res://cenas/balas/bullet_bumerangue_foice.tscn" id="4_7brqx"]
 [ext_resource type="Texture2D" uid="uid://dsa51xcf7rieb" path="res://sprites/barra_curva_empty.png" id="4_hobp6"]
 [ext_resource type="Texture2D" uid="uid://bmlylcnmroyfc" path="res://sprites/barra_curva_full.png" id="5_xcans"]
 [ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="6_0xaye"]
@@ -60,6 +61,7 @@ input_pickable = true
 script = ExtResource("1_hwfcf")
 bala_bumerangue_dano_duplo = ExtResource("2_xcans")
 bala_bumerangue_aumenta_dano = ExtResource("3_f2un3")
+bala_bumerangue_foice = ExtResource("4_7brqx")
 delay_shoot = 0.3
 bullet = ExtResource("2_ho27v")
 sprite2d = NodePath("Sprite2D")
@@ -145,14 +147,18 @@ rota_1_3_price = 1000
 rota_2_1_price = 130
 rota_2_2_price = 300
 rota_2_3_price = 3000
-rota_3_1_price = 50
-rota_3_2_price = 300
-rota_3_3_price = 99999
+rota_3_1_price = 1
+rota_3_2_price = 1
+rota_3_3_price = 1
 
 [node name="AreaDeExclusao" type="Area2D" parent="." unique_id=1043563095]
 visible = false
 
 [node name="AreaDeexclusaoShape" type="CollisionShape2D" parent="AreaDeExclusao" unique_id=357127349]
 shape = SubResource("CircleShape2D_add4o")
+
+[node name="Timer" type="Timer" parent="." unique_id=391003830]
+wait_time = 5.0
+autostart = true
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

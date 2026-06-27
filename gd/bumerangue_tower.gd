@@ -1,8 +1,12 @@
 extends Cannon_tower
 @export var bala_bumerangue_dano_duplo:PackedScene
 @export var bala_bumerangue_aumenta_dano:PackedScene
+@export var bala_bumerangue_foice:PackedScene
 @export var texture_upada:Texture2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $Sprite2D/AnimatedSprite2D
+var contador_de_tiro:int = 0
+@onready var timer: Timer = $Timer
+
 
 func _ready() -> void:
 	super()
@@ -32,3 +36,20 @@ func upgrade_3_1():
 
 func upgrade_3_2():
 	speed_bonus = 400
+
+func upgrade_3_3():
+	timer.timeout.connect(shoot_foice)
+
+func shoot_foice():
+	var f:Bullet = bala_bumerangue_foice.instantiate()
+	f.damage += bullet_extra_damage
+	f.perfuracao = perfuracao_bonus
+	f.speed += speed_bonus
+	f.modulate = cor_da_municao
+	if can_see_cammo:
+		f.set_collision_mask_value(6,true)
+	if retira_cammo:
+		f.retira_cammo = true
+	f.transform = mira.global_transform
+	get_tree().root.get_node("Main").add_child(f)
+	f.scale = Vector2(1.0,1.0)

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cf5vcyhjk4yb2"]
+
+[ext_resource type="Script" uid="uid://bvsqixevkj43i" path="res://cenas/balas/bullet_bumerangue_foice.gd" id="1_8l6ud"]
+[ext_resource type="Texture2D" uid="uid://d2m03r3w7onba" path="res://sprites/bala_bumerangue_foice.png" id="2_nkh1a"]
+[ext_resource type="PackedScene" uid="uid://dcblr1s7xybnt" path="res://cenas/trail.tscn" id="3_nkh1a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mfi1j"]
+
+[sub_resource type="Gradient" id="Gradient_nkh1a"]
+offsets = PackedFloat32Array(0, 0.45084745, 1)
+colors = PackedColorArray(1, 0.55205876, 0.46388704, 0.05882353, 0.9818761, 0, 0.06747159, 0.19215687, 0.6066152, 0, 0.075205795, 0.6627451)
+
+[node name="bullet_bumerangue" type="Area2D" unique_id=308860949]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_8l6ud")
+bullet_duracao = 3.0
+rastro_tempo = 0.1
+speed = 800.0
+damage = 10
+perfuracao = 3
+metadata/_custom_type_script = "uid://cju1mfu60b65w"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1832682918]
+shape = SubResource("CircleShape2D_mfi1j")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1147194329]
+position = Vector2(2, 0)
+texture = ExtResource("2_nkh1a")
+
+[node name="trail" parent="." unique_id=1107045996 instance=ExtResource("3_nkh1a")]
+gradient = SubResource("Gradient_nkh1a")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
