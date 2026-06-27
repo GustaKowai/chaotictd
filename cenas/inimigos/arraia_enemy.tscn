@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dpagr3g08pqmx" path="res://cenas/inimigos/arraia_enemy.gd" id="1_yvjpy"]
 [ext_resource type="PackedScene" uid="uid://bn3hmqsehhwo7" path="res://cenas/explosa_inimigo.tscn" id="2_8kiid"]
+[ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="3_3toxa"]
 [ext_resource type="Texture2D" uid="uid://b7dt2xg6nutu4" path="res://sprites/nave inimiga - movimento spritesheet2.png" id="3_qtwt8"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_xju15"]
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_6qwg1"]
@@ -98,6 +99,7 @@ script = ExtResource("1_yvjpy")
 max_health = 500
 death_prefab = ExtResource("2_8kiid")
 color_damage = Color(0.99215686, 0.4627451, 0, 1)
+pieces = ExtResource("3_3toxa")
 number_pieces_min = 2
 number_pieces_max = 2
 spread_area_radius = 65.0

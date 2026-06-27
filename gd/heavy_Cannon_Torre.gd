@@ -65,10 +65,10 @@ func upgrade_1_3():
 	animation_player.play("carregar_6")
 	
 func upgrade_2_1():
-	pass
+	perfuracao_bonus = 1
 
 func upgrade_2_2():
-	perfuracao_bonus = 1
+	perfuracao_bonus = 3
 
 	
 func upgrade_2_3():
