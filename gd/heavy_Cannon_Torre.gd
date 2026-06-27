@@ -75,10 +75,10 @@ func upgrade_2_3():
 	perfuracao_bonus = -1
 	
 func upgrade_3_1():
-	pass
+	bullet_extra_damage=250
 
 func upgrade_3_2():
-	pass
+	bullet_extra_damage=550
 	
 func upgrade_3_3():
 	bullet = bullet_chain
