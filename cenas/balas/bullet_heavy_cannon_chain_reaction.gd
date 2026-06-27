@@ -24,8 +24,8 @@ func duplicate_self():
 		instance.enemy_hit = enemy_hit
 		instance.transform = global_transform
 		#instance.position.x += 30
-		instance.scale *= 0.5
-		instance.damage /= 2
+		instance.scale *= 0.7
+		instance.damage *=0.7
 		#print_debug(instance.damage)
 		instance.rotate(PI*i/2)
 		

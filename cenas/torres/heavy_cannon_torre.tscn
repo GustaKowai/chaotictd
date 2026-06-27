@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://dpmp81xpx6xl1"]
 
+[ext_resource type="Script" uid="uid://j47akvxp3bkw" path="res://gd/heavy_Cannon_Torre.gd" id="1_4ovom"]
+[ext_resource type="PackedScene" uid="uid://b8gx3dwhi4wxt" path="res://cenas/balas/bullet_heavy_cannon.tscn" id="2_ivrw8"]
 [ext_resource type="Texture2D" uid="uid://bgm43arellftn" path="res://sprites/torre forte.png" id="3_bp2nv"]
+[ext_resource type="PackedScene" uid="uid://22ldq21vaqet" path="res://cenas/balas/bullet_heavy_cannon_chain_reaction.tscn" id="3_fakko"]
+[ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="4_2fgkh"]
 [ext_resource type="Texture2D" uid="uid://dsa51xcf7rieb" path="res://sprites/barra_curva_empty.png" id="4_dnlp8"]
 [ext_resource type="Texture2D" uid="uid://bmlylcnmroyfc" path="res://sprites/barra_curva_full.png" id="5_4ovom"]
 [ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="5_vh0gn"]
@@ -99,10 +103,19 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_4uke3"]
 radius = 139.12944
 
-[node name="heavy_cannon_torre" type="StaticBody2D" unique_id=747018379 groups=["torre"]]
+[node name="heavy_cannon_torre" type="StaticBody2D" unique_id=747018379 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
 texture_filter = 3
 collision_mask = 3
 input_pickable = true
+script = ExtResource("1_4ovom")
+delay_shoot = 7.5
+bullet = ExtResource("2_ivrw8")
+bullet_chain = ExtResource("3_fakko")
+sprite2d = NodePath("Sprite2D")
+collision_shape = NodePath("AreaDeExclusao/AreaDeexclusaoShape")
+max_health = 500
+value = 100
+death_prefab = ExtResource("4_2fgkh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=929075892]
 visible = false
