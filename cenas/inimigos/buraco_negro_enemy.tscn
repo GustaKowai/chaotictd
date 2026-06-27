@@ -44,7 +44,7 @@ radius = 297.69415
 height = 1150.5714
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_puqim"]
-radius = 129.00388
+radius = 107.07474
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5qptq"]
 radius = 43.121307
@@ -67,6 +67,7 @@ metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1085191555]
 sprite_frames = SubResource("SpriteFrames_vuoa5")
+autoplay = "default"
 frame = 2
 frame_progress = 0.72086984
 flip_h = true
@@ -82,7 +83,7 @@ rotation = 0.95802903
 shape = SubResource("CapsuleShape2D_hpf3y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1199135808]
-position = Vector2(-6, -1)
+position = Vector2(8, -1)
 shape = SubResource("CircleShape2D_puqim")
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1110670401 groups=["Enemy"]]

@@ -123,6 +123,7 @@ visible = false
 shape = SubResource("CircleShape2D_6eodh")
 
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre", "rota_disable") instance=ExtResource("4_ubf62")]
+visible = false
 torre = NodePath("..")
 rota_disable = {
 NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_1"): false,

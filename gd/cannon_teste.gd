@@ -15,7 +15,7 @@ func upgrade_1_3():
 	
 func upgrade_2_1():
 	bullet_extra_damage +=2
-	cor_da_municao = Color(2.454, 1, 1, 1.0)
+	cor_da_municao = Color(2.454, 1.1, 1.1, 1.0)
 func upgrade_2_2():
 	perfuracao_bonus= 2
 func upgrade_2_3():
