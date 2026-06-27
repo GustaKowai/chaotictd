@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxk7ou5cwigkv" path="res://gd/enemy.gd" id="1_mta7j"]
 [ext_resource type="PackedScene" uid="uid://bn3hmqsehhwo7" path="res://cenas/explosa_inimigo.tscn" id="2_h8eph"]
-[ext_resource type="PackedScene" uid="uid://bij78peujw27q" path="res://cenas/inimigos/enemy_fast.tscn" id="3_uv1k5"]
+[ext_resource type="PackedScene" uid="uid://b3wsm5weijsre" path="res://cenas/inimigos/enemy_fast_camuflado.tscn" id="3_mta7j"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="4_w06bc"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="5_dhbxv"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="6_agy8e"]
@@ -27,7 +27,7 @@ script = ExtResource("1_mta7j")
 max_health = 500
 death_prefab = ExtResource("2_h8eph")
 color_damage = Color(0, 0, 1, 1)
-pieces = ExtResource("3_uv1k5")
+pieces = ExtResource("3_mta7j")
 number_pieces_min = 4
 number_pieces_max = 4
 spread_area_radius = 135.0
