@@ -55,6 +55,7 @@ collision_mask = 13
 script = ExtResource("1_3gscd")
 max_health = 3500
 death_prefab = ExtResource("2_5qptq")
+max_health = 750
 color_damage = Color(1, 0, 0, 1)
 pieces = ExtResource("2_5i3nj")
 number_pieces_min = 80

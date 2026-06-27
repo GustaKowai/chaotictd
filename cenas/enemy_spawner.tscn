@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bjc66ers4cmw8"]
 
 [ext_resource type="Script" uid="uid://c1c0vwaprttm0" path="res://gd/enemySpawner.gd" id="1_pr3b6"]
-[ext_resource type="Script" uid="uid://cs0eajybywg8w" path="res://gd/enemy_spawn_char.gd" id="2_6xrey"]
+[ext_resource type="Script" path="res://gd/enemy_spawn_char.gd" id="2_6xrey"]
 [ext_resource type="PackedScene" uid="uid://bij78peujw27q" path="res://cenas/inimigos/enemy_fast.tscn" id="2_e8qxx"]
 [ext_resource type="PackedScene" uid="uid://utweuuar87qt" path="res://cenas/inimigos/armadeira_enemy.tscn" id="3_lipia"]
 [ext_resource type="PackedScene" uid="uid://cpr4xsnla50fm" path="res://cenas/inimigos/arraia_enemy.tscn" id="4_nygbe"]
