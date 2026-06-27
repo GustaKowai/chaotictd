@@ -3,7 +3,7 @@ class_name bullet_bumerangue
 @export var bullet_duracao = 0.48
 @export var rastro:PackedScene
 @export var rastro_tempo:float
-@export var rastro_aux:float
+var rastro_aux:float
 var bullet_tempodevida = 0
 @onready var sprite_2d: Sprite2D = $Sprite2D
 

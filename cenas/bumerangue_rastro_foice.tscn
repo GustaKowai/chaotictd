@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bjeeqjgh2g6ck"]
+
+[ext_resource type="Texture2D" uid="uid://d5mr85irbsqx" path="res://sprites/Skull_pixel_resize.png" id="1_fgmei"]
+[ext_resource type="Script" uid="uid://dqomyky1gjmsk" path="res://bumerangue_rastro.gd" id="2_nmgx0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgmei"]
+atlas = ExtResource("1_fgmei")
+region = Rect2(3, 6, 36, 36)
+
+[node name="Bumerangue_rastro" type="Sprite2D" unique_id=261898667]
+texture = SubResource("AtlasTexture_fgmei")
+script = ExtResource("2_nmgx0")
