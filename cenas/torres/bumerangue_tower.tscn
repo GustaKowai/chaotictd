@@ -188,15 +188,15 @@ rota_2_3_text = "O bumerangue causa um dano extra ao sair do alvo"
 rota_3_1_text = "Permite que os bumerangues atinjam inimigos camuflados"
 rota_3_2_text = "Aumenta o alcance do bumerangue e a velocidade dos projéteis"
 rota_3_3_text = "A cada 5 segundo dispara um bumerangue especial que executa inimigos com menos de 30% de vida"
-rota_1_1_price = 1
-rota_1_2_price = 1
-rota_1_3_price = 1
-rota_2_1_price = 1
-rota_2_2_price = 1
-rota_2_3_price = 1
-rota_3_1_price = 1
-rota_3_2_price = 1
-rota_3_3_price = 1
+rota_1_1_price = 150
+rota_1_2_price = 200
+rota_1_3_price = 1000
+rota_2_1_price = 130
+rota_2_2_price = 300
+rota_2_3_price = 3000
+rota_3_1_price = 50
+rota_3_2_price = 300
+rota_3_3_price = 1000
 
 [node name="AreaDeExclusao" type="Area2D" parent="." unique_id=1043563095]
 visible = false

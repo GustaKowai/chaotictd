@@ -16,6 +16,7 @@ func _process(_delta: float) -> void:
 	point = get_parent().global_position
 	
 	add_point(point)
+	#print_debug(get_point_count())
 	
 	while get_point_count()>comprimento:
 		remove_point(0)

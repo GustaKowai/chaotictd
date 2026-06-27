@@ -293,15 +293,15 @@ rota_2_3_text = "Retira camuflagem de inimigos atingidos"
 rota_3_1_text = "Aumenta a frequencia dos ataques"
 rota_3_2_text = "Causa duas instâncias de dano no inimigo quando ele entra no alcance da torre"
 rota_3_3_text = "Libera pequenas bombas que explodem ao contato, causando dano em quem a ativou"
-rota_1_1_price = 1
+rota_1_1_price = 180
 rota_1_2_price = 1
-rota_1_3_price = 1
+rota_1_3_price = 3000
 rota_2_1_price = 200
 rota_2_2_price = 300
 rota_2_3_price = 2000
-rota_3_1_price = 1
-rota_3_2_price = 1
-rota_3_3_price = 1
+rota_3_1_price = 150
+rota_3_2_price = 500
+rota_3_3_price = 2500
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="area_dano/Timer" to="area_dano" method="_on_timer_timeout"]

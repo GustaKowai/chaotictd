@@ -205,14 +205,14 @@ rota_2_3_text = "O tiro de energia não se dissipa ao atingir inimigos"
 rota_3_1_text = "Aumenta o dano do tiro"
 rota_3_2_text = "Aumenta mais ainda o dano do tiro"
 rota_3_3_text = "Reação em cadeia: Ao atingir um inimigo, a bala se divide em duas, cada uma com 70% do tamanho e do dano da original. Esse efeito se repete a cada acerto."
-rota_1_1_price = 1
-rota_1_2_price = 1
-rota_1_3_price = 1
+rota_1_1_price = 100
+rota_1_2_price = 180
+rota_1_3_price = 1500
 rota_2_1_price = 200
-rota_2_2_price = 99999
+rota_2_2_price = 500
 rota_2_3_price = 3000
-rota_3_1_price = 1
-rota_3_2_price = 1
+rota_3_1_price = 200
+rota_3_2_price = 300
 rota_3_3_price = 5000
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2083213803]
