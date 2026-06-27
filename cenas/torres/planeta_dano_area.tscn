@@ -4,12 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://c84cue2absm3u" path="res://cenas/explosa_aliado.tscn" id="2_aad67"]
 [ext_resource type="PackedScene" uid="uid://d2gjm8xil17yh" path="res://cenas/debuffs/bomba.tscn" id="2_chpb1"]
 [ext_resource type="Script" uid="uid://ddlwi8gohf47d" path="res://gd/area_dano.gd" id="3_rcaev"]
-[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="3_wrkmi"]
-[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="4_koxe4"]
 [ext_resource type="Texture2D" uid="uid://d0n554p0f2vcp" path="res://sprites/PlanetaRaioSprite-sheet2.png" id="5_5ikv0"]
+[ext_resource type="Texture2D" uid="uid://bmlylcnmroyfc" path="res://sprites/barra_curva_full.png" id="5_d5so0"]
+[ext_resource type="Texture2D" uid="uid://c11c7ma0x22u2" path="res://sprites/barra_curva_full_shield.png" id="6_hclay"]
 [ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="6_koxe4"]
 [ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="7_chpb1"]
 [ext_resource type="Texture2D" uid="uid://ni5jyd1s88jo" path="res://sprites/torre-area-temp-area.png" id="7_ohx4t"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_chpb1"]
+load_path = "res://.godot/imported/barra_curva_empty.png-b22eaa2c45fbe5a4257cb9b6ba4f3d72.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d5so0"]
 radius = 22.0
@@ -204,7 +207,33 @@ value = 40
 death_prefab = ExtResource("2_aad67")
 metadata/_custom_type_script = "uid://cb8m2etlq51wa"
 
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=375576532]
+offset_left = -32.0
+offset_top = -27.0
+offset_right = 132.0
+offset_bottom = 137.0
+scale = Vector2(0.39999938, 0.39999938)
+fill_mode = 5
+radial_initial_angle = 237.2
+radial_fill_degrees = 114.5
+radial_center_offset = Vector2(0, -90)
+texture_under = SubResource("CompressedTexture2D_chpb1")
+texture_progress = ExtResource("5_d5so0")
+
+[node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=573501421]
+offset_left = -32.0
+offset_top = -27.0
+offset_right = 96.0
+offset_bottom = -7.0
+scale = Vector2(0.39999938, 0.39999938)
+fill_mode = 5
+radial_initial_angle = 237.2
+radial_fill_degrees = 114.5
+radial_center_offset = Vector2(0, -90)
+texture_progress = ExtResource("6_hclay")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1106354335]
+visible = false
 shape = SubResource("CircleShape2D_d5so0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1068359886]
@@ -215,23 +244,8 @@ texture = SubResource("AtlasTexture_bgs41")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=695492518]
 sprite_frames = SubResource("SpriteFrames_jhexb")
 animation = &"chock"
-
-[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=375576532]
-offset_left = -64.0
-offset_top = 34.0
-offset_right = 64.0
-offset_bottom = 54.0
-value = 40.0
-texture_under = ExtResource("3_wrkmi")
-texture_progress = ExtResource("4_koxe4")
-
-[node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=573501421]
-offset_left = -64.0
-offset_top = 34.0
-offset_right = 64.0
-offset_bottom = 54.0
-texture_progress = ExtResource("4_koxe4")
-tint_progress = Color(0.001, 7.574, 7, 1)
+frame = 7
+frame_progress = 1.0
 
 [node name="area_dano" type="Area2D" parent="." unique_id=1978986120]
 collision_mask = 2
@@ -253,6 +267,7 @@ frame = 7
 frame_progress = 1.0
 
 [node name="AreaDeExclusao" type="Area2D" parent="area_dano" unique_id=828761745]
+visible = false
 
 [node name="AreaDeexclusaoShape" type="CollisionShape2D" parent="area_dano/AreaDeExclusao" unique_id=1790111150]
 shape = SubResource("CircleShape2D_a6kdn")

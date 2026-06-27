@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ci617jwq6rp7d" path="res://cenas/balas/bullet_bumerangue_aumento_dano.gd" id="1_c0ugl"]
 [ext_resource type="Texture2D" uid="uid://duu2h00qm13dg" path="res://sprites/bala_bumerangue.png" id="2_o76ol"]
+[ext_resource type="PackedScene" uid="uid://3g5wbdv1ufug" path="res://cenas/impact.tscn" id="2_ofrpv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ofrpv"]
 
@@ -10,6 +11,7 @@ collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_c0ugl")
 bullet_duracao = 3.0
+impact = ExtResource("2_ofrpv")
 speed = 800.0
 damage = 10
 perfuracao = 3

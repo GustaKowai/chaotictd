@@ -62,3 +62,15 @@ func adicionar_escudo(_wave):
 	for torre in torres:
 		if torre.is_in_group("torre"):
 			torre.add_shield(shield_value)
+			
+func cura_torre(_wave):
+	#area_escudo_sprite.visible = true
+	#area_escudo_sprite.play("default")
+	global_position.x += 1 #Precisa disso pq se não ele não atualiza a lista de overlapping_bodies
+	global_position.x -= 1
+	await get_tree().physics_frame
+	#global_position.x -= 1
+	#animated_sprite_2d.play("smile")
+	for torre in torres:
+		if torre.is_in_group("torre"):
+			torre.heal_damage(50)

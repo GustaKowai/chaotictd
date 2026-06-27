@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b6x1lq47q6ynt" path="res://sprites/torre base.png" id="4_p00pg"]
 [ext_resource type="PackedScene" uid="uid://7vwv0bybyog0" path="res://cenas/balas/bullet_stone.tscn" id="4_wvtn8"]
 [ext_resource type="Texture2D" uid="uid://bmlylcnmroyfc" path="res://sprites/barra_curva_full.png" id="5_w7g3a"]
+[ext_resource type="PackedScene" uid="uid://bkyyvpf4gndau" path="res://cenas/balas/bullet_teste.tscn" id="5_wvtn8"]
 [ext_resource type="Texture2D" uid="uid://c11c7ma0x22u2" path="res://sprites/barra_curva_full_shield.png" id="6_1o2wj"]
 [ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="7_psoph"]
 
@@ -76,7 +77,7 @@ bullet_ricochete = ExtResource("2_w7g3a")
 bullet_teleguiada = ExtResource("3_1o2wj")
 bullet_pedra = ExtResource("4_wvtn8")
 delay_shoot = 0.3
-bullet = ExtResource("3_1o2wj")
+bullet = ExtResource("5_wvtn8")
 sprite2d = NodePath("Sprite2D")
 collision_shape = NodePath("AreaDeExclusao/AreaDeexclusaoShape")
 max_health = 500

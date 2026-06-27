@@ -101,9 +101,9 @@ func drop_pieces():
 		#get_parent().add_child(item)
 		
 func _on_mouse_entered() -> void:
-	print_debug("o mouse entrou")
+	#print_debug("o mouse entrou")
 	progress_bar.visible = true
 	
 func _on_mouse_exited() -> void:
-	print_debug("o mouse saiu")
+	#print_debug("o mouse saiu")
 	progress_bar.visible = false

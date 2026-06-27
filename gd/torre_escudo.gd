@@ -4,15 +4,24 @@ extends Building
 var dinheiro_por_rodada:int
 
 func upgrade_1_1():
-	area_escudo.shield_value = 400
+	area_escudo.shield_value = 150
+	
+func upgrade_1_2():
+	area_escudo.shield_value = 250
 	
 func upgrade_1_3():
-	WaveManager.start_wave.disconnect(area_escudo.criar_escudo)
-	WaveManager.start_wave.connect(area_escudo.adicionar_escudo)
+	area_escudo.shield_value = 400
 	
 func upgrade_2_1():
 	area_escudo.scale = Vector2(1.5,1.5)
+	
+func upgrade_2_2():
+	WaveManager.start_wave.connect(area_escudo.cura_torre)
 
+func upgrade_2_3():
+	WaveManager.start_wave.disconnect(area_escudo.criar_escudo)
+	WaveManager.start_wave.connect(area_escudo.adicionar_escudo)
+	
 func upgrade_3_1():
 	WaveManager.start_wave.connect(da_dinheiro)
 	dinheiro_por_rodada = 100

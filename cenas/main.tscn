@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://t4n6p64qxp5d" path="res://cenas/torres/base.tscn" id="3_4fhxt"]
 [ext_resource type="AudioStream" uid="uid://dqwso7cwpqh5f" path="res://teste-song-1.wav" id="6_bhvw8"]
-[ext_resource type="PackedScene" uid="uid://vr8acvol4uvd" path="res://cenas/inimigos/buraco_negro_enemy.tscn" id="7_l8342"]
 [ext_resource type="Texture2D" uid="uid://b2mdngu4sswkk" path="res://sprites/Fundo_Space_Shooter_TD.png" id="9_jdavq"]
 [ext_resource type="PackedScene" uid="uid://dhxtpf1oy4cby" path="res://cenas/UI/game_over_ui.tscn" id="11_vhipe"]
 [ext_resource type="PackedScene" uid="uid://blll4f2yqp03e" path="res://cenas/UI/UI.tscn" id="12_iwfo7"]
@@ -47,6 +46,3 @@ position = Vector2(957, 542)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2036050511]
 environment = SubResource("Environment_bhvw8")
-
-[node name="buraco_negro_enemy" parent="." unique_id=1508756033 instance=ExtResource("7_l8342")]
-position = Vector2(222, 563)

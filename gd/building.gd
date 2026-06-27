@@ -11,6 +11,7 @@ class_name Building
 @export var death_prefab:PackedScene
 var shield:int:
 	set(new_value):
+		print_debug("tentei colocar o shield de ",new_value)
 		shield = new_value
 		if new_value > max_health:
 			shield = max_health
@@ -82,8 +83,7 @@ func add_shield(amount:int):
 	shield += amount
 	
 func set_shield(amount:int):
-	#print_debug(self)
-	if amount < shield:
+	if amount > shield:
 		shield = amount
 	
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

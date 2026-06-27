@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://owfo0wildnqx" path="res://gd/bullet_bumerangue_dano_duplo.gd" id="1_jv8xg"]
 [ext_resource type="PackedScene" uid="uid://3g5wbdv1ufug" path="res://cenas/impact.tscn" id="2_la6i2"]
-[ext_resource type="Texture2D" uid="uid://duu2h00qm13dg" path="res://sprites/bala_bumerangue.png" id="3_s35f0"]
+[ext_resource type="PackedScene" uid="uid://baq7a6rxooyhv" path="res://cenas/bumerangue_rastro_dano_duplo.tscn" id="2_rnunp"]
+[ext_resource type="Texture2D" uid="uid://qpi45djiouac" path="res://sprites/bala_bumerangue_dano_duplo.png" id="3_s35f0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lgxiu"]
 
@@ -11,6 +12,8 @@ collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_jv8xg")
 bullet_duracao = 3.0
+rastro = ExtResource("2_rnunp")
+rastro_tempo = 0.1
 impact = ExtResource("2_la6i2")
 speed = 800.0
 damage = 10

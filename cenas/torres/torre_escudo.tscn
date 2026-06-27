@@ -203,7 +203,7 @@ tint_progress = Color(0.001, 7.574, 7, 1)
 
 [node name="AreaEscudo" type="Area2D" parent="." unique_id=1948713512]
 script = ExtResource("5_qj8f2")
-shield_value = 300
+shield_value = 80
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEscudo" unique_id=807040822]
 shape = SubResource("CircleShape2D_wah4h")
@@ -227,17 +227,20 @@ NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_2"): t
 NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): true
 }
 rota_1_1_text = "Aumenta o escudo"
-rota_1_3_text = "O escudo agora pode acumular até a vida máxima da torre"
+rota_1_2_text = "Aumenta mais o escudo"
+rota_1_3_text = "Aumenta o escudo pra caramba"
 rota_2_1_text = "Aumenta o raio de proteção"
+rota_2_2_text = "Cura um pouco da vida de cada aliado no alcance por rodada"
+rota_2_3_text = "O escudo agora pode acumular até a vida máxima da torre"
 rota_3_1_text = "Ganha 100 peças extras no início de cada rodada"
 rota_3_2_text = "Ganha 300 peças extras no início de cada rodada"
 rota_3_3_text = "Ganha 1000 peças extras no início de cada rodada"
 rota_1_1_price = 1
 rota_1_2_price = 1
 rota_1_3_price = 1
-rota_2_1_price = 400
-rota_2_2_price = 99999
-rota_2_3_price = 99999
+rota_2_1_price = 1
+rota_2_2_price = 1
+rota_2_3_price = 1
 rota_3_1_price = 500
 rota_3_2_price = 1500
 rota_3_3_price = 5000

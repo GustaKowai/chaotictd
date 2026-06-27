@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://baq7a6rxooyhv"]
+
+[ext_resource type="Texture2D" uid="uid://dplsv0r4sij2" path="res://sprites/rastro_dano_duplo_bumerangue.png" id="1_gdswx"]
+[ext_resource type="Script" uid="uid://dqomyky1gjmsk" path="res://bumerangue_rastro.gd" id="2_ed3xi"]
+
+[node name="Bumerangue_rastro" type="Sprite2D" unique_id=919647373]
+texture = ExtResource("1_gdswx")
+script = ExtResource("2_ed3xi")

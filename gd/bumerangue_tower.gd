@@ -1,11 +1,17 @@
 extends Cannon_tower
+@export_group("Upgrades balas")
 @export var bala_bumerangue_dano_duplo:PackedScene
 @export var bala_bumerangue_aumenta_dano:PackedScene
 @export var bala_bumerangue_foice:PackedScene
-@export var texture_upada:Texture2D
+@export_group("Upgrades textures")
+@export var texture_upada_dano_duplo:Texture2D
+@export var textura_upada_base_dano_duplo:Texture2D
+@export var texture_upada_dano_aumenta:Texture2D
+@export var texture_upada_executor:Texture2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $Sprite2D/AnimatedSprite2D
 var contador_de_tiro:int = 0
 @onready var timer: Timer = $Timer
+@onready var sprite_2d_base: Sprite2D = $Sprite2D/Sprite2DBase
 
 
 func _ready() -> void:
@@ -30,6 +36,10 @@ func upgrade_2_2():
 	
 func upgrade_2_3():
 	bullet = bala_bumerangue_dano_duplo
+	animated_sprite_2d.play("dano_duplo")
+	sprite_2d_base.texture = textura_upada_base_dano_duplo
+	sprite_2d.texture = texture_upada_dano_aumenta
+	sprite2d.texture = texture_upada_dano_duplo
 	
 func upgrade_3_1():
 	can_see_cammo = true
@@ -39,6 +49,7 @@ func upgrade_3_2():
 
 func upgrade_3_3():
 	timer.timeout.connect(shoot_foice)
+	sprite2d.texture = texture_upada_executor
 
 func shoot_foice():
 	var f:Bullet = bala_bumerangue_foice.instantiate()

@@ -18,7 +18,7 @@ bullet_duracao = 3.0
 rastro_tempo = 0.1
 speed = 800.0
 damage = 10
-perfuracao = 3
+perfuracao = -1
 metadata/_custom_type_script = "uid://cju1mfu60b65w"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1832682918]
