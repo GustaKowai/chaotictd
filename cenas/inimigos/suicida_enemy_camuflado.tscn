@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://mai61uc2glrt"]
+
+[ext_resource type="Script" uid="uid://ur64x8of23wx" path="res://gd/suicida_enemy.gd" id="1_3lnrq"]
+[ext_resource type="PackedScene" uid="uid://dk661vonkumgx" path="res://cenas/explosa_suicida.tscn" id="2_dc74d"]
+[ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="3_ufp2t"]
+[ext_resource type="Texture2D" uid="uid://def4g2eqnwnr0" path="res://sprites/Suicida movimento.png" id="4_ypcec"]
+[ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="5_rhcfy"]
+[ext_resource type="Script" uid="uid://cjtli66j3y46e" path="res://gd/EnemyHunt.gd" id="6_tyjr6"]
+[ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="7_2q2oj"]
+[ext_resource type="Script" uid="uid://i546gccwghdh" path="res://gd/EnemyExplode.gd" id="8_rk4rh"]
+[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="9_om082"]
+[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="10_7rrof"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ka714"]
+radius = 23.505318
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svj1p"]
+atlas = ExtResource("4_ypcec")
+region = Rect2(0, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8etu"]
+atlas = ExtResource("4_ypcec")
+region = Rect2(120, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52d0u"]
+atlas = ExtResource("4_ypcec")
+region = Rect2(240, 0, 120, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wmyqr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svj1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8etu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52d0u")
+}],
+"loop": true,
+"name": &"follow",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4bk5b"]
+radius = 90.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dcr57"]
+radius = 17.92969
+height = 99.00001
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_npfyb"]
+radius = 22.022715
+
+[node name="suicida_enemy" type="CharacterBody2D" unique_id=642258836 node_paths=PackedStringArray("area_dano")]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_3lnrq")
+area_dano = NodePath("Sprite/AttackArea")
+dano = 2500
+max_health = 200
+death_prefab = ExtResource("2_dc74d")
+color_damage = Color(0.8942446, 1, 0.8064035, 1)
+pieces = ExtResource("3_ufp2t")
+number_pieces_min = 5
+number_pieces_max = 5
+spread_area_radius = 50.0
+cost = 1
+wave_appear = 4
+metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
+
+[node name="HitBox" type="Area2D" parent="." unique_id=537918643 groups=["Enemy"]]
+collision_layer = 32
+collision_mask = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=284334138]
+shape = SubResource("CircleShape2D_ka714")
+debug_color = Color(0, 1, 0, 0.41960785)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=940082315]
+self_modulate = Color(1, 1, 1, 0.20392157)
+sprite_frames = SubResource("SpriteFrames_wmyqr")
+animation = &"follow"
+autoplay = "follow"
+frame_progress = 0.3394722
+offset = Vector2(-31, 1)
+
+[node name="AttackArea" type="Area2D" parent="Sprite" unique_id=1365165423]
+collision_layer = 2
+collision_mask = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/AttackArea" unique_id=1673817170]
+shape = SubResource("CircleShape2D_4bk5b")
+debug_color = Color(0.9999998, 0.016718408, 0.019342402, 0.41960785)
+
+[node name="Area2D" type="Area2D" parent="Sprite" unique_id=1441026510]
+scale = Vector2(2.6666665, 2.8444443)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D" unique_id=344522788]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_dcr57")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1349895766]
+shape = SubResource("CircleShape2D_npfyb")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1108831530 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("5_rhcfy")
+initial_state = NodePath("Hunt")
+metadata/_custom_type_script = "uid://ba7rfbrlsl42t"
+
+[node name="Hunt" type="Node" parent="StateMachine" unique_id=1678730874 node_paths=PackedStringArray("area_alerta", "enemy")]
+script = ExtResource("6_tyjr6")
+area_alerta = NodePath("../../Sprite/Area2D")
+speed_hunting = 40.0
+enemy = NodePath("../..")
+move_speed = 40.0
+do_collided = "die"
+metadata/_custom_type_script = "uid://cjtli66j3y46e"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=446802948 node_paths=PackedStringArray("enemy")]
+script = ExtResource("7_2q2oj")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://cqvygmqemyqcq"
+
+[node name="Die" type="Node" parent="StateMachine" unique_id=2097192420 node_paths=PackedStringArray("enemy")]
+script = ExtResource("8_rk4rh")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://i546gccwghdh"
+
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=2007040514]
+offset_left = -68.0
+offset_top = -50.0
+offset_right = 30.0
+offset_bottom = -38.0
+nine_patch_stretch = true
+texture_under = ExtResource("9_om082")
+texture_progress = ExtResource("10_7rrof")
+
+[connection signal="mouse_entered" from="HitBox" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HitBox" to="." method="_on_mouse_exited"]

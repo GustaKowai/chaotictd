@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://dg3pfc4mheukj"]
+
+[ext_resource type="Script" uid="uid://cdohxipu88atb" path="res://gd/buraco_negro_enemy.gd" id="1_q0r2a"]
+[ext_resource type="PackedScene" uid="uid://bn3hmqsehhwo7" path="res://cenas/explosa_inimigo.tscn" id="2_1i0u4"]
+[ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="3_oawxr"]
+[ext_resource type="Texture2D" uid="uid://oj1yfgl24sbo" path="res://sprites/buraco negro.png" id="4_ewg3p"]
+[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="5_4wppw"]
+[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="6_peq64"]
+[ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="7_fp51n"]
+[ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="8_wx170"]
+[ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="9_n7iev"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxr62"]
+atlas = ExtResource("4_ewg3p")
+region = Rect2(0, 0, 364, 364)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxikp"]
+atlas = ExtResource("4_ewg3p")
+region = Rect2(364, 0, 364, 364)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u70hv"]
+atlas = ExtResource("4_ewg3p")
+region = Rect2(728, 0, 364, 364)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vuoa5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxr62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxikp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u70hv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hpf3y"]
+radius = 297.69415
+height = 1150.5714
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_puqim"]
+radius = 107.07474
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5qptq"]
+radius = 43.121307
+
+[node name="buraco_negro_enemy" type="CharacterBody2D" unique_id=1508756033]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_q0r2a")
+max_health = 750
+death_prefab = ExtResource("2_1i0u4")
+color_damage = Color(1, 0, 0, 1)
+pieces = ExtResource("3_oawxr")
+number_pieces_min = 80
+number_pieces_max = 80
+spread_area_radius = 170.0
+cost = 40
+wave_appear = 10
+metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1085191555]
+self_modulate = Color(1, 1, 1, 0.20392157)
+sprite_frames = SubResource("SpriteFrames_vuoa5")
+autoplay = "default"
+frame = 2
+frame_progress = 0.72086984
+flip_h = true
+
+[node name="AreaAtaque" type="Area2D" parent="Sprite" unique_id=1500720533]
+unique_name_in_owner = true
+rotation = -1.6534739
+scale = Vector2(0.36260617, 0.4050632)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/AreaAtaque" unique_id=1115696861]
+position = Vector2(-21.516241, 23.176031)
+rotation = 0.95802903
+shape = SubResource("CapsuleShape2D_hpf3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1199135808]
+position = Vector2(8, -1)
+shape = SubResource("CircleShape2D_puqim")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=1110670401 groups=["Enemy"]]
+scale = Vector2(2.758, 2.758)
+collision_layer = 32
+collision_mask = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=670248673]
+position = Vector2(2.1754897, -0.7251631)
+rotation = -0.74967206
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("CircleShape2D_5qptq")
+debug_color = Color(0.9799538, 0, 0.38767323, 0.41960785)
+
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=282509453]
+offset_left = -128.0
+offset_top = -122.0
+offset_right = 127.0
+offset_bottom = -86.0
+nine_patch_stretch = true
+texture_under = ExtResource("5_4wppw")
+texture_progress = ExtResource("6_peq64")
+
+[node name="StateMachine" type="Node" parent="." unique_id=654654324 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("7_fp51n")
+initial_state = NodePath("Follow")
+metadata/_custom_type_script = "uid://ba7rfbrlsl42t"
+
+[node name="Follow" type="Node" parent="StateMachine" unique_id=407155186 node_paths=PackedStringArray("enemy")]
+script = ExtResource("8_wx170")
+enemy = NodePath("../..")
+move_speed = 15.0
+do_collided = "follow"
+metadata/_custom_type_script = "uid://cjnylbeht4a6i"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1120386391 node_paths=PackedStringArray("enemy")]
+script = ExtResource("9_n7iev")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://cqvygmqemyqcq"
+
+[connection signal="body_entered" from="Sprite/AreaAtaque" to="." method="_on_area_ataque_body_entered"]
+[connection signal="mouse_entered" from="HitBox" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HitBox" to="." method="_on_mouse_exited"]

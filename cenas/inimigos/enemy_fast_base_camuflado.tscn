@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://b3204ig5kp15o"]
+
+[ext_resource type="Script" uid="uid://dfuplgvonmw5h" path="res://gd/enemy_fast_base.gd" id="1_1w8yf"]
+[ext_resource type="PackedScene" uid="uid://bn3hmqsehhwo7" path="res://cenas/explosa_inimigo.tscn" id="2_4bimr"]
+[ext_resource type="PackedScene" uid="uid://f7bbx5pbm5t8" path="res://cenas/piece.tscn" id="3_7e1fn"]
+[ext_resource type="Texture2D" uid="uid://d1b587pqdo1cv" path="res://sprites/nave inimiga media rapida - ataque spritesheet.png" id="4_ffse1"]
+[ext_resource type="Texture2D" uid="uid://bwf7a16mxdjfh" path="res://sprites/nave inimiga media rapida - movimento spritesheet png.png" id="5_6nurh"]
+[ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="6_5o5tu"]
+[ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="7_xgosx"]
+[ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="8_drm60"]
+[ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="9_wnupu"]
+[ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="10_8ca7a"]
+[ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="11_c26xn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3qpn"]
+atlas = ExtResource("4_ffse1")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1f136"]
+atlas = ExtResource("4_ffse1")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7vir"]
+atlas = ExtResource("4_ffse1")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_to4gm"]
+atlas = ExtResource("5_6nurh")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cudhb"]
+atlas = ExtResource("5_6nurh")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kixi"]
+atlas = ExtResource("5_6nurh")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y3qpn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3qpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1f136")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7vir")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_to4gm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cudhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kixi")
+}],
+"loop": true,
+"name": &"follow",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_to4gm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cudhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kixi")
+}],
+"loop": true,
+"name": &"hunt",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtwt8"]
+size = Vector2(33, 123.0625)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sfe5s"]
+radius = 1.0243424
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cudhb"]
+radius = 49.0
+height = 130.0
+
+[node name="Enemy_fast_base" type="CharacterBody2D" unique_id=1532225188]
+collision_layer = 2
+collision_mask = 12
+script = ExtResource("1_1w8yf")
+max_health = 150
+death_prefab = ExtResource("2_4bimr")
+color_damage = Color(0.99215686, 0.4627451, 0, 1)
+pieces = ExtResource("3_7e1fn")
+spread_area_radius = 65.0
+wave_appear = 5
+metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1655705128]
+self_modulate = Color(1, 1, 1, 0.20392157)
+sprite_frames = SubResource("SpriteFrames_y3qpn")
+animation = &"follow"
+autoplay = "follow"
+
+[node name="AreaAtaque" type="Area2D" parent="Sprite" unique_id=1404639723]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/AreaAtaque" unique_id=2393644]
+position = Vector2(59, 0)
+shape = SubResource("RectangleShape2D_qtwt8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1721174049]
+position = Vector2(11, -1)
+scale = Vector2(49.80001, 44.520004)
+shape = SubResource("CircleShape2D_sfe5s")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=2028237609 groups=["Enemy"]]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=553732649]
+position = Vector2(12, -1)
+shape = SubResource("CapsuleShape2D_cudhb")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=557022575]
+offset_left = -78.0
+offset_top = -68.0
+offset_right = 77.0
+offset_bottom = -52.0
+nine_patch_stretch = true
+texture_under = ExtResource("6_5o5tu")
+texture_progress = ExtResource("7_xgosx")
+
+[node name="StateMachine" type="Node" parent="." unique_id=874818024 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("8_drm60")
+initial_state = NodePath("Follow")
+metadata/_custom_type_script = "uid://ba7rfbrlsl42t"
+
+[node name="Follow" type="Node" parent="StateMachine" unique_id=1890026106 node_paths=PackedStringArray("enemy")]
+script = ExtResource("9_wnupu")
+enemy = NodePath("../..")
+move_speed = 180.0
+metadata/_custom_type_script = "uid://cjnylbeht4a6i"
+
+[node name="Attack" type="Node" parent="StateMachine" unique_id=1529928686 node_paths=PackedStringArray("enemy", "area_dano")]
+script = ExtResource("10_8ca7a")
+enemy = NodePath("../..")
+area_dano = NodePath("../../HitBox")
+dano = 100
+delay_attack = 0.5
+lost_target_try_first = "follow"
+metadata/_custom_type_script = "uid://da3rkekrhcba0"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1803447841 node_paths=PackedStringArray("enemy")]
+script = ExtResource("11_c26xn")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://cqvygmqemyqcq"
+
+[connection signal="mouse_entered" from="HitBox" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HitBox" to="." method="_on_mouse_exited"]
