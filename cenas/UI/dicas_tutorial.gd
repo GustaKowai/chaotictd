@@ -17,7 +17,7 @@ func show_message(wave):
 		9:
 			choose_tutorial(3)
 func hide_tutorial():
-	get_parent().hide()4
+	get_parent().hide()
 
 func choose_tutorial(int):
 	get_parent().show()

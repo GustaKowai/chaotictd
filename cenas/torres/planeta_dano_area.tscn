@@ -290,7 +290,7 @@ rota_1_2_text = "Inimigos que sofrem dano dessa planeta passam a receber dano ex
 rota_1_3_text = "Deem mais peças!
 Inimigos atingidos pela torre tem chance de dropar até o dobro de peças ao morrerem"
 rota_2_1_text = "Aumenta o alcance da torre"
-rota_2_2_text = "Permite que a torre atinja os inimigos"
+rota_2_2_text = "Permite que a torre atinja os inimigos camuflados"
 rota_2_3_text = "Não se esconda!
 Retira camuflagem de inimigos atingidos"
 rota_3_1_text = "Aumenta a frequencia dos ataques"
