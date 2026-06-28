@@ -11,6 +11,7 @@ var posicionando:bool
 var is_game_over:bool = false
 var posicao_base:Vector2
 var pontuacao_waves:Array = [["name",1],["name2",0]]
+var damage_multiplier:float = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,7 +21,7 @@ func _ready() -> void:
 		posicao_base = Vector2(0,0)
 	posicionando = false
 	piece_count = pieces_started
-	pass # Replace with function body.
+	damage_multiplier = 1.0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,10 +32,12 @@ func restart():
 	restart_game.emit()
 	posicionando = false
 	piece_count = pieces_started
+	damage_multiplier = 1.0
 	GameManager.piece_collected.emit()
 	WaveManager.wave = 0
 	WaveManager.start_wave.emit(WaveManager.wave)
 	is_game_over = false
 	var b = base.instantiate()
 	b.global_position = posicao_base #Vector2(973,520)
+	print_debug(posicao_base)
 	get_tree().root.add_child(b)

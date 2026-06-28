@@ -37,6 +37,7 @@ torre=""
 Enemy=""
 stun=""
 Base=""
+base_position=""
 
 [input]
 

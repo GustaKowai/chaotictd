@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://t4n6p64qxp5d"]
 
 [ext_resource type="Script" uid="uid://687nbbkelr7d" path="res://gd/base.gd" id="1_m2pul"]
+[ext_resource type="PackedScene" uid="uid://bgfjw3fvrqegw" path="res://cenas/balas/bullet_sun.tscn" id="2_6qypd"]
 [ext_resource type="Texture2D" uid="uid://b85q76mheea3w" path="res://sprites/torre principal.png" id="2_gy3w1"]
 [ext_resource type="Texture2D" uid="uid://dsa51xcf7rieb" path="res://sprites/barra_curva_empty.png" id="2_ykcco"]
 [ext_resource type="Texture2D" uid="uid://bmlylcnmroyfc" path="res://sprites/barra_curva_full.png" id="3_6eodh"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="4_ubf62"]
 [ext_resource type="Texture2D" uid="uid://bujshp5yp3dgn" path="res://sprites/torre principal ociosa.png" id="5_8c4wd"]
 [ext_resource type="Texture2D" uid="uid://bpvcdyne782m5" path="res://sprites/heal-particle.png" id="6_ykcco"]
+[ext_resource type="Script" uid="uid://c0uv7hy87bhpf" path="res://cenas/torres/area_dano_up.gd" id="9_o80od"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ykcco"]
 radius = 119.00105
@@ -65,11 +67,16 @@ gravity = Vector3(0, 0, 0)
 radial_accel_min = 38.069996
 radial_accel_max = 70.09
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6qypd"]
+radius = 191.00262
+
 [node name="Base" type="StaticBody2D" unique_id=1670237934 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["Base", "torre"]]
 collision_layer = 9
 collision_mask = 3
 input_pickable = true
 script = ExtResource("1_m2pul")
+bullet = ExtResource("2_6qypd")
+number_rotations = 17
 sprite2d = NodePath("Sprite2D")
 collision_shape = NodePath("CollisionShape2D")
 max_health = 10000
@@ -113,17 +120,14 @@ autoplay = "default"
 frame_progress = 0.9435837
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1964487356]
-visible = false
 texture = ExtResource("2_gy3w1")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=369362489]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1772929820]
 shape = SubResource("CircleShape2D_6eodh")
 
 [node name="Upgrade_UI" parent="." unique_id=594738499 node_paths=PackedStringArray("torre", "rota_disable") instance=ExtResource("4_ubf62")]
-visible = false
 torre = NodePath("..")
 rota_disable = {
 NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/rota1_1"): false,
@@ -138,20 +142,27 @@ NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): t
 }
 rota_1_1_text = "Aumenta a vida máxima em 10%"
 rota_1_2_text = "No início de cada rodada, cura 2% da vida máxima"
-rota_1_3_text = "Ganha um escudo de 5% da vida atual, acumula a cada rodada até o máximo de 20% da vida máxima"
-rota_2_1_text = "Aumenta o ganho de dinheiro no início de cada rodada de 20 x nivel da onda para 50 x nivel da onda"
-rota_1_1_price = 50
-rota_1_2_price = 60
-rota_1_3_price = 30
+rota_1_3_text = "Não me toque!
+Ganha um escudo de 5% da vida atual, acumula a cada rodada até o máximo de 20% da vida máxima"
+rota_2_1_text = "Aumenta o ganho de dinheiro no início de cada rodada de 10 x nivel da onda para 20 x nivel da onda"
+rota_2_2_text = "Aumenta mais ainda o ganho de dinheiro no inicio de cada rodada, para 40x o nivel da rodada"
+rota_2_3_text = "Armas melhores!
+Aumenta todo o dano causado por aliados em 20%!"
+rota_3_1_text = "De tempos em tempos lança um ataque em uma pequena area ao redor."
+rota_3_2_text = "De tempos em tempos dispara uma tempestade solar que causa um pequeno dano"
+rota_3_3_text = "Medidas desesperadas!
+Ao ficar com menos de 30% de hp, executa instantaneamente todos os inimigos na tela. Tem um cooldown de 5 turnos entre os usos."
+rota_1_1_price = 500
+rota_1_2_price = 600
+rota_1_3_price = 3000
 rota_2_1_price = 1000
-rota_2_2_price = 99999
-rota_2_3_price = 99999
-rota_3_1_price = 99999
-rota_3_2_price = 99999
-rota_3_3_price = 99999
+rota_2_2_price = 5000
+rota_2_3_price = 10000
+rota_3_1_price = 400
+rota_3_2_price = 800
+rota_3_3_price = 5000
 
 [node name="AreaDeExclusao" type="Area2D" parent="." unique_id=357707933]
-visible = false
 
 [node name="AreaDeexclusaoShape" type="CollisionShape2D" parent="AreaDeExclusao" unique_id=565851291]
 shape = SubResource("CircleShape2D_gy3w1")
@@ -163,5 +174,51 @@ texture = ExtResource("6_ykcco")
 one_shot = true
 speed_scale = 1.65
 process_material = SubResource("ParticleProcessMaterial_6eodh")
+
+[node name="area_dano_up" type="Area2D" parent="." unique_id=1930491162]
+collision_layer = 0
+collision_mask = 34
+script = ExtResource("9_o80od")
+dano_area = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_dano_up" unique_id=561642508]
+shape = SubResource("CircleShape2D_6qypd")
+debug_color = Color(0.98549634, 0, 0.3378182, 0.41960785)
+
+[node name="Timer" type="Timer" parent="area_dano_up" unique_id=633162452]
+wait_time = 5.0
+
+[node name="cannon_base" type="Node2D" parent="." unique_id=146712095]
+
+[node name="Marker2D" type="Marker2D" parent="cannon_base" unique_id=525816524]
+position = Vector2(117, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="cannon_base" unique_id=963196102]
+position = Vector2(0, 117)
+rotation = 1.5707964
+
+[node name="Marker2D3" type="Marker2D" parent="cannon_base" unique_id=2057379403]
+position = Vector2(-117, 0)
+rotation = 3.1415927
+
+[node name="Marker2D4" type="Marker2D" parent="cannon_base" unique_id=340387160]
+position = Vector2(0, -117)
+rotation = 4.712389
+
+[node name="Marker2D5" type="Marker2D" parent="cannon_base" unique_id=101899703]
+position = Vector2(83, 83)
+rotation = 0.7853982
+
+[node name="Marker2D6" type="Marker2D" parent="cannon_base" unique_id=1294612577]
+position = Vector2(83, -83)
+rotation = -0.7853982
+
+[node name="Marker2D7" type="Marker2D" parent="cannon_base" unique_id=1236926604]
+position = Vector2(-83, 83)
+rotation = 2.3561945
+
+[node name="Marker2D8" type="Marker2D" parent="cannon_base" unique_id=159500132]
+position = Vector2(-83, -83)
+rotation = -2.3561945
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

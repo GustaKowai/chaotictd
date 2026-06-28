@@ -198,13 +198,16 @@ NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): t
 }
 rota_1_1_text = "Aumenta a velocidade de carga em 20%"
 rota_1_2_text = "Reduz o intervalo entre tiros para 4s"
-rota_1_3_text = "Substitui o tiro do canhão por 6 tiros menores, porém com o mesmo dano, que saem radialmente ao planeta"
+rota_1_3_text = "Mais tiros!!
+Substitui o tiro do canhão por 6 tiros menores, porém com o mesmo dano, que saem radialmente ao planeta"
 rota_2_1_text = "O tiro de energia se dissipar apenas após acertar pelo menos dois inimigos"
 rota_2_2_text = "O tiro de energia se dissipa apenas após acertar pelo menos quatro inimigos"
-rota_2_3_text = "O tiro de energia não se dissipa ao atingir inimigos"
+rota_2_3_text = "Sai da frente!
+O tiro de energia não se dissipa ao atingir inimigos"
 rota_3_1_text = "Aumenta o dano do tiro"
 rota_3_2_text = "Aumenta mais ainda o dano do tiro"
-rota_3_3_text = "Reação em cadeia: Ao atingir um inimigo, a bala se divide em duas, cada uma com 70% do tamanho e do dano da original. Esse efeito se repete a cada acerto."
+rota_3_3_text = "Reação em cadeia!
+ Ao atingir um inimigo, a bala se divide em duas, cada uma com 70% do tamanho e do dano da original. Esse efeito se repete a cada acerto."
 rota_1_1_price = 100
 rota_1_2_price = 180
 rota_1_3_price = 1500

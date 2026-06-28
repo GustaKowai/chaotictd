@@ -181,13 +181,16 @@ NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): t
 }
 rota_1_1_text = "Aumenta um pouco a velocidade de ataque"
 rota_1_2_text = "Aumenta o dano do bumerangue"
-rota_1_3_text = "O bumerangue aumenta de dano, tamanho e velocidade a cada alvo que atinge"
+rota_1_3_text = "Bumerangue adaptavel!
+O bumerangue aumenta de dano, tamanho e velocidade a cada alvo que atinge"
 rota_2_1_text = "Permite que o bumerangue atinja até 5 alvos antes de desaparecer"
 rota_2_2_text = "O bumerangue não desaparece ao atingir alvos"
-rota_2_3_text = "O bumerangue causa um dano extra ao sair do alvo"
+rota_2_3_text = "Saida explosiva!
+O bumerangue causa um grande dano extra ao sair do alvo"
 rota_3_1_text = "Permite que os bumerangues atinjam inimigos camuflados"
 rota_3_2_text = "Aumenta o alcance do bumerangue e a velocidade dos projéteis"
-rota_3_3_text = "A cada 5 segundo dispara um bumerangue especial que executa inimigos com menos de 30% de vida"
+rota_3_3_text = "Ajuda do ceifador!
+A cada 5 segundo dispara um bumerangue especial que executa inimigos com menos de 30% de vida"
 rota_1_1_price = 150
 rota_1_2_price = 200
 rota_1_3_price = 1000

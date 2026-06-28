@@ -65,6 +65,7 @@ linear_accel_max = 27.189997
 radial_accel_curve = SubResource("CurveTexture_yxcyq")
 
 [node name="Alert" type="AnimatedSprite2D" unique_id=1419523384]
+self_modulate = Color(1.6416155, 0, 0, 1)
 top_level = true
 sprite_frames = SubResource("SpriteFrames_baqvu")
 autoplay = "default"

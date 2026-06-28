@@ -228,19 +228,22 @@ NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): t
 }
 rota_1_1_text = "Aumenta o escudo"
 rota_1_2_text = "Aumenta mais o escudo"
-rota_1_3_text = "Aumenta o escudo pra caramba"
+rota_1_3_text = "Você quer escudo? Toma escudo!
+Aumenta o escudo pra caramba"
 rota_2_1_text = "Aumenta o raio de proteção"
 rota_2_2_text = "Cura um pouco da vida de cada aliado no alcance por rodada"
-rota_2_3_text = "O escudo agora pode acumular até a vida máxima da torre"
+rota_2_3_text = "De pouco em pouco...
+O escudo agora pode acumular até a vida máxima da torre"
 rota_3_1_text = "Ganha 100 peças extras no início de cada rodada"
 rota_3_2_text = "Ganha 300 peças extras no início de cada rodada"
-rota_3_3_text = "Ganha 1000 peças extras no início de cada rodada"
-rota_1_1_price = 1
-rota_1_2_price = 1
-rota_1_3_price = 1
-rota_2_1_price = 1
-rota_2_2_price = 1
-rota_2_3_price = 1
+rota_3_3_text = "MONEY!
+Ganha 1000 peças extras no início de cada rodada"
+rota_1_1_price = 100
+rota_1_2_price = 300
+rota_1_3_price = 1500
+rota_2_1_price = 240
+rota_2_2_price = 400
+rota_2_3_price = 4000
 rota_3_1_price = 500
 rota_3_2_price = 1500
 rota_3_3_price = 5000

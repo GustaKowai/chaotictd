@@ -1,6 +1,6 @@
 extends StaticBody2D
 class_name Building
-
+signal dying
 @onready var upgrade_ui: upgrade_UI = $Upgrade_UI
 @onready var progress_bar: TextureProgressBar = $ProgressBar
 @onready var progress_bar2: TextureProgressBar = $ProgressBar2
@@ -18,6 +18,9 @@ var shield:int:
 		progress_bar2.value = new_value #Se for usar uma barra de escudo também, sendo em baixo ou sobre a vida
 var current_health: int :
 	set(new_value):
+		if current_health > max_health*0.3:
+			if new_value < max_health*0.3:
+				dying.emit()
 		current_health = new_value
 		if new_value > max_health:
 			current_health = max_health

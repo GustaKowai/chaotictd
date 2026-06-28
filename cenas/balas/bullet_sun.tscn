@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bgfjw3fvrqegw"]
+
+[ext_resource type="Script" uid="uid://dfphxkt0fqq73" path="res://gd/bullet.gd" id="1_7duae"]
+[ext_resource type="Texture2D" uid="uid://cft08rd3p2axw" path="res://sprites/bullet_sun.png" id="2_2q4gd"]
+[ext_resource type="PackedScene" uid="uid://mdoxsi7yuvm8" path="res://cenas/impact_sun.tscn" id="2_bv0yl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bv0yl"]
+radius = 6.0
+
+[node name="Bullet" type="Area2D" unique_id=52142530]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_7duae")
+impact = ExtResource("2_bv0yl")
+speed = 500.0
+damage = 5
+metadata/_custom_type_script = "uid://dfphxkt0fqq73"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1025652548]
+shape = SubResource("CircleShape2D_bv0yl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1198401465]
+self_modulate = Color(1.4369954, 1.4369954, 1.4369954, 1)
+position = Vector2(-3.25, 0.5)
+scale = Vector2(1.02, 1.05)
+texture = ExtResource("2_2q4gd")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

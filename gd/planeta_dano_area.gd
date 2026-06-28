@@ -8,6 +8,9 @@ var count_to_bomb:int
 func upgrade_1_1():
 	area_dano.dano_area = 50
 	
+func upgrade_1_2():
+	area_dano.extra_damage = 20
+	
 func upgrade_1_3():
 	area_dano.upgrade_money = true
 	

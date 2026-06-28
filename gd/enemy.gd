@@ -24,6 +24,7 @@ var stun:bool
 @export var cost:int
 @export var wave_appear:int
 var morto:bool = false
+var extra_damage:int = 0
 #var teste:int = 0
 var alvo:Building  #Utilizado para inimigos que podem mudar de alvo
 
@@ -50,11 +51,12 @@ func _process(_delta: float) -> void:
 
 
 func take_damage(damage:int):
-	current_health -= damage
+	damage = (damage + extra_damage)*GameManager.damage_multiplier
+	current_health -= damage + extra_damage
 	blink_damage()
 	if current_health <= 0:
 		die()
-
+	
 func blink_damage():
 	modulate = color_damage
 	var tween = create_tween()

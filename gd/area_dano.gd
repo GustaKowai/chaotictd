@@ -5,6 +5,7 @@ extends Area2D
 var retira_cammo:bool = false
 var upgrade_money:bool = false
 var tempo:float = 0
+var extra_damage:int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,6 +30,7 @@ func causar_dano():
 	for inimigo in inimigos:
 		if inimigo.is_in_group("Enemy"):
 			var inimigo_body:Enemy = inimigo.get_parent()
+			inimigo_body.extra_damage = extra_damage
 			inimigo_body.take_damage(dano_area)
 			if retira_cammo:
 				inimigo.set_collision_layer_value(2,true)

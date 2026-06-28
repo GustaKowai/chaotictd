@@ -159,13 +159,16 @@ NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): t
 }
 rota_1_1_text = "Aumenta a velocidade de ataque"
 rota_1_2_text = "Aumenta mais ainda a velocidade"
-rota_1_3_text = "Pedras que atingirem os oponentes ficam orbitando eles causando dano em outros inimigos próximos"
+rota_1_3_text = "Pedras frágeis!
+Pedras que atingirem os oponentes liberam destroços que ficam orbitando eles, causando dano em outros inimigos próximos"
 rota_2_1_text = "Aumenta o dano da pedra"
 rota_2_2_text = "Permite o tiro atingir dois inimigos extras"
-rota_2_3_text = "Aumenta o número de alvos possiveis de se atingir antes de desaparecer em um. Além disso, ricocheteia nas paredes da tela. Cada ricochete conta como um alvo atingido."
+rota_2_3_text = "Pedras de borracha??
+Aumenta o número de alvos possiveis de se atingir antes de desaparecer em um. Além disso, ricocheteia nas paredes da tela. Cada ricochete conta como um alvo atingido."
 rota_3_1_text = "Consegue atingir inimigos camuflados"
 rota_3_2_text = "A torre passa a disparar para trás também"
-rota_3_3_text = "A bala é substituida por uma bala teleguiada que segue o alvo que passar perto dela"
+rota_3_3_text = "Pedra teleguiada!
+A bala é substituida por uma bala teleguiada que segue o alvo que passar perto dela"
 rota_1_1_price = 60
 rota_1_2_price = 200
 rota_1_3_price = 1200

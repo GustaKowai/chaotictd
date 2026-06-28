@@ -286,15 +286,19 @@ NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_2"): t
 NodePath("HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/rota3_3"): true
 }
 rota_1_1_text = "Aumenta o dano"
-rota_1_3_text = "Inimigos atingidos pela torre tem chance de dropar até o dobro de peças ao morrerem"
+rota_1_2_text = "Inimigos que sofrem dano dessa planeta passam a receber dano extra de todos os outros ataques"
+rota_1_3_text = "Deem mais peças!
+Inimigos atingidos pela torre tem chance de dropar até o dobro de peças ao morrerem"
 rota_2_1_text = "Aumenta o alcance da torre"
 rota_2_2_text = "Permite que a torre atinja os inimigos"
-rota_2_3_text = "Retira camuflagem de inimigos atingidos"
+rota_2_3_text = "Não se esconda!
+Retira camuflagem de inimigos atingidos"
 rota_3_1_text = "Aumenta a frequencia dos ataques"
 rota_3_2_text = "Causa duas instâncias de dano no inimigo quando ele entra no alcance da torre"
-rota_3_3_text = "Libera pequenas bombas que explodem ao contato, causando dano em quem a ativou"
+rota_3_3_text = "Kaboom.
+Libera pequenas bombas que explodem ao contato, causando dano em quem a ativou"
 rota_1_1_price = 180
-rota_1_2_price = 1
+rota_1_2_price = 400
 rota_1_3_price = 3000
 rota_2_1_price = 200
 rota_2_2_price = 300
