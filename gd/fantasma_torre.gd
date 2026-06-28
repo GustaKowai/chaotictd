@@ -10,6 +10,7 @@ var pode_colocar
 func _ready() -> void:
 	sprite_2d.texture = sprite2D.texture
 	collision_shape_2d.shape = collision_shape.shape
+	GameManager.UI_tower_mouse.connect(cancel_tower)
 	pass # Replace with function body.
 
 
@@ -40,3 +41,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		GameManager.posicionando = false
 		queue_free()
+		
+func cancel_tower():
+	GameManager.posicionando = false
+	queue_free()

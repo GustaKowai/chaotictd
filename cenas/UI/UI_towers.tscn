@@ -95,6 +95,7 @@ anchor_bottom = 1.0
 offset_left = -48.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 1
 theme = SubResource("Theme_letcd")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_pby11")
 script = ExtResource("1_nrlti")
@@ -160,3 +161,5 @@ layout_mode = 2
 shortcut = SubResource("Shortcut_sv7bf")
 hotkey = "6"
 torre = ExtResource("9_52s8d")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

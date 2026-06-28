@@ -33,3 +33,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("add_tower_6"):
 		button_6.put_tower()
 	
+
+
+func _on_mouse_entered() -> void:
+	GameManager.UI_tower_mouse.emit()
