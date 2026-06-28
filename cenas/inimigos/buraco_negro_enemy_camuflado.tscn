@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dg3pfc4mheukj"]
+[gd_scene format=3 uid="uid://c8j6kvgyewmfa"]
 
 [ext_resource type="Script" uid="uid://cdohxipu88atb" path="res://gd/buraco_negro_enemy.gd" id="1_q0r2a"]
 [ext_resource type="PackedScene" uid="uid://bn3hmqsehhwo7" path="res://cenas/explosa_inimigo.tscn" id="2_1i0u4"]
@@ -65,7 +65,7 @@ wave_appear = 10
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1085191555]
-self_modulate = Color(1, 1, 1, 0.20392157)
+self_modulate = Color(1, 1, 1, 0.6509804)
 sprite_frames = SubResource("SpriteFrames_vuoa5")
 autoplay = "default"
 frame = 2

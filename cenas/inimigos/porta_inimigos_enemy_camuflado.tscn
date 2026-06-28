@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxk7ou5cwigkv" path="res://gd/enemy.gd" id="1_mta7j"]
 [ext_resource type="PackedScene" uid="uid://bn3hmqsehhwo7" path="res://cenas/explosa_inimigo.tscn" id="2_h8eph"]
-[ext_resource type="PackedScene" uid="uid://b3wsm5weijsre" path="res://cenas/inimigos/enemy_fast_camuflado.tscn" id="3_mta7j"]
+[ext_resource type="PackedScene" uid="uid://cqo56dbnolv51" path="res://cenas/inimigos/enemy_fast_camuflado.tscn" id="3_mta7j"]
 [ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="4_w06bc"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="5_dhbxv"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="6_agy8e"]
@@ -36,7 +36,7 @@ metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=265042889]
 modulate = Color(8.1822276e-07, 0.7999728, 0.4306677, 1)
-self_modulate = Color(0.36078432, 0.7529412, 0.5137255, 0.20392157)
+self_modulate = Color(0.36078432, 0.7529412, 0.5137255, 0.6509804)
 texture = ExtResource("4_w06bc")
 
 [node name="AreaAtaque" type="Area2D" parent="Sprite" unique_id=2063154842]

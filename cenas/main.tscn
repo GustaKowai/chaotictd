@@ -26,7 +26,7 @@ texture = ExtResource("9_jdavq")
 
 [node name="UI" parent="." unique_id=744365688 instance=ExtResource("12_iwfo7")]
 
-[node name="Base" parent="." unique_id=1886608135 groups=["Base", "Player"] instance=ExtResource("3_4fhxt")]
+[node name="Base" parent="." unique_id=1886608135 groups=["Player"] instance=ExtResource("3_4fhxt")]
 position = Vector2(973, 520)
 
 [node name="EnemySpawner" parent="." unique_id=959906953 instance=ExtResource("15_gl1un")]

@@ -6,60 +6,61 @@
 [ext_resource type="PackedScene" uid="uid://bcbjjqgft1ukh" path="res://cenas/balas/bullet_chase.tscn" id="3_1o2wj"]
 [ext_resource type="Texture2D" uid="uid://bjsjja478f7dv" path="res://sprites/torre base2.png" id="3_ocafh"]
 [ext_resource type="Texture2D" uid="uid://dsa51xcf7rieb" path="res://sprites/barra_curva_empty.png" id="4_aupty"]
-[ext_resource type="Texture2D" uid="uid://b6x1lq47q6ynt" path="res://sprites/torre base.png" id="4_p00pg"]
 [ext_resource type="PackedScene" uid="uid://7vwv0bybyog0" path="res://cenas/balas/bullet_stone.tscn" id="4_wvtn8"]
 [ext_resource type="Texture2D" uid="uid://bmlylcnmroyfc" path="res://sprites/barra_curva_full.png" id="5_w7g3a"]
 [ext_resource type="PackedScene" uid="uid://bkyyvpf4gndau" path="res://cenas/balas/bullet_teste.tscn" id="5_wvtn8"]
 [ext_resource type="Texture2D" uid="uid://c11c7ma0x22u2" path="res://sprites/barra_curva_full_shield.png" id="6_1o2wj"]
 [ext_resource type="PackedScene" uid="uid://1o81x8cq10t5" path="res://cenas/UI/upgrade_ui.tscn" id="7_psoph"]
+[ext_resource type="Texture2D" uid="uid://bi3xex67vmjnj" path="res://sprites/terra_base.png" id="11_e34ep"]
+[ext_resource type="Texture2D" uid="uid://btwhqvfqwmxo8" path="res://sprites/torre base pedras.png" id="11_wvtn8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_slvgt"]
 radius = 51.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iletb"]
-atlas = ExtResource("4_p00pg")
-region = Rect2(0, 0, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e34ep"]
+atlas = ExtResource("11_wvtn8")
+region = Rect2(640, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_baf7l"]
-atlas = ExtResource("4_p00pg")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_psoph"]
-atlas = ExtResource("4_p00pg")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rpa05"]
-atlas = ExtResource("4_p00pg")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f1tct"]
-atlas = ExtResource("4_p00pg")
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5wht"]
+atlas = ExtResource("11_wvtn8")
 region = Rect2(512, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7kxun"]
-atlas = ExtResource("4_p00pg")
-region = Rect2(640, 0, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_klcy3"]
+atlas = ExtResource("11_wvtn8")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbkvv"]
+atlas = ExtResource("11_wvtn8")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okgq6"]
+atlas = ExtResource("11_wvtn8")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3iym"]
+atlas = ExtResource("11_wvtn8")
+region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8385t"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iletb")
+"texture": SubResource("AtlasTexture_e34ep")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_baf7l")
+"texture": SubResource("AtlasTexture_t5wht")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_psoph")
+"texture": SubResource("AtlasTexture_klcy3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rpa05")
+"texture": SubResource("AtlasTexture_gbkvv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f1tct")
+"texture": SubResource("AtlasTexture_okgq6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7kxun")
+"texture": SubResource("AtlasTexture_q3iym")
 }],
 "loop": true,
 "name": &"default",
@@ -115,14 +116,20 @@ radial_center_offset = Vector2(0, -100)
 texture_progress = ExtResource("6_1o2wj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1836009599]
+self_modulate = Color(1, 1, 1, 0)
 position = Vector2(-2, 2)
 texture = ExtResource("3_ocafh")
 offset = Vector2(2, -2)
 
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=545855150]
+position = Vector2(2, -2)
+texture = ExtResource("11_e34ep")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=877975832]
+rotation = -0.8517207
 sprite_frames = SubResource("SpriteFrames_8385t")
 autoplay = "default"
-frame_progress = 0.1968192
+frame_progress = 0.9573805
 offset = Vector2(2, -2)
 
 [node name="Cannon" type="Sprite2D" parent="Sprite2D" unique_id=1500969869]
@@ -131,6 +138,11 @@ position = Vector2(44, 0)
 [node name="Mira" type="Marker2D" parent="Sprite2D/Cannon" unique_id=1614255656]
 unique_name_in_owner = true
 position = Vector2(6, 0)
+
+[node name="Mira2" type="Marker2D" parent="Sprite2D/Cannon" unique_id=1292880645]
+unique_name_in_owner = true
+position = Vector2(-95, 0)
+rotation = -3.1415927
 
 [node name="Upgrade_UI" parent="." unique_id=653696189 node_paths=PackedStringArray("torre", "rota_disable") instance=ExtResource("7_psoph")]
 torre = NodePath("..")
@@ -152,6 +164,7 @@ rota_2_1_text = "Aumenta o dano da pedra"
 rota_2_2_text = "Permite o tiro atingir dois inimigos extras"
 rota_2_3_text = "Aumenta o número de alvos possiveis de se atingir antes de desaparecer em um. Além disso, ricocheteia nas paredes da tela. Cada ricochete conta como um alvo atingido."
 rota_3_1_text = "Consegue atingir inimigos camuflados"
+rota_3_2_text = "A torre passa a disparar para trás também"
 rota_3_3_text = "A bala é substituida por uma bala teleguiada que segue o alvo que passar perto dela"
 rota_1_1_price = 60
 rota_1_2_price = 200
@@ -160,7 +173,7 @@ rota_2_1_price = 60
 rota_2_2_price = 180
 rota_2_3_price = 2000
 rota_3_1_price = 50
-rota_3_2_price = 1
+rota_3_2_price = 100
 rota_3_3_price = 900
 
 [node name="AreaDeExclusao" type="Area2D" parent="." unique_id=191637833]

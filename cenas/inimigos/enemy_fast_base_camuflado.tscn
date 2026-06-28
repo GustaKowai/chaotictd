@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b3204ig5kp15o"]
+[gd_scene format=3 uid="uid://fs3id8jfu444"]
 
 [ext_resource type="Script" uid="uid://dfuplgvonmw5h" path="res://gd/enemy_fast_base.gd" id="1_1w8yf"]
 [ext_resource type="PackedScene" uid="uid://bn3hmqsehhwo7" path="res://cenas/explosa_inimigo.tscn" id="2_4bimr"]
@@ -104,7 +104,7 @@ wave_appear = 5
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1655705128]
-self_modulate = Color(1, 1, 1, 0.20392157)
+self_modulate = Color(1, 1, 1, 0.6313726)
 sprite_frames = SubResource("SpriteFrames_y3qpn")
 animation = &"follow"
 autoplay = "follow"

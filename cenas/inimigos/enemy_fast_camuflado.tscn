@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b3wsm5weijsre"]
+[gd_scene format=3 uid="uid://cqo56dbnolv51"]
 
 [ext_resource type="Script" uid="uid://chymrunoty06p" path="res://gd/enemy_fast.gd" id="1_urcxq"]
 [ext_resource type="PackedScene" uid="uid://bn3hmqsehhwo7" path="res://cenas/explosa_inimigo.tscn" id="2_7pucx"]
@@ -175,7 +175,7 @@ collision_layer = 32
 shape = SubResource("CircleShape2D_2fvk4")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=740497630]
-self_modulate = Color(1, 1, 1, 0.20392157)
+self_modulate = Color(1, 1, 1, 0.5137255)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_kdtis")
 animation = &"hunt"

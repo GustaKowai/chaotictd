@@ -17,6 +17,6 @@ func _process(_delta: float) -> void:
 	
 	add_point(point)
 	#print_debug(get_point_count())
-	
 	while get_point_count()>comprimento:
 		remove_point(0)
+		#print_debug(get_point_position(10).distance_to(get_point_position(11)))

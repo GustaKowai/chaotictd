@@ -6,6 +6,7 @@ var auto_wave:bool = false
 func _ready() -> void:
 	animated_button.visible = false
 	WaveManager.wave_end.connect(start_wave)
+	GameManager.game_over.connect(func():button_pressed = false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

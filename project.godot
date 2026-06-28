@@ -36,6 +36,7 @@ window/stretch/mode="viewport"
 torre=""
 Enemy=""
 stun=""
+Base=""
 
 [input]
 

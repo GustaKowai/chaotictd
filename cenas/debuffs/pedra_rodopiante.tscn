@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bq7dt08xig6ys" path="res://cenas/debuffs/pedra_rodopiante.gd" id="1_we7yi"]
 [ext_resource type="PackedScene" uid="uid://3g5wbdv1ufug" path="res://cenas/impact.tscn" id="2_7hy1t"]
-[ext_resource type="Texture2D" uid="uid://cd5gh8d6bbhkw" path="res://sprites/projetil.png" id="2_ufp4a"]
+[ext_resource type="Texture2D" uid="uid://dtah85ltfev31" path="res://sprites/estilhaço.png" id="3_ufp4a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_we7yi"]
-radius = 14.0
+radius = 7.0
 
 [sub_resource type="Animation" id="Animation_ufp4a"]
 length = 0.001
@@ -55,7 +55,7 @@ metadata/_custom_type_script = "uid://b0vpvrdmx81vo"
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=686860040]
 position = Vector2(100, 0)
-texture = ExtResource("2_ufp4a")
+texture = ExtResource("3_ufp4a")
 
 [node name="Area2D" type="Area2D" parent="Node2D/Sprite2D" unique_id=637170941]
 collision_layer = 4

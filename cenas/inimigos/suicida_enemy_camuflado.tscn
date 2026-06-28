@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://mai61uc2glrt"]
+[gd_scene format=3 uid="uid://yfyoem1ai7g1"]
 
 [ext_resource type="Script" uid="uid://ur64x8of23wx" path="res://gd/suicida_enemy.gd" id="1_3lnrq"]
 [ext_resource type="PackedScene" uid="uid://dk661vonkumgx" path="res://cenas/explosa_suicida.tscn" id="2_dc74d"]
@@ -79,7 +79,7 @@ shape = SubResource("CircleShape2D_ka714")
 debug_color = Color(0, 1, 0, 0.41960785)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=940082315]
-self_modulate = Color(1, 1, 1, 0.20392157)
+self_modulate = Color(1, 1, 1, 0.67058825)
 sprite_frames = SubResource("SpriteFrames_wmyqr")
 animation = &"follow"
 autoplay = "follow"

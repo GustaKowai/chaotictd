@@ -65,7 +65,7 @@ gravity = Vector3(0, 0, 0)
 radial_accel_min = 38.069996
 radial_accel_max = 70.09
 
-[node name="Base" type="StaticBody2D" unique_id=1670237934 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["torre"]]
+[node name="Base" type="StaticBody2D" unique_id=1670237934 node_paths=PackedStringArray("sprite2d", "collision_shape") groups=["Base", "torre"]]
 collision_layer = 9
 collision_mask = 3
 input_pickable = true
