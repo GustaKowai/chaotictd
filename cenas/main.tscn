@@ -3,10 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://t4n6p64qxp5d" path="res://cenas/torres/base.tscn" id="3_4fhxt"]
 [ext_resource type="AudioStream" uid="uid://dqwso7cwpqh5f" path="res://teste-song-1.wav" id="6_bhvw8"]
 [ext_resource type="Script" uid="uid://dnnf4aqbb6035" path="res://cenas/base_position.gd" id="6_l8342"]
-[ext_resource type="PackedScene" uid="uid://b3uxdxfuskpns" path="res://cenas/inimigos/arraia_enemy_camuflada.tscn" id="8_v1d1r"]
 [ext_resource type="Texture2D" uid="uid://b2mdngu4sswkk" path="res://sprites/Fundo_Space_Shooter_TD.png" id="9_jdavq"]
-[ext_resource type="PackedScene" uid="uid://yfyoem1ai7g1" path="res://cenas/inimigos/suicida_enemy_camuflado.tscn" id="9_vhipe"]
-[ext_resource type="PackedScene" uid="uid://cqo56dbnolv51" path="res://cenas/inimigos/enemy_fast_camuflado.tscn" id="10_iwfo7"]
 [ext_resource type="PackedScene" uid="uid://dhxtpf1oy4cby" path="res://cenas/UI/game_over_ui.tscn" id="11_vhipe"]
 [ext_resource type="PackedScene" uid="uid://blll4f2yqp03e" path="res://cenas/UI/UI.tscn" id="12_iwfo7"]
 [ext_resource type="PackedScene" uid="uid://bjc66ers4cmw8" path="res://cenas/enemy_spawner.tscn" id="15_gl1un"]
@@ -51,12 +48,3 @@ position = Vector2(957, 542)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2036050511]
 environment = SubResource("Environment_bhvw8")
-
-[node name="ArraiaEnemy" parent="." unique_id=1532225188 instance=ExtResource("8_v1d1r")]
-position = Vector2(91, 793)
-
-[node name="suicida_enemy" parent="." unique_id=642258836 instance=ExtResource("9_vhipe")]
-position = Vector2(61, 619)
-
-[node name="Enemy_fast" parent="." unique_id=1900647932 instance=ExtResource("10_iwfo7")]
-position = Vector2(123, 502)

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://duhxritp57dma" path="res://cenas/UI/UI_towers.tscn" id="2_ekiuc"]
 [ext_resource type="Texture2D" uid="uid://bg8b5f6u11lvb" path="res://sprites/button_auto_wave1.png" id="4_uoe5a"]
 [ext_resource type="Script" uid="uid://doka67do3cdvj" path="res://cenas/UI/auto_wave.gd" id="5_2dd7u"]
+[ext_resource type="PackedScene" uid="uid://0kdwy7v5fqbj" path="res://cenas/UI/tutorial.tscn" id="7_v3jl7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lxbms"]
 texture = ExtResource("1_b3efl")
@@ -162,5 +163,8 @@ frame_progress = 0.0034597649
 [node name="Control" parent="HBoxContainer" unique_id=13132552 instance=ExtResource("2_ekiuc")]
 layout_mode = 2
 size_flags_vertical = 2
+
+[node name="tutorial" parent="." unique_id=980340494 instance=ExtResource("7_v3jl7")]
+visible = false
 
 [connection signal="toggled" from="HBoxContainer/VBoxContainer/autoWave" to="HBoxContainer/VBoxContainer/autoWave" method="_on_toggled"]

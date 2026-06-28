@@ -15,6 +15,7 @@ func _ready() -> void:
 	WaveManager.start_wave.connect(give_pieces)
 	upgrade_ui.vender.visible = false
 	WaveManager.start_wave.connect(func(): killer_cd -= 1)
+	WaveManager.start_wave.emit(0)
 
 func die():
 	GameManager.game_over.emit()

@@ -9,6 +9,7 @@ func _ready() -> void:
 	SaveLoadArcade.load_arcade()
 	pontuacao_waves = GameManager.pontuacao_waves
 	escrever_recordes()
+	print_debug(main_menu)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -26,4 +27,4 @@ func escrever_recordes():
 
 
 func _on_button_pressed() -> void:
-		get_tree().change_scene_to_packed(main_menu)
+		get_tree().change_scene_to_file("res://cenas/UI/main_menu.tscn")

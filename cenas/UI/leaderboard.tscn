@@ -55,14 +55,13 @@ grow_vertical = 0
 text = "Voltar ao menu"
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1239159019]
-scroll_offset = Vector2(0, 4)
 repeat_size = Vector2(0, 1020)
 autoscroll = Vector2(0, -50)
 repeat_times = 2
 
 [node name="FundoSpaceShooterTd" type="Sprite2D" parent="Parallax2D2" unique_id=1196209469]
 texture_filter = 3
-position = Vector2(964, 536)
+position = Vector2(960, -3)
 texture = ExtResource("2_ogg21")
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

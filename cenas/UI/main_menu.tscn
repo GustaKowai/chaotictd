@@ -2,6 +2,17 @@
 
 [ext_resource type="Script" uid="uid://6lblvd3db4q8" path="res://gd/main_menu.gd" id="1_lo2na"]
 [ext_resource type="Texture2D" uid="uid://b2mdngu4sswkk" path="res://sprites/Fundo_Space_Shooter_TD.png" id="1_yhjln"]
+[ext_resource type="PackedScene" uid="uid://1f2bkx5xj6yt" path="res://cenas/UI/leaderboard.tscn" id="2_a0d5h"]
+[ext_resource type="FontFile" uid="uid://bv73tyjv2mg2y" path="res://fontes/ds_digital/DS-DIGIT.TTF" id="3_2t3qi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a0d5h"]
+font = ExtResource("3_2t3qi")
+font_size = 60
+font_color = Color(0.21568628, 0.27450982, 0.77254903, 1)
+outline_size = 2
+outline_color = Color(0.14509805, 0.1254902, 0.5019608, 1)
+shadow_color = Color(0.7176471, 0.9529412, 1, 1)
+shadow_offset = Vector2(2, 3)
 
 [node name="MainMenu" type="Control" unique_id=943528580]
 layout_mode = 3
@@ -11,6 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lo2na")
+leaderboard = ExtResource("2_a0d5h")
 
 [node name="Fundo" type="TextureRect" parent="." unique_id=951584522]
 layout_mode = 1
@@ -30,10 +42,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -35.5
-offset_right = 330.0
-offset_bottom = 314.5
+offset_left = -175.0
+offset_top = -175.0
+offset_right = 175.0
+offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
@@ -41,7 +53,8 @@ theme_override_constants/separation = 15
 [node name="NomeJogo" type="Label" parent="VBoxContainer" unique_id=1686184138]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "(NOME DO JOGO)"
+text = "CHAOTIC SS"
+label_settings = SubResource("LabelSettings_a0d5h")
 horizontal_alignment = 1
 
 [node name="StartGame" type="Button" parent="VBoxContainer" unique_id=1566820119]

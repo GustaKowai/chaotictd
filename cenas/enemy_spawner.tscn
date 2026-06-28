@@ -10,11 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://c3x452n30jyai" path="res://cenas/inimigos/porta_inimigos_enemy.tscn" id="8_hyy8y"]
 [ext_resource type="PackedScene" uid="uid://lx85sn0v6apj" path="res://cenas/inimigos/enemy_fast_base.tscn" id="9_2j6do"]
 [ext_resource type="PackedScene" uid="uid://b3uxdxfuskpns" path="res://cenas/inimigos/arraia_enemy_camuflada.tscn" id="10_0d7bd"]
-[ext_resource type="PackedScene" uid="uid://dg3pfc4mheukj" path="res://cenas/inimigos/buraco_negro_enemy_camuflado.tscn" id="11_hvqix"]
-[ext_resource type="PackedScene" uid="uid://b3204ig5kp15o" path="res://cenas/inimigos/enemy_fast_base_camuflado.tscn" id="12_r0iiy"]
-[ext_resource type="PackedScene" uid="uid://b3wsm5weijsre" path="res://cenas/inimigos/enemy_fast_camuflado.tscn" id="13_7x0y0"]
+[ext_resource type="PackedScene" uid="uid://c8j6kvgyewmfa" path="res://cenas/inimigos/buraco_negro_enemy_camuflado.tscn" id="11_hvqix"]
+[ext_resource type="PackedScene" uid="uid://fs3id8jfu444" path="res://cenas/inimigos/enemy_fast_base_camuflado.tscn" id="12_r0iiy"]
+[ext_resource type="PackedScene" uid="uid://cqo56dbnolv51" path="res://cenas/inimigos/enemy_fast_camuflado.tscn" id="13_7x0y0"]
 [ext_resource type="PackedScene" uid="uid://c7opnu2ieknyh" path="res://cenas/inimigos/porta_inimigos_enemy_camuflado.tscn" id="14_opbm7"]
-[ext_resource type="PackedScene" uid="uid://mai61uc2glrt" path="res://cenas/inimigos/suicida_enemy_camuflado.tscn" id="15_dx5o1"]
+[ext_resource type="PackedScene" uid="uid://yfyoem1ai7g1" path="res://cenas/inimigos/suicida_enemy_camuflado.tscn" id="15_dx5o1"]
 
 [sub_resource type="Resource" id="Resource_uwef1"]
 script = ExtResource("2_6xrey")
@@ -75,28 +75,28 @@ metadata/_custom_type_script = "uid://cs0eajybywg8w"
 script = ExtResource("2_6xrey")
 enemy = ExtResource("12_r0iiy")
 cost = 1
-initial_wave = 13
+initial_wave = 17
 metadata/_custom_type_script = "uid://cs0eajybywg8w"
 
 [sub_resource type="Resource" id="Resource_wgbet"]
 script = ExtResource("2_6xrey")
 enemy = ExtResource("13_7x0y0")
 cost = 1
-initial_wave = 11
+initial_wave = 13
 metadata/_custom_type_script = "uid://cs0eajybywg8w"
 
 [sub_resource type="Resource" id="Resource_totd6"]
 script = ExtResource("2_6xrey")
 enemy = ExtResource("14_opbm7")
 cost = 7
-initial_wave = 14
+initial_wave = 15
 metadata/_custom_type_script = "uid://cs0eajybywg8w"
 
 [sub_resource type="Resource" id="Resource_nrhg6"]
 script = ExtResource("2_6xrey")
 enemy = ExtResource("15_dx5o1")
 cost = 7
-initial_wave = 12
+initial_wave = 17
 metadata/_custom_type_script = "uid://cs0eajybywg8w"
 
 [sub_resource type="Curve2D" id="Curve2D_e8qxx"]

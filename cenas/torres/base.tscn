@@ -87,6 +87,7 @@ position = Vector2(1, 0.5)
 shape = SubResource("CircleShape2D_ykcco")
 
 [node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1622694890]
+show_behind_parent = true
 offset_left = -160.0
 offset_top = -130.0
 offset_right = 160.0
@@ -102,6 +103,7 @@ texture_under = ExtResource("2_ykcco")
 texture_progress = ExtResource("3_6eodh")
 
 [node name="ProgressBar2" type="TextureProgressBar" parent="." unique_id=413799275]
+show_behind_parent = true
 offset_left = -160.0
 offset_top = -130.0
 offset_right = 160.0

@@ -19,17 +19,17 @@ func game_over():
 func restart():
 	show()
 
-#func _input(event: InputEvent) -> void:
-	#if event.is_action_pressed("add_tower_1"):
-		#button.put_tower()
-	#if event.is_action_pressed("add_tower_2"):
-		#button_2.put_tower()
-	#if event.is_action_pressed("add_tower_3"):
-		#button_3.put_tower()
-	#if event.is_action_pressed("add_tower_4"):
-		#button_4.put_tower()
-	#if event.is_action_pressed("add_tower_5"):
-		#button_5.put_tower()
-	#if event.is_action_pressed("add_tower_6"):
-		#button_6.put_tower()
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("add_tower_1"):
+		button.put_tower()
+	if event.is_action_pressed("add_tower_2"):
+		button_2.put_tower()
+	if event.is_action_pressed("add_tower_3"):
+		button_3.put_tower()
+	if event.is_action_pressed("add_tower_4"):
+		button_4.put_tower()
+	if event.is_action_pressed("add_tower_5"):
+		button_5.put_tower()
+	if event.is_action_pressed("add_tower_6"):
+		button_6.put_tower()
 	
