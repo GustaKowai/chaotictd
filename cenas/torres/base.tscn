@@ -160,8 +160,8 @@ rota_1_3_price = 3000
 rota_2_1_price = 1000
 rota_2_2_price = 5000
 rota_2_3_price = 10000
-rota_3_1_price = 400
-rota_3_2_price = 800
+rota_3_1_price = 40
+rota_3_2_price = 80
 rota_3_3_price = 5000
 
 [node name="AreaDeExclusao" type="Area2D" parent="." unique_id=357707933]

@@ -1,5 +1,6 @@
-extends RichTextLabel
-@onready var timer: Timer = $Timer
+extends PanelContainer
+@onready var texto: RichTextLabel = $RichTextLabel
+@onready var timer: Timer = $RichTextLabel/Timer
 @export_multiline() var tutorial:Array[String]
 
 # Called when the node enters the scene tree for the first time.
@@ -16,12 +17,14 @@ func show_message(wave):
 			choose_tutorial(2)
 		9:
 			choose_tutorial(3)
+		3:
+			choose_tutorial(4)
 func hide_tutorial():
-	get_parent().hide()
+	hide()
 
 func choose_tutorial(int):
-	get_parent().show()
-	text = tutorial[int]
+	show()
+	texto.text = tutorial[int]
 	timer.start()
 
 
