@@ -15,5 +15,6 @@ func _on_options_pressed():
 func _on_scoreboard_pressed():
 	get_tree().change_scene_to_file("res://cenas/UI/leaderboard.tscn")
 	#print_debug(get_tree().change_scene_to_packed(leaderboard))
+	pass
 func _on_exit_game_pressed():
 	get_tree().quit()

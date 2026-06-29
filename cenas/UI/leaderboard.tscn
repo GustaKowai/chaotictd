@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://1f2bkx5xj6yt"]
 
-[ext_resource type="Script" uid="uid://ctgqwg1xrhbsi" path="res://gd/leaderboard.gd" id="1_qvh3m"]
-[ext_resource type="PackedScene" uid="uid://dchpd6rb4r783" path="res://cenas/UI/main_menu.tscn" id="2_7iu2l"]
+[ext_resource type="Script" uid="uid://b88sy5tju7m5c" path="res://gd/alert.gd" id="1_qvh3m"]
+[ext_resource type="PackedScene" uid="uid://dgn3wi3q4ns3s" path="res://teste.tscn" id="2_7iu2l"]
 [ext_resource type="Texture2D" uid="uid://b2mdngu4sswkk" path="res://sprites/Fundo_Space_Shooter_TD.png" id="2_ogg21"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7iu2l"]

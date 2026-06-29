@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var recordeWaves: VBoxContainer = %RecordeWaves
-@export var main_menu:PackedScene
+#@export var main_menu:PackedScene
 var pontuacao_waves:Array
 
 # Called when the node enters the scene tree for the first time.
@@ -9,7 +9,7 @@ func _ready() -> void:
 	SaveLoadArcade.load_arcade()
 	pontuacao_waves = GameManager.pontuacao_waves
 	escrever_recordes()
-	print_debug(main_menu)
+	#print_debug(main_menu)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
