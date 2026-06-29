@@ -2,22 +2,15 @@
 
 [ext_resource type="Script" uid="uid://6lblvd3db4q8" path="res://gd/main_menu.gd" id="1_lo2na"]
 [ext_resource type="Texture2D" uid="uid://b2mdngu4sswkk" path="res://sprites/Fundo_Space_Shooter_TD.png" id="1_yhjln"]
-[ext_resource type="FontFile" uid="uid://bv73tyjv2mg2y" path="res://fontes/ds_digital/DS-DIGIT.TTF" id="3_2t3qi"]
+[ext_resource type="LabelSettings" uid="uid://c7rf24n6obviq" path="res://chaotic.tres" id="3_6isp4"]
 [ext_resource type="Texture2D" uid="uid://ch1rdsh1dlpcl" path="res://sprites/ui play apagado.png" id="4_u7gsp"]
 [ext_resource type="Texture2D" uid="uid://psqmfix17xab" path="res://sprites/ui play aceso.png" id="5_ynv5s"]
 [ext_resource type="Texture2D" uid="uid://bkaqfm7s8r7mn" path="res://sprites/ui options apagado.png" id="6_ft4wk"]
 [ext_resource type="Texture2D" uid="uid://dpcswvcwvwg17" path="res://sprites/ui options aceso.png" id="7_s7du4"]
+[ext_resource type="Texture2D" uid="uid://xm84axawn472" path="res://sprites/ui leaderboard apagado.png" id="8_0cpie"]
 [ext_resource type="Texture2D" uid="uid://bspw04dbm32yg" path="res://sprites/ui exit apagado.png" id="8_6isp4"]
 [ext_resource type="Texture2D" uid="uid://cijmerrwjhg1k" path="res://sprites/ui exit aceso.png" id="9_0cpie"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_a0d5h"]
-font = ExtResource("3_2t3qi")
-font_size = 60
-font_color = Color(0.32156864, 0.8, 0.6745098, 1)
-outline_size = 2
-outline_color = Color(0.12941177, 0.47843137, 0.6509804, 1)
-shadow_color = Color(0.05490196, 0.23137255, 0.54901963, 1)
-shadow_offset = Vector2(2, 3)
+[ext_resource type="Texture2D" uid="uid://yvx624hyxjr8" path="res://sprites/ui leaderboard aceso.png" id="9_aj1cx"]
 
 [node name="MainMenu" type="Control" unique_id=943528580]
 layout_mode = 3
@@ -62,7 +55,7 @@ theme_override_constants/separation = 15
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "CHAOTIC SS"
-label_settings = SubResource("LabelSettings_a0d5h")
+label_settings = ExtResource("3_6isp4")
 horizontal_alignment = 1
 
 [node name="StartGame" type="TextureButton" parent="VBoxContainer" unique_id=503185682]
@@ -81,10 +74,13 @@ texture_pressed = ExtResource("7_s7du4")
 texture_hover = ExtResource("7_s7du4")
 texture_focused = ExtResource("7_s7du4")
 
-[node name="Scoreboard" type="Button" parent="VBoxContainer" unique_id=1782586666]
-custom_minimum_size = Vector2(300, 55)
+[node name="Scoreboard" type="TextureButton" parent="VBoxContainer" unique_id=396912898]
 layout_mode = 2
-text = "SCOREBOARD"
+size_flags_horizontal = 4
+texture_normal = ExtResource("8_0cpie")
+texture_pressed = ExtResource("9_aj1cx")
+texture_hover = ExtResource("9_aj1cx")
+texture_focused = ExtResource("9_aj1cx")
 
 [node name="ExitGame" type="TextureButton" parent="VBoxContainer" unique_id=964054033]
 layout_mode = 2
