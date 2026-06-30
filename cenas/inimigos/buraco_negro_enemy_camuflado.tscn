@@ -53,7 +53,7 @@ radius = 43.121307
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_q0r2a")
-max_health = 750
+max_health = 2300
 death_prefab = ExtResource("2_1i0u4")
 color_damage = Color(1, 0, 0, 1)
 pieces = ExtResource("3_oawxr")
@@ -99,6 +99,7 @@ shape = SubResource("CircleShape2D_5qptq")
 debug_color = Color(0.9799538, 0, 0.38767323, 0.41960785)
 
 [node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=282509453]
+visible = false
 offset_left = -128.0
 offset_top = -122.0
 offset_right = 127.0

@@ -164,7 +164,9 @@ frame_progress = 0.0034597649
 layout_mode = 2
 size_flags_vertical = 2
 
-[node name="tutorial" parent="." unique_id=980340494 instance=ExtResource("7_v3jl7")]
+[node name="tutorial" parent="." unique_id=980340494 node_paths=PackedStringArray("menu_torres", "botao_auto") instance=ExtResource("7_v3jl7")]
 visible = false
+menu_torres = NodePath("../HBoxContainer/Control")
+botao_auto = NodePath("../HBoxContainer/VBoxContainer/autoWave")
 
 [connection signal="toggled" from="HBoxContainer/VBoxContainer/autoWave" to="HBoxContainer/VBoxContainer/autoWave" method="_on_toggled"]

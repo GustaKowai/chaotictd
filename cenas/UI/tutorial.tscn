@@ -47,7 +47,7 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
 script = ExtResource("1_q8agm")
-tutorial = Array[String](["Bem vindo ao [color=red]Chaotic Tower Defense! [/color]
+tutorial = Array[String](["Bem vindo ao [color=red]Chaotic Space Shooter! [/color]
 Aqui você tem como dever defender sua [color=red]estrela central[/color]. Se ela morrer, você perde.
 O menu a direita permite que você selecione e coloque torres.
 Cada uma delas tem uma mecanica diferente, experimente-as!", "Os inimigos podem atacar sua estrela ou seus planetas.
