@@ -1,6 +1,7 @@
 extends StaticBody2D
 class_name Building
 signal dying
+signal life_changing
 @onready var upgrade_ui: upgrade_UI = $Upgrade_UI
 @onready var progress_bar: TextureProgressBar = $ProgressBar
 @onready var progress_bar2: TextureProgressBar = $ProgressBar2
@@ -25,6 +26,7 @@ var current_health: int :
 		if new_value > max_health:
 			current_health = max_health
 		progress_bar.value = new_value
+		life_changing.emit()
 func _ready() -> void:
 	progress_bar.max_value = max_health
 	progress_bar2.max_value = max_health

@@ -15,6 +15,10 @@ class_name upgrade_UI
 @onready var rota_3_3: CheckBox = %rota3_3
 @onready var upgrade_text: Label = %upgrade_text
 @onready var info_container: PanelContainer = %info_container
+@onready var see_cammo: TextureRect = %see_cammo
+@onready var vida: Label = %vida
+@onready var barra_vida_update: TextureProgressBar = %barra_vida_update
+
 const GLITCH = preload("uid://cjo3vujurf3ae")
 
 
@@ -81,7 +85,7 @@ func _ready() -> void:
 	rota_3_2.text = str(rota_3_2_price)
 	rota_3_3.text = str(rota_3_3_price)
 	upgrade_size = size
-	
+	torre.life_changing.connect(update_life)
 	self.hide()
 
 
@@ -302,3 +306,9 @@ func _on_rota_3_3_mouse_entered() -> void:
 func _on_info_container_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		self.hide()
+
+func update_life():
+	if barra_vida_update:
+		barra_vida_update.max_value = torre.max_health
+		barra_vida_update.value = torre.current_health
+		vida.text = str(torre.current_health)+"/"+str(torre.max_health) 
