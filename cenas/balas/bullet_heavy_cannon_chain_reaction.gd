@@ -25,6 +25,7 @@ func duplicate_self():
 		instance.transform = global_transform
 		#instance.position.x += 30
 		instance.scale *= 0.7
+		@warning_ignore("narrowing_conversion")
 		instance.damage *=0.7
 		#print_debug(instance.damage)
 		instance.rotate(PI*i/2)

@@ -22,9 +22,9 @@ func show_message(wave):
 func hide_tutorial():
 	hide()
 
-func choose_tutorial(int):
+func choose_tutorial(num):
 	show()
-	texto.text = tutorial[int]
+	texto.text = tutorial[num]
 	timer.start()
 
 

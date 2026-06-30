@@ -1,6 +1,7 @@
 extends Node
 var base:PackedScene = preload("uid://t4n6p64qxp5d")
 var piece_count:int
+@warning_ignore("unused_signal")
 signal UI_tower_mouse
 @warning_ignore("unused_signal")
 signal piece_collected()

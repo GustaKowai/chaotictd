@@ -51,6 +51,7 @@ func _process(_delta: float) -> void:
 
 
 func take_damage(damage:int):
+	@warning_ignore("narrowing_conversion")
 	damage = (damage + extra_damage)*GameManager.damage_multiplier
 	current_health -= damage + extra_damage
 	blink_damage()

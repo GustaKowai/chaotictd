@@ -14,7 +14,7 @@ func _ready() -> void:
 	super()
 	WaveManager.start_wave.connect(give_pieces)
 	upgrade_ui.vender.visible = false
-	WaveManager.start_wave.connect(func(): killer_cd -= 1)
+	WaveManager.start_wave.connect(func(_int): killer_cd -= 1)
 	WaveManager.start_wave.emit(0)
 
 func die():
