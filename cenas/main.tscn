@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://wig3gvmd4il6"]
 
 [ext_resource type="PackedScene" uid="uid://t4n6p64qxp5d" path="res://cenas/torres/base.tscn" id="3_4fhxt"]
-[ext_resource type="AudioStream" uid="uid://dqwso7cwpqh5f" path="res://teste-song-1.wav" id="6_bhvw8"]
 [ext_resource type="Script" uid="uid://dnnf4aqbb6035" path="res://cenas/base_position.gd" id="6_l8342"]
+[ext_resource type="AudioStream" uid="uid://dxmc7u4ctelcf" path="res://chaotic.wav" id="7_l8342"]
 [ext_resource type="Texture2D" uid="uid://b2mdngu4sswkk" path="res://sprites/Fundo_Space_Shooter_TD.png" id="9_jdavq"]
 [ext_resource type="PackedScene" uid="uid://dhxtpf1oy4cby" path="res://cenas/UI/game_over_ui.tscn" id="11_vhipe"]
 [ext_resource type="PackedScene" uid="uid://blll4f2yqp03e" path="res://cenas/UI/UI.tscn" id="12_iwfo7"]
@@ -40,7 +40,7 @@ position = Vector2(973, 520)
 script = ExtResource("6_l8342")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=991305301]
-stream = ExtResource("6_bhvw8")
+stream = ExtResource("7_l8342")
 autoplay = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=397640874]

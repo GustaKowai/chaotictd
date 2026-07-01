@@ -41,6 +41,34 @@ animations = [{
 "loop": true,
 "name": &"follow",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svj1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8etu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52d0u")
+}],
+"loop": true,
+"name": &"hunt",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svj1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8etu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52d0u")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4bk5b"]
@@ -80,9 +108,8 @@ debug_color = Color(0, 1, 0, 0.41960785)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=940082315]
 sprite_frames = SubResource("SpriteFrames_wmyqr")
-animation = &"follow"
+animation = &"idle"
 autoplay = "follow"
-frame_progress = 0.3394722
 offset = Vector2(-31, 1)
 
 [node name="AttackArea" type="Area2D" parent="Sprite" unique_id=1365165423]

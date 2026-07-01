@@ -26,6 +26,18 @@ region = Rect2(120, 0, 120, 60)
 atlas = ExtResource("4_ypcec")
 region = Rect2(240, 0, 120, 60)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lnrq"]
+atlas = ExtResource("4_ypcec")
+region = Rect2(0, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dc74d"]
+atlas = ExtResource("4_ypcec")
+region = Rect2(120, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufp2t"]
+atlas = ExtResource("4_ypcec")
+region = Rect2(240, 0, 120, 60)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_wmyqr"]
 animations = [{
 "frames": [{
@@ -40,6 +52,34 @@ animations = [{
 }],
 "loop": true,
 "name": &"follow",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lnrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dc74d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufp2t")
+}],
+"loop": true,
+"name": &"hunt",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lnrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dc74d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufp2t")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 8.0
 }]
 
@@ -81,9 +121,8 @@ debug_color = Color(0, 1, 0, 0.41960785)
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=940082315]
 self_modulate = Color(1, 1, 1, 0.67058825)
 sprite_frames = SubResource("SpriteFrames_wmyqr")
-animation = &"follow"
+animation = &"idle"
 autoplay = "follow"
-frame_progress = 0.3394722
 offset = Vector2(-31, 1)
 
 [node name="AttackArea" type="Area2D" parent="Sprite" unique_id=1365165423]

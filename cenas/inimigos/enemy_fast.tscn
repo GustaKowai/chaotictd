@@ -112,7 +112,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_6k8qe")
 }],
 "loop": true,
-"name": &"default",
+"name": &"follow",
 "speed": 15.0
 }, {
 "frames": [{
@@ -177,8 +177,8 @@ shape = SubResource("CircleShape2D_2fvk4")
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=740497630]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_kdtis")
-animation = &"hunt"
-autoplay = "default"
+animation = &"follow"
+autoplay = "follow"
 
 [node name="AttackArea" type="Area2D" parent="Sprite" unique_id=1944355732]
 position = Vector2(231.48935, 0)
