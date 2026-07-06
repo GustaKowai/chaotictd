@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://ce6f4ggat3eu2"]
+
+[ext_resource type="Script" uid="uid://doty1q6gwkx1f" path="res://gd/pause_menu.gd" id="1_2mev3"]
+[ext_resource type="Texture2D" uid="uid://cx0fxp5aou383" path="res://sprites/Pecas3.png" id="2_lydt5"]
+[ext_resource type="Texture2D" uid="uid://ch1rdsh1dlpcl" path="res://sprites/ui play apagado.png" id="3_npgai"]
+[ext_resource type="Texture2D" uid="uid://psqmfix17xab" path="res://sprites/ui play aceso.png" id="4_egdtj"]
+[ext_resource type="Texture2D" uid="uid://bspw04dbm32yg" path="res://sprites/ui exit apagado.png" id="5_yf8la"]
+[ext_resource type="Texture2D" uid="uid://cijmerrwjhg1k" path="res://sprites/ui exit aceso.png" id="6_4qvgc"]
+
+[node name="PauseMenu" type="Control" unique_id=1726217702]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2mev3")
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=1021930137]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1201834854]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -23.5
+offset_right = 430.0
+offset_bottom = 276.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="InfoContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=381055572]
+layout_mode = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="MoneyContainer" type="HBoxContainer" parent="VBoxContainer/InfoContainer" unique_id=510817365]
+layout_mode = 2
+
+[node name="PieceIcon" type="TextureRect" parent="VBoxContainer/InfoContainer/MoneyContainer" unique_id=2037408156]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("2_lydt5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MoneyLabel" type="Label" parent="VBoxContainer/InfoContainer/MoneyContainer" unique_id=29313083]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "0"
+
+[node name="WaveContainer" type="HBoxContainer" parent="VBoxContainer/InfoContainer" unique_id=154165417]
+layout_mode = 2
+
+[node name="WaveText" type="Label" parent="VBoxContainer/InfoContainer/WaveContainer" unique_id=830502038]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Wave:"
+
+[node name="RoundLabel" type="Label" parent="VBoxContainer/InfoContainer/WaveContainer" unique_id=1984155972]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "0"
+
+[node name="Resume" type="TextureButton" parent="VBoxContainer" unique_id=1641952707]
+custom_minimum_size = Vector2(350, 90)
+layout_mode = 2
+texture_normal = ExtResource("3_npgai")
+texture_pressed = ExtResource("4_egdtj")
+texture_hover = ExtResource("4_egdtj")
+stretch_mode = 5
+
+[node name="QuitToMainMenu" type="TextureButton" parent="VBoxContainer" unique_id=1276714136]
+custom_minimum_size = Vector2(350, 90)
+layout_mode = 2
+texture_normal = ExtResource("5_yf8la")
+texture_pressed = ExtResource("6_4qvgc")
+texture_hover = ExtResource("6_4qvgc")
+stretch_mode = 5

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://t4n6p64qxp5d" path="res://cenas/torres/base.tscn" id="3_4fhxt"]
 [ext_resource type="Script" uid="uid://dnnf4aqbb6035" path="res://cenas/base_position.gd" id="6_l8342"]
 [ext_resource type="AudioStream" uid="uid://dxmc7u4ctelcf" path="res://chaotic.wav" id="7_l8342"]
+[ext_resource type="PackedScene" uid="uid://ce6f4ggat3eu2" path="res://cenas/UI/pause_menu.tscn" id="8_v1d1r"]
 [ext_resource type="Texture2D" uid="uid://b2mdngu4sswkk" path="res://sprites/Fundo_Space_Shooter_TD.png" id="9_jdavq"]
 [ext_resource type="PackedScene" uid="uid://dhxtpf1oy4cby" path="res://cenas/UI/game_over_ui.tscn" id="11_vhipe"]
 [ext_resource type="PackedScene" uid="uid://blll4f2yqp03e" path="res://cenas/UI/UI.tscn" id="12_iwfo7"]
@@ -48,3 +49,7 @@ position = Vector2(957, 542)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2036050511]
 environment = SubResource("Environment_bhvw8")
+
+[node name="PauseLayer" type="CanvasLayer" parent="." unique_id=646699567]
+
+[node name="PauseMenu" parent="PauseLayer" unique_id=1726217702 instance=ExtResource("8_v1d1r")]
