@@ -2,6 +2,7 @@ extends Area2D
 @export var dano_area:int 
 @export var pieces:PackedScene
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animated_sprite_2d_planet: AnimatedSprite2D = $"../Sprite2D/AnimatedSprite2D"
 var retira_cammo:bool = false
 var upgrade_money:bool = false
 var tempo:float = 0
@@ -23,6 +24,7 @@ func _on_timer_timeout():
 	
 func causar_dano():
 	animated_sprite_2d.play("chock")
+	animated_sprite_2d_planet.play("chock")
 	get_parent().blink_damage(Color(1.476, 1.476, 0.0, 1.0))
 	print_debug("tentou_causar_dano")
 	var inimigos = get_overlapping_areas()

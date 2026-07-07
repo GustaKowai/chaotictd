@@ -7,7 +7,7 @@ extends PanelContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	WaveManager.start_wave.connect(show_message)
+	ativa_tutorial()
 	
 func show_message(wave):
 	match wave:
@@ -48,3 +48,9 @@ func blink(UI):
 	tween.set_loops(5)
 	tween.tween_property(UI,"modulate",Color(2.313, 2.313, 2.313, 1.0),1)
 	tween.tween_property(UI,"modulate",Color.WHITE,1)
+	
+func desativa_tutorial():
+	WaveManager.start_wave.disconnect(show_message)
+
+func ativa_tutorial():
+	WaveManager.start_wave.connect(show_message)
