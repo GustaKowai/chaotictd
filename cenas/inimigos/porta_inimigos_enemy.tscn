@@ -4,21 +4,72 @@
 [ext_resource type="PackedScene" uid="uid://bij78peujw27q" path="res://cenas/inimigos/enemy_fast.tscn" id="2_4c5jp"]
 [ext_resource type="PackedScene" uid="uid://bn3hmqsehhwo7" path="res://cenas/explosa_inimigo.tscn" id="2_ctbec"]
 [ext_resource type="Script" uid="uid://ba7rfbrlsl42t" path="res://gd/state_machine.gd" id="3_4c5jp"]
-[ext_resource type="Texture2D" uid="uid://dxswbvkv6seg1" path="res://icon.svg" id="3_vhru5"]
+[ext_resource type="Texture2D" uid="uid://gjvxgo66hjby" path="res://sprites/casuloInimigoSheet.png" id="4_71dcr"]
 [ext_resource type="Script" uid="uid://cjnylbeht4a6i" path="res://gd/EnemyFollow.gd" id="4_gxl1r"]
 [ext_resource type="Script" uid="uid://da3rkekrhcba0" path="res://gd/EnemyAttack.gd" id="5_5wlbm"]
 [ext_resource type="Texture2D" uid="uid://cfyobk864s402" path="res://sprites/barra de vida vazia.png" id="5_71dcr"]
 [ext_resource type="Texture2D" uid="uid://cps1wp0kj23l" path="res://sprites/barra de vida cheia.png" id="6_us7tv"]
 [ext_resource type="Script" uid="uid://cqvygmqemyqcq" path="res://gd/EnemyIdle.gd" id="8_v4xsw"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_us7tv"]
+atlas = ExtResource("4_71dcr")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plm6p"]
+atlas = ExtResource("4_71dcr")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvx8b"]
+atlas = ExtResource("4_71dcr")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ps2fg"]
+atlas = ExtResource("4_71dcr")
+region = Rect2(0, 150, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pch87"]
+atlas = ExtResource("4_71dcr")
+region = Rect2(150, 150, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t67os"]
+atlas = ExtResource("4_71dcr")
+region = Rect2(300, 150, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6gnex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_us7tv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plm6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvx8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ps2fg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pch87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t67os")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ol254"]
-size = Vector2(206, 195)
+size = Vector2(97, 105)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ofidm"]
-radius = 61.073727
+radius = 43.046486
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_n3dg1"]
-radius = 85.09406
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4vhvi"]
+radius = 34.0
+height = 132.79068
 
 [node name="porta_inimigos_enemy" type="CharacterBody2D" unique_id=1558024661]
 collision_layer = 2
@@ -34,17 +85,17 @@ spread_area_radius = 135.0
 wave_appear = 3
 metadata/_custom_type_script = "uid://bxk7ou5cwigkv"
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=265042889]
-modulate = Color(8.1822276e-07, 0.7999728, 0.4306677, 1)
-self_modulate = Color(0.36069837, 0.75327927, 0.51517135, 1)
-texture = ExtResource("3_vhru5")
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1920895537]
+sprite_frames = SubResource("SpriteFrames_6gnex")
+autoplay = "default"
+frame_progress = 0.8095318
 
 [node name="AreaAtaque" type="Area2D" parent="Sprite" unique_id=2063154842]
 collision_layer = 2
 collision_mask = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/AreaAtaque" unique_id=473288132]
-position = Vector2(-3, 0.5)
+position = Vector2(0.5, -5.5)
 shape = SubResource("RectangleShape2D_ol254")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=930571678]
@@ -56,8 +107,9 @@ collision_layer = 2
 collision_mask = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1216710797]
-position = Vector2(1, 0)
-shape = SubResource("CircleShape2D_n3dg1")
+position = Vector2(0, -6)
+rotation = -0.7127442
+shape = SubResource("CapsuleShape2D_4vhvi")
 
 [node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=527987750]
 offset_left = -121.0
