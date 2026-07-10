@@ -39,3 +39,7 @@ func _on_resume_pressed():
 func _on_quit_to_main_menu_pressed():
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://cenas/UI/main_menu.tscn")
+
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	GameManager.tutorial_on.emit(toggled_on)

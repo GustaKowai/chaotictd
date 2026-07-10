@@ -84,6 +84,12 @@ texture_pressed = ExtResource("4_egdtj")
 texture_hover = ExtResource("4_egdtj")
 stretch_mode = 5
 
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer" unique_id=312756276]
+layout_mode = 2
+size_flags_horizontal = 4
+button_pressed = true
+text = "Tutorial "
+
 [node name="QuitToMainMenu" type="TextureButton" parent="VBoxContainer" unique_id=1276714136]
 custom_minimum_size = Vector2(350, 90)
 layout_mode = 2
@@ -91,3 +97,5 @@ texture_normal = ExtResource("5_yf8la")
 texture_pressed = ExtResource("6_4qvgc")
 texture_hover = ExtResource("6_4qvgc")
 stretch_mode = 5
+
+[connection signal="toggled" from="VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]

@@ -8,6 +8,8 @@ extends PanelContainer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ativa_tutorial()
+	GameManager.tutorial_on.connect(toogle_tutorial)
+	
 	
 func show_message(wave):
 	match wave:
@@ -54,3 +56,9 @@ func desativa_tutorial():
 
 func ativa_tutorial():
 	WaveManager.start_wave.connect(show_message)
+	
+func toogle_tutorial(toogle):
+	if toogle:
+		ativa_tutorial()
+	else:
+		desativa_tutorial()

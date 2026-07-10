@@ -7,6 +7,8 @@ signal UI_tower_mouse
 signal piece_collected()
 @warning_ignore("unused_signal")
 signal game_over()
+@warning_ignore("unused_signal")
+signal tutorial_on()
 signal restart_game()
 var pieces_started:int = 150
 var posicionando:bool
