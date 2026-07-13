@@ -1,9 +1,9 @@
 extends Control
 
-@onready var round_label: Label = $VBoxContainer/InfoContainer/WaveContainer/RoundLabel
-@onready var money_label: Label = $VBoxContainer/InfoContainer/MoneyContainer/MoneyLabel
-@onready var resume_button: TextureButton = $VBoxContainer/Resume
-@onready var quit_button: TextureButton = $VBoxContainer/QuitToMainMenu
+@onready var round_label: Label = %RoundLabel
+@onready var money_label: Label = %MoneyLabel
+@onready var resume_button: TextureButton = %Resume
+@onready var quit_button: TextureButton = %QuitToMainMenu
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS

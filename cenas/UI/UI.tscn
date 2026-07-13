@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://drrkkodh5c7gl" path="res://sprites/UI_Space_shooter_td.png" id="1_b3efl"]
 [ext_resource type="PackedScene" uid="uid://de4snsa6vh3g8" path="res://cenas/UI/next_wave.tscn" id="2_5auu7"]
 [ext_resource type="PackedScene" uid="uid://duhxritp57dma" path="res://cenas/UI/UI_towers.tscn" id="2_ekiuc"]
+[ext_resource type="LabelSettings" uid="uid://dtngv7cw2tyfi" path="res://title.tres" id="3_rslxl"]
 [ext_resource type="Texture2D" uid="uid://bg8b5f6u11lvb" path="res://sprites/button_auto_wave1.png" id="4_uoe5a"]
 [ext_resource type="Script" uid="uid://doka67do3cdvj" path="res://cenas/UI/auto_wave.gd" id="5_2dd7u"]
 [ext_resource type="PackedScene" uid="uid://0kdwy7v5fqbj" path="res://cenas/UI/tutorial.tscn" id="7_v3jl7"]
@@ -15,15 +16,6 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_b3efl"]
-font_size = 30
-
-[sub_resource type="LabelSettings" id="LabelSettings_lxbms"]
-font_size = 30
-
-[sub_resource type="LabelSettings" id="LabelSettings_k48pe"]
-font_size = 30
-
-[sub_resource type="LabelSettings" id="LabelSettings_yk6h3"]
 font_size = 30
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dd7u"]
@@ -113,20 +105,20 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
-label_settings = SubResource("LabelSettings_lxbms")
+label_settings = ExtResource("3_rslxl")
 
 [node name="labelWave" type="Label" parent="PanelContainer/Piece_counter" unique_id=744956442]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Wave:"
-label_settings = SubResource("LabelSettings_k48pe")
+label_settings = ExtResource("3_rslxl")
 
 [node name="wave_number" type="Label" parent="PanelContainer/Piece_counter" unique_id=1096816604]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 2
 text = "0"
-label_settings = SubResource("LabelSettings_yk6h3")
+label_settings = ExtResource("3_rslxl")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=96470351]
 anchors_preset = 11

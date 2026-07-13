@@ -1,11 +1,44 @@
 [gd_scene format=3 uid="uid://ce6f4ggat3eu2"]
 
 [ext_resource type="Script" uid="uid://doty1q6gwkx1f" path="res://gd/pause_menu.gd" id="1_2mev3"]
+[ext_resource type="Texture2D" uid="uid://mfoj5eprc5st" path="res://sprites/pause_menu_background.png" id="2_4qvgc"]
 [ext_resource type="Texture2D" uid="uid://cx0fxp5aou383" path="res://sprites/Pecas3.png" id="2_lydt5"]
 [ext_resource type="Texture2D" uid="uid://ch1rdsh1dlpcl" path="res://sprites/ui play apagado.png" id="3_npgai"]
 [ext_resource type="Texture2D" uid="uid://psqmfix17xab" path="res://sprites/ui play aceso.png" id="4_egdtj"]
+[ext_resource type="FontFile" uid="uid://bv73tyjv2mg2y" path="res://fontes/ds_digital/DS-DIGIT.TTF" id="4_j84b0"]
 [ext_resource type="Texture2D" uid="uid://bspw04dbm32yg" path="res://sprites/ui exit apagado.png" id="5_yf8la"]
 [ext_resource type="Texture2D" uid="uid://cijmerrwjhg1k" path="res://sprites/ui exit aceso.png" id="6_4qvgc"]
+[ext_resource type="FontFile" uid="uid://dfbvjjbko0424" path="res://fontes/ds_digital/DS-DIGI.TTF" id="7_u5e1e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j84b0"]
+texture = ExtResource("2_4qvgc")
+
+[sub_resource type="LabelSettings" id="LabelSettings_u5e1e"]
+font = ExtResource("4_j84b0")
+font_size = 40
+font_color = Color(0.32156864, 0.8, 0.6745098, 1)
+outline_size = 2
+outline_color = Color(0.12941177, 0.47843137, 0.6509804, 1)
+shadow_color = Color(0.05490196, 0.23137255, 0.54901963, 1)
+shadow_offset = Vector2(2, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gm2xr"]
+font = ExtResource("4_j84b0")
+font_size = 40
+font_color = Color(0.32156864, 0.8, 0.6745098, 1)
+outline_size = 2
+outline_color = Color(0.12941177, 0.47843137, 0.6509804, 1)
+shadow_color = Color(0.05490196, 0.23137255, 0.54901963, 1)
+shadow_offset = Vector2(2, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ko0ia"]
+font = ExtResource("4_j84b0")
+font_size = 40
+font_color = Color(0.32156864, 0.8, 0.6745098, 1)
+outline_size = 2
+outline_color = Color(0.12941177, 0.47843137, 0.6509804, 1)
+shadow_color = Color(0.05490196, 0.23137255, 0.54901963, 1)
+shadow_offset = Vector2(2, 3)
 
 [node name="PauseMenu" type="Control" unique_id=1726217702]
 layout_mode = 3
@@ -28,74 +61,101 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.47058824)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1201834854]
+[node name="PanelContainer" type="PanelContainer" parent="Fundo" unique_id=1989230406]
+custom_minimum_size = Vector2(350, 450)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -225.0
-offset_top = -150.0
-offset_right = 225.0
-offset_bottom = 150.0
+offset_left = -175.0
+offset_top = -155.5
+offset_right = 175.0
+offset_bottom = 155.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j84b0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Fundo/PanelContainer" unique_id=1201834854]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/separation = 20
 
-[node name="InfoContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=381055572]
+[node name="InfoContainer" type="HBoxContainer" parent="Fundo/PanelContainer/VBoxContainer" unique_id=381055572]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/separation = 80
 alignment = 1
 
-[node name="MoneyContainer" type="HBoxContainer" parent="VBoxContainer/InfoContainer" unique_id=510817365]
+[node name="MoneyContainer" type="HBoxContainer" parent="Fundo/PanelContainer/VBoxContainer/InfoContainer" unique_id=510817365]
 layout_mode = 2
 
-[node name="PieceIcon" type="TextureRect" parent="VBoxContainer/InfoContainer/MoneyContainer" unique_id=2037408156]
+[node name="PieceIcon" type="TextureRect" parent="Fundo/PanelContainer/VBoxContainer/InfoContainer/MoneyContainer" unique_id=2037408156]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("2_lydt5")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="MoneyLabel" type="Label" parent="VBoxContainer/InfoContainer/MoneyContainer" unique_id=29313083]
+[node name="MoneyLabel" type="Label" parent="Fundo/PanelContainer/VBoxContainer/InfoContainer/MoneyContainer" unique_id=29313083]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "0"
+label_settings = SubResource("LabelSettings_u5e1e")
 
-[node name="WaveContainer" type="HBoxContainer" parent="VBoxContainer/InfoContainer" unique_id=154165417]
+[node name="WaveContainer" type="HBoxContainer" parent="Fundo/PanelContainer/VBoxContainer/InfoContainer" unique_id=154165417]
 layout_mode = 2
 
-[node name="WaveText" type="Label" parent="VBoxContainer/InfoContainer/WaveContainer" unique_id=830502038]
+[node name="WaveText" type="Label" parent="Fundo/PanelContainer/VBoxContainer/InfoContainer/WaveContainer" unique_id=830502038]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Wave:"
+label_settings = SubResource("LabelSettings_gm2xr")
 
-[node name="RoundLabel" type="Label" parent="VBoxContainer/InfoContainer/WaveContainer" unique_id=1984155972]
+[node name="RoundLabel" type="Label" parent="Fundo/PanelContainer/VBoxContainer/InfoContainer/WaveContainer" unique_id=1984155972]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "0"
+label_settings = SubResource("LabelSettings_ko0ia")
 
-[node name="Resume" type="TextureButton" parent="VBoxContainer" unique_id=1641952707]
+[node name="Resume" type="TextureButton" parent="Fundo/PanelContainer/VBoxContainer" unique_id=1641952707]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(350, 90)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture_normal = ExtResource("3_npgai")
 texture_pressed = ExtResource("4_egdtj")
 texture_hover = ExtResource("4_egdtj")
 stretch_mode = 5
 
-[node name="CheckButton" type="CheckButton" parent="VBoxContainer" unique_id=312756276]
+[node name="CheckButton" type="CheckButton" parent="Fundo/PanelContainer/VBoxContainer" unique_id=312756276]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.15294118, 0.38039216, 0.32156864, 1)
+theme_override_colors/font_focus_color = Color(0.32156864, 0.8, 0.6745098, 1)
+theme_override_colors/font_pressed_color = Color(0.32156864, 0.8, 0.6745098, 1)
+theme_override_colors/font_hover_color = Color(0.32156864, 0.8, 0.6745098, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.32156864, 0.8, 0.6745098, 1)
+theme_override_colors/font_outline_color = Color(0.12941177, 0.47843137, 0.6509804, 1)
+theme_override_fonts/font = ExtResource("7_u5e1e")
+theme_override_font_sizes/font_size = 40
 button_pressed = true
 text = "Tutorial "
 
-[node name="QuitToMainMenu" type="TextureButton" parent="VBoxContainer" unique_id=1276714136]
+[node name="QuitToMainMenu" type="TextureButton" parent="Fundo/PanelContainer/VBoxContainer" unique_id=1276714136]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(350, 90)
 layout_mode = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("5_yf8la")
 texture_pressed = ExtResource("6_4qvgc")
 texture_hover = ExtResource("6_4qvgc")
 stretch_mode = 5
 
-[connection signal="toggled" from="VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="Fundo/PanelContainer/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
