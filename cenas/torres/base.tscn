@@ -122,6 +122,7 @@ autoplay = "default"
 frame_progress = 0.9435837
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1964487356]
+visible = false
 texture = ExtResource("2_gy3w1")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=369362489]

@@ -8,10 +8,12 @@ extends PanelContainer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ativa_tutorial()
-	GameManager.tutorial_on.connect(toogle_tutorial)
+	#GameManager.tutorial_on.connect(toogle_tutorial)
 	
 	
 func show_message(wave):
+	if !GameManager.tutorial:
+		return
 	match wave:
 		0:
 			choose_tutorial(0)
@@ -51,14 +53,14 @@ func blink(UI):
 	tween.tween_property(UI,"modulate",Color(2.313, 2.313, 2.313, 1.0),1)
 	tween.tween_property(UI,"modulate",Color.WHITE,1)
 	
-func desativa_tutorial():
-	WaveManager.start_wave.disconnect(show_message)
-
+#func desativa_tutorial():
+	#WaveManager.start_wave.disconnect(show_message)
+#
 func ativa_tutorial():
 	WaveManager.start_wave.connect(show_message)
-	
-func toogle_tutorial(toogle):
-	if toogle:
-		ativa_tutorial()
-	else:
-		desativa_tutorial()
+	#
+#func toogle_tutorial(toogle):
+	#if toogle:
+		#ativa_tutorial()
+	#else:
+		#desativa_tutorial()

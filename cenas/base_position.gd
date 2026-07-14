@@ -5,3 +5,4 @@ extends Marker2D
 func _ready() -> void:
 	GameManager.posicao_base = global_position
 	print_debug(GameManager.posicao_base)
+	GameManager.restart()

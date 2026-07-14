@@ -4,8 +4,10 @@ extends Control
 @onready var money_label: Label = %MoneyLabel
 @onready var resume_button: TextureButton = %Resume
 @onready var quit_button: TextureButton = %QuitToMainMenu
+@onready var tutorial: CheckButton = %tutorial
 
 func _ready():
+	tutorial.button_pressed = GameManager.tutorial
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	visible = false
 
@@ -13,7 +15,7 @@ func _ready():
 	quit_button.pressed.connect(_on_quit_to_main_menu_pressed)
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("pause"):
 		toggle_pause()
 
 func toggle_pause():
@@ -42,4 +44,5 @@ func _on_quit_to_main_menu_pressed():
 
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
-	GameManager.tutorial_on.emit(toggled_on)
+	#GameManager.tutorial_on.emit(toggled_on)
+	GameManager.tutorial = toggled_on

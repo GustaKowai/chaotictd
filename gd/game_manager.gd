@@ -7,8 +7,8 @@ signal UI_tower_mouse
 signal piece_collected()
 @warning_ignore("unused_signal")
 signal game_over()
-@warning_ignore("unused_signal")
-signal tutorial_on()
+#@warning_ignore("unused_signal")
+#signal tutorial_on()
 signal restart_game()
 var pieces_started:int = 150
 var posicionando:bool
@@ -16,6 +16,7 @@ var is_game_over:bool = false
 var posicao_base:Vector2
 var pontuacao_waves:Array = [["name",1],["name2",0]]
 var damage_multiplier:float = 1.0
+var tutorial:bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,4 +45,4 @@ func restart():
 	var b = base.instantiate()
 	b.global_position = posicao_base #Vector2(973,520)
 	print_debug(posicao_base)
-	get_tree().root.add_child(b)
+	get_tree().root.get_node("Main").add_child.call_deferred(b)

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6lblvd3db4q8" path="res://gd/main_menu.gd" id="1_lo2na"]
 [ext_resource type="Texture2D" uid="uid://b2mdngu4sswkk" path="res://sprites/Fundo_Space_Shooter_TD.png" id="1_yhjln"]
+[ext_resource type="Texture2D" uid="uid://dwa67u0cv1oj7" path="res://sprites/titulo tdss.png" id="3_0cpie"]
 [ext_resource type="FontFile" uid="uid://bv73tyjv2mg2y" path="res://fontes/ds_digital/DS-DIGIT.TTF" id="3_6isp4"]
 [ext_resource type="Texture2D" uid="uid://ch1rdsh1dlpcl" path="res://sprites/ui play apagado.png" id="4_u7gsp"]
 [ext_resource type="Texture2D" uid="uid://psqmfix17xab" path="res://sprites/ui play aceso.png" id="5_ynv5s"]
@@ -32,7 +33,19 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_lo2na")
 
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1244837705]
+scroll_offset = Vector2(-245, 137)
+repeat_size = Vector2(1890, 1080)
+autoscroll = Vector2(50, 50)
+repeat_times = 3
+
+[node name="FundoSpaceShooterTd" type="Sprite2D" parent="Parallax2D" unique_id=546570263]
+texture_filter = 3
+position = Vector2(964, 536)
+texture = ExtResource("1_yhjln")
+
 [node name="Fundo" type="TextureRect" parent="." unique_id=951584522]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,17 +56,22 @@ texture = ExtResource("1_yhjln")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=629325368]
+[node name="TituloTdss" type="Sprite2D" parent="." unique_id=743079651]
+position = Vector2(977, 506)
+scale = Vector2(2, 2)
+texture = ExtResource("3_0cpie")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="." unique_id=1013499237]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -175.0
-offset_top = -184.0
-offset_right = 175.0
-offset_bottom = 184.0
+offset_left = -394.0
+offset_top = 474.0
+offset_right = 199.0
+offset_bottom = 538.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -61,6 +79,7 @@ pivot_offset = Vector2(175, 184)
 theme_override_constants/separation = 15
 
 [node name="NomeJogo" type="Label" parent="VBoxContainer" unique_id=1686184138]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "CHAOTIC SS"
